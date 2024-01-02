@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post = Post.new(new_post_params)
 
   end
 
@@ -15,7 +16,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def gpt_creation
+  private
+
+  def new_post_params
+    params.require(:post).permit(:prompt)
+  end
+
+  def gpt_creation(post)
 
   end
 end
