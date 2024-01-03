@@ -8,8 +8,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(new_post_params)
-
+    @post = Post.create!(new_post_params)
+    @post.update!(user: current_user)
   end
 
   def show
@@ -22,7 +22,27 @@ class PostsController < ApplicationController
     params.require(:post).permit(:prompt)
   end
 
-  def gpt_creation(post)
+  def gpt_prompt(post)
+    Faraday.new(
+      url: "https://api.openai.com/v1/threads/#{post.user.thread}/messages",
+      headers: {'Content-Type' => 'application/json',
+                'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
+                'OpenAI-Beta' => 'assistants=v1'}
+      )
+  end
+
+  def run_thread(post)
+    Faraday.new(
+      url: "https://api.openai.com/v1/threads/#{post.user.thread}/messages",
+      headers: {'Content-Type' => 'application/json',
+                'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
+                'OpenAI-Beta' => 'assistants=v1'},
+      body: {'assistant_id'=> ENV['GPT_ASSISTANT']}
+      )
+  end
+
+  def gpt_description
 
   end
+
 end
