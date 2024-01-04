@@ -1,0 +1,83 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 2%;
+
+  h3{
+  font-family: 'glacial-indifference' ;
+  font-weight: lighter;
+  margin: 3%;
+  text-align: center;
+  }
+}
+
+.form-column {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-colum:last-child{
+  margin-bottom: 0;
+}
+
+.actions-inscription{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3%;
+
+}
+
+.field-inscription {
+  flex: 1;
+  margin-right: 2%;
+  margin-bottom: 5%;
+
+
+  // label{
+  //   text-align: left;
+  // }
+
+  input{
+    width: 90%;
+    border: 1px solid grey;
+    height: 25px;
+  }
+
+  textarea{
+    border: 1px solid grey;
+  }
+}
+
+
+.btn-inscription{
+  width: 20%;
+  height: 50px;
+  padding: 1%;
+  margin: 1%;
+  background-color: black;
+  border-radius: 15px;
+  border: 1px solid ;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+
+.activite{
+  width: 90%;
+  margin: 2%;
+
+}
+
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .field {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,52 @@
+
+ @font-face {
+  font-family: 'brasika-display-trial';
+  src: url('brasika-display-trial.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'glacial-indifference';
+  src: url('GlacialIndifference-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'glacial-indifference';
+  src: url('GlacialIndifference-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@import "font-awesome";
+@import 'colors';
+@import 'components/index';
+
+
+body {
+  font-family: 'glaciale-indifference', sans-serif;
+}
+h1, h2 {
+  font-family: 'brasika-display-trial', 'Inter', 'Arial', 'Helvetica', sans-serif;
+  text-align: center;
+  margin: 3rem ;
+}
+h1{
+  font-size: 58px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+* {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color:inherit;
+}
