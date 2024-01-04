@@ -1,0 +1,81 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 2%;
+
+  h3{
+  font-family: 'glacial-indifference' ;
+  font-weight: lighter;
+  margin: 3%;
+  text-align: center;
+  }
+}
+
+.field{
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1%;
+
+  input{
+    width: 90%;
+    height: 25px;
+    border: 1px solid grey;
+    margin: 2%
+  }
+
+}
+
+.field-2{
+  width: 30%; /* Ajustez cette valeur selon vos besoins */
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+// .field-checkbox {
+//   display: flex;
+//   align-items: center;
+// }
+
+.field:last-child {
+  margin-right: 0; /* Supprime la marge pour le dernier élément */
+}
+
+.actions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-connexion {
+  width: 100%;
+  height: 30%;
+  padding: 1%;
+  margin: 1%;
+  background-color: black;
+  border-radius: 15px;
+  border: 1px solid ;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+
+
+
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column;
+  }
+
+  .field {
+    margin-right: 0;
+  }
+}
