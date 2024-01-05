@@ -1,0 +1,48 @@
+<nav class="overflow-hidden" data-controller="navbar" data-navbar-target="nav">
+  <section id="navigation">
+    <i id='menu-button' class="fa-solid fa-bars" data-action="click->navbar#toggle"></i>
+      <div id="menu" data-navbar-target="menu">
+        <%= link_to '#' do %>
+          <div>Post programmés</div>
+        <% end %>
+        <%= link_to '#' do %>
+          <div>Post sauvegardés</div>
+        <% end %>
+        <%= link_to root_path+'#contact' do %>
+          <div>Post publiés</div>
+        <% end %>
+        <%= link_to '#' do %>
+          <div>Générateur d’idées</div>
+        <% end %>
+        <%= link_to '#' do %>
+          <div><p>Mon Compte </p></div>
+        <% end %>
+        <%= link_to '#' do %>
+          <div><p>Mon Statistiques </p></div>
+        <% end %>
+        <%= link_to root_path+'#contact' do %>
+          <div><p>CGV </p></div>
+        <% end %>
+        <%= link_to '#' do %>
+          <div><p>Contact </p></div>
+        <% end %>
+        <%= link_to '#' do %>
+          <div><p>Se déconnecter</p></div>
+        <% end %>
+      </div>
+  </section>
+
+  <section id="main-logo">
+    <%= link_to root_path do %>
+      <%= image_tag("logo-eazia.svg", alt:"logo eazia") %>
+      <h3>Votre générateur de contenus par l’IA</h3>
+    <% end %>
+  </section>
+
+  <%# <section id='main-title'>
+    <%= link_to root_path do %>
+
+  <%# <% end %>
+  <%# </section> %>
+
+</nav>
