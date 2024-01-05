@@ -1,3 +1,9 @@
+@import "font-awesome";
+@import 'components/index';
+
+@import 'colors';
+@import 'navbar';
+
 
  @font-face {
   font-family: 'brasika-display-trial';
@@ -20,25 +26,29 @@
   font-style: italic;
 }
 
-@import "font-awesome";
-@import 'colors';
-@import 'components/index';
-
 
 body {
   font-family: 'glaciale-indifference', sans-serif;
 }
-h1, h2 {
+h1, h2, h3{
   font-family: 'brasika-display-trial', 'Inter', 'Arial', 'Helvetica', sans-serif;
   text-align: center;
-  margin: 3rem ;
+  margin: 1rem ;
 }
 h1{
   font-size: 58px;
 }
 
+h3{
+  font-size: 18px;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+p{
+  margin-bottom: 0;
 }
 
 
