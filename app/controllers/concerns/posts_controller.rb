@@ -8,8 +8,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create!(new_post_params)
-    @post.update!(user_id: current_user.id)
+    @post = Post.new(new_post_params)
+    @post.user = current_user
+    @post.save!
     gpt_prompt(@post)
     run_thread(@post)
     gpt_description(@post)
@@ -36,7 +37,7 @@ class PostsController < ApplicationController
                         'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
                         'OpenAI-Beta' => 'assistants=v1'}
               )
-    request.post('/')
+    request.post
   end
 
   def run_thread(post)
@@ -46,9 +47,10 @@ class PostsController < ApplicationController
               headers: {'Content-Type' => 'application/json',
                         'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
                         'OpenAI-Beta' => 'assistants=v1'},
-              body: {'assistant_id'=> ENV['GPT_ASSISTANT']}
               )
-    request.post('/')
+    request.post do |r|
+      r.body = {'assistant_id'=> ENV['GPT_ASSISTANT']}.to_json
+    end
     sleep(30)
   end
 
@@ -60,8 +62,8 @@ class PostsController < ApplicationController
                 'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
                 'OpenAI-Beta' => 'assistants=v1'},
       )
-    response = request.get('/')
-    data = JSON.parse(response)
+    response = request.get
+    data = JSON.parse(response.body)
     result = data['data'][0]["content"][0]["text"]["value"]
     return result
   end
@@ -69,7 +71,7 @@ class PostsController < ApplicationController
   def gpt_description(post)
     # ici je capture ce qu'il y a entre [] pour le donner à post.description
     post.description = gpt_answer(post)[/(?<=\[).+?(?=\])/]
-    return description
+    post.save!
   end
 
   def gpt_dalle(result)
