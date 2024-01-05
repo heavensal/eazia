@@ -5,12 +5,12 @@
 
 <div class="form-column">
   <div class="field-inscription">
-    <%= f.label :prénom %><br />
+    <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
   </div>
 
   <div class="field-inscription">
-    <%= f.label :nom %><br />
+    <%= f.label :last_name %><br />
     <%= f.text_field :last_name %>
   </div>
 
@@ -21,37 +21,32 @@
   </div>
 
   <div class="field-inscription">
-    <%= f.label :Mot_de_passe %>
+    <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> caractères min)</em>
     <% end %><br />
-    <%= f.password_field :encrypted_password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="field-inscription">
-    <%= f.label :Confirmation_du_mot_de_passe %><br />
+    <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
   </div>
 
 <div class="form-column">
     <div class="field">
-    <%= f.label :Nom_de_votre_entreprise %><br />
+    <%= f.label :company %><br />
     <%= f.text_field :company %>
   </div>
 
   <div class="field">
-    <%= f.label :Description_de_votre_activité %><br />
+    <%= f.label :information %><br />
     <%= f.text_area :information, class:"activite" %>
   </div>
 
-<div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </div>
-
     <div class="field">
-    <%= f.label :Instagram %><br />
+    <%= f.label :instagram %><br />
     <%= f.text_field :instagram %>
   </div>
 </div>

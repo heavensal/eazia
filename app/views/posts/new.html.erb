@@ -1,2 +1,14 @@
 <h1>Posts#new</h1>
 <p>Find me in app/views/posts/new.html.erb</p>
+
+<%= form_for(@post) do |f| %>
+
+  <div class="field">
+    <%= f.label :prompt %><br>
+    <%= f.text_field :prompt, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Générer mon post", class: "btn-connexion" %>
+  </div>
+<% end %>

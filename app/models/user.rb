@@ -19,6 +19,7 @@ class User < ApplicationRecord
 
     response = thread_creator.post('/')
     data = JSON.parse(response.body)
+    raise
     self.update!(thread: data['id'])
   end
 
