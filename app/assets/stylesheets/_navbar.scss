@@ -43,21 +43,56 @@ nav {
     margin-left: 0.5em;
     font-size: 2em;
   }
+
 }
 
-#menu {
+#navigation {
   display:flex;
   flex-direction: column;
   justify-content: flex-start;
   list-style: none;
-  position:absolute;
-  top:15vh;
-  right: 0;
   height:85vh;
   font-size: 1em;
-  transform-origin: left;
-  transform: translateX(100%);     // Échelle horizontale réduite à 0
+  transform-origin: left;  // Échelle horizontale réduite à 0
   transition: transform 0.5s ease-out;
+
+
+}
+
+  section {
+    width:33%;
+  }
+
+
+.menu {
+  width: 30%;
+  cursor: pointer;
+  font-size: 4em;
+  margin-left: 1%;
+ }
+
+ .sub-menus {
+  display: none;
+  position: relative;
+  z-index: 99;
+  width: 50%;
+  list-style: none;
+  padding: revert;
+  background-color: #A5F3AD;
+
+  li {
+    display: block;
+    margin-top: 12%;
+    font-weight: bold;
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover{
+    color:#FDAEEE;
 
   @media (max-width: 768px) {
     top: 100%;
@@ -66,16 +101,18 @@ nav {
 
   div {
     padding: 1em;
+
   }
+
 }
 
-#menu.toggle {
-  transform: translateX(0);
-  transition: transform 0.5s ease-out;
+ul li:last-child{
+  margin-bottom: 20%;
 }
 
-.overflow-hidden {
-  overflow: hidden;
+#menu-toggle:checked + .menu + .sub-menus {
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -108,12 +145,49 @@ nav {
   }
 }
 
-// #main-title {
-//   display: flex;
-//   justify-content: left;
-//   align-items: center;
-//   text-align: center;
-//   font-size: 1em;
+@media (max-width: 768px) {
+  /* Adaptations pour les tablettes et les mobiles */
+  nav {
+    height: auto;
 
+  }
 
-// }
+  #navigation, .menu, .sub-menus {
+    width: 100%;
+    font-size: 0.8em;
+    height: 5vh;
+  }
+
+  section {
+    width: 100%;
+  }
+
+  .sub-menus{
+    background-color: #A5F3AD;
+  }
+
+  #main-logo h3 {
+    font-size: 12px;
+    margin-left: 2em;
+  }
+
+  .menu {
+    font-size: 3em; /* Taille plus petite pour les appareils mobiles */
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Adaptations spécifiques pour les mobiles */
+  .menu {
+    font-size: 2em; /* Encore plus petit pour les écrans très petits */
+  }
+
+  #main-logo img {
+    height: 40px; /* Taille d'image plus petite */
+  }
+
+  #main-logo h3 {
+    font-size: 10px; /* Taille de police plus petite */
+  }
+}
