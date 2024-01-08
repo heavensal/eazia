@@ -10,3 +10,21 @@
   font-weight: bold;
   color: black;
 }
+
+@media (max-width: 768px) {
+  .btn-valider {
+    font-size: 12px; /* Légèrement plus petit pour les tablettes */
+    padding: 1.5%; /* Ajuster le padding pour une meilleure visibilité */
+    height: 30%; /* Hauteur automatique pour s'adapter au contenu */
+    width: 100%;
+  }
+}
+
+/* Pour les mobiles */
+@media (max-width: 480px) {
+  .btn-valider {
+    font-size: 14px; /* Encore plus petit pour les mobiles */
+    padding: 2%; /* Padding plus grand pour une meilleure ergonomie */
+    border-radius: 10px; /* Ajuster le rayon de la bordure pour les petits écrans */
+  }
+}
