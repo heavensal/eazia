@@ -13,7 +13,7 @@
   }
 }
 
-.field{
+.field {
   width: 30%;
   margin-left: auto;
   margin-right: auto;
@@ -26,13 +26,28 @@
     margin: 2%
   }
 
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+
+  @media (max-width: 480px) {
+    width: 80%;
+  }
+
 }
 
-.field-2{
-  width: 30%; /* Ajustez cette valeur selon vos besoins */
+.field-2 {
+  width: 30%;
   margin-left: auto;
   margin-right: auto;
 
+  @media (max-width: 768px) {
+    width: 40%;
+  }
+
+  @media (max-width: 480px) {
+    width: 80%;
+  }
 }
 
 // .field-checkbox {
@@ -41,7 +56,7 @@
 // }
 
 .field:last-child {
-  margin-right: 0; /* Supprime la marge pour le dernier élément */
+  margin-right: 0;
 }
 
 .actions{
@@ -52,9 +67,17 @@
   width: 20%;
   margin-left: auto;
   margin-right: auto;
+
+  @media (max-width: 768px) { // Pour les tablettes
+    width: 50%;
+  }
+
+  @media (max-width: 480px) { // Pour les mobiles
+    width: 80%;
+  }
 }
 
-.btn-connexion {
+.btn-connexion, .btn-mdp {
   width: 100%;
   height: 30%;
   padding: 1%;
@@ -65,30 +88,18 @@
   font-size: 18px;
   font-weight: bold;
   color: white;
-}
 
-
-.btn-mdp{
-  width: 100%;
-  height: 40%;
-  padding: 2%;
-  margin: 1%;
-  background-color: black;
-  border-radius: 15px;
-  border: 1px solid ;
-  font-size: 18px;
-  font-weight: bold;
-  color: white;
-}
-
-
-
-@media (max-width: 600px) {
-  .form-row {
-    flex-direction: column;
+  @at-root .btn-mdp {
+    height: 40%;
+    padding: 2%;
   }
 
-  .field {
-    margin-right: 0;
+  // Styles responsive pour les boutons
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
   }
 }

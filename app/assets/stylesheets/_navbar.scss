@@ -9,6 +9,15 @@ nav {
 
   section {
     width:33%;
+
+  @media (max-width: 768px) {
+    width: 50%
+  }
+  }
+
+  @media (max-width: 768px) {
+  display: flex;
+  height: auto;
   }
 
 }
@@ -16,6 +25,10 @@ nav {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+  @media (max-width: 768px) {
+    width: 30%;
+  }
 }
 
 #menu-button {
@@ -24,6 +37,11 @@ nav {
 
   &:hover {
     cursor:pointer;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 0.5em;
+    font-size: 2em;
   }
 }
 
@@ -40,6 +58,11 @@ nav {
   transform-origin: left;
   transform: translateX(100%);     // Échelle horizontale réduite à 0
   transition: transform 0.5s ease-out;
+
+  @media (max-width: 768px) {
+    top: 100%;
+    height: auto;
+  }
 
   div {
     padding: 1em;
@@ -70,6 +93,18 @@ nav {
   a{
     text-decoration: none;
     color: black;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    img {
+      height: 60px;
+      margin-top: 4%;
+    }
+    h3 {
+      font-size: 14px;
+
+    }
   }
 }
 
