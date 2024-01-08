@@ -9,20 +9,43 @@
 #   end
 
   # creation d'une conversation entre un USER et CHATGPT
-  thread_creator = Faraday.new(
-    url: 'https://api.openai.com/v1/threads',
-    headers: {'Content-Type' => 'application/json',
-              'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
-              'OpenAI-Beta' => 'assistants=v1'}
-  )
+#   thread_creator = Faraday.new(
+#     url: 'https://api.openai.com/v1/threads',
+#     headers: {'Content-Type' => 'application/json',
+#               'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
+#               'OpenAI-Beta' => 'assistants=v1'}
+#   )
 
-  response = thread_creator.post
-  response_body = response.body
+#   response = thread_creator.post
+#   response_body = response.body
 
-# Parsing du JSON pour le convertir en Hash
-parsed_response = JSON.parse(response_body)
+# # Parsing du JSON pour le convertir en Hash
+# parsed_response = JSON.parse(response_body)
 
-# Récupération du thread_id
-thread_id = parsed_response["id"]
+# # Récupération du thread_id
+# thread_id = parsed_response["id"]
 
-puts "Thread ID: #{thread_id}"
+# puts "Thread ID: #{thread_id}"
+
+adam = User.first
+p adam
+puts adam.thread
+
+# liste des messages
+
+disp_message = Faraday.new(
+                url: "https://api.openai.com/v1/threads/#{adam.thread}/messages",
+                headers: {'Content-Type' => 'application/json',
+                          'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
+                          'OpenAI-Beta' => 'assistants=v1'}
+              )
+response = disp_message.get
+body = JSON.parse(response.body)
+data = body['data']
+data.each do |msg|
+  puts " "
+  puts "auteur -> " + msg['role']
+  puts "said -> " + msg['content'][0]['text']['value']
+  puts " "
+  puts " "
+end
