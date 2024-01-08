@@ -6,6 +6,44 @@ nav {
   z-index:1000;
   background: #A5F3AD;
   margin-bottom: 1em;
+
+  section {
+    width:33%;
+
+  @media (max-width: 768px) {
+    width: 50%
+  }
+  }
+
+  @media (max-width: 768px) {
+  display: flex;
+  height: auto;
+  }
+
+}
+#navigation {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    width: 30%;
+  }
+}
+
+#menu-button {
+  font-size: 2em;
+  margin-left: 1em;
+
+  &:hover {
+    cursor:pointer;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 0.5em;
+    font-size: 2em;
+  }
+
 }
 
 #navigation {
@@ -17,6 +55,7 @@ nav {
   font-size: 1em;
   transform-origin: left;  // Échelle horizontale réduite à 0
   transition: transform 0.5s ease-out;
+
 
 }
 
@@ -54,6 +93,15 @@ nav {
 
   a:hover{
     color:#FDAEEE;
+
+  @media (max-width: 768px) {
+    top: 100%;
+    height: auto;
+  }
+
+  div {
+    padding: 1em;
+
   }
 
 }
@@ -82,6 +130,18 @@ ul li:last-child{
   a{
     text-decoration: none;
     color: black;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    img {
+      height: 60px;
+      margin-top: 4%;
+    }
+    h3 {
+      font-size: 14px;
+
+    }
   }
 }
 
