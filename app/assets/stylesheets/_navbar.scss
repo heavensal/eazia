@@ -21,15 +21,7 @@ nav {
   }
 
 }
-#navigation {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
 
-  @media (max-width: 768px) {
-    width: 30%;
-  }
-}
 
 #menu-button {
   font-size: 2em;
@@ -55,7 +47,6 @@ nav {
   font-size: 1em;
   transform-origin: left;  // Échelle horizontale réduite à 0
   transition: transform 0.5s ease-out;
-
 
 }
 
@@ -98,10 +89,10 @@ nav {
     top: 100%;
     height: auto;
   }
+  }
 
   div {
     padding: 1em;
-
   }
 
 }
