@@ -1,4 +1,12 @@
 <h1>Posts#index</h1>
 <p>Find me in app/views/posts/index.html.erb</p>
 
+<% @posts.each do |post| %>
+  <%= link_to post_path(post) do %>
+    <%= image_tag post.dalle3_images[0].link, width: 160 if post.dalle3_images[0]%>
+    <p><%= post.created_at %></p>
+    <p><%= post.gpt_creation.description %></p>
+  <% end %>
+<% end %>
+
 <%= link_to 'Déconnexion', destroy_user_session_path, method: :delete %>

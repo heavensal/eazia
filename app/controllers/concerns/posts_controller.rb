@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.where(user: current_user)
+    @posts = Post.where(user: current_user).order(created_at: :desc)
   end
 
   def new
@@ -57,7 +57,7 @@ class PostsController < ApplicationController
     request.post do |r|
       r.body = {'assistant_id'=> ENV['GPT_ASSISTANT']}.to_json
     end
-    sleep(45)
+    sleep(25)
   end
 
   def gpt_answer(post)
