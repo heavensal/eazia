@@ -5,7 +5,7 @@
   <%= link_to post_path(post) do %>
     <%= image_tag post.dalle3_images[0].link, width: 160 if post.dalle3_images[0]%>
     <p><%= post.created_at %></p>
-    <p><%= post.gpt_creation.description %></p>
+    <p><%= post.gpt_creation.description if post.gpt_creation %></p>
   <% end %>
 <% end %>
 

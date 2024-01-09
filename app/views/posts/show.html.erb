@@ -4,10 +4,13 @@
 
 <p><%= @post.description %></p>
 
-<p><%= @post.gpt_creation.description if @post.gpt_creation.description%></p>
+<p><%= @description if @description %></p>
 
 <p>
-  url: <%= @post.dalle3_images[0].link if @post.dalle3_images[0].link %>
+  <% if @images %>
+    <% @images.each do |img| %>
+      <p><%= img.link %></p>
+      <%= image_tag img.link %>
+    <% end %>
+  <% end %>
 </p>
-
-<%= image_tag @post.dalle3_images[0].link, width: 320 %>
