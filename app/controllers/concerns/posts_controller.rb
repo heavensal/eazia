@@ -37,7 +37,12 @@ class PostsController < ApplicationController
                         'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
                         'OpenAI-Beta' => 'assistants=v1'}
               )
-    request.post
+    request.post do |m|
+      m.body = {
+        "role": "user",
+        "content": post.prompt
+    }.to_json
+    end
   end
 
   def run_thread(post)
@@ -70,7 +75,7 @@ class PostsController < ApplicationController
 
   def gpt_description(post)
     # ici je capture ce qu'il y a entre [] pour le donner à post.description
-    post.description = gpt_answer(post)[/(?<=\[).+?(?=\])/]
+    post.description = gpt_answer(post)[/_%(.+?)%_/]
     post.save!
   end
 

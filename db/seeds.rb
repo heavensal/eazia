@@ -27,25 +27,46 @@
 
 # puts "Thread ID: #{thread_id}"
 
-adam = User.first
-p adam
-puts adam.thread
+leila = User.last
+# p leila
+# puts leila.thread
 
 # liste des messages
 
-disp_message = Faraday.new(
-                url: "https://api.openai.com/v1/threads/#{adam.thread}/messages",
-                headers: {'Content-Type' => 'application/json',
-                          'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
-                          'OpenAI-Beta' => 'assistants=v1'}
-              )
-response = disp_message.get
-body = JSON.parse(response.body)
-data = body['data']
-data.each do |msg|
-  puts " "
-  puts "auteur -> " + msg['role']
-  puts "said -> " + msg['content'][0]['text']['value']
-  puts " "
-  puts " "
-end
+# disp_message = Faraday.new(
+#                 url: "https://api.openai.com/v1/threads/#{leila.thread}/messages",
+#                 headers: {'Content-Type' => 'application/json',
+#                           'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
+#                           'OpenAI-Beta' => 'assistants=v1'}
+#               )
+# response = disp_message.get
+# body = JSON.parse(response.body)
+# data = body['data']
+# data.each do |msg|
+#   puts " "
+#   puts "auteur -> " + msg['role']
+#   puts "said -> " + msg['content'][0]['text']['value']
+#   puts " "
+#   puts " "
+# end
+
+request = Faraday.new(
+      url: "https://api.openai.com/v1/threads/#{leila.thread}/messages",
+      headers: {'Content-Type' => 'application/json',
+                'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
+                'OpenAI-Beta' => 'assistants=v1'},
+      )
+    response = request.get
+    data = JSON.parse(response.body)
+    result = data['data'][0]["content"][0]["text"]["value"]
+
+puts result
+
+post = Post.last
+# p post
+puts " "
+# post.update!(description: result)
+post.description = result[/_%(.+?)%_/]
+# post.description = matched
+post.save!
+puts "Voici la description Dall-E de mon post -> " + post.description
