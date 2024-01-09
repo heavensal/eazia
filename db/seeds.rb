@@ -66,7 +66,7 @@ post = Post.last
 # p post
 puts " "
 # post.update!(description: result)
-post.description = result[/_%(.+?)%_/]
+post.description = result[/_%(.+?)%_/, 1]
 # post.description = matched
 post.save!
 puts "Voici la description Dall-E de mon post -> " + post.description

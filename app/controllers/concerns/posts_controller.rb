@@ -75,7 +75,7 @@ class PostsController < ApplicationController
 
   def gpt_description(post)
     # ici je capture ce qu'il y a entre [] pour le donner à post.description
-    post.description = gpt_answer(post)[/_%(.+?)%_/]
+    post.description = gpt_answer(post)[/_%(.+?)%_/, 1]
     post.save!
   end
 
