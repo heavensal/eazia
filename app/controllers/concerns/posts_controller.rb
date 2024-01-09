@@ -13,9 +13,10 @@ class PostsController < ApplicationController
     @post.save!
     gpt_prompt(@post)
     run_thread(@post)
+    gpt_answer(@post)
     gpt_description(@post)
     @post.save!
-
+    gpt_dalle(@post)
     redirect_to post_path(@post)
   end
 
@@ -56,7 +57,7 @@ class PostsController < ApplicationController
     request.post do |r|
       r.body = {'assistant_id'=> ENV['GPT_ASSISTANT']}.to_json
     end
-    sleep(30)
+    sleep(25)
   end
 
   def gpt_answer(post)
@@ -70,19 +71,36 @@ class PostsController < ApplicationController
     response = request.get
     data = JSON.parse(response.body)
     result = data['data'][0]["content"][0]["text"]["value"]
-    return result
+    post.description = result
+    post.save!
   end
 
   def gpt_description(post)
     # ici je capture ce qu'il y a entre [] pour le donner à post.description
-    post.description = gpt_answer(post)[/_%(.+?)%_/, 1]
-    post.save!
+    gpt_creation = GptCreation.new(description: post.description[/_%(.+?)%_/, 1])
+    gpt_creation.post = post
+    gpt_creation.save!
   end
 
-  def gpt_dalle(result)
+  def gpt_dalle(post)
     # ici je capture ce qu'il y a entre {} pour le donner à dalle
-    dalle_prompt = result[/(?<={).+?(?=})/]
-    return dalle_prompt
+    img_prompt = post.description[/(?<={).+?(?=})/]
+    img = Dalle3Image.new(prompt: img_prompt)
+    img.post = post
+    request = Faraday.new(
+              url: "https://api.openai.com/v1/images/generations",
+              headers: {'Content-Type' => 'application/json',
+                        'Authorization' => "Bearer #{ENV['GPT_ANAIS']}"})
+    response = request.post do |r|
+                r.body = {'model'=> 'dall-e-3',
+                          'prompt' => img_prompt,
+                          'size' => "1024x1024",
+                          'quality' => 'hd',
+                          'style' => "natural"}.to_json
+              end
+    data = JSON.parse(response.body)
+    img.link = data['data'][0]['url']
+    img.save!
   end
 
 end
