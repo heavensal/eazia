@@ -8,6 +8,9 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
 
+  validates :email, presence: true
+  validates :password, presence: true
+
   def user_thread
     # creation d'une conversation entre un USER et CHATGPT
     thread_creator = Faraday.new(
