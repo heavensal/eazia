@@ -1,11 +1,19 @@
-<div class="container">
+<div class="container" data-controller="obligation-form" data-loader-target="togglableElement">
   <h1>Bienvenue !</h1>
     <h3>Se connecter</h3>
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
           <div class="field">
+          <% if resource.errors.any? %>
+            <% resource.errors.full_messages.each do |message| %>
+            <% if message.include?("Email") %>
+              <p style="color: red;"><%= message %></p>
+            <% end %>
+            <% end %>
+          <% end %>
+
             <%= f.label :email %><br>
             <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <p class="d-none text-danger fst-italic", data-obligation-form-target="text" style="font-size: 12px;">L'email est obligatoire</p>
           </div>
 
           <div class="field">
