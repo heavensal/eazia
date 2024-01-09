@@ -1,11 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="ia-generator"
 export default class extends Controller {
   static targets = ["email", "password", "text"]
 
   connect() {
-    console.log("hello")
+    console.log('hello')
 
   }
 

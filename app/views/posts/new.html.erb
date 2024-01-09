@@ -1,5 +1,5 @@
 <h1>Votre prochain post est à 1 clic</h1>
-
+<div data-controller="autorisation-form">
 <%= form_for(@post) do |f| %>
 
   <div class="field">
@@ -11,3 +11,4 @@
     <%= f.submit "Générer mon post", class: "btn-valider" %>
   </div>
 <% end %>
+</div>

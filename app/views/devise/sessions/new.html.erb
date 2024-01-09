@@ -1,4 +1,5 @@
-<div class="container" data-controller="autorisation-form">
+<div class="container">
+<div data-controller="autorisation-form">
   <h1>Bienvenue !</h1>
     <h3>Se connecter</h3>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -25,6 +26,6 @@
             <%= f.submit "Connexion", class: "btn-connexion" %>
           </div>
         <% end %>
-
+</div>
 <%= render "devise/shared/links" %>
 </div>
