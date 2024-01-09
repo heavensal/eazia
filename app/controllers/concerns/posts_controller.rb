@@ -11,12 +11,12 @@ class PostsController < ApplicationController
     @post = Post.new(new_post_params)
     @post.user = current_user
     @post.save!
-    gpt_prompt(@post)
-    run_thread(@post)
-    gpt_answer(@post)
-    gpt_description(@post)
+    gpt_prompt(@post) # POST message vers le thread
+    run_thread(@post) # POST Run du thread pour attendre la réponse
+    gpt_answer(@post) # GET dernier message du thread pour obtenir la réponse
+    gpt_description(@post) # Creation de la description du post
     @post.save!
-    gpt_dalle(@post)
+    gpt_dalle(@post) # Creation d'une image Dall-E
     redirect_to post_path(@post)
   end
 
@@ -57,7 +57,7 @@ class PostsController < ApplicationController
     request.post do |r|
       r.body = {'assistant_id'=> ENV['GPT_ASSISTANT']}.to_json
     end
-    sleep(25)
+    sleep(45)
   end
 
   def gpt_answer(post)

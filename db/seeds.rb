@@ -27,46 +27,65 @@
 
 # puts "Thread ID: #{thread_id}"
 
-leila = User.last
-# p leila
-# puts leila.thread
+kazuya = User.last
+p kazuya
+puts kazuya.thread
 
 # liste des messages
 
-# disp_message = Faraday.new(
-#                 url: "https://api.openai.com/v1/threads/#{leila.thread}/messages",
-#                 headers: {'Content-Type' => 'application/json',
-#                           'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
-#                           'OpenAI-Beta' => 'assistants=v1'}
-#               )
-# response = disp_message.get
-# body = JSON.parse(response.body)
-# data = body['data']
-# data.each do |msg|
-#   puts " "
-#   puts "auteur -> " + msg['role']
-#   puts "said -> " + msg['content'][0]['text']['value']
-#   puts " "
-#   puts " "
-# end
+disp_message = Faraday.new(
+                url: "https://api.openai.com/v1/threads/#{kazuya.thread}/messages",
+                headers: {'Content-Type' => 'application/json',
+                          'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
+                          'OpenAI-Beta' => 'assistants=v1'}
+              )
+response = disp_message.get
+body = JSON.parse(response.body)
+data = body['data']
+data.each do |msg|
+  puts " "
+  puts "auteur -> " + msg['role']
+  puts "said -> " + msg['content'][0]['text']['value']
+  puts " "
+  puts " "
+end
 
-request = Faraday.new(
-      url: "https://api.openai.com/v1/threads/#{leila.thread}/messages",
-      headers: {'Content-Type' => 'application/json',
-                'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
-                'OpenAI-Beta' => 'assistants=v1'},
-      )
-    response = request.get
-    data = JSON.parse(response.body)
-    result = data['data'][0]["content"][0]["text"]["value"]
+# request = Faraday.new(
+#       url: "https://api.openai.com/v1/threads/#{leila.thread}/messages",
+#       headers: {'Content-Type' => 'application/json',
+#                 'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
+#                 'OpenAI-Beta' => 'assistants=v1'},
+#       )
+#     response = request.get
+#     data = JSON.parse(response.body)
+#     result = data['data'][0]["content"][0]["text"]["value"]
 
-puts result
-
-post = Post.last
-# p post
-puts " "
-# post.update!(description: result)
-post.description = result[/_%(.+?)%_/, 1]
-# post.description = matched
-post.save!
-puts "Voici la description Dall-E de mon post -> " + post.description
+# puts result
+# puts " "
+# post = Post.last
+# # post.description = result
+# # post.save!
+# # p post
+# # puts " "
+# # puts "Voici la description complète de mon post -> " + post.description
+# # img_prompt = post.description[/(?<={).+?(?=})/]
+# # img = Dalle3Image.new(prompt: img_prompt)
+# # img.post = post
+# # request = Faraday.new(
+# #               url: "https://api.openai.com/v1/images/generations",
+# #               headers: {'Content-Type' => 'application/json',
+# #                         'Authorization' => "Bearer #{ENV['GPT_ANAIS']}"})
+# # response = request.post do |r|
+# #             r.body = {'model'=> 'dall-e-3',
+# #                       'prompt' => img_prompt,
+# #                       'size' => "1024x1024",
+# #                       'quality' => 'hd',
+# #                       'style' => "natural"}.to_json
+# #           end
+# # data = JSON.parse(response.body)
+# # img.link = data['data'][0]['url']
+# # img.save!
+# # p img
+# img = Dalle3Image.last
+# puts img.link
+# puts img.prompt
