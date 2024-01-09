@@ -9,8 +9,7 @@
 <p>
   <% if @images %>
     <% @images.each do |img| %>
-      <p><%= img.link %></p>
-      <%= image_tag img.link %>
+      <%= cl_image_tag img.key, width: 240, height: 240 %>
     <% end %>
   <% end %>
 </p>

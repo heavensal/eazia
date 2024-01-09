@@ -40,7 +40,22 @@ class AiApiService
     post.description = result
   end
 
-  # Autres méthodes nécessaires...
+  def image(post)
+    img_prompt = post.description[/(?<={).+?(?=})/]
+    img = Dalle3Image.new(prompt: img_prompt)
+    img.post = post
+    request = faraday_ai
+    response = request.post("https://api.openai.com/v1/images/generations", headers: {'OpenAI-Beta' => nil}) do |r|
+      r.body = {'model'=> 'dall-e-3',
+                          'prompt' => img_prompt,
+                          'size' => "1024x1024",
+                          'quality' => 'hd',
+                          'style' => "natural"}.to_json
+    end
+    data = JSON.parse(response.body)
+    img.link = data['data'].first['url']
+    img.save!
+  end
 
   private
 
