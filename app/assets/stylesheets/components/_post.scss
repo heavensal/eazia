@@ -12,7 +12,7 @@
   }
 
   input {
-    height: 100px;
+   padding-bottom: 5%;
   }
 
 
@@ -101,13 +101,12 @@
 
 
 .btn-valider{
-  width: 100%;
+  width: 30%;
   height: 30%;
-  padding: 1%;
   margin: 1%;
   background-color: #FDAEEE;
   border-radius: 15px;
-  border: 1px solid #BDDDFA;
+  border: 5px solid #BDDDFA;
   font-size: 18px;
   font-weight: bold;
   color: black;
