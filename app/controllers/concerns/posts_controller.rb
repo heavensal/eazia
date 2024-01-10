@@ -13,7 +13,9 @@ class PostsController < ApplicationController
     ai_api_service = AiApiService.new(@post.user)
     ai_api_service.work(@post)
     GptCreation.create_description(@post) # Creation de la description du post
-    ai_api_service.image(@post) # Creation d'une image Dall-E
+    @post.pictures_generated.times do
+      ai_api_service.image(@post) # Creation d'une image Dall-E
+    end
     redirect_to post_path(@post)
   end
 
@@ -26,7 +28,7 @@ class PostsController < ApplicationController
   private
 
   def new_post_params
-    params.require(:post).permit(:prompt, photos: [])
+    params.require(:post).permit(:prompt, :pictures_generated, photos: [])
   end
 
 end

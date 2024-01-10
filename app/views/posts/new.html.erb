@@ -12,6 +12,13 @@
     <%= f.file_field :photos, as: :file, multiple: true %>
   </div>
 
+  <div class="field">
+    <%= f.label :pictures_generated,  "Sélectionner le nombre d'images à créer"%><br>
+    <%= f.select :pictures_generated, options_for_select(0..5) %>
+  </div>
+
+
+
   <div class="actions">
     <%= f.submit "Générer mon post", class: "btn-valider" %>
   </div>
