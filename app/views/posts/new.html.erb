@@ -7,6 +7,11 @@
     <%= f.text_field :prompt, autofocus: true %>
   </div>
 
+  <div class="field">
+    <%= f.label :prompt,  "Ajoutez vos propres photos ?"%><br>
+    <%= f.file_field :photos, as: :file, multiple: true %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Générer mon post", class: "btn-valider" %>
   </div>
