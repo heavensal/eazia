@@ -1,11 +1,18 @@
 nav {
   display:flex;
   height: 15vh;
-  position: sticky;
+  position: relative;
   top: 0;
   z-index:1000;
-  background: #A5F3AD;
   margin-bottom: 1em;
+  background: linear-gradient(
+    to right,
+    #A5F3AD,
+    #BDDDFA,
+    #EAF8EF,
+    #FDAEEE,
+  );
+
 
   section {
     width:33%;
@@ -23,20 +30,20 @@ nav {
 }
 
 
-#menu-button {
-  font-size: 2em;
-  margin-left: 1em;
+// #menu-button {
+//   font-size: 2em;
+//   margin-left: 1em;
 
-  &:hover {
-    cursor:pointer;
-  }
+//   &:hover {
+//     cursor:pointer;
+//   }
 
-  @media (max-width: 768px) {
-    margin-left: 0.5em;
-    font-size: 2em;
-  }
+//   @media (max-width: 768px) {
+//     margin-left: 0.5em;
+//     font-size: 2em;
+//   }
 
-}
+// }
 
 #navigation {
   display:flex;
@@ -64,12 +71,19 @@ nav {
 
  .sub-menus {
   display: none;
-  position: relative;
-  z-index: 99;
+  position: sticky;
+  z-index: 10;
   width: 50%;
   list-style: none;
   padding: revert;
-  background-color: #A5F3AD;
+  background: linear-gradient(
+    to right,
+    rgba(165, 243, 173, 0.7),
+    rgba(189, 221, 250, 0.7),
+    rgba(234, 248, 239, 0.7),
+    rgba(253, 174, 238, 0.7),
+  );
+
 
   li {
     display: block;
@@ -117,10 +131,12 @@ ul li:last-child{
   align-items: center;
   img{
     height: 60px;
+    animation: rotateAndFadeIn 1.5s linear;
   }
   h3{
     font-size: 14px;
-    margin-left: 5em
+    margin-left: 5em;
+    animation: fadeIn 4s linear;
   }
   a{
     text-decoration: none;
@@ -139,6 +155,27 @@ ul li:last-child{
     }
   }
 }
+
+@keyframes rotateAndFadeIn {
+  from {
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 
 @media (max-width: 768px) {
   /* Adaptations pour les tablettes et les mobiles */
@@ -164,7 +201,15 @@ ul li:last-child{
   }
 
   .sub-menus{
-    background-color: #A5F3AD;
+    position: relative;
+    z-index: 100;
+    background: linear-gradient(
+      to right,
+      rgba(165, 243, 173, 0.9), /* Vert clair avec transparence */
+      rgba(189, 221, 250, 0.9), /* Bleu ciel avec transparence */
+      rgba(234, 248, 239, 0.9), /* Vert très pâle avec transparence */
+      rgba(253, 174, 238, 0.9)  /* Rose pâle avec transparence */
+    );
     height: auto;
     width: 70%;
     margin-top: 20%;
@@ -191,7 +236,13 @@ ul li:last-child{
   }
 
   .sub-menus{
-    background-color: #A5F3AD;
+    background: linear-gradient(
+      to right,
+      rgba(165, 243, 173, 0.9), /* Vert clair avec transparence */
+      rgba(189, 221, 250, 0.9), /* Bleu ciel avec transparence */
+      rgba(234, 248, 239, 0.9), /* Vert très pâle avec transparence */
+      rgba(253, 174, 238, 0.9)  /* Rose pâle avec transparence */
+    );
     height: auto;
     width: 70%;
   }
