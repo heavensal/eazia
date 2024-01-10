@@ -11,7 +11,7 @@ nav {
     width:33%;
 
   @media (max-width: 768px) {
-    width: 50%
+    width: 100%
   }
   }
 
@@ -104,6 +104,10 @@ ul li:last-child{
 #menu-toggle:checked + .menu + .sub-menus {
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 
@@ -124,7 +128,7 @@ ul li:last-child{
   }
 
   @media (max-width: 768px) {
-    justify-content: center;
+    justify-content: left;
     img {
       height: 60px;
       margin-top: 4%;
@@ -143,9 +147,15 @@ ul li:last-child{
 
   }
 
-  #navigation, .menu, .sub-menus {
+  #navigation {
+    width: 50%;
+    font-size: 1em;
+
+  }
+
+  .menu, .sub-menus{
     width: 100%;
-    font-size: 0.8em;
+    font-size: 1em;
     height: 5vh;
   }
 
@@ -155,6 +165,12 @@ ul li:last-child{
 
   .sub-menus{
     background-color: #A5F3AD;
+    height: auto;
+    width: 70%;
+    margin-top: 20%;
+    a {
+      font-size: 12px;
+    }
   }
 
   #main-logo h3 {
@@ -163,22 +179,28 @@ ul li:last-child{
   }
 
   .menu {
-    font-size: 3em; /* Taille plus petite pour les appareils mobiles */
+    font-size: 3em;
   }
 }
 
 @media (max-width: 480px) {
 
-  /* Adaptations spécifiques pour les mobiles */
+
   .menu {
-    font-size: 2em; /* Encore plus petit pour les écrans très petits */
+    font-size: 2em;
+  }
+
+  .sub-menus{
+    background-color: #A5F3AD;
+    height: auto;
+    width: 70%;
   }
 
   #main-logo img {
-    height: 40px; /* Taille d'image plus petite */
+    height: 40px;
   }
 
   #main-logo h3 {
-    font-size: 10px; /* Taille de police plus petite */
+    font-size: 10px;
   }
 }

@@ -1,3 +1,105 @@
+.prompt {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3%;
+  width: 80%;
+
+  label {
+    font-family: 'glacial-indifference';
+    font-size: 18px;
+  }
+
+  input {
+    height: 100px;
+  }
+
+
+  @media (max-width: 768px) {
+    width: 100%;
+
+    label {
+      font-size: 16px;
+    }
+
+    input {
+      height: 40px;
+    }
+  }
+
+
+  @media (max-width: 480px) {
+    width: 100%;
+
+    label {
+      font-size: 14px;
+    }
+
+    input {
+      height: 35px;
+    }
+  }
+}
+
+.images {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3%;
+  margin-right: auto;
+  margin-left: 10%;
+
+  label {
+    margin-right: 1%;
+    font-family: 'glacial-indifference';
+    font-size: 18px;
+
+
+  }
+
+  select {
+    padding: 0.3em;
+    font-family: 'glacial-indifference';
+    width: 30%;
+
+  }
+
+  input{
+    font-family: 'glacial-indifference';
+  }
+
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-left: 0;
+
+
+    label {
+      font-size: 16px;
+    }
+
+    select {
+      padding: 0.25em;
+      width: 100%;
+    }
+  }
+
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+
+
+    label {
+      font-size: 14px;
+    }
+
+    select {
+      padding: 0.2em;
+    }
+  }
+}
+
+
 .btn-valider{
   width: 100%;
   height: 30%;
@@ -13,18 +115,18 @@
 
 @media (max-width: 768px) {
   .btn-valider {
-    font-size: 12px; /* Légèrement plus petit pour les tablettes */
-    padding: 1.5%; /* Ajuster le padding pour une meilleure visibilité */
-    height: 30%; /* Hauteur automatique pour s'adapter au contenu */
+    font-size: 14px;
+    padding: 1.5%;
+    height: 30%;
     width: 100%;
   }
 }
 
-/* Pour les mobiles */
+
 @media (max-width: 480px) {
   .btn-valider {
-    font-size: 14px; /* Encore plus petit pour les mobiles */
-    padding: 2%; /* Padding plus grand pour une meilleure ergonomie */
-    border-radius: 10px; /* Ajuster le rayon de la bordure pour les petits écrans */
+    font-size: 14px;
+    padding: 2%;
+    border-radius: 10px;
   }
 }

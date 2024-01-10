@@ -1,19 +1,17 @@
+<div class="container">
 <h1>Votre prochain post est à 1 clic</h1>
 
 <%= form_for(@post) do |f| %>
 
-  <div class="field">
-    <%= f.label :prompt,  "Saisisez en quelques mots le sujet de votre prochain post"%><br>
+  <div class="prompt">
+    <%= f.label :prompt,  "Saisisez en quelques mots le sujet de votre prochain post : "%>
     <%= f.text_field :prompt, autofocus: true %>
   </div>
 
-  <div class="field">
-    <%= f.label :prompt,  "Ajoutez vos propres photos ?"%><br>
-    <%= f.file_field :photos, as: :file, multiple: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :pictures_generated,  "Sélectionner le nombre d'images à créer"%><br>
+  <div class="images">
+    <%= f.label :prompt,  "Ajoutez vos propres photos ?"%>
+    <%= f.file_field :photos, as: :file, multiple: true %><br>
+    <%= f.label :pictures_generated,  "Sélectionner le nombre d'images à créer"%>
     <%= f.select :pictures_generated, options_for_select(0..5) %>
   </div>
 
@@ -23,3 +21,4 @@
     <%= f.submit "Générer mon post", class: "btn-valider" %>
   </div>
 <% end %>
+</div>
