@@ -50,7 +50,7 @@ nav {
   flex-direction: column;
   justify-content: flex-start;
   list-style: none;
-  height:15vh;
+  height:85vh;
   font-size: 1em;
   transform-origin: left;  // Échelle horizontale réduite à 0
   transition: transform 0.5s ease-out;
@@ -73,6 +73,7 @@ nav {
   display: none;
   position: sticky;
   z-index: 10;
+  height:100vh;
   width: 50%;
   list-style: none;
   padding: revert;
