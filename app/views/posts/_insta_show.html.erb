@@ -7,12 +7,13 @@
     <div><%= render "layouts/instagram/threepoints" %></div>
   </div>
 
-   <content select="img">
+   <div select="img">
     <div id="carouselExampleIndicators"  class="carousel slide custom">
       <div class="carousel-images">
         <% if @images.length > 1 %>
-        <% @images.each do |img| %>
-          <%= cl_image_tag img.key, width: 120, height: 120 %>
+        <% @images.each_with_index do |img, i| %>
+        <div data-bs-slide-to="<%=i%>" class="<%= i== 0 ? "active" : "" %> rounded-circle card-indicator"></div>
+          <%# <%= cl_image_tag img.key, width: 120, height: 120 %>
         <% end %>
         <% end %>
       </div>
@@ -30,13 +31,13 @@
       <% end %>
 
     </div>
-</content>
+</div>
 
 <%= render "layouts/instagram/interaction_btn" %>
 
 <div class="textcontent" data-controller="toggledescription">
   <b> <%= current_user.instagram %> </b>
-  <span style="display:inline;" data-action="click->toggledescription#fireplus">
+  <span data-action="click->toggledescription#fireplus">
     <span data-toggledescription-target="description" style="cursor:pointer;">
       <% if post.description.size > 64 %>
         <%= post.description[0..64] %><span style="color: grey;">...plus</span>
