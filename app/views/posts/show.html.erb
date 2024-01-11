@@ -1,13 +1,22 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
-<p><%= @post.prompt %></p>
+<div class="show">
+  <div class="creation">
+    <div class="creation-images">
+      <% if @images %>
+        <% @images.each do |img| %>
+        <%= cl_image_tag img.key, width: 200, height: 200 %>
+        <% end %>
+      <% end %>
+    </div>
 
-<p><%= @description if @description %></p>
+    <div class="prompt-insta"><%= @post.prompt %></div>
 
-<p>
-  <% if @images %>
-    <% @images.each do |img| %>
-      <%= cl_image_tag img.key, width: 240, height: 240 %>
-    <% end %>
-  <% end %>
-</p>
+    <div class="description"><%= @description if @description %></div>
+  </div>
+
+  <div class='view-insta'>
+    <div><h4>Vue Instagram</h4></div>
+    <div><%= render "insta_show", post: @post %></div>
+    <div><%= render "show_btns", post: @post %></div>
+  </div>
+
+</div>

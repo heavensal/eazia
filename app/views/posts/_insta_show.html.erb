@@ -1,0 +1,50 @@
+<div class="insta">
+  <div class="topbar">
+    <div>
+      <%= image_tag "photo_alice.jpeg", class:"icon" %>
+      <b><%= current_user.instagram %></b>
+    </div>
+    <div><%= render "layouts/instagram/threepoints" %></div>
+  </div>
+
+   <content select="img">
+    <div id="carouselExampleIndicators"  class="carousel slide custom">
+      <div class="carousel-images">
+        <% if @images.length > 1 %>
+        <% @images.each do |img| %>
+          <%= cl_image_tag img.key, width: 120, height: 120 %>
+        <% end %>
+        <% end %>
+      </div>
+
+       <div class="carousel-inner" data-controller="show-imgs">
+        <% @images.each_with_index do |img, i| %>
+          <div class="carousel-item <%= i == 0 ? "active" : "" %>">
+            <%= cl_image_tag img.key , class:"crop", data: { show_imgs_target: "image", src: img.key } %>
+          </div>
+        <% end %>
+       </div>
+
+      <% if @images.length > 1 %>
+        <%= render "layouts/instagram/btn_carousel_show" %>
+      <% end %>
+
+    </div>
+</content>
+
+<%= render "layouts/instagram/interaction_btn" %>
+
+<div class="textcontent" data-controller="toggledescription">
+  <b> <%= current_user.instagram %> </b>
+  <span style="display:inline;" data-action="click->toggledescription#fireplus">
+    <span data-toggledescription-target="description" style="cursor:pointer;">
+      <% if post.description.size > 64 %>
+        <%= post.description[0..64] %><span style="color: grey;">...plus</span>
+       <% else %>
+        <%= post.description %>
+      <% end %>
+    </span>
+    <span data-toggledescription-target="plus" class="d-none" style="cursor:pointer;"><%= post.description %></span>
+    </span>
+</div>
+</div>
