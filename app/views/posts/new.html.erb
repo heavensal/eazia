@@ -9,7 +9,7 @@
   </div>
 
   <div class="images">
-    <%= f.label :prompt,  "Ajoutez vos propres photos ?"%>
+    <%= f.label :prompt,  "Ajoutez vos propres photos ?" %>
     <%= f.file_field :photos, as: :file, multiple: true %><br>
     <%= f.label :pictures_generated,  "Sélectionner le nombre d'images à créer"%>
     <%= f.select :pictures_generated, options_for_select(0..5) %>
