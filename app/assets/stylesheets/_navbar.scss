@@ -56,6 +56,9 @@ nav {
   transform-origin: left;  // Échelle horizontale réduite à 0
   transition: transform 0.5s ease-out;
 
+  @media (max-width: 768px) {
+    height: 15vh;
+}
 }
 
   section {
@@ -70,13 +73,14 @@ nav {
   width: 30%;
   cursor: pointer;
   font-size: 4em;
+  height: 15vh;
  }
 
  .sub-menus {
   display: none;
   position: sticky;
   z-index: 10;
-  height:100vh;
+  height:85vh;
   width: 150%;
   list-style: none;
   padding: revert;
