@@ -12,14 +12,13 @@
 
     <div class="description"><%= @description if @description %></div>
 
-    <div class="btn-creation" data-controller="toggle">
-
-      <div >
-        <button data-action="click->toggle#fireArea" data-toggle-target="modif" class="button-annexe">
+    <div data-controller="toggle">
+      <div>
+        <button data-action="click->toggle#fireArea" data-toggle-target="modif" class="btn-creation">
           Modifier ma description ✏️
         </button>
          <%= form_with url: new_post_path, method: "PATCH", html: { autocomplete: 'off'} do |f| %>
-          <%= f.submit "Recréer une description 🤔", class:"button-annexe", data: { toggle_target: "regen" } %>
+          <%= f.submit "Recréer une description 🤔", class:"btn-creation", data: { toggle_target: "regen" } %>
          <% end %>
         <%# <div style="flex-basis:100%" data-toggle-target="textarea" class="d-none">
           <%= simple_form_for @post  do |f| %>

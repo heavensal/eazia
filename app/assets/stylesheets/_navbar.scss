@@ -51,6 +51,7 @@ nav {
   justify-content: flex-start;
   list-style: none;
   height:85vh;
+  width: 10%;
   font-size: 1em;
   transform-origin: left;  // Échelle horizontale réduite à 0
   transition: transform 0.5s ease-out;
@@ -74,14 +75,14 @@ nav {
   position: sticky;
   z-index: 10;
   height:100vh;
-  width: 50%;
+  width: 150%;
   list-style: none;
   padding: revert;
   background: linear-gradient(
     to right,
-    rgba(165, 243, 173, 0.7),
-    rgba(189, 221, 250, 0.7),
-    rgba(234, 248, 239, 0.7),
+    rgba(165, 243, 173, 0.9),
+    rgba(189, 221, 250, 0.9),
+    rgba(234, 248, 239, 0.9),
     rgba(253, 174, 238, 0.7),
   );
 
@@ -128,8 +129,9 @@ ul li:last-child{
 
 #main-logo{
   display: flex;
-  justify-content:right;
+  justify-content:center;
   align-items: center;
+  width: 80%;
   img{
     height: 60px;
     animation: rotateAndFadeIn 1.5s linear;
