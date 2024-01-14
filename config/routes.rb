@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'pages/cgv'
+  get 'pages/legal'
+  get 'pages/account'
+  get 'pages/quartz_agency'
+  get 'pages/contact'
   root 'posts#new'
   devise_for :users
   resources :posts
