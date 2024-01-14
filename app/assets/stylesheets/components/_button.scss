@@ -4,6 +4,25 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 1%;
+  box-shadow: 4px 4px 8px 0px #A5F3AD;
+  border: none;
+  background:transparent;
+  background-color: transparent;
+  border-radius:4px;
+  cursor:pointer;
+  color:#BDDDFA;
+  font-size:12px;
+  font-weight: bold;
+  padding:8px 32px;
+  margin-bottom: 10px;
+  text-decoration:none;
+  text-shadow:0px 0px 0px #f5f5f7;
+  min-width:160px;
+}
+
+.btn-creation:hover{
+  color:grey;
+  transform: scale(1.1);
 }
 
 .button-annexe {
@@ -25,7 +44,8 @@
 }
 
 .button-annexe:hover{
-  color:black
+  color:grey;
+  transform: scale(1.1);
 }
 
 .button-instagram-show {
