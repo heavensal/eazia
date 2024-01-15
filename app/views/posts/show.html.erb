@@ -3,7 +3,7 @@
     <div class="creation-images">
       <% if @images %>
         <% @images.each do |img| %>
-        <%= cl_image_tag img.key, width: 200, height: 200 %>
+          <%= cl_image_tag img.key, width: 200, height: 200 %>
         <% end %>
       <% end %>
     </div>
@@ -12,7 +12,7 @@
 
     <div class="description"><%= @description if @description %></div>
 
-    <div data-controller="toggle">
+    <div data-controller="display" class="border border-5">
       <div>
         <button data-action="click->toggle#fireArea" data-toggle-target="modif" class="btn-creation">
           Modifier ma description ✏️
