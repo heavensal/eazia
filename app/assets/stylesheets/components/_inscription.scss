@@ -56,6 +56,10 @@
   to { width: 7ch; } /* 'ch' est une unité basée sur la largeur du caractère '0' */
   }
 
+.form{
+  width: 80%;
+}
+
 .form-column {
   display: flex;
   justify-content: space-between;
@@ -69,11 +73,17 @@
   margin-bottom: 0;
 }
 
-.actions-inscription{
+.actions-inscription, .actions-continuer{
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 1%;
+  width: 100%;
+
+  @at-root .actions-continuer{
+    width: 20%;
+    margin-top: 1%;
+  }
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -96,7 +106,7 @@
   // }
 
   input{
-    width: 90%;
+    width: 100%;
     border: 1px solid grey;
     height: 25px;
 
@@ -135,6 +145,8 @@
 
   @at-root .btn-continuer{
     width: 100%;
+    text-align: center;
+    line-height: 50px;
   }
 
   @media (max-width: 768px) {
@@ -145,8 +157,7 @@
 
 
 .activite{
-  width: 90%;
-  margin: 2%;
+  width: 100%;
 
   @media (max-width: 768px) {
     width: 90%;

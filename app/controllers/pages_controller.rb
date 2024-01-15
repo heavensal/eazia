@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!, except: [:account]
+  before_action :authenticate_user!, except: [:account, :contact]
   def cgv
   end
 

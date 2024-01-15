@@ -2,6 +2,7 @@
 <div data-controller="autorisation-form">
   <h1>Bienvenue !</h1>
     <h3>Se connecter</h3>
+    <div class="form-connexion">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
           <div class="field">
@@ -21,7 +22,7 @@
               <%= f.label :remember_me, "Se souvenir de moi" %>
             </div>
           <% end %>
-
+</div>
           <div class="actions">
             <%= f.submit "Connexion", class: "btn-connexion" %>
           </div>

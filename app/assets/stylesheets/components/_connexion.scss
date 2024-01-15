@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   margin: 2%;
+  width: 100%;
 
   h1{
   text-align: center;
@@ -48,6 +49,13 @@
 @keyframes typing {
 from { width: 0; }
 to { width: 7ch; } /* 'ch' est une unité basée sur la largeur du caractère '0' */
+}
+
+.form-connexion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 
