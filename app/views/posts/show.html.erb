@@ -1,9 +1,10 @@
 <div class="show">
+
   <div class="creation">
     <div class="creation-images">
       <% if @images %>
         <% @images.each do |img| %>
-        <%= cl_image_tag img.key, width: 200, height: 200 %>
+        <%= cl_image_tag img.key%>
         <% end %>
       <% end %>
     </div>
@@ -17,21 +18,21 @@
         <button data-action="click->toggle#fireArea" data-toggle-target="modif" class="btn-creation">
           Modifier ma description ✏️
         </button>
-         <%= form_with url: new_post_path, method: "PATCH", html: { autocomplete: 'off'} do |f| %>
+        <%= form_with url: new_post_path, method: "PATCH", html: { autocomplete: 'off'} do |f| %>
           <%= f.submit "Recréer une description 🤔", class:"btn-creation", data: { toggle_target: "regen" } %>
          <% end %>
-        <%# <div style="flex-basis:100%" data-toggle-target="textarea" class="d-none">
-          <%= simple_form_for @post  do |f| %>
-            <%# <%= f.input :description, label: false, placeholder: @post.description, input_html: { id:"modif-description" }%>
-            <%# <div class="d-flex justify-content-around">
-              <button data-action="click->toggle#cancelArea" class="button-cancel" style= "flex-basis:40%">
-                Annuler
-              </button>
-              <%= f.submit "Modifier ✔️", class: "button-annexe", style: "flex-basis:40%" %>
-            <%# </div>
-          <% end %>
-        <%# </div> %>
-       </div>
+          <%# <div style="flex-basis:100%" data-toggle-target="textarea" class="d-none">
+            <%= simple_form_for @post  do |f| %>
+              <%# <%= f.input :description, label: false, placeholder: @post.description, input_html: { id:"modif-description" }%>
+              <%# <div class="d-flex justify-content-around">
+                <button data-action="click->toggle#cancelArea" class="button-cancel" style= "flex-basis:40%">
+                  Annuler
+                </button>
+                <%= f.submit "Modifier ✔️", class: "button-annexe", style: "flex-basis:40%" %>
+              <%# </div>
+            <% end %>
+          <%# </div> %>
+      </div>
     </div>
   </div>
 
