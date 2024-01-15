@@ -12,11 +12,12 @@
 
 .creation-images{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 
 img{
   width: 200px;
   height: 200px;
+  margin: 1%
 
 }
 }
@@ -132,4 +133,180 @@ path {
   fill: none;
   stroke-miterlimit: 10;
   stroke: #000000;
+}
+
+
+@media (max-width: 600px) {
+
+  .show{
+    display:flex;
+    flex-direction: column;
+  }
+  .creation{
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .creation-images img{
+    width: 100px; // Taille plus petite pour les images sur mobile
+    height: 100px;
+  }
+
+  .insta-show {
+    width: 100%;
+  }
+
+  .view-insta h4 {
+    font-size: 16px; // Taille de police plus petite pour mobile
+  }
+
+  .insta {
+    max-width: 100%; // Utilise toute la largeur disponible
+  }
+
+  .insta-show {
+    width: 100%; // Utilise toute la largeur disponible
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .crop {
+    height: 200px; // Hauteur ajustée pour les mobiles
+  }
+
+  .interactionbtns {
+    flex-direction: row;
+    align-items: space-between;
+  }
+
+  .interactionbtns span {
+    width: 100%;
+    justify-content: left;
+  }
+
+  .btn-annexe, .btn-publier {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .textcontent {
+    font-size: 10px; // Taille de police plus petite pour mobile
+  }
+}
+
+
+
+// Écrans moyens (tablettes)
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  .show{
+    display:flex;
+    flex-direction: column;
+  }
+
+  .creation{
+    width: 70%;
+  }
+
+  .creation-images {
+    display: flex;
+    justify-content: center;
+  }
+
+  .creation-images img{
+    width: 150px; // Taille intermédiaire pour les tablettes
+    height: 150px;
+    margin: 1%
+  }
+
+  .insta-show {
+    width: 80%;
+  }
+
+  .view-insta h4 {
+    font-size: 18px; // Taille de police intermédiaire pour tablettes
+  }
+
+  .insta-show {
+    width: 80%; // Largeur ajustée pour tablettes
+  }
+
+  .icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .crop {
+    height: 300px; // Hauteur ajustée pour les tablettes
+  }
+
+  .interactionbtns {
+    padding: 8px 10px;
+  }
+
+  .interactionbtns span {
+    width: 80%;
+  }
+
+  .btn-annexe, .btn-publier {
+    margin-top: 3%;
+  }
+
+  .textcontent {
+    font-size: 11px; // Taille de police intermédiaire pour tablettes
+  }
+}
+
+// Grands écrans (ordinateurs de bureau)
+@media (min-width: 1025px) {
+  .creation{
+    width: 50%; // Largeur originale pour les grands écrans
+  }
+
+  .creation-images {
+    display: flex;
+    justify-content: center;
+  }
+
+  .creation-images img{
+    width: 200px; // Taille originale
+    height: 200px;
+    margin: 1%
+  }
+
+  .insta-show {
+    width: 400px;
+  }
+
+  .view-insta h4 {
+    font-size: 20px; // Taille originale pour grands écrans
+  }
+
+  .insta {
+    max-width: 400px; // Largeur originale
+  }
+
+  .insta-show {
+    width: 400px; // Largeur originale
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+}
+.crop {
+  height: 350px; // Hauteur ajustée pour les tablettes
+}
+
+.interactionbtns span {
+  width: 95px; // Taille originale
+}
+
+
+.textcontent {
+  font-size: 12px; // Taille originale
+}
 }
