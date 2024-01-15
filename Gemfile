@@ -68,3 +68,4 @@ gem "devise", "~> 4.9"
 gem 'faraday'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 gem "cloudinary"
+gem "bootstrap", "~> 5.2"

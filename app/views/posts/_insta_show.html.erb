@@ -1,4 +1,4 @@
-<div class="insta">
+<div class="card carousel-card insta text-center">
   <div class="topbar">
     <div>
       <%= image_tag "photo_alice.jpeg", class:"icon" %>
@@ -7,16 +7,16 @@
     <div><%= render "layouts/instagram/threepoints" %></div>
   </div>
 
-   <div select="img">
-    <div id="carouselExampleIndicators"  class="carousel slide custom">
-      <div class="carousel-images">
+   <div>
+    <div id="myCarousel"  class="carousel slide" data-ride="carousel">
+       <div class="carousel-indicators">
         <% if @images.length > 1 %>
         <% @images.each_with_index do |img, i| %>
-        <div data-bs-slide-to="<%=i%>" class="<%= i== 0 ? "active" : "" %> rounded-circle card-indicator"></div>
+<div data-bs-slide-to="<%=i%>" class="<%= i== 0 ? "active" : "" %> rounded-circle card-indicator"></div>
           <%# <%= cl_image_tag img.key, width: 120, height: 120 %>
         <% end %>
-        <% end %>
-      </div>
+         <% end %>
+       </div>
 
        <div class="carousel-inner" data-controller="show-imgs">
         <% @images.each_with_index do |img, i| %>
