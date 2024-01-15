@@ -34,6 +34,7 @@ img{
   font-size: 14px;
   font-weight: lighter;
   text-align: justify;
+  margin: 2%
 }
 
 .view-insta{
@@ -69,7 +70,6 @@ img{
 }
 .insta-show {
   width: 400px;
-  display: flex;
   justify-content:center;
 }
 
@@ -152,12 +152,14 @@ path {
     height: 100px;
   }
 
-  .insta-show {
+  .insta-show img {
     width: 100%;
+    height: 300px
   }
 
   .view-insta h4 {
-    font-size: 16px; // Taille de police plus petite pour mobile
+    font-size: 16px;
+    margin-top: 1% // Taille de police plus petite pour mobile
   }
 
   .insta {
@@ -208,7 +210,9 @@ path {
   }
 
   .creation{
-    width: 70%;
+    display:flex;
+    justify-content: center;
+    width: 100%;
   }
 
   .creation-images {
@@ -223,15 +227,11 @@ path {
   }
 
   .insta-show {
-    width: 80%;
+    width: 100%;
   }
 
   .view-insta h4 {
     font-size: 18px; // Taille de police intermédiaire pour tablettes
-  }
-
-  .insta-show {
-    width: 80%; // Largeur ajustée pour tablettes
   }
 
   .icon {

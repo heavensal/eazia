@@ -13,18 +13,31 @@ nav {
     #FDAEEE,
   );
 
+  @media (max-width: 1024px) {
+    flex-direction: row;
+    height: 15vh;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    height: 15vh;
+  }
 
   section {
     width:33%;
 
-  @media (max-width: 768px) {
-    width: 100%
-  }
-  }
+
+  @media (max-width: 1024px) {
+    width: 33%;
+    display: flex;
+    height: 15vh;
+    }
 
   @media (max-width: 768px) {
-  display: flex;
-  height: auto;
+    width: 33%;
+    display: flex;
+    height: 15vh;
+  }
   }
 
 }
@@ -50,15 +63,22 @@ nav {
   flex-direction: column;
   justify-content: flex-start;
   list-style: none;
-  height:85vh;
+  height:100vh;
   width: 10%;
   font-size: 1em;
-  transform-origin: left;  // Échelle horizontale réduite à 0
+  transform-origin: left;
   transition: transform 0.5s ease-out;
 
+  @media (max-width: 1024px) {
+    height: 15vh;
+    width: 15%;
+  }
+
+  /* Ajustement pour les mobiles */
   @media (max-width: 768px) {
     height: 15vh;
-}
+    width: 15%;
+  }
 }
 
   section {
@@ -80,7 +100,7 @@ nav {
   display: none;
   position: sticky;
   z-index: 10;
-  height:85vh;
+  height: calc(100vh - 20vh);
   width: 150%;
   list-style: none;
   padding: revert;
@@ -187,22 +207,19 @@ ul li:last-child{
 
 
 @media (max-width: 768px) {
-  /* Adaptations pour les tablettes et les mobiles */
   nav {
     height: auto;
-
   }
 
   #navigation {
     width: 50%;
     font-size: 1em;
-
   }
 
   .menu, .sub-menus{
     width: 100%;
     font-size: 1em;
-    height: 5vh;
+
   }
 
   section {
@@ -219,8 +236,8 @@ ul li:last-child{
       rgba(234, 248, 239, 0.9), /* Vert très pâle avec transparence */
       rgba(253, 174, 238, 0.9)  /* Rose pâle avec transparence */
     );
-    height: auto;
-    width: 70%;
+    height: calc(100vh - 20vh);
+    width: 100%;
     margin-top: 20%;
     a {
       font-size: 12px;
