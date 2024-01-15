@@ -48,7 +48,7 @@
 
 @keyframes typing {
 from { width: 0; }
-to { width: 7ch; } /* 'ch' est une unité basée sur la largeur du caractère '0' */
+to { width: 7ch; }
 }
 
 .form-connexion{
@@ -113,11 +113,11 @@ to { width: 7ch; } /* 'ch' est une unité basée sur la largeur du caractère '0
   margin-left: auto;
   margin-right: auto;
 
-  @media (max-width: 768px) { // Pour les tablettes
+  @media (max-width: 768px) {
     width: 50%;
   }
 
-  @media (max-width: 480px) { // Pour les mobiles
+  @media (max-width: 480px) {
     width: 80%;
   }
 }
@@ -141,7 +141,6 @@ to { width: 7ch; } /* 'ch' est une unité basée sur la largeur du caractère '0
 
   }
 
-  // Styles responsive pour les boutons
   @media (max-width: 768px) {
     font-size: 16px;
   }

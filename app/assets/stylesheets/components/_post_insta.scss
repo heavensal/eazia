@@ -10,21 +10,27 @@
   margin-left: 1%
 }
 
-.creation-images{
+.creation-images {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
 
-img{
-  width: 200px;
-  height: 200px;
-  margin: 1%
+  img{
+    width: 100px;
+    height: 100px;
+    margin: 1%
 
+  }
 }
+
+.creation-images > div {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
 }
+
 
 .prompt-insta{
   font-family: 'glacial-indifference';
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   text-align: center;
 }
@@ -147,8 +153,12 @@ path {
     margin-left: 0;
   }
 
+  .prompt-insta{
+    font-size: 14px;
+  }
+
   .creation-images img{
-    width: 100px; // Taille plus petite pour les images sur mobile
+    width: 100px;
     height: 100px;
   }
 
@@ -159,15 +169,15 @@ path {
 
   .view-insta h4 {
     font-size: 16px;
-    margin-top: 1% // Taille de police plus petite pour mobile
+    margin-top: 1%
   }
 
   .insta {
-    max-width: 100%; // Utilise toute la largeur disponible
+    max-width: 100%;
   }
 
   .insta-show {
-    width: 100%; // Utilise toute la largeur disponible
+    width: 100%;
   }
 
   .icon {
@@ -176,7 +186,7 @@ path {
   }
 
   .crop {
-    height: 200px; // Hauteur ajustée pour les mobiles
+    height: 200px;
   }
 
   .interactionbtns {
@@ -195,13 +205,12 @@ path {
   }
 
   .textcontent {
-    font-size: 10px; // Taille de police plus petite pour mobile
+    font-size: 10px;
   }
 }
 
 
 
-// Écrans moyens (tablettes)
 @media (min-width: 601px) and (max-width: 1024px) {
 
   .show{
@@ -215,13 +224,12 @@ path {
     width: 100%;
   }
 
-  .creation-images {
-    display: flex;
-    justify-content: center;
-  }
+ .prompt-insta{
+  font-size: 14px;
+ }
 
   .creation-images img{
-    width: 150px; // Taille intermédiaire pour les tablettes
+    width: 150px;
     height: 150px;
     margin: 1%
   }
@@ -231,7 +239,7 @@ path {
   }
 
   .view-insta h4 {
-    font-size: 18px; // Taille de police intermédiaire pour tablettes
+    font-size: 18px;
   }
 
   .icon {
@@ -240,7 +248,7 @@ path {
   }
 
   .crop {
-    height: 300px; // Hauteur ajustée pour les tablettes
+    height: 300px;
   }
 
   .interactionbtns {
@@ -256,23 +264,18 @@ path {
   }
 
   .textcontent {
-    font-size: 11px; // Taille de police intermédiaire pour tablettes
+    font-size: 11px;
   }
 }
 
-// Grands écrans (ordinateurs de bureau)
+
 @media (min-width: 1025px) {
   .creation{
-    width: 50%; // Largeur originale pour les grands écrans
-  }
-
-  .creation-images {
-    display: flex;
-    justify-content: center;
+    width: 50%;
   }
 
   .creation-images img{
-    width: 200px; // Taille originale
+    width: 200px;
     height: 200px;
     margin: 1%
   }
@@ -282,31 +285,32 @@ path {
   }
 
   .view-insta h4 {
-    font-size: 20px; // Taille originale pour grands écrans
+    font-size: 20px;
+
+    .insta {
+      max-width: 400px;
+    }
+
+    .insta-show {
+      width: 400px;
+    }
+
+    .icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    .crop {
+    height: 350px;
+    }
+
+    .interactionbtns span {
+    width: 95px;
+    }
+
+
+    .textcontent {
+    font-size: 12px;
+    }
   }
-
-  .insta {
-    max-width: 400px; // Largeur originale
-  }
-
-  .insta-show {
-    width: 400px; // Largeur originale
-  }
-
-  .icon {
-    width: 30px;
-    height: 30px;
-}
-.crop {
-  height: 350px; // Hauteur ajustée pour les tablettes
-}
-
-.interactionbtns span {
-  width: 95px; // Taille originale
-}
-
-
-.textcontent {
-  font-size: 12px; // Taille originale
-}
 }

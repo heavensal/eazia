@@ -53,7 +53,7 @@
 
 @keyframes typing {
   from { width: 0; }
-  to { width: 7ch; } /* 'ch' est une unité basée sur la largeur du caractère '0' */
+  to { width: 7ch; }
   }
 
 .form{
@@ -99,11 +99,6 @@
   flex: 1;
   margin-right: 2%;
   margin-bottom: 5%;
-
-
-  // label{
-  //   text-align: left;
-  // }
 
   input{
     width: 100%;
