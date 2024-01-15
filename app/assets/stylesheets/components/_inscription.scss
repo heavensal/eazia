@@ -1,3 +1,14 @@
+.inscription{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p{
+    text-align: justify;
+    width: 80%;
+  }
+}
 .form-inscription{
   display: flex;
   flex-direction: column;
@@ -111,7 +122,7 @@
 }
 
 
-.btn-inscription{
+.btn-inscription, .btn-continuer{
   width: 20%;
   height: 50px;
   margin: 1%;
@@ -121,6 +132,10 @@
   font-size: 18px;
   font-weight: bold;
   color: white;
+
+  @at-root .btn-continuer{
+    width: 100%;
+  }
 
   @media (max-width: 768px) {
     width: 100%;
