@@ -7,15 +7,15 @@
     <div><%= render "layouts/instagram/threepoints" %></div>
   </div>
 
-   <div class="insta-show">
+  <div class="insta-show">
     <div id="myCarousel"  class="carousel slide" data-ride="carousel">
        <div class="carousel-indicators">
         <% if @images.length > 1 %>
-          <% @images.each_with_index do |img, i| %>
-            <div data-bs-slide-to="<%=i%>" class="<%= i== 0 ? "active" : "" %> rounded-circle card-indicator"></div>
-              <%# <%= cl_image_tag img.key, width: 120, height: 120 %>
-          <% end %>
-        <% end %>
+        <% @images.each_with_index do |img, i| %>
+          <div data-bs-slide-to="<%=i%>" class="<%= i== 0 ? "active" : "" %> rounded-circle card-indicator"></div>
+            <%# <%= cl_image_tag img.key, width: 120, height: 120 %>
+        <%end%>
+        <%end%>
       </div>
 
        <div class="carousel-inner" data-controller="show-imgs">
@@ -31,21 +31,21 @@
       <% end %>
 
     </div>
-</div>
+  </div>
 
-<%= render "layouts/instagram/interaction_btn" %>
+  <%= render "layouts/instagram/interaction_btn" %>
 
-<div class="textcontent" data-controller="toggledescription">
-  <b> <%= current_user.instagram %> </b>
-  <span data-action="click->toggledescription#fireplus">
-    <span data-toggledescription-target="description" style="cursor:pointer;">
-      <% if post.description.size > 64 %>
-        <%= post.description[0..64] %><span style="color: grey;">...plus</span>
-       <% else %>
-        <%= post.description %>
-      <% end %>
-    </span>
-    <span data-toggledescription-target="plus" class="d-none" style="cursor:pointer;"><%= post.description %></span>
-    </span>
-</div>
+  <div class="textcontent" data-controller="toggledescription">
+    <b> <%= current_user.instagram %> </b>
+      <span data-action="click->toggledescription#fireplus">
+        <span data-toggledescription-target="description" style="cursor:pointer;">
+          <% if post.description.size > 64 %>
+            <%= post.description[0..64] %><span style="color: grey;">...plus</span>
+          <% else %>
+            <%= post.description %>
+          <% end %>
+        </span>
+        <span data-toggledescription-target="plus" class="d-none" style="cursor:pointer;"><%= post.description %></span>
+      </span>
+  </div>
 </div>

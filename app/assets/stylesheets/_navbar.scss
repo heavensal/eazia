@@ -74,7 +74,6 @@ nav {
     width: 15%;
   }
 
-  /* Ajustement pour les mobiles */
   @media (max-width: 768px) {
     height: 15vh;
     width: 15%;
@@ -231,10 +230,10 @@ ul li:last-child{
     z-index: 100;
     background: linear-gradient(
       to right,
-      rgba(165, 243, 173, 0.9), /* Vert clair avec transparence */
-      rgba(189, 221, 250, 0.9), /* Bleu ciel avec transparence */
-      rgba(234, 248, 239, 0.9), /* Vert très pâle avec transparence */
-      rgba(253, 174, 238, 0.9)  /* Rose pâle avec transparence */
+      rgba(165, 243, 173, 0.9),
+      rgba(189, 221, 250, 0.9),
+      rgba(234, 248, 239, 0.9),
+      rgba(253, 174, 238, 0.9)
     );
     height: calc(100vh - 20vh);
     width: 100%;
@@ -264,10 +263,10 @@ ul li:last-child{
   .sub-menus{
     background: linear-gradient(
       to right,
-      rgba(165, 243, 173, 0.9), /* Vert clair avec transparence */
-      rgba(189, 221, 250, 0.9), /* Bleu ciel avec transparence */
-      rgba(234, 248, 239, 0.9), /* Vert très pâle avec transparence */
-      rgba(253, 174, 238, 0.9)  /* Rose pâle avec transparence */
+      rgba(165, 243, 173, 0.9),
+      rgba(189, 221, 250, 0.9),
+      rgba(234, 248, 239, 0.9),
+      rgba(253, 174, 238, 0.9)
     );
     height: auto;
     width: 70%;
