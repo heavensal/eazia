@@ -7,8 +7,8 @@
 
 
  @font-face {
-  font-family: 'brasika-display-trial';
-  src: url('brasika-display-trial.woff') format('woff');
+  font-family: 'brasika-display';
+  src: url('brasika-display.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -32,7 +32,7 @@ body {
   font-family: 'glaciale-indifference', sans-serif;
 }
 h1, h2, h3{
-  font-family: 'brasika-display-trial', 'Inter', 'Arial', 'Helvetica', sans-serif;
+  font-family: 'brasika-display', 'Inter', 'Arial', 'Helvetica', sans-serif;
   text-align: center;
   margin: 1rem ;
 }
