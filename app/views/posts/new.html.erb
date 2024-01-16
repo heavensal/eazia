@@ -11,8 +11,7 @@
   <div class="images">
     <%= f.label :prompt,  "Ajoutez vos propres photos ? (optionnel)" %>
     <div class="file-upload-wrapper">
-    <%= f.file_field :photos, as: :file, multiple: true, class:"file-input" %>
-    <label for="file-input" class="file-label">Choisir un fichier</label>
+    <%= f.file_field :photos, as: :file, multiple: true %>
     </div>
     <%= f.label :pictures_generated,  "Sélectionner le nombre d'images à créer (optionnel)"%>
     <%= f.select :pictures_generated, options_for_select(0..5) %>

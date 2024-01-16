@@ -67,6 +67,7 @@
   @media (max-width: 768px) {
     flex-direction: column;
   }
+
 }
 
 .form-colum:last-child{
@@ -105,11 +106,16 @@
     border: 1px solid grey;
     height: 25px;
 
+
     @media (max-width: 768px) {
       width: 100%;
     }
   }
 
+  // input:invalid{
+  //   background-color: red;
+
+  // }
   textarea{
     border: 1px solid grey;
 
@@ -159,4 +165,19 @@
     margin: 0
   }
 
+}
+
+.error{
+
+  h2{
+    font-family: "brasika-display-trial";
+    color: red;
+  }
+
+  p{
+  text-align: center;
+  color: red;
+  font-size: 16px;
+  font-family: 'glacial-indifference' ;
+  }
 }

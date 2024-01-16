@@ -1,32 +1,35 @@
 <div class="form-connect">
-  <div data-controller="autorisation-form">
-    <h1>Bienvenue !</h1>
-      <h3>Se connecter</h3>
-        <div class="form-connexion">
-          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="field">
-            <%= f.label :email %><br>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-            <p class="d-none text-danger fst-italic", data-autorisation-form-target="text" style="font-size: 12px;">l'email est obligatoire</p>
-          </div>
+  <h1>Bienvenue !</h1>
+    <h3>Se connecter</h3>
+  <div class="form-connexion" data-controller="autorisation-form">
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-          <div class="field">
-            <%= f.label :password, "Mot de Passe" %><br>
-            <%= f.password_field :password, autocomplete: "current-password" %>
-          </div>
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
+      <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[email]" style="font-size: 14px;">l'email est obligatoire</p>
+    </div>
 
-          <% if devise_mapping.rememberable? %>
-            <div class="field-2 field-checkbox">
-              <%= f.check_box :remember_me %>
-              <%= f.label :remember_me, "Se souvenir de moi" %>
-            </div>
-          <% end %>
-        </div>
+    <div class="field">
+      <%= f.label :password, "Mot de Passe" %><br>
+      <%= f.password_field :password, autocomplete: "current-password", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"}  %>
+      <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[password]" style="font-size: 14px;">le mot de passe est obligatoire</p>
+    </div>
 
-          <div class="actions">
-            <%= f.submit "Connexion", class: "btn-connexion" %>
-          </div>
-        <% end %>
+    <% if devise_mapping.rememberable? %>
+      <div class="field-2 field-checkbox">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, "Se souvenir de moi" %>
+      </div>
+    <% end %>
+
+
+    <div class="actions">
+      <%= f.submit "Connexion", class: "btn-connexion" %>
+    </div>
+    <% end %>
+
   </div>
 
   <%= render "devise/shared/links" %>

@@ -1,26 +1,29 @@
 <div class="form-inscription">
   <h1>Bienvenue !</h1>
     <h3>S'inscrire</h3>
-  <div class="form">
+  <div class="form" data-controller="autorisation-form">
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="form-column">
         <div class="field-inscription">
           <%= f.label :first_name, "Prénom" %><br />
-          <%= f.text_field :first_name %>
+          <%= f.text_field :first_name, data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
+          <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[first_name]" style="font-size: 14px;">le prénom est obligatoire</p>
         </div>
 
         <div class="field-inscription">
           <%= f.label :last_name, "Nom" %><br />
-          <%= f.text_field :last_name %>
+          <%= f.text_field :last_name, data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
+          <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[last_name]" style="font-size: 14px;">le nom est obligatoire</p>
         </div>
       </div>
 
       <div class="form-column" >
         <div class="field-inscription">
           <%= f.label :email, "Email" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
+          <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[email]" style="font-size: 14px;">l'email est obligatoire</p>
         </div>
 
         <div class="field-inscription">
@@ -28,33 +31,38 @@
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> caractères min)</em>
           <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password" %>
+          <%= f.password_field :password, autocomplete: "new-password", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
+          <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[password]" style="font-size: 14px;">le mot de passe est obligatoire</p>
         </div>
       </div>
 
       <div class="form-column">
         <div class="field-inscription">
           <%= f.label :password_confirmation, "Confirmation du mot de passe" %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
+          <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[password_confirmation]"style="font-size: 14px;">la confirmation du mot de passe est obligatoire</p>
         </div>
 
         <div class="field-inscription">
           <%= f.label :company, "Nom de votre entreprise" %><br />
-          <%= f.text_field :company %>
+          <%= f.text_field :company, data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"}%>
+          <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[company]" style="font-size: 14px;">le nom de votre entreprise est obligatoire</p>
         </div>
       </div>
 
       <div class="form-column">
         <div class="field-inscription">
           <%= f.label :information, "Quelques mots sur votre activité" %><br />
-          <%= f.text_area :information, class:"activite" %>
+          <%= f.text_area :information, class:"activite", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
+          <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[information]" style="font-size: 14px;">Ce champs est obligatoire</p>
         </div>
       </div>
 
       <div class="form-column">
         <div class="field-inscription">
           <%= f.label :instagram, "Pseudo Instagram" %><br />
-          <%= f.text_field :instagram %>
+          <%= f.text_field :instagram, data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
+          <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[instagram]" style="font-size: 14px;">Votre identifiant instagram est obligatoire</p>
         </div>
       </div>
 
