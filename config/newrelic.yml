@@ -64,4 +64,4 @@ staging:
 
 production:
   <<: *default_settings
-  app_name: 'eazia new relic (Production)'
+  app_name: 'eazia new relic'
