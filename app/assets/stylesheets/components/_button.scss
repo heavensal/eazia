@@ -25,6 +25,59 @@
   transform: scale(1.1);
 }
 
+.btn-valider{
+  width: 20%;
+  height: 50px;
+  margin: 1%;
+  background: linear-gradient(
+    to right,
+    rgba(165, 243, 173, 0.7),
+    rgba(189, 221, 250, 0.7),
+    rgba(234, 248, 239, 0.7),
+    rgba(253, 174, 238, 0.7),
+  );
+  border-radius: 15px;
+  border: 5px solid #BDDDFA;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+
+  &:hover {
+    animation: zoom-in-zoom-out 1s ease infinite;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .btn-valider {
+    font-size: 14px;
+    padding: 1.5%;
+    height: 30%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-valider {
+    font-size: 14px;
+    padding: 2%;
+    border-radius: 10px;
+  }
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+  50% {
+    transform: scale(1.3, 1.3);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+
 .button-annexe {
   border: none;
   box-shadow: 4px 4px 8px 0px #FDAEEE;
