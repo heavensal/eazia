@@ -16,7 +16,7 @@ common: &default_settings
 
   # Your application name. Renaming here affects where data displays in New
   # Relic.  For more details, see https://docs.newrelic.com/docs/apm/new-relic-apm/maintenance/renaming-applications
-  app_name: 'eazia new relic' 
+  app_name: 'eazia new relic'
 
   distributed_tracing:
     enabled: true
@@ -64,3 +64,4 @@ staging:
 
 production:
   <<: *default_settings
+  app_name: 'eazia new relic (Production)'
