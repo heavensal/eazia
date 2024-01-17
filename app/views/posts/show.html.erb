@@ -12,27 +12,41 @@
 
     <div class="prompt-insta"><%= @post.prompt %></div>
 
-    <div class="description"><%= @description if @description %></div>
+    <div class="description"><%= @post.description if @description %></div>
 
     <div data-controller="display" >
       <div>
-        <button data-action="click->toggle#fireArea" data-toggle-target="modif" class="btn-creation">
+        <button data-action="click->display#fireArea" data-display-target="modif" class="btn-creation">
           Modifier ma description ✏️
         </button>
-        <%= form_with url: new_post_path, method: "PATCH", html: { autocomplete: 'off'} do |f| %>
-          <%= f.submit "Recréer une description 🤔", class:"btn-creation", data: { toggle_target: "regen" } %>
+        <%= form_with url: regenerate_path, method: "PATCH", html: { autocomplete: 'off'} do |f| %>
+        <%= hidden_field_tag :id, @post.id %>
+          <%= f.submit "Recréer une description 🤔", class:"btn-creation", data: { display_target: "regen" } %>
          <% end %>
-          <%# <div style="flex-basis:100%" data-toggle-target="textarea" class="d-none">
-            <%= simple_form_for @post  do |f| %>
-              <%# <%= f.input :description, label: false, placeholder: @post.description, input_html: { id:"modif-description" }%>
-              <%# <div class="d-flex justify-content-around">
-                <button data-action="click->toggle#cancelArea" class="button-cancel" style= "flex-basis:40%">
+          <div style="flex-basis:100%" data-display-target="textarea" class="d-none" data-controller="extends"
+          data-action="input->extends#updateTextarea"
+          data-extends-target="dimension">
+            <%= form_for(@post)  do |f| %>
+              <%= f.text_area :description,
+               label: false,
+               placeholder: @description,
+                input_html: { id:"modif-description" ,
+                              class:"description",
+                              data: {
+                                controller: "extends",
+                                action: "input->extends#updateTextarea",
+                                extends_target: "dimension"
+                              }
+                }
+                %>
+              <div class="d-flex justify-content-around">
+                <button data-action="click->display#cancelArea" class="button-cancel">
                   Annuler
                 </button>
-                <%= f.submit "Modifier ✔️", class: "button-annexe", style: "flex-basis:40%" %>
-              <%# </div>
+                <%= f.submit "Modifier ✔️", class:"button-annexe" %>
+              </div>
             <% end %>
-          <%# </div> %>
+           </div>
       </div>
     </div>
   </div>
