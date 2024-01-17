@@ -36,14 +36,6 @@ class PostsController < ApplicationController
     end
   end
 
-
-  def regenerate
-    @post = Post.find(params[:id])
-    GptCreation.regenerate_description(@post)
-    redirect_to post_path(@post), notice: 'Description régénérée avec succès.'
-  end
-
-
   private
 
   def new_post_params
