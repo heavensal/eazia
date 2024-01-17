@@ -78,7 +78,7 @@
 }
 
 
-.button-annexe {
+.button-annexe, .button-cancel{
   border: none;
   box-shadow: 4px 4px 8px 0px #FDAEEE;
   background:transparent;
@@ -93,7 +93,7 @@
   margin-bottom: 10px;
   text-decoration:none;
   text-shadow:0px 0px 0px #f5f5f7;
-  min-width:160px;
+  width: 40%;
 }
 
 .button-annexe:hover{
