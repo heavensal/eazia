@@ -25,10 +25,29 @@ class PostsController < ApplicationController
     @description = @post.gpt_creation.description
   end
 
+  def update
+    @post = Post.find(params[:id])
+    new_description = params[:post][:description]
+    @post.description = new_description
+    if @post.save
+      redirect_to post_path(@post)
+    else
+      render 'posts/show', status: :unprocessable_entity
+    end
+  end
+
+
+  def regenerate
+    @post = Post.find(params[:id])
+    GptCreation.regenerate_description(@post)
+    redirect_to post_path(@post), notice: 'Description régénérée avec succès.'
+  end
+
+
   private
 
   def new_post_params
-    params.require(:post).permit(:prompt, :pictures_generated, photos: [])
+    params.require(:post).permit(:prompt, :description, :pictures_generated, photos: [])
   end
 
 end
