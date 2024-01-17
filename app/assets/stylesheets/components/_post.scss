@@ -9,6 +9,8 @@
   label {
     font-family: 'glacial-indifference';
     font-size: 18px;
+    color: #FDAEEE;
+    font-weight: bold;
   }
 
   input {
@@ -17,7 +19,8 @@
 
   textarea {
     background-color: #EAF8EF;
-    border: 0
+    border: 0;
+    height: 100px;
   }
 
 
@@ -87,7 +90,9 @@
   label {
     margin-right: 1%;
     font-family: 'glacial-indifference';
+    font-weight: bold;
     font-size: 18px;
+    color: #FDAEEE
   }
 
   select {
@@ -101,6 +106,7 @@
 
   input{
     font-family: 'glacial-indifference';
+    color: #BDDDFA
   }
 
 
@@ -131,42 +137,5 @@
     select {
       padding: 0.2em;
     }
-  }
-}
-
-
-.btn-valider{
-  width: 30%;
-  height: 30%;
-  margin: 1%;
-  background: linear-gradient(
-    to right,
-    rgba(165, 243, 173, 0.7),
-    rgba(189, 221, 250, 0.7),
-    rgba(234, 248, 239, 0.7),
-    rgba(253, 174, 238, 0.7),
-  );
-  border-radius: 15px;
-  border: 5px solid #BDDDFA;
-  font-size: 18px;
-  font-weight: bold;
-  color: black
-}
-
-@media (max-width: 768px) {
-  .btn-valider {
-    font-size: 14px;
-    padding: 1.5%;
-    height: 30%;
-    width: 100%;
-  }
-}
-
-
-@media (max-width: 480px) {
-  .btn-valider {
-    font-size: 14px;
-    padding: 2%;
-    border-radius: 10px;
   }
 }
