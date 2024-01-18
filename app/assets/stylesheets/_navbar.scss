@@ -12,71 +12,20 @@ nav {
     #FDAEEE,
   );
 
-  @media (max-width: 1024px) {
-    flex-direction: row;
-    height: 15vh;
-  }
-
-  @media (max-width: 768px) {
-    flex-direction: row;
-    height: 15vh;
-  }
-
   section {
     width:33%;
-
-
-  @media (max-width: 1024px) {
-    width: 33%;
-    display: flex;
-    height: 15vh;
-    }
-
-  @media (max-width: 768px) {
-    width: 33%;
-    display: flex;
-    height: 15vh;
-  }
   }
 
 }
 
 
-// #menu-button {
-//   font-size: 2em;
-//   margin-left: 1em;
-
-//   &:hover {
-//     cursor:pointer;
-//   }
-
-//   @media (max-width: 768px) {
-//     margin-left: 0.5em;
-//     font-size: 2em;
-//   }
-
-// }
-
 #navigation {
-  // display:flex;
-  // flex-direction: column;
-  // justify-content: flex-start;
   list-style: none;
   height:100vh;
   width: 10%;
   font-size: 1em;
   transform-origin: left;
   transition: transform 0.5s ease-out;
-
-  @media (max-width: 1024px) {
-    height: 15vh;
-    width: 15%;
-  }
-
-  @media (max-width: 768px) {
-    height: 15vh;
-    width: 15%;
-  }
 }
 
   section {
@@ -100,7 +49,7 @@ nav {
   position: sticky;
   z-index: 10;
   height: calc(100vh - 15vh);
-  width: 150%;
+  width: 160%;
   list-style: none;
   padding: revert;
   background: linear-gradient(
@@ -149,8 +98,22 @@ ul li:first-child{
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 768px) {
-    width: 100%;
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 15vh);
+    width: 230%;
+    }
+
+
+@media (max-width: 768px) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: calc(100vh - 15vh);
+  width: 260%;
   }
 }
 
@@ -164,7 +127,7 @@ ul li:first-child{
   img{
     height: 60px;
     margin-top:2%;
-    animation: fadeIn 2s linear;
+    animation: fadeIn 4s linear;
   }
   h3{
     font-size: 16px;
@@ -210,27 +173,11 @@ ul li:first-child{
 }
 
 
-@media (max-width: 768px) {
-  nav {
-    height: auto;
-  }
+@media (max-width: 1024px) {
 
-  #navigation {
-    width: 50%;
-    font-size: 1em;
-  }
-
-  .menu, .sub-menus{
-    width: 100%;
-    font-size: 1em;
-
-  }
-
-  section {
-    width: 100%;
-  }
-
-  .sub-menus{
+   .sub-menus{
+    display: none;
+    justify-content: space-between;
     position: relative;
     z-index: 100;
     background: linear-gradient(
@@ -240,11 +187,59 @@ ul li:first-child{
       rgba(234, 248, 239, 0.9),
       rgba(253, 174, 238, 0.9)
     );
-    height: calc(100vh - 20vh);
-    width: 100%;
-    margin-top: 20%;
+    height: calc(100vh - 15vh);
+    width: 300%;
     a {
-      font-size: 12px;
+      font-size: 14px;
+    }
+  }
+
+  }
+
+
+@media (max-width: 768px) {
+  nav {
+    height: 15vh;
+  }
+
+  #navigation {
+    width: 50%;
+    font-size: 1em;
+    height: 100vh;
+  }
+
+  .menu{
+    width: 100%;
+    font-size: 3em;
+  }
+
+  section {
+    width: 100%;
+  }
+
+  label{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sub-menus{
+    display: none;
+    justify-content: space-between;
+    position: relative;
+    z-index: 100;
+    background: linear-gradient(
+      to right,
+      rgba(165, 243, 173, 0.9),
+      rgba(189, 221, 250, 0.9),
+      rgba(234, 248, 239, 0.9),
+      rgba(253, 174, 238, 0.9)
+    );
+    height: calc(100vh - 15vh);
+    width: 300%;
+    a {
+      font-size: 20px;
     }
   }
 
@@ -253,19 +248,31 @@ ul li:first-child{
     margin-left: 2em;
   }
 
-  .menu {
-    font-size: 3em;
-  }
 }
 
 @media (max-width: 480px) {
+  nav {
+    height: 15vh;
+  }
 
+  #navigation {
+    width: 50%;
+    font-size: 1em;
+    height: 100vh;
+  }
 
   .menu {
+    width: 100%;
     font-size: 2em;
   }
 
+  section {
+    width: 100%;
+  }
+
   .sub-menus{
+    display: none;
+    justify-content: space-between;
     background: linear-gradient(
       to right,
       rgba(165, 243, 173, 0.9),
@@ -273,8 +280,13 @@ ul li:first-child{
       rgba(234, 248, 239, 0.9),
       rgba(253, 174, 238, 0.9)
     );
-    height: auto;
-    width: 70%;
+    height: calc(100vh - 15vh);
+    width: 300%;
+
+    a {
+      font-size: 16px;
+    }
+
   }
 
   #main-logo img {
