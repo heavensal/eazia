@@ -1,6 +1,7 @@
 .show{
   display:flex;
   justify-content: space-around;
+  margin-top: 1%;
 }
 
 .creation{
@@ -15,8 +16,8 @@
   flex-wrap: wrap;
 
   img{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     margin: 1%
 
   }
@@ -134,84 +135,64 @@
 }
 
 
-
 path {
   fill: none;
   stroke-miterlimit: 10;
   stroke: #000000;
 }
 
-
-@media (max-width: 600px) {
-
-  .show{
-    display:flex;
-    flex-direction: column;
-  }
+@media (max-width: 1024px) {
   .creation{
     width: 100%;
-    margin-left: 0;
-  }
-
-  .prompt-insta{
-    font-size: 14px;
   }
 
   .creation-images img{
-    width: 100px;
-    height: 100px;
-  }
-
-  .insta-show img {
-    width: 100%;
-    height: 300px
-  }
-
-  .view-insta h4 {
-    font-size: 16px;
-    margin-top: 1%
-  }
-
-  .insta {
-    max-width: 100%;
+    width: 200px;
+    height: 200px;
+    margin: 1%
   }
 
   .insta-show {
-    width: 100%;
+    width: 400px;
   }
 
-  .icon {
-    width: 20px;
-    height: 20px;
+  .instagram{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
   }
 
-  .crop {
-    height: 200px;
-  }
+  .view-insta h4 {
+    font-size: 20px;
 
-  .interactionbtns {
-    flex-direction: row;
-    align-items: space-between;
-  }
 
-  .interactionbtns span {
-    width: 100%;
-    justify-content: left;
-  }
+    .insta-show {
+      width: 100%;
+    }
 
-  .btn-annexe, .btn-publier {
-    flex-direction: column;
-    align-items: center;
-  }
+    .icon {
+      width: 30px;
+      height: 30px;
+    }
 
-  .textcontent {
-    font-size: 10px;
+    .crop {
+    height: 350px;
+    }
+
+    .interactionbtns span {
+    width: 95px;
+    }
+
+
+    .textcontent {
+    font-size: 12px;
+    }
   }
 }
 
 
-
-@media (min-width: 601px) and (max-width: 1024px) {
+@media  (max-width: 768px) {
 
   .show{
     display:flex;
@@ -268,49 +249,69 @@ path {
   }
 }
 
+@media (max-width: 480px) {
 
-@media (min-width: 1025px) {
+  .show{
+    display:flex;
+    flex-direction: column;
+  }
   .creation{
-    width: 50%;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .prompt-insta{
+    font-size: 14px;
   }
 
   .creation-images img{
-    width: 200px;
-    height: 200px;
-    margin: 1%
+    width: 50px;
+    height: 50px;
   }
 
-  .insta-show {
-    width: 400px;
+  .insta-show img {
+    width: 100%;
+    height: 300px
   }
 
   .view-insta h4 {
-    font-size: 20px;
+    font-size: 16px;
+    margin-top: 1%
+  }
 
-    .insta {
-      max-width: 400px;
-    }
+  .insta {
+    max-width: 100%;
+  }
 
-    .insta-show {
-      width: 400px;
-    }
+  .insta-show {
+    width: 100%;
+  }
 
-    .icon {
-      width: 30px;
-      height: 30px;
-    }
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
 
-    .crop {
-    height: 350px;
-    }
+  .crop {
+    height: 200px;
+  }
 
-    .interactionbtns span {
-    width: 95px;
-    }
+  .interactionbtns {
+    flex-direction: row;
+    align-items: space-between;
+  }
 
+  .interactionbtns span {
+    width: 100%;
+    justify-content: left;
+  }
 
-    .textcontent {
-    font-size: 12px;
-    }
+  .btn-annexe, .btn-publier {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .textcontent {
+    font-size: 10px;
   }
 }
