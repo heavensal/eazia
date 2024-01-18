@@ -64,6 +64,9 @@ nav {
   li {
     display: block;
     font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding: 0;
   }
 
   a{
@@ -87,7 +90,17 @@ nav {
 }
 
 ul li:last-child{
-  margin-bottom: 15%;
+  margin-left: -4%;
+
+  @media (max-width: 1024px){
+    text-align: center;
+    margin-left: -12%;
+    }
+
+  @media (max-width: 768px){
+  text-align: center;
+  margin-left: -4%;
+  }
 }
 
 ul li:first-child{

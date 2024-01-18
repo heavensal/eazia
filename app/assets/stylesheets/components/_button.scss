@@ -117,3 +117,48 @@
   color: #ffdc80;
   transform: scale(1.1);
   }
+
+.logout-button {
+  position: relative;
+  margin: 0;
+  background-color: transparent;
+  color: grey;
+  font-weight:lighter;
+  border: none;
+  cursor: pointer;
+
+}
+
+.logout-button:hover {
+  color: #FDAEEE; /* Couleur au survol */
+}
+
+@media (max-width: 1024px) {
+  .logout-button {
+    position: relative;
+    font-size: 14px;
+    padding: 1.5%;
+    height: 30%;
+    width: 62%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .logout-button {
+    position: relative;
+    font-size: 20px;
+    padding: 1.5%;
+    height: 30%;
+    width: 120%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logout-button {
+    position: relative;
+    font-size: 20px;
+    padding: 2%;
+    border-radius: 10px;
+  }
+}

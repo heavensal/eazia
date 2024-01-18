@@ -22,7 +22,7 @@
       <div class="form-column" >
         <div class="field-inscription">
           <%= f.label :email, "Email" %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
+          <%= f.email_field :email, autocomplete: "email", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
           <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[email]" style="font-size: 14px;">l'email est obligatoire</p>
         </div>
 
