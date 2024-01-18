@@ -1,20 +1,26 @@
 <div data-controller="loader">
-  <div class="container"  data-loader-target="togglableElement">
+  <div class="form-new"  data-loader-target="togglableElement">
     <h1>Votre prochain post est à 1 clic</h1>
 
     <%= form_for(@post) do |f| %>
 
       <div class="prompt">
         <%= f.label :prompt,  "Saisissez en quelques mots le sujet de votre prochain post : "%>
-        <%= f.text_area :prompt, autofocus: true, wrap: "soft" %>
+        <%= f.text_area :prompt, wrap: "soft" %>
       </div>
 
       <div class="images">
-        <%= f.label :prompt,  "Ajoutez vos propres photos ? (optionnel)" %>
-        <div class="file-upload-wrapper">
-        <%= f.file_field :photos, as: :file, multiple: true %>
+        <%= f.label :prompt do %>
+        Ajoutez vos propres photos ? (optionnel)
+         <%end%>
+        <div class="file-upload-wrapper" data-controller="file-upload">
+          <%= f.label :photos, "Choisissez vos photos", class: "custom-file-upload" %>
+          <%= f.file_field :photos, as: :file, multiple: true, data: { action: "change->file-upload#updateFileName", file_upload_target: "source" } %>
+          <span data-file-upload-target="fileName" class="file-name"></span>
         </div>
-        <%= f.label :pictures_generated,  "Sélectionner le nombre d'images à créer (optionnel)"%>
+        <%= f.label :pictures_generated do %>
+        Sélectionner le nombre d'images à créer (optionnel)
+        <%end%>
         <%= f.select :pictures_generated, options_for_select(0..5) %>
       </div>
 
@@ -39,9 +45,9 @@
       <span class="lettre">T</span>
     </div>
 
-    <div class="sous-titre">
+    <%# <div class="sous-titre">
       <span>Le saviez vous ? </span>
-    </div>
+    </div> %>
 
     <div id="group">
     <div></div>
@@ -59,7 +65,7 @@
     </div>
 
 
-    <div class="citation" data-controller="random-phrases">
+    <%# <div class="citation" data-controller="random-phrases">
       <span class="phrase1" data-random-phrases-target="phrase">Nombre d'utilisateurs actifs : En 2023, Instagram comptait plus de 2 milliards d'utilisateurs actifs mensuels dans le monde.</span>
       <span class="phrase2" data-random-phrases-target="phrase">Engagement quotidien : Les utilisateurs passent en moyenne 53 minutes par jour sur la plateforme.</span>
       <span class="phrase3" data-random-phrases-target="phrase">Taux d'engagement : Le taux d'engagement moyen sur Instagram est d'environ 1,22 %, ce qui est généralement plus élevé que sur d'autres réseaux sociaux.</span>
@@ -79,6 +85,6 @@
       <span class="phrase1" data-random-phrases-target="phrase">Shopping sur Instagram : La fonctionnalité de shopping était largement utilisée, permettant aux entreprises de vendre directement via la plateforme.</span>
       <span class="phrase2" data-random-phrases-target="phrase">Téléchargements de l'Application : Instagram était régulièrement l'une des applications les plus téléchargées dans le monde.</span>
       <span class="phrase3" data-random-phrases-target="phrase">Taux d'Engagement : Le taux d'engagement moyen pour les comptes d'entreprise était autour de 0,96 %.</span>
-    </div>
+    </div> %>
   </div>
 </div>

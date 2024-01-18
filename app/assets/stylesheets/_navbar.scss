@@ -4,7 +4,6 @@ nav {
   position: relative;
   top: 0;
   z-index:1000;
-  margin-bottom: 1em;
   background: linear-gradient(
     to right,
     #A5F3AD,
@@ -59,9 +58,9 @@ nav {
 // }
 
 #navigation {
-  display:flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  // display:flex;
+  // flex-direction: column;
+  // justify-content: flex-start;
   list-style: none;
   height:100vh;
   width: 10%;
@@ -97,9 +96,10 @@ nav {
 
  .sub-menus {
   display: none;
+  justify-content: space-between;
   position: sticky;
   z-index: 10;
-  height: calc(100vh - 20vh);
+  height: calc(100vh - 15vh);
   width: 150%;
   list-style: none;
   padding: revert;
@@ -114,7 +114,6 @@ nav {
 
   li {
     display: block;
-    margin-top: 12%;
     font-weight: bold;
   }
 
@@ -139,7 +138,11 @@ nav {
 }
 
 ul li:last-child{
-  margin-bottom: 20%;
+  margin-bottom: 15%;
+}
+
+ul li:first-child{
+  margin-top: 15%;
 }
 
 #menu-toggle:checked + .menu + .sub-menus {
@@ -157,10 +160,11 @@ ul li:last-child{
   justify-content:center;
   align-items: center;
   width: 80%;
+  margin-top: 1%;
   img{
     height: 60px;
     margin-top:2%;
-    animation: rotateAndFadeIn 1.5s linear;
+    animation: fadeIn 2s linear;
   }
   h3{
     font-size: 16px;
@@ -185,16 +189,16 @@ ul li:last-child{
   }
 }
 
-@keyframes rotateAndFadeIn {
-  from {
-    transform: rotate(0deg);
-    opacity: 0;
-  }
-  to {
-    transform: rotate(360deg);
-    opacity: 1;
-  }
-}
+// @keyframes rotateAndFadeIn {
+//   from {
+//     transform: rotate(0deg);
+//     opacity: 0;
+//   }
+//   to {
+//     transform: rotate(360deg);
+//     opacity: 1;
+//   }
+// }
 
 @keyframes fadeIn {
   from {

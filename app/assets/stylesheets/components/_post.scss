@@ -1,16 +1,45 @@
+.form-new{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  form{
+    width: 50%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 10%;
+
+    form{
+      width: 90%;
+      height: 100vh
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+
+    form{
+      width: 90%;
+      height: 100vh
+    }
+  }
+}
+
 .prompt {
   display: flex;
   flex-direction: column;
   margin-left: auto;
   margin-right: auto;
   margin-top: 3%;
-  width: 80%;
+  width: 100%;
 
   label {
     font-family: 'glacial-indifference';
-    font-size: 18px;
-    color: #FDAEEE;
-    font-weight: bold;
+    font-size: 16px;
   }
 
   input {
@@ -21,6 +50,14 @@
     background-color: #EAF8EF;
     border: 0;
     height: 100px;
+    border-bottom: 3px solid #BDDDFA;
+    border-radius: 10px;
+    resize: none;
+  }
+
+  textarea:focus {
+    border-color: #FDAEEE;
+    outline: none;
   }
 
 
@@ -50,33 +87,34 @@
   }
 }
 
+
 .file-upload-wrapper {
-  position: relative;
-  width: 200px;
-  margin-bottom: 2%;
+  border: none;
+  border-bottom: 2px dashed #BDDDFA;
+  border-radius: 10px;
+  background-color: #EAF8EF;
+  margin-bottom: 20px;
+  width: 50%;
 }
 
-// .file-input {
-//   width: 100%;
-//   height: 100%;
-//   opacity: 0;
-//   position: absolute;
-//   left: 0;
-//   top: 0;
-//   z-index: 1;
-// }
+.file-upload-wrapper input[type="file"] {
+  display: none; /* Masquer le champ de fichier par défaut */
+}
 
-.file-label {
-  display: inline-block;
-  background-color: #EAF8EF;
-  border: 1px solid grey;
-  border-radius: 10px;
-  padding:5px;
-  cursor: pointer;
-  z-index: 0;
-  margin-bottom: 15px;
+.file-upload-wrapper label {
   color: grey;
-  width: 90%;
+  font-size: 14px;
+  padding: 10px ;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style pour le nom du fichier sélectionné */
+.file-name {
+  margin-top: 10px;
+  font-style: italic;
+  color: #BDDDFA;
+  font-size: 12px
 }
 
 
@@ -85,23 +123,28 @@
   flex-direction: column;
   margin-top: 3%;
   margin-right: auto;
-  margin-left: 10%;
+
 
   label {
-    margin-right: 1%;
     font-family: 'glacial-indifference';
-    font-weight: bold;
-    font-size: 18px;
-    color: #FDAEEE
+    font-size: 16px;
   }
 
   select {
     padding: 0.3em;
     font-family: 'glacial-indifference';
-    width: 10%;
+    width: 20%;
+    border: none;
+    border-bottom: 2px solid #BDDDFA;
     background-color: #EAF8EF;
     color: grey;
-    border-radius:10px
+    border-radius:10px;
+
+  }
+
+  select:focus {
+    border-color: #FDAEEE;
+    outline: none;
   }
 
   input{
