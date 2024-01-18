@@ -1,25 +1,20 @@
 .loader {
-  position: absolute;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
   width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, #FFC0CB, #FF69B4);
+  height: 100vh;
+  background: white
 }
 
 .titre {
   display: flex;
   justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
 }
-
-.sous-titre {
-  display: flex;
-  justify-content: center;
-  font-family: 'glacial-indifference';
-  font-size: 24px;
-  color: white;
-  font-weight: bold;
-  text-shadow: 0 0 7px black;
-}
-
 
 .lettre {
   color: #A5F3AD;
@@ -27,6 +22,17 @@
   letter-spacing: 15px;
   animation: flash 1.4s linear infinite;
 }
+// .sous-titre {
+//   display: flex;
+//   justify-content: center;
+//   font-family: 'glacial-indifference';
+//   font-size: 24px;
+//   color: black;
+//   font-weight: bold;
+//   text-shadow: 0 0 7px black;
+// }
+
+
 
 @keyframes flash {
   0% {
@@ -44,8 +50,12 @@
 }
 
 #group{
+  position: absolute;
   width: 20px;
-  height: 20px;
+  height: 100vh;
+  z-index: 1;
+  display: flex;
+  align-items: center;
 }
 
 #group div {
@@ -131,72 +141,72 @@
 }
 
 
-.citation {
-display: flex;
-flex-direction: column;
-margin-left: auto;
-margin-right: auto;
-text-align: center;
-width: 90%;
-}
+// .citation {
+// display: flex;
+// flex-direction: column;
+// margin-left: auto;
+// margin-right: auto;
+// text-align: center;
+// width: 90%;
+// }
 
-.phrase1 {
-  color:  #A5F3AD;
-  font-size: 25px;
-  animation: pulse 3s linear infinite;
-  animation-delay: 3s;
-  animation-iteration-count: 1;
-  margin-left: 10px;
-  margin-top: 50px;
-}
+// .phrase1 {
+//   color:  #A5F3AD;
+//   font-size: 25px;
+//   animation: pulse 3s linear infinite;
+//   animation-delay: 3s;
+//   animation-iteration-count: 1;
+//   margin-left: 10px;
+//   margin-top: 50px;
+// }
 
-.phrase2 {
-  color: #A5F3AD;
-  font-size: 25px;
-  animation: bounce 3s linear infinite;
-  animation-delay: 3s;
-  animation-iteration-count: 1;
-  margin-left: 10px;
-  margin-top: 50px;
-}
+// .phrase2 {
+//   color: #A5F3AD;
+//   font-size: 25px;
+//   animation: bounce 3s linear infinite;
+//   animation-delay: 3s;
+//   animation-iteration-count: 1;
+//   margin-left: 10px;
+//   margin-top: 50px;
+// }
 
-.phrase3 {
-  color: #A5F3AD;
-  font-size: 25px;
-  animation: pulse 3s infinite;
-  animation-delay: 4s;
-  animation-iteration-count: 1;
-  margin-left: 10px;
-  margin-top: 50px;
-}
+// .phrase3 {
+//   color: #A5F3AD;
+//   font-size: 25px;
+//   animation: pulse 3s infinite;
+//   animation-delay: 4s;
+//   animation-iteration-count: 1;
+//   margin-left: 10px;
+//   margin-top: 50px;
+// }
 
-.phrase4 {
-  color: #A5F3AD;
-  font-size: 25px;
-  animation: rotate 1s normal linear infinite;
-  animation-delay: 2s;
-  animation-iteration-count: 1;
-  margin-left: 10px;
-  margin-top: 50px;
-}
+// .phrase4 {
+//   color: #A5F3AD;
+//   font-size: 25px;
+//   animation: rotate 1s normal linear infinite;
+//   animation-delay: 2s;
+//   animation-iteration-count: 1;
+//   margin-left: 10px;
+//   margin-top: 50px;
+// }
 
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
+// @keyframes pulse {
+//   0% { transform: scale(1); }
+//   50% { transform: scale(1.1); }
+//   100% { transform: scale(1); }
+// }
 
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+// @keyframes rotate {
+//   from { transform: rotate(0deg); }
+//   to { transform: rotate(360deg); }
+// }
 
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-  40% { transform: translateY(-30px); }
-  60% { transform: translateY(-15px); }
-}
+// @keyframes bounce {
+//   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+//   40% { transform: translateY(-30px); }
+//   60% { transform: translateY(-15px); }
+// }
 
 
 .lettre:nth-child(1) {
@@ -258,11 +268,11 @@ width: 90%;
     letter-spacing: 10px;
   }
 
-  .phrase1,
-  .phrase2,
-  .phrase3,
-  .phrase4 {
-    font-size: 14px;
-    margin-top: 60px;
-  }
+  // .phrase1,
+  // .phrase2,
+  // .phrase3,
+  // .phrase4 {
+  //   font-size: 14px;
+  //   margin-top: 60px;
+  // }
 }

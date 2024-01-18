@@ -26,24 +26,20 @@
 }
 
 .btn-valider{
-  width: 20%;
+  width: 40%;
   height: 50px;
   margin: 1%;
-  background: linear-gradient(
-    to right,
-    rgba(165, 243, 173, 0.7),
-    rgba(189, 221, 250, 0.7),
-    rgba(234, 248, 239, 0.7),
-    rgba(253, 174, 238, 0.7),
-  );
+  background: #FDAEEE;
   border-radius: 15px;
-  border: 5px solid #BDDDFA;
+  border: none;
+  border-bottom:5px solid #BDDDFA;
   font-size: 18px;
   font-weight: bold;
-  color: black;
+  color: grey;
 
   &:hover {
     animation: zoom-in-zoom-out 1s ease infinite;
+    color: black
   }
 
 }
