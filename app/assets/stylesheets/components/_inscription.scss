@@ -7,6 +7,7 @@
   p{
     text-align: justify;
     width: 80%;
+    line-height: 2;
   }
 }
 .form-inscription{
@@ -33,12 +34,21 @@
   font-size: 24px;
   color: #FDAEEE;
   font-weight: bold;
+
+  @media (max-width: 768px){
+    font-size: 20px;
+  }
   }
 
   a{
     color: #FDAEEE;
     font-weight: bold;
     text-decoration: none;
+
+    @media (max-width: 768px){
+      margin-bottom: 10px;
+    }
+
   }
 
   a:hover{
@@ -59,7 +69,12 @@
 .form{
   display: flex;
   justify-content: center;
-  width: 80%;
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    width: 120%
+  }
+
 }
 
 .form-column {
@@ -92,6 +107,7 @@
     flex-direction: column;
     margin-left: auto;
     margin-right: auto;
+    margin-top:10%;
     width: 50%;
 
   }
@@ -130,6 +146,7 @@
 
     @media (max-width: 768px) {
       width: 100%;
+      height: 30px;
     }
   }
 
@@ -145,7 +162,7 @@
 .btn-inscription, .btn-continuer{
   width: 20%;
   height: 50px;
-  margin: 1%;
+  margin-top: 10px;
   background-color: black;
   border-radius: 15px;
   border: 1px solid ;
