@@ -1,0 +1,21 @@
+.brouillons{
+  display: flex;
+  flex-direction: column;
+  margin-left:auto;
+  margin-right:auto;
+  width: 50%;
+  height: 400px;
+  margin-bottom: 10%
+}
+
+.insta-show-draft {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content:center;
+}
+
+.images-drafts{
+  display: flex;
+ justify-content: space-between;
+}
