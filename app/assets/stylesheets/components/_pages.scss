@@ -1,0 +1,53 @@
+.pages{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: justify;
+  align-items: center;
+}
+
+
+.legales {
+
+  width: 80%;
+  background-color: rgba(234, 248, 239, 0.8);
+  box-shadow: 0 3px 3px;
+  margin: 2%;
+  padding: 1%;
+  border-radius: 5px;
+  font-family: 'glacial-indifference' ;
+  font-size: 18px;
+  line-height: 2;
+
+}
+
+
+.contact{
+  width: 40%;
+  background-color: rgba(234, 248, 239, 0.8);
+  box-shadow: 0 3px 3px;
+  margin: 2%;
+  padding: 1%;
+  border-radius: 5px;
+  font-family: 'glacial-indifference' ;
+  font-size: 18px;
+  line-height: 2;
+
+}
+
+.rs{
+  width: 40%;
+  background-color: rgba(234, 248, 239, 0.8);
+  box-shadow: 0 3px 3px;
+  margin: 2%;
+  padding: 1%;
+  border-radius: 5px;
+  font-family: 'glacial-indifference' ;
+  font-size: 18px;
+  line-height: 2;
+
+  img {
+    height: 40px
+  }
+
+}

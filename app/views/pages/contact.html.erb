@@ -1,2 +1,21 @@
-<h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+<div class="pages">
+
+  <h1>Contact</h1>
+
+  <h3>Mes coordonnées</h3>
+    <div class="contact">
+      <p> 📧 anais.bremand@free.fr</p>
+      <p> 📞 06.02.39.03.19</p>
+  </div>
+
+  <h3>Réseaux sociaux</h3>
+     <div class="rs">
+      <%= image_tag("logo-linkedin.png", alt:"linkedin")%>
+      <%= link_to"https://www.linkedin.com/company/eazia/", target:"_blank" do %> https://www.linkedin.com/company/eazia/
+      <% end %><br><br>
+      <%= image_tag("logo-insta.jpg", alt:"instagram")%>
+      <%= link_to"https://www.instagram.com/quartzagency_/", target:"_blank" do %>https://www.instagram.com/quartzagency_/
+      <%end%>
+    </div>
+
+</div>
