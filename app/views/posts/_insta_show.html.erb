@@ -41,12 +41,12 @@
         <span data-toggledescription-target="description" style="cursor:pointer;">
           <% if post.description.size.to_i > 64 %>
             <%= post.description[0..64] %>
-            <span style="color: grey;">...plus</span> %>
+            <span style="color: grey;">...plus</span>
           <% else %>
           <%= post.description %>
           <% end %>
         </span>
-        <span data-toggledescription-target="plus" class="d-none" style="cursor:pointer;"><%= post.description %></span>
+        <span data-toggledescription-target="plus" class="d-none" style="cursor:pointer;"><%= description %></span>
       </span>
   </div>
 </div>

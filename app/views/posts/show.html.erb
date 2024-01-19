@@ -19,10 +19,14 @@
         <button data-action="click->display#fireArea" data-display-target="modif" class="btn-creation">
           Modifier ma description ✏️
         </button>
+
         <%= form_with url: regenerate_path, method: "PATCH", html: { autocomplete: 'off'} do |f| %>
         <%= hidden_field_tag :id, @post.id %>
           <%= f.submit "Recréer une description 🤔", class:"btn-creation", data: { display_target: "regen" } %>
          <% end %>
+
+
+
           <div style="flex-basis:100%" data-display-target="textarea" class="d-none" data-controller="extends"
           data-action="input->extends#updateTextarea"
           data-extends-target="dimension">
@@ -46,6 +50,7 @@
                 <%= f.submit "Modifier ✔️", class:"button-annexe" %>
               </div>
             <% end %>
+
            </div>
       </div>
     </div>
@@ -53,7 +58,7 @@
 
   <div class='view-insta'>
     <div><h4>Vue Instagram</h4></div>
-    <div class="instagram"><%= render "insta_show", post: @post %></div>
+    <div class="instagram"><%= render "insta_show", post: @post, description: @description %></div>
     <div><%= render "show_btns", post: @post %></div>
   </div>
 

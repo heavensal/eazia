@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  def index
-    @posts = Post.where(user: current_user).order(created_at: :desc)
+  def drafts
+    @posts = Post.includes(:gpt_creation).where(user: current_user, status: "draft").order(created_at: :desc).with_attached_photos
   end
 
   def new
@@ -34,6 +34,10 @@ class PostsController < ApplicationController
     else
       render 'posts/show', status: :unprocessable_entity
     end
+  end
+
+  def regenerate
+
   end
 
   private
