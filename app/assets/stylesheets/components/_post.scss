@@ -215,5 +215,7 @@
   height: 150px;
   font-size: 14px;
   font-family: 'glacial-indifference';
+  z-index: 1100; /* Un z-index plus élevé pour le champ de modification */
+  position: relative;
 
 }

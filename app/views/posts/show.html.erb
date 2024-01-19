@@ -1,4 +1,4 @@
-<div class="show">
+<div class="show" data-controller="display">
 
   <div class="creation">
     <div class="creation-images">
@@ -14,7 +14,7 @@
 
     <div class="description"><%= @description if @description %></div>
 
-    <div data-controller="display" >
+    <div >
       <div>
         <button data-action="click->display#fireArea" data-display-target="modif" class="btn-creation">
           Modifier ma description ✏️
@@ -51,7 +51,7 @@
     </div>
   </div>
 
-  <div class='view-insta'>
+  <div class='view-insta decalage' data-display-target="view">
     <div><h4>Vue Instagram</h4></div>
     <div class="instagram"><%= render "insta_show", post: @post %></div>
     <div><%= render "show_btns", post: @post %></div>
