@@ -117,7 +117,7 @@ to { width: 7ch; }
   margin-right: auto;
 
   @media (max-width: 768px) {
-    width: 50%;
+    width: 60%;
   }
 
   @media (max-width: 480px) {
@@ -146,9 +146,11 @@ to { width: 7ch; }
 
   @media (max-width: 768px) {
     font-size: 16px;
+    width: 100%;
   }
 
   @media (max-width: 480px) {
     font-size: 14px;
+    width: 100%;
   }
 }

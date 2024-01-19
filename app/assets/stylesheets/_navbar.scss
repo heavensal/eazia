@@ -8,8 +8,6 @@ nav {
     to right,
     #A5F3AD,
     #BDDDFA,
-    #EAF8EF,
-    #FDAEEE,
   );
 
   section {
@@ -26,6 +24,7 @@ nav {
   font-size: 1em;
   transform-origin: left;
   transition: transform 0.5s ease-out;
+
 }
 
   section {
@@ -35,12 +34,14 @@ nav {
 
 .menu {
   display: flex;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
   width: 30%;
   cursor: pointer;
-  font-size: 4em;
+  font-size: 3em;
   height: 15vh;
+
  }
 
  .sub-menus {
@@ -56,15 +57,12 @@ nav {
     to right,
     rgba(165, 243, 173, 0.9),
     rgba(189, 221, 250, 0.9),
-    rgba(234, 248, 239, 0.9),
-    rgba(253, 174, 238, 0.7),
   );
 
 
   li {
     display: block;
     font-weight: bold;
-    text-align: center;
     margin: 0;
     padding: 0;
   }
@@ -89,19 +87,18 @@ nav {
 
 }
 
-ul li:last-child{
-  margin-left: -4%;
+// ul li:last-child{
 
-  @media (max-width: 1024px){
-    text-align: center;
-    margin-left: -12%;
-    }
+//   @media (max-width: 1024px){
+//     text-align: center;
 
-  @media (max-width: 768px){
-  text-align: center;
-  margin-left: -4%;
-  }
-}
+//     }
+
+//   @media (max-width: 768px){
+//   text-align: center;
+//   margin-left: -4%;
+//   }
+// }
 
 ul li:first-child{
   margin-top: 15%;
@@ -116,7 +113,7 @@ ul li:first-child{
     flex-direction: column;
     justify-content: space-between;
     height: calc(100vh - 15vh);
-    width: 230%;
+    width: 200%;
     }
 
 
@@ -124,10 +121,24 @@ ul li:first-child{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   height: calc(100vh - 15vh);
-  width: 260%;
+  width: 350%;
   }
+}
+
+
+#main-titre{
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  width: 80%;
+
+  h3{
+    font-size: 16px;
+    animation: fadeIn 4s linear;
+  }
+
+
 }
 
 
@@ -135,34 +146,17 @@ ul li:first-child{
   display: flex;
   justify-content:center;
   align-items: center;
-  width: 80%;
-  margin-top: 1%;
+  width: 10%;
   img{
-    height: 60px;
-    margin-top:2%;
+    height: 40px;
     animation: fadeIn 4s linear;
   }
-  h3{
-    font-size: 16px;
-    margin-left: 5em;
-    animation: fadeIn 4s linear;
-  }
+
   a{
     text-decoration: none;
     color: black;
   }
 
-  @media (max-width: 768px) {
-    justify-content: left;
-    img {
-      height: 60px;
-      margin-top: 4%;
-    }
-    h3 {
-      font-size: 14px;
-
-    }
-  }
 }
 
 // @keyframes rotateAndFadeIn {
@@ -197,11 +191,10 @@ ul li:first-child{
       to right,
       rgba(165, 243, 173, 0.9),
       rgba(189, 221, 250, 0.9),
-      rgba(234, 248, 239, 0.9),
-      rgba(253, 174, 238, 0.9)
+
     );
     height: calc(100vh - 15vh);
-    width: 300%;
+    width: 350%;
     a {
       font-size: 14px;
     }
@@ -216,14 +209,15 @@ ul li:first-child{
   }
 
   #navigation {
-    width: 50%;
+    width: 30%;
     font-size: 1em;
     height: 100vh;
   }
 
   .menu{
     width: 100%;
-    font-size: 3em;
+    font-size: 2em;
+    margin-left: 1em
   }
 
   section {
@@ -233,8 +227,7 @@ ul li:first-child{
   label{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
+
   }
 
   .sub-menus{
@@ -246,19 +239,23 @@ ul li:first-child{
       to right,
       rgba(165, 243, 173, 0.9),
       rgba(189, 221, 250, 0.9),
-      rgba(234, 248, 239, 0.9),
-      rgba(253, 174, 238, 0.9)
+
     );
     height: calc(100vh - 15vh);
-    width: 300%;
+    width: 350%;
     a {
       font-size: 20px;
     }
   }
 
-  #main-logo h3 {
+  #main-titre h3 {
     font-size: 12px;
-    margin-left: 2em;
+
+  }
+
+  #main-logo img {
+    height: 30px;
+    margin-right: 5px;
   }
 
 }
@@ -277,6 +274,7 @@ ul li:first-child{
   .menu {
     width: 100%;
     font-size: 2em;
+    margin-left: 1em
   }
 
   section {
@@ -290,11 +288,10 @@ ul li:first-child{
       to right,
       rgba(165, 243, 173, 0.9),
       rgba(189, 221, 250, 0.9),
-      rgba(234, 248, 239, 0.9),
-      rgba(253, 174, 238, 0.9)
+
     );
     height: calc(100vh - 15vh);
-    width: 300%;
+    width: 350%;
 
     a {
       font-size: 16px;
@@ -303,10 +300,11 @@ ul li:first-child{
   }
 
   #main-logo img {
-    height: 40px;
+    height: 30px;
+    margin-right: 5px;
   }
 
-  #main-logo h3 {
+  #main-titre h3 {
     font-size: 10px;
   }
 }

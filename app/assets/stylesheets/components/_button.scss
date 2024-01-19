@@ -38,8 +38,9 @@
   color: grey;
 
   &:hover {
-    animation: zoom-in-zoom-out 1s ease infinite;
-    color: black
+    color: black;
+    background-color:#BDDDFA;
+    border-bottom:5px solid #FDAEEE;
   }
 
 }
@@ -61,17 +62,6 @@
   }
 }
 
-@keyframes zoom-in-zoom-out {
-  0% {
-    transform: scale(1, 1);
-  }
-  50% {
-    transform: scale(1.3, 1.3);
-  }
-  100% {
-    transform: scale(1, 1);
-  }
-}
 
 
 .button-annexe, .button-cancel{
@@ -121,25 +111,26 @@
 .logout-button {
   position: relative;
   margin: 0;
-  background-color: transparent;
-  color: grey;
-  font-weight:lighter;
-  border: none;
+  background-color: white;
+  color: #BDDDFA;
+  font-weight:bold;
+  border: 3px solid #BDDDFA;
+  border-radius: 15%;
+  margin-bottom: 10%;
   cursor: pointer;
 
 }
 
 .logout-button:hover {
-  color: #FDAEEE; /* Couleur au survol */
+  color: #FDAEEE;
 }
 
 @media (max-width: 1024px) {
   .logout-button {
     position: relative;
     font-size: 14px;
-    padding: 1.5%;
-    height: 30%;
-    width: 62%;
+    padding: 0;
+    width: 70%;
   }
 }
 
@@ -147,18 +138,18 @@
 @media (max-width: 768px) {
   .logout-button {
     position: relative;
-    font-size: 20px;
-    padding: 1.5%;
-    height: 30%;
-    width: 120%;
+    font-size: 16px;
+    padding: 0;
+    height: 50%;
+    width: 40%;
   }
 }
 
 @media (max-width: 480px) {
   .logout-button {
     position: relative;
-    font-size: 20px;
-    padding: 2%;
+    font-size: 16px;
+    padding: 0;
     border-radius: 10px;
   }
 }

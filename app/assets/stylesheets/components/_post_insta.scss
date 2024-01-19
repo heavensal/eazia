@@ -141,6 +141,7 @@ path {
   stroke: #000000;
 }
 
+
 @media (max-width: 1024px) {
   .creation{
     width: 100%;
@@ -247,6 +248,10 @@ path {
   .textcontent {
     font-size: 11px;
   }
+
+  .decalage {
+    margin-top: 250px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -313,5 +318,9 @@ path {
 
   .textcontent {
     font-size: 10px;
+  }
+
+  .decalage {
+    margin-top: 250px;
   }
 }
