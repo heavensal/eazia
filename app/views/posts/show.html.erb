@@ -20,13 +20,6 @@
           Modifier ma description ✏️
         </button>
 
-        <%= form_with url: regenerate_path, method: "PATCH", html: { autocomplete: 'off'} do |f| %>
-        <%= hidden_field_tag :id, @post.id %>
-          <%= f.submit "Recréer une description 🤔", class:"btn-creation", data: { display_target: "regen" } %>
-         <% end %>
-
-
-
           <div style="flex-basis:100%" data-display-target="textarea" class="d-none" data-controller="extends"
           data-action="input->extends#updateTextarea"
           data-extends-target="dimension">

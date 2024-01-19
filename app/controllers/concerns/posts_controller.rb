@@ -36,10 +36,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def regenerate
-
-  end
-
   private
 
   def new_post_params
