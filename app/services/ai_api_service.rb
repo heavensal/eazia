@@ -4,11 +4,20 @@ class AiApiService
     @api_key = ENV['GPT_ANAIS']
   end
 
-  def work(post)
+  # Réaliser Mission 1: Générer une description insta et des photos
+  def work_1(post)
     prompt(post)
     run(post)
     answer(post)
     post.save!
+  end
+
+  # Réaliser la mission 2: Récréer la description chatgpt
+  def work_2(post)
+    recreate(post)
+    run(post)
+    answer_2(post)
+    post.gpt_creation.save!
   end
 
   def prompt(post)
@@ -17,7 +26,17 @@ class AiApiService
     request.post("https://api.openai.com/v1/threads/#{post.user.thread}/messages") do |m|
       m.body = {
         "role": "user",
-        "content": post.prompt
+        "content": "Mission 1 " + post.prompt
+    }.to_json
+    end
+  end
+
+  def recreate(post)
+    request = faraday_ai
+    request.post("https://api.openai.com/v1/threads/#{post.user.thread}/messages") do |m|
+      m.body = {
+        "role": "user",
+        "content": "Mission 2"
     }.to_json
     end
   end
@@ -39,6 +58,16 @@ class AiApiService
     result = data['data'].first["content"].first["text"]["value"]
     post.description = result
   end
+
+  def answer_2(post)
+    # Logique pour obtenir la réponse
+    request = faraday_ai
+    response = request.get("https://api.openai.com/v1/threads/#{post.user.thread}/messages")
+    data = JSON.parse(response.body)
+    result = data['data'].first["content"].first["text"]["value"]
+    post.gpt_creation.description = result
+  end
+
 
   def image(post)
     img_prompt = post.description[/(?<={).+?(?=})/]

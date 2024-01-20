@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   root 'posts#new'
   devise_for :users
   resources :posts do
-    # Gpt_creations Controller
-    patch 'post/:id/gpt_creations/rewrite', to: "gpt_creations#rewrite"
-    patch 'post/:id/gpt_creations/recreate', to: "gpt_creations#recreate"
+    # Nested routes for gpt_creations
+    resource :gpt_creation, only: [], controller: 'gpt_creations' do
+      patch :rewrite, on: :member
+      patch :recreate, on: :member
+    end
   end
 
   get '/drafts', to: 'posts#drafts', as: "drafts"

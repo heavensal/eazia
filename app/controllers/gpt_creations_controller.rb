@@ -5,6 +5,9 @@ class GptCreationsController < ApplicationController
 
   def recreate
     @post = Post.find(params[:post_id])
-    @description = @post.gpt_creation.description
+    @gpt_description = @post.gpt_creation
+    ai_api_service = AiApiService.new(@post.user)
+    ai_api_service.work_2(@post)
+    redirect_to post_path(@post)
   end
 end

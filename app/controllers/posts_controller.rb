@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     @post = Post.new(new_post_params)
     @post.user = current_user
     ai_api_service = AiApiService.new(@post.user)
-    ai_api_service.work(@post)
+    ai_api_service.work_1(@post)
     GptCreation.create_description(@post) # Creation de la description du post
     @post.pictures_generated.times do
       ai_api_service.image(@post) # Creation d'une image Dall-E

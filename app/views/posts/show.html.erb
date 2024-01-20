@@ -5,7 +5,7 @@
       <% if @images %>
         <% @images.each do |img| %>
 
-        <%= cl_image_tag img.key%>
+        <%= cl_image_tag img.key, loading: "lazy" %>
         <% end %>
       <% end %>
     </div>
@@ -23,6 +23,7 @@
           <div style="flex-basis:100%" data-display-target="textarea" class="d-none" data-controller="extends"
           data-action="input->extends#updateTextarea"
           data-extends-target="dimension">
+
             <%= form_for(@post)  do |f| %>
               <%= f.text_area :description,
                label: false,
@@ -43,8 +44,16 @@
                 <%= f.submit "Modifier ✔️", class:"button-annexe" %>
               </div>
             <% end %>
-
            </div>
+
+          <!-- # BUTTON RECREER LA DESCRIPTION PAR CHATGPT -->
+          <div class="text-center">
+            <%= form_for([@post, @post.gpt_creation], url: recreate_post_gpt_creation_path(@post), method: :patch) do |f| %>
+              <%= f.submit "Recréer ✔️", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+
+
       </div>
     </div>
   </div>
