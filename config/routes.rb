@@ -1,20 +1,31 @@
 Rails.application.routes.draw do
-  get 'pages/cgv'
-  get 'pages/legal'
-  get 'pages/account'
-  get 'pages/quartz_agency'
-  get 'pages/contact'
+
   root 'posts#new'
+
   devise_for :users
+
   resources :posts do
-    # Nested routes for gpt_creations
     resource :gpt_creation, only: [], controller: 'gpt_creations' do
       patch :rewrite, on: :member
       patch :recreate, on: :member
     end
   end
-
   get '/drafts', to: 'posts#drafts', as: "drafts"
+
+  require "sidekiq/web"
+  authenticate :user, ->(user) { user.status == "admin" } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+
+  # Pages Controller
+  get 'pages/cgv'
+  get 'pages/legal'
+  get 'pages/account'
+  get 'pages/quartz_agency'
+  get 'pages/contact'
+
+
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

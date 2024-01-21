@@ -13,10 +13,8 @@ class PostsController < ApplicationController
     ai_api_service = AiApiService.new(@post.user)
     ai_api_service.work_1(@post)
     GptCreation.create_description(@post) # Creation de la description du post
-    @post.pictures_generated.times do
-      ai_api_service.image(@post) # Creation d'une image Dall-E
-    end
     redirect_to post_path(@post)
+    PhotoJob.perform_later(@post)
   end
 
   def show

@@ -47,7 +47,7 @@ class AiApiService
     request.post("https://api.openai.com/v1/threads/#{post.user.thread}/runs") do |r|
       r.body = {'assistant_id'=> ENV['GPT_ASSISTANT']}.to_json
     end
-    sleep(25)
+    sleep(20)
   end
 
   def answer(post)
