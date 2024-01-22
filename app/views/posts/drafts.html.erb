@@ -1,35 +1,56 @@
-<div>
-  <h1>Mes brouillons</h1>
-  <div class="text-center mx-5">
-    <%= link_to "Générer un autre post", new_post_path, class:"button-annexe" %>
-    <%= link_to "Voir mon historique", new_post_path, class:"button-annexe" %>
-  </div>
+<h1>Mes brouillons</h1>
+<div class="btn-draft">
+<%= link_to "Générer un autre post", new_post_path, class:"button-annexe-draft" %>
+<%= link_to "Voir mon historique", new_post_path, class:"button-annexe-draft" %>
+</div>
+
 <div class="brouillons">
    <% @posts.each do |post| %>
-    <div class="insta-show-draft">
-    <div class="topbar">
-        <%= image_tag "photo_alice.jpeg", class:"icon" %>
-        <b><%= current_user.instagram %></b>
-    <%= render "layouts/instagram/threepoints" %>
-    </div>
-    <div class="images-drafts">
-      <%= link_to post_path(post) do %>
-      <% if post.photos %>
-      <% post.photos.each do |img| %>
-      <%= cl_image_tag img.key, width: 160 %>
-        <% end %>
-      <% end %>
+      <div class="insta-show-draft">
+        <div class="topbar">
+          <div>
+            <%= image_tag "photo_alice.jpeg", class:"icon" %>
+            <b><%= current_user.instagram %></b>
+          </div>
+          <div><%= render "layouts/instagram/threepoints" %></div>
+        </div>
+
+        <div id="myDraftCarousel<%= post.id %>" class="carousel slide" data-ride="carousel">
+          <% if post.photos && post.photos.length > 1 %>
+            <div class="carousel-indicators">
+              <% post.photos.each.with_index do |img, i| %>
+                <div data-target="#myDraftCarousel<%= post.id %>" data-bs-slide-to="<%= i %>" class="<%= 'active' if i.zero? %>"></div>
+              <% end %>
+            </div>
+          <% end %>
+          <div class="carousel-inner">
+            <% post.photos.each.with_index do |img, i| %>
+              <div class="carousel-item <%= 'active' if i.zero? %>">
+                <%= cl_image_tag img.key, width: 300, height: 300 %>
+              </div>
+            <% end %>
+          </div>
+          <% if post.photos && post.photos.length > 1%>
+          <button class="carousel-control-prev" type="button" data-bs-target="#myDraftCarousel<%= post.id %>" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#myDraftCarousel<%= post.id %>" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          <%end%>
+        </div>
+
+        <%= render "layouts/instagram/interaction_btn" %>
+        <div  class="insta-draft-description"data-controller="toggledescription">
+          <b> <%= current_user.instagram %> </b>
+        </div>
       </div>
-      </div>
-      <p><%= post.created_at %></p>
-      <p><%= post.gpt_creation.description if post.gpt_creation %></p>
-    <% end %>
-  <%= render "layouts/instagram/interaction_btn" %>
-  <div class="textcontent" data-controller="toggledescription">
-    <b> <%= current_user.instagram %> </b>
-  </div>
   <% end %>
 </div>
-  </div>
 
-</div>
+      <%# <p><%= post.created_at %>
+      <%# </p> %>
+      <%# <p><%= post.gpt_creation.description if post.gpt_creation %>
+      <%# </p>   %>
