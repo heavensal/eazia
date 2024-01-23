@@ -20,6 +20,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @images = @post.photos
+    @gpt_creation = @post.gpt_creation
     @description = @post.gpt_creation.description
   end
 
