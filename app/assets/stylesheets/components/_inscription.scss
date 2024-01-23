@@ -58,6 +58,12 @@
   p{
     margin-bottom: 0;
   }
+
+  span{
+
+    font-style: italic;
+    font-size: 12px;
+  }
 }
 
 
@@ -207,3 +213,32 @@
   font-family: 'glacial-indifference' ;
   }
 }
+
+
+.field-checkbox{
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+
+  label{
+    font-size: 14px;
+    font-family: 'glacial-indifference';
+    color: grey
+  }
+}
+
+.cgv{
+  margin-bottom: 2%;
+
+  a{
+  font-size: 14px;
+  color: #BDDDFA;
+  font-family: 'glacial-indifference';
+  text-decoration: none;
+  }
+
+}
+
+ .hidden{
+display: none;
+ }

@@ -1,20 +1,20 @@
 <div class="form-inscription">
   <h1>Bienvenue !</h1>
     <h3>S'inscrire</h3>
-  <div class="form" data-controller="autorisation-form">
+  <div class="form" data-controller="autorisation-form" >
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="form-column">
         <div class="field-inscription">
           <%= f.label :first_name, "Prénom" %><br />
-          <%= f.text_field :first_name, data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
+          <%= f.text_field :first_name, data: {action:"blur->autorisation-form#validateField", autorisation_form_target:"input"} %>
           <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[first_name]" style="font-size: 14px;">le prénom est obligatoire</p>
         </div>
 
         <div class="field-inscription">
           <%= f.label :last_name, "Nom" %><br />
-          <%= f.text_field :last_name, data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
+          <%= f.text_field :last_name, data: {action:"blur->autorisation-form#validateField", autorisation_form_target:"input"} %>
           <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[last_name]" style="font-size: 14px;">le nom est obligatoire</p>
         </div>
       </div>
@@ -22,7 +22,7 @@
       <div class="form-column" >
         <div class="field-inscription">
           <%= f.label :email, "Email" %><br />
-          <%= f.email_field :email, autocomplete: "email", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
+          <%= f.email_field :email, autocomplete: "email", data: {action:"blur->autorisation-form#validateField", autorisation_form_target:"input"} %>
           <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[email]" style="font-size: 14px;">l'email est obligatoire</p>
         </div>
 
@@ -31,7 +31,7 @@
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> caractères min)</em>
           <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
+          <%= f.password_field :password, autocomplete: "new-password", data: {action:"blur->autorisation-form#validateField", autorisation_form_target:"input"} %>
           <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[password]" style="font-size: 14px;">le mot de passe est obligatoire</p>
         </div>
       </div>
@@ -39,13 +39,13 @@
       <div class="form-column">
         <div class="field-inscription">
           <%= f.label :password_confirmation, "Confirmation du mot de passe" %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", data: {action:"blur->autorisation-form#validateField", autorisation_form_target:"input"} %>
           <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[password_confirmation]"style="font-size: 14px;">la confirmation du mot de passe est obligatoire</p>
         </div>
 
         <div class="field-inscription">
           <%= f.label :company, "Nom de votre entreprise" %><br />
-          <%= f.text_field :company, data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"}%>
+          <%= f.text_field :company, data: {action:"blur->autorisation-form#validateField", autorisation_form_target:"input"}%>
           <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[company]" style="font-size: 14px;">le nom de votre entreprise est obligatoire</p>
         </div>
       </div>
@@ -53,7 +53,7 @@
       <div class="form-column">
         <div class="field-inscription">
           <%= f.label :information, "Quelques mots sur votre activité" %><br />
-          <%= f.text_area :information, class:"activite", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
+          <%= f.text_area :information, class:"activite", data: {action:"blur->autorisation-form#validateField", autorisation_form_target:"input"} %>
           <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[information]" style="font-size: 14px;">Ce champs est obligatoire</p>
         </div>
       </div>
@@ -61,26 +61,35 @@
       <div class="form-column">
         <div class="field-inscription">
           <%= f.label :instagram, "Pseudo Instagram" %><br />
-          <%= f.text_field :instagram, data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
+          <%= f.text_field :instagram, data: {action:"blur->autorisation-form#validateField", autorisation_form_target:"input"} %>
           <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[instagram]" style="font-size: 14px;">Votre identifiant instagram est obligatoire</p>
         </div>
       </div>
 
       <div>
-        <%= link_to"" "Besoin d'un expert?", pages_contact_path %><br>
+        <%= link_to "Besoin d'un expert?", pages_contact_path %><br>
       </div>
 
-      <%# <div class="field-2 field-checkbox">
-        <%= f.check_box :concentement %>
-        <%# <%= f.label :concentement, "En cochant cette case j'accepte les CGV d'EazIA" %>
-      <%# </div> %>
+       <div class="field-checkbox">
+          <div>
+            <input type="checkbox"  id="termsCheckbox" data-autorisation-form-target="checkbox" >
+            <label for="termsCheckbox"> J'ai pris connaissance et j'accepte les conditions générales de ventes et la politique de confidentialité d'Eazia</label>
+          </div>
+          <div class="cgv">
+            <%= link_to "Lire les Conditions Générales de Ventes ", pages_cgv_path %>
+            <%= link_to "et lire la politique de confidentialité", pages_legal_path %>
+          </div>
+          <div  class="hidden" data-autorisation-form-target="myErrorMessage">
+            <span class="text-danger">Vous devez accepter les termes et conditions pour continuer.</span>
+          </div>
+        </div>
 
         <div class="actions-inscription">
-          <%= f.submit "S'inscrire", class:"btn-inscription"%>
+          <%= f.submit "S'inscrire", class:"btn-inscription", data: { action: "submit->autorisation-form#validateForm" } %>
         </div>
-          <% end %>
-      </div>
+      <% end %>
+    </div>
 
-    <%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
 
 </div>
