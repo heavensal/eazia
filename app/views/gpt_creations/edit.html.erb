@@ -1,0 +1,24 @@
+<%= turbo_frame_tag @gpt_creation do %>
+
+  <%= form_for([@post, @gpt_creation], url: post_gpt_creation_path(@post), method: :patch)  do |f| %>
+
+    <%= f.text_area :description,
+      label: false,
+      value: @description,
+      input_html: { id:"modif-description" ,
+                    class:"description",
+                    data: {
+                      controller: "extends",
+                      action: "input->extends#updateTextarea",
+                      extends_target: "dimension"
+                    }
+      }
+      %>
+    <div class="d-flex justify-content-around">
+      <%= link_to "Annuler", post_path(@post) %>
+      <%= f.submit "Modifier ✔️", class:"button-annexe" %>
+    </div>
+
+  <% end %>
+
+<% end %>

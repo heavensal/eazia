@@ -6,7 +6,8 @@ Rails.application.routes.draw do
 
   resources :posts do
     resource :gpt_creation, only: [], controller: 'gpt_creations' do
-      patch :rewrite, on: :member
+      get :edit, on: :member
+      patch :update, on: :member
       patch :recreate, on: :member
     end
   end

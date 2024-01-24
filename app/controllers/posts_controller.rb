@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(:gpt_creation).with_attached_photos.find(params[:id])
     @images = @post.photos
     @gpt_creation = @post.gpt_creation
     @description = @post.gpt_creation.description

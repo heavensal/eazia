@@ -1,5 +1,12 @@
 class GptCreationsController < ApplicationController
-  def rewrite
+
+  def edit
+    @post = Post.find(params[:post_id])
+    @gpt_creation = @post.gpt_creation
+    @description = @gpt_creation.description
+  end
+
+  def update
     @post = Post.find(params[:post_id])
     @gpt_creation = @post.gpt_creation
     if @gpt_creation.update(description_params)

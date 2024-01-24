@@ -84,6 +84,7 @@ class AiApiService
     data = JSON.parse(response.body)
     img.link = data['data'].first['url']
     img.save!
+    return img.post.photos.last
   end
 
   private
