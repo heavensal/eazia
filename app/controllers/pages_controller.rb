@@ -14,4 +14,10 @@ class PagesController < ApplicationController
 
   def contact
   end
+
+  def cgu
+  end
+
+  def confidentialite
+  end
 end

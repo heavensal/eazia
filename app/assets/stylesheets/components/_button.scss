@@ -72,7 +72,7 @@
   border-radius:4px;
   display:inline-block;
   cursor:pointer;
-  color:#BDDDFA;
+  color:black;
   font-size:12px;
   font-weight: bold;
   padding:8px 32px;
@@ -112,10 +112,10 @@
   position: relative;
   margin: 0;
   background-color: white;
-  color: #BDDDFA;
-  font-weight:bold;
-  border: 3px solid #BDDDFA;
-  border-radius: 15%;
+  color: black;
+  font-weight: lighter;
+  border: 3px solid white;
+  // border-radius: 15%;
   margin-bottom: 10%;
   cursor: pointer;
 
@@ -133,7 +133,7 @@
   border-radius:4px;
   display:inline-block;
   cursor:pointer;
-  color:#BDDDFA;
+  color:black;
   font-size:12px;
   font-weight: bold;
   padding:8px 32px;

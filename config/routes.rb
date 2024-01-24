@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   get 'pages/account'
   get 'pages/quartz_agency'
   get 'pages/contact'
+  get 'pages/cgu'
+  get 'pages/confidentialite'
 
 
 
