@@ -1,6 +1,6 @@
 nav {
   display:flex;
-  height: 15vh;
+  height: 10vh;
   position: relative;
   top: 0;
   z-index:1000;
@@ -34,13 +34,13 @@ nav {
 
 .menu {
   display: flex;
-  align-items: center;
+  // align-items: center;
   margin-left: auto;
   margin-right: auto;
-  width: 30%;
+  width: 40%;
   cursor: pointer;
   font-size: 3em;
-  height: 15vh;
+  height: 10vh;
 
  }
 
@@ -49,7 +49,7 @@ nav {
   justify-content: space-between;
   position: sticky;
   z-index: 10;
-  height: calc(100vh - 15vh);
+  height: calc(100vh - 10vh);
   width: 160%;
   list-style: none;
   padding: revert;
@@ -112,7 +112,7 @@ ul li:first-child{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: calc(100vh - 15vh);
+    height: calc(100vh - 10vh);
     width: 200%;
     }
 
@@ -121,7 +121,7 @@ ul li:first-child{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100vh - 15vh);
+  height: calc(100vh - 10vh);
   width: 350%;
   }
 }
@@ -149,7 +149,6 @@ ul li:first-child{
   width: 10%;
   img{
     height: 40px;
-    animation: fadeIn 4s linear;
   }
 
   a{
@@ -193,7 +192,7 @@ ul li:first-child{
       rgba(189, 221, 250, 0.9),
 
     );
-    height: calc(100vh - 15vh);
+    height: calc(100vh - 10vh);
     width: 350%;
     a {
       font-size: 14px;
@@ -241,7 +240,7 @@ ul li:first-child{
       rgba(189, 221, 250, 0.9),
 
     );
-    height: calc(100vh - 15vh);
+    height: calc(100vh - 10vh);
     width: 350%;
     a {
       font-size: 20px;
@@ -290,7 +289,7 @@ ul li:first-child{
       rgba(189, 221, 250, 0.9),
 
     );
-    height: calc(100vh - 15vh);
+    height: calc(100vh - 10vh);
     width: 350%;
 
     a {

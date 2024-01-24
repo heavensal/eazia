@@ -124,12 +124,15 @@
   flex: 1;
   margin-right: 2%;
   margin-bottom: 5%;
+  font-family: 'glacial-indifference' ;
+  font-size: 18px;
 
   input{
     width: 100%;
     border: none;
     border-bottom: 2px solid  #BDDDFA;
     height: 25px;
+    font-family: 'glacial-indifference' ;
 
     input:focus {
       border-color: #BDDDFA;
@@ -227,7 +230,7 @@
   }
 }
 
-.cgv{
+.conditions{
   margin-bottom: 2%;
 
   a{
