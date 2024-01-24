@@ -3,21 +3,12 @@
   <div class="creation">
     <div class="creation-images">
       <div>
-
-        <div>
           <% if @post.photos.attached? %> <!-- Vérifie si le post a des photos attachées -->
-
-            <%= turbo_stream_from @post %>
-              <div id="images">
-                <% @post.photos.each do |img| %>
-                  <%= cl_image_tag img.key, loading: "lazy" %>
-                <% end %>
-              </div>
-
+            <% @post.photos.each do |img| %>
+              <%= cl_image_tag img.key, loading: "lazy" %>
+            <% end %>
           <% end %>
         </div>
-
-      </div>
 
     </div>
 
