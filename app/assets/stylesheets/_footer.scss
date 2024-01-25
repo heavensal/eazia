@@ -1,0 +1,35 @@
+#footer{
+  display: flex;
+  height: 10vh;
+  background: linear-gradient(
+    to right,
+    rgba(165, 243, 173, 0.9),
+    rgba(189, 221, 250, 0.9),
+  );
+  position: static;
+  bottom: 0;
+  z-index:10;
+  width: 100%;
+}
+
+
+.mentions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+
+  a{
+    font-family: 'glacial-indifference';
+    font-size: 14px;
+  }
+}
+
+.logo-footer{
+  display: flex;
+  width: 30%;
+
+
+
+}

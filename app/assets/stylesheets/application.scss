@@ -27,9 +27,17 @@
   font-style: italic;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: 'glaciale-indifference', sans-serif;
+
 }
 h1, h2, h3{
   font-family: 'brasika-display', 'Inter', 'Arial', 'Helvetica', sans-serif;
@@ -60,6 +68,10 @@ p{
 a {
   text-decoration: none;
   color:inherit;
+}
+
+.content {
+  flex: 1; /* Fait en sorte que le contenu prenne tout l'espace disponible, poussant le footer vers le bas */
 }
 
 @media (max-width: 768px) {
