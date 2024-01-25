@@ -1,6 +1,9 @@
 .show{
   display:flex;
   justify-content: space-around;
+  // position: absolute;
+  // z-index:20;
+  flex: 1;
   margin-top: 1%;
 }
 
@@ -14,6 +17,7 @@
 .creation-images {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 
   img{
     width: 200px;
@@ -44,6 +48,25 @@
   margin: 2%
 }
 
+// .gpt_creation{
+//   display: flex;
+//   flex-direction: column;
+// }
+
+.edit_gpt_creation{
+
+  textarea{
+    width: 100%;
+    font-size: 14px;
+    font-family: 'glacial-indifference';
+  }
+}
+
+.recreer{
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .view-insta{
   display: flex;
   flex-direction: column;
@@ -63,7 +86,7 @@
 .insta {
   box-shadow: 0 0 20px darkgray;
   overflow-x: hidden;
-  max-width: 400px;
+  max-width: 350px;
 }
 
 .topbar {
@@ -76,7 +99,7 @@
   }
 }
 .insta-show {
-  width: 400px;
+  width: 350px;
   justify-content:center;
 }
 

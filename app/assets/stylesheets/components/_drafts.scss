@@ -1,3 +1,9 @@
+.draft{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
 .brouillons{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

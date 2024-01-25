@@ -78,8 +78,34 @@
   padding:8px 32px;
   margin-bottom: 10px;
   text-decoration:none;
+  text-align: center;
   text-shadow:0px 0px 0px #f5f5f7;
-  width: 40%;
+  width: 45%;
+}
+
+.button-modifier, .button-recreer{
+  border: none;
+  box-shadow: 4px 4px 8px 0px #FDAEEE;
+  background:transparent;
+  background-color: transparent;
+  border-radius:4px;
+  display:inline-block;
+  cursor:pointer;
+  color:black;
+  font-size:12px;
+  font-weight: bold;
+  padding:8px 32px;
+  margin-bottom: 10px;
+  margin-left: 40%;
+  text-decoration:none;
+  text-align: center;
+  text-shadow:0px 0px 0px #f5f5f7;
+  width: 20%;
+
+  @at-root .button-recreer{
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 .button-annexe:hover{
