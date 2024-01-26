@@ -1,14 +1,22 @@
 <div id="footer">
 
+
+
 <div class="mentions">
   <div class="text-start", style="font-weight:lighter"><%= link_to "Conditions Générales de Ventes", pages_cgv_path %></div>
   <div class="text-start", style="font-weight:lighter"><%= link_to "Conditions Générales d'Utilisateurs", pages_cgu_path %></div>
 </div>
+
+  <div class="main-logo-footer">
+    <%= link_to root_path do %>
+      <%= image_tag("logo_eazia_lettres.svg", alt:"logo eazia") %>
+    <% end %>
+  </div>
 <div class="mentions">
   <div class="text-start", style="font-weight:lighter"><%= link_to "Mentions Légales", pages_legal_path %></div>
   <div class="text-start", style="font-weight:lighter"><%= link_to "Politique de confidentialité", pages_confidentialite_path %></div>
 </div>
-<div class="mentions">
+<%# <div class="mentions">
   <div class="text-start", style="font-weight:lighter"><%= link_to "Contact", pages_contact_path %></div>
-</div>
+<%# </div>  %>
 </div>

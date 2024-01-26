@@ -12,6 +12,7 @@
           <li style="font-weight:lighter">_________________</li>
           <li class="text-start", style="font-weight:lighter"><%= link_to "Mon comptes", new_post_path %></li>
           <li class="text-start", style="font-weight:lighter"><%= link_to "Mes statistiques", new_post_path %></li>
+          <li class="text-start", style="font-weight:lighter"><%= link_to "Contact", pages_contact_path %></li>
           <li style="font-weight:lighter">_________________</li>
           <%= form_with url: destroy_user_session_path, method: :delete do %>
           <%= submit_tag "Déconnexion", class:"logout-button" %>

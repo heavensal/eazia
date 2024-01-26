@@ -8,6 +8,13 @@
   background: white
 }
 
+.charging{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+}
+
 .titre {
   display: flex;
   justify-content: center;
@@ -16,8 +23,21 @@
   z-index: 2;
 }
 
+.sous-titre{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+
+  span{
+    color: #a73cc2;
+  }
+
+}
+
 .lettre {
-  color: #A5F3AD;
+  color: #6b1e80;
   font-size: 80px;
   letter-spacing: 15px;
   animation: flash 1.4s linear infinite;
@@ -36,15 +56,15 @@
 
 @keyframes flash {
   0% {
-    color: #A5F3AD;
+    color: #6b1e80 ;
     text-shadow: 0 0 7px #EAF8EF ;
   }
   90% {
-    color: #BDDDFA;
+    color: #9f2dbe  ;
     text-shadow: none;
   }
   100% {
-    color: #BDDDFA;
+    color: #a73cc2;
     text-shadow: 0 0 7px white;
   }
 }
@@ -72,7 +92,7 @@
   left: 50%;
   width: 5px;
   height: 20px;
-  background-color: #BDDDFA;
+  background-color: #007ff5 ;
   transform: translate(-50%, -50%)
 }
 
