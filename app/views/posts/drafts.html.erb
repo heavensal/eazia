@@ -7,6 +7,7 @@
 
 <div class="brouillons">
    <% @posts.each do |post| %>
+   <%= link_to post_path(post) do %>
       <div class="insta-show-draft">
         <div class="topbar">
           <div>
@@ -48,6 +49,7 @@
           <b> <%= current_user.instagram %> </b>
         </div>
       </div>
+  <% end %>
   <% end %>
 </div>
 </div>
