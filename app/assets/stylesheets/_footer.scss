@@ -23,10 +23,14 @@
   }
 }
 
-.logo-footer{
-  display: flex;
-  width: 30%;
-
-
+.main-logo-footer {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 50%;
+  img {
+  height: 6vh;
+  //   margin-right: 5px;
+  }
 
 }
