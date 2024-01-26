@@ -47,14 +47,22 @@
         <%= render "layouts/instagram/interaction_btn" %>
         <div  class="insta-draft-description"data-controller="toggledescription">
           <b> <%= current_user.instagram %> </b>
+            <%# <span data-action="click->toggledescription#fireplus"> %>
+              <%# <p data-toggledescription-target="description" style="cursor:pointer;"> %>
+                <%# <% if post.gpt_creation.description.size.to_i > 64 %>
+                  <%# <%= post.gpt_creation.description[0..64] %>
+                  <%# <span style="color: grey;">...plus</span> %>
+                <%# <% else %>
+                <%= post.gpt_creation.description if post.gpt_creation %>
+                <%# <% end%>
+              <%# </p> %>
+              <%# <span data-toggledescription-target="plus" class="d-none" style="cursor:pointer;"><%= post.gpt_creation.description if post.gpt_creation  %>
+              <%# </span>  %>
+            <%# </span> %>
         </div>
-      </div>
-  <% end %>
-  <% end %>
-</div>
-</div>
 
-      <%# <p><%= post.created_at %>
-      <%# </p> %>
-      <%# <p><%= post.gpt_creation.description if post.gpt_creation %>
-      <%# </p>   %>
+      </div>
+      <% end %>
+      <% end %>
+</div>
+</div>

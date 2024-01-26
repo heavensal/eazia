@@ -39,8 +39,8 @@
     <b> <%= current_user.instagram %> </b>
       <span data-action="click->toggledescription#fireplus">
         <span data-toggledescription-target="description" style="cursor:pointer;">
-          <% if description.size.to_i > 64 %>
-            <%= description[0..64] %>
+          <% if @description.size.to_i > 64 %>
+            <%= @description[0..64] %>
             <span style="color: grey;">...plus</span>
           <% else %>
           <%= description %>

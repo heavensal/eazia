@@ -55,11 +55,19 @@
 // }
 
 .edit_gpt_creation{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 120px;
+margin-top: 2%;
+margin-bottom: 2%;
+
 
   textarea{
     width: 100%;
     font-size: 14px;
     font-family: 'glacial-indifference';
+    z-index: 11 ;
   }
 }
 
