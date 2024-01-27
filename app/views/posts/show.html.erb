@@ -2,44 +2,37 @@
 
   <div class="creation">
     <div class="creation-images">
-      <div>
           <% if @post.photos.attached? %> <!-- Vérifie si le post a des photos attachées -->
             <% @post.photos.each do |img| %>
               <%= cl_image_tag img.key, loading: "lazy" %>
             <% end %>
           <% end %>
-        </div>
-
     </div>
 
-    <div class="prompt-insta"><%= @post.prompt %></div>
+    <%# <div class="prompt-insta"><%= @post.prompt</div>  %>
 
   <%= turbo_frame_tag @gpt_creation do %>
 
     <div class="description">
       <%= @description if @description %>
     </div>
-    <%= link_to 'Modifier', edit_post_gpt_creation_path(@post), class:"btn btn-outline-primary" %>
-
+    <div>
+    <%= link_to 'Modifier', edit_post_gpt_creation_path(@post), class:"button-modifier" %>
+    </div>
   <% end %>
 
-    <div>
-      <div>
-
+    <div class="recreer" >
           <!-- # BUTTON RECREER LA DESCRIPTION PAR CHATGPT -->
-          <div class="text-center">
+
             <%= form_for([@post, @gpt_creation], url: recreate_post_gpt_creation_path(@post), method: :patch) do |f| %>
-              <%= f.submit "Recréer ✔️", class: "btn btn-primary" %>
+              <%= f.submit "Recréer ✔️",  class:"button-recreer"%>
             <% end %>
-          </div>
 
 
-      </div>
     </div>
   </div>
 
   <div class='view-insta decalage' data-display-target="view">
-    <div><h4>Vue Instagram</h4></div>
     <div class="instagram"><%= render "insta_show", post: @post, description: @description %></div>
     <div><%= render "show_btns", post: @post %></div>
   </div>

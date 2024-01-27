@@ -1,0 +1,36 @@
+#footer{
+  display: flex;
+  height: 10vh;
+  background: radial-gradient(circle, #6b1e80, #9f2dbe, #a73cc2);
+  position: static;
+  bottom: 0;
+  z-index:10;
+  width: 100%;
+}
+
+
+.mentions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+
+  a{
+    font-family: 'glacial-indifference';
+    font-size: 14px;
+    color: white
+  }
+}
+
+.main-logo-footer {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 50%;
+  img {
+  height: 5vh;
+  //   margin-right: 5px;
+  }
+
+}

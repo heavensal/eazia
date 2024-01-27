@@ -1,3 +1,4 @@
+<div class="draft">
 <h1>Mes brouillons</h1>
 <div class="btn-draft">
 <%= link_to "Générer un autre post", new_post_path, class:"button-annexe-draft" %>
@@ -6,6 +7,7 @@
 
 <div class="brouillons">
    <% @posts.each do |post| %>
+   <%= link_to post_path(post) do %>
       <div class="insta-show-draft">
         <div class="topbar">
           <div>
@@ -45,12 +47,22 @@
         <%= render "layouts/instagram/interaction_btn" %>
         <div  class="insta-draft-description"data-controller="toggledescription">
           <b> <%= current_user.instagram %> </b>
+            <%# <span data-action="click->toggledescription#fireplus"> %>
+              <%# <p data-toggledescription-target="description" style="cursor:pointer;"> %>
+                <%# <% if post.gpt_creation.description.size.to_i > 64 %>
+                  <%# <%= post.gpt_creation.description[0..64] %>
+                  <%# <span style="color: grey;">...plus</span> %>
+                <%# <% else %>
+                <%= post.gpt_creation.description if post.gpt_creation %>
+                <%# <% end%>
+              <%# </p> %>
+              <%# <span data-toggledescription-target="plus" class="d-none" style="cursor:pointer;"><%= post.gpt_creation.description if post.gpt_creation  %>
+              <%# </span>  %>
+            <%# </span> %>
         </div>
-      </div>
-  <% end %>
-</div>
 
-      <%# <p><%= post.created_at %>
-      <%# </p> %>
-      <%# <p><%= post.gpt_creation.description if post.gpt_creation %>
-      <%# </p>   %>
+      </div>
+      <% end %>
+      <% end %>
+</div>
+</div>

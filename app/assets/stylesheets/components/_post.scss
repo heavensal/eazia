@@ -57,16 +57,17 @@
   }
 
   textarea {
-    background-color: #EAF8EF;
+    background-color: #f5f5f5;
     border: 0;
     height: 100px;
-    border-bottom: 3px solid #BDDDFA;
+    border-bottom: 3px solid #cccccc;
     border-radius: 10px;
     resize: none;
+    color: #2c2c2c;
   }
 
   textarea:focus {
-    border-color: #FDAEEE;
+    border-color: #007ff5;
     outline: none;
   }
 
@@ -100,9 +101,9 @@
 
 .file-upload-wrapper {
   border: none;
-  border-bottom: 2px dashed #BDDDFA;
+  border-bottom: 2px dashed #cccccc;
   border-radius: 10px;
-  background-color: #EAF8EF;
+  background-color: #f5f5f5;
   margin-bottom: 20px;
   width: 50%;
 }
@@ -145,15 +146,15 @@
     font-family: 'glacial-indifference';
     width: 20%;
     border: none;
-    border-bottom: 2px solid #BDDDFA;
-    background-color: #EAF8EF;
+    border-bottom: 2px solid #cccccc;
+    background-color: #f5f5f5;
     color: grey;
     border-radius:10px;
 
   }
 
   select:focus {
-    border-color: #FDAEEE;
+    border-color: #007ff5;
     outline: none;
   }
 

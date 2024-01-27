@@ -3,12 +3,8 @@ nav {
   height: 10vh;
   position: relative;
   top: 0;
-  z-index:1000;
-  background: linear-gradient(
-    to right,
-    #A5F3AD,
-    #BDDDFA,
-  );
+  z-index:500;
+  background: radial-gradient(circle, #6b1e80, #9f2dbe, #a73cc2);
 
   section {
     width:33%;
@@ -53,11 +49,8 @@ nav {
   width: 160%;
   list-style: none;
   padding: revert;
-  background: linear-gradient(
-    to right,
-    rgba(165, 243, 173, 0.9),
-    rgba(189, 221, 250, 0.9),
-  );
+  background: linear-gradient(to right, #6b1e80, #9f2dbe, #a73cc2);
+
 
 
   li {
@@ -65,15 +58,16 @@ nav {
     font-weight: bold;
     margin: 0;
     padding: 0;
+    color: white
   }
 
   a{
     text-decoration: none;
-    color: black;
+    color: white;
   }
 
   a:hover{
-    color:#FDAEEE;
+    color:#007ff5;
 
   @media (max-width: 768px) {
     top: 100%;
@@ -112,7 +106,7 @@ ul li:first-child{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: calc(100vh - 10vh);
+    height: calc(100vh - 20vh);
     width: 200%;
     }
 
@@ -121,7 +115,7 @@ ul li:first-child{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100vh - 10vh);
+  height: calc(100vh - 20vh);
   width: 350%;
   }
 }
@@ -136,6 +130,7 @@ ul li:first-child{
   h3{
     font-size: 16px;
     animation: fadeIn 4s linear;
+    color: white
   }
 
 
@@ -192,7 +187,7 @@ ul li:first-child{
       rgba(189, 221, 250, 0.9),
 
     );
-    height: calc(100vh - 10vh);
+    height: calc(100vh - 20vh);
     width: 350%;
     a {
       font-size: 14px;
@@ -240,7 +235,7 @@ ul li:first-child{
       rgba(189, 221, 250, 0.9),
 
     );
-    height: calc(100vh - 10vh);
+    height: calc(100vh - 20vh);
     width: 350%;
     a {
       font-size: 20px;
@@ -289,7 +284,7 @@ ul li:first-child{
       rgba(189, 221, 250, 0.9),
 
     );
-    height: calc(100vh - 10vh);
+    height: calc(100vh - 20vh);
     width: 350%;
 
     a {
