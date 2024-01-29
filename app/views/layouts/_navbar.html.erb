@@ -1,9 +1,9 @@
-<nav id='menu'>
-   <section id="navigation">
+<nav id='menu' data-menu-target="navbar">
+   <section id="navigation" >
     <% if current_user %>
-    <input type="checkbox" id="menu-toggle" hidden>
-      <label for="menu-toggle"class="menu">☰</label>
-        <ul class='sub-menus'>
+    <input type="checkbox" id="menu-toggle" hidden data-action="click->menu#toggle">
+      <label for="menu-toggle"class="menu-navbar" >☰</label>
+        <ul class='sub-menus' data-menu-target="menu">
           <li class="text-start"><%= link_to "Nouveau", new_post_path %></li>
           <li class="text-start"><%= link_to "Brouillons", drafts_path%></li>
           <li class="text-start"><%= link_to "Posts Programmés", new_post_path %></li>

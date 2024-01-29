@@ -4,9 +4,11 @@
   background: radial-gradient(circle, #6b1e80, #9f2dbe, #a73cc2);
   position: static;
   bottom: 0;
-  z-index:10;
+  z-index:11;
   width: 100%;
+  transition: margin-left 0.3s, width 0.3s;
 }
+
 
 
 .mentions{

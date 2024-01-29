@@ -39,6 +39,18 @@ body {
   font-family: 'glaciale-indifference', sans-serif;
 
 }
+
+body.menu-open .content {
+  width: calc(100% - 220px);
+    margin-left: 220px;
+}
+
+.menu-open footer {
+  transform: translateY(150px); /* Vous pouvez ajuster la valeur en fonction de la hauteur de votre menu */
+  transition: transform 0.3s ease;
+}
+
+
 h1, h2, h3{
   font-family: 'brasika-display', 'Inter', 'Arial', 'Helvetica', sans-serif;
   text-align: center;
@@ -71,10 +83,21 @@ a {
 }
 
 .content {
-  flex: 1; /* Fait en sorte que le contenu prenne tout l'espace disponible, poussant le footer vers le bas */
+  flex: 1;
+  position: relative;
+  z-index: 600;
+  margin-left: 0;
+  width: 100%;
+  transition: margin-left 0.3s, width 0.3s;
 }
 
 @media (max-width: 768px) {
+
+  body.menu-open .content {
+    width: 100%;
+    margin-left: 0;
+  }
+
   h1 {
     font-size: 30px;
   }
@@ -83,10 +106,21 @@ a {
     font-size: 16px;
   }
 
+  .content{
+    position: relative;
+    z-index: 400
+  }
+
 }
 
 
 @media (max-width: 480px) {
+
+  body.menu-open .content {
+    width: 100%;
+    margin-left: 0;
+  }
+
   h1 {
     font-size: 20px;
   }

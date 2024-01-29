@@ -38,3 +38,30 @@
   font-size: 12px;
   text-align: justify;
 }
+
+
+@media (max-width: 768px){
+  .brouillons{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-draft{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+  }
+}
+
+@media (max-width: 680px){
+  .brouillons{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .btn-draft{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+  }
+}
