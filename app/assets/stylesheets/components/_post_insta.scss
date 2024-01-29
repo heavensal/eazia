@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   width: 50%;
-  margin-left: 3%
+  margin: 2%
 }
 
 .creation-images {
@@ -49,31 +49,68 @@
   margin: 2%
 }
 
-// .gpt_creation{
-//   display: flex;
-//   flex-direction: column;
-// }
-
-.edit_gpt_creation{
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-height: 120px;
-margin-top: 2%;
-margin-bottom: 2%;
-
-
-  textarea{
-    width: 100%;
-    font-size: 14px;
-    font-family: 'glacial-indifference';
-    z-index: 11 ;
-  }
+.modifier{
+  display: flex;
+  justify-content: center;
 }
 
+.gpt{
+  display: flex;
+  flex-direction: column;
+
+  textarea{
+  width: 100%;
+  font-size: 14px;
+  font-family: 'glacial-indifference';
+  z-index: 11 ;
+  }
+
+  @media (max-width: 768px){
+    width: 100%;
+    margin-top: 2%;
+  }
+
+  @media (max-width: 680px){
+    width: 100%;
+    margin-top: 2%;
+  }
+
+}
+
+// .edit_gpt_creation{
+// display: flex;
+// flex-direction: column;
+// justify-content: center;
+// margin-top: 2%;
+// margin-bottom: 2%;
+// width: 100%;
+
+
+
+//   @media (max-width: 768px){
+//     width: 100%;
+//   }
+
+//   @media (max-width: 680px){
+//     width: 100%;
+//   }
+// }
+
 .recreer{
-  margin-left: auto;
-  margin-right: auto;
+display: flex;
+justify-content: center;
+width: 100%;
+
+@media (max-width: 768px){
+  width: 100%;
+  margin-top: 2%;
+}
+
+@media (max-width: 680px){
+  width: 100%;
+  margin-top: 2%;
+}
+
 }
 
 .view-insta{
@@ -185,44 +222,40 @@ path {
     margin: 1%
   }
 
-  .insta-show {
-    width: 400px;
-  }
-
   .instagram{
-    width: 80%;
     margin-left: auto;
     margin-right: auto;
 
   }
 
-  .view-insta h4 {
-    font-size: 20px;
+  .view-insta{
+    width: 100%;
 
-
-    .insta-show {
-      width: 100%;
+    h4 {
+      font-size: 20px;
     }
 
-    .icon {
-      width: 30px;
-      height: 30px;
-    }
-
-    .crop {
-    height: 350px;
-    }
-
-    .interactionbtns span {
-    width: 95px;
-    }
-
-
-    .textcontent {
-    font-size: 12px;
-    }
   }
-}
+
+  .insta-show {
+    width: 100%;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+
+
+  .interactionbtns span {
+    width: 95px;
+  }
+
+  .textcontent {
+    font-size: 12px;
+  }
+  }
+
 
 
 @media  (max-width: 768px) {
@@ -235,7 +268,7 @@ path {
   .creation{
     display:flex;
     justify-content: center;
-    width: 100%;
+    width: 90%;
   }
 
  .prompt-insta{
@@ -259,10 +292,6 @@ path {
   .icon {
     width: 25px;
     height: 25px;
-  }
-
-  .crop {
-    height: 300px;
   }
 
   .interactionbtns {
@@ -293,8 +322,7 @@ path {
     flex-direction: column;
   }
   .creation{
-    width: 100%;
-    margin-left: 0;
+    width: 90%;
   }
 
   .prompt-insta{
@@ -329,9 +357,6 @@ path {
     height: 20px;
   }
 
-  .crop {
-    height: 200px;
-  }
 
   .interactionbtns {
     flex-direction: row;

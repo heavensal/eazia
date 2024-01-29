@@ -20,10 +20,6 @@
 
   h1{
   text-align: center;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 0;
-  animation: typing 1.5s steps(7) 0s forwards, blink 0.25s step-end ;
   }
 
   h3{
@@ -131,8 +127,10 @@
     width: 100%;
     border: none;
     border-bottom: 2px solid  #cccccc ;
-    height: 25px;
+    height: 6vh;
     font-family: 'glacial-indifference' ;
+
+
 
     input:focus {
       border-color: #007ff5 ;
