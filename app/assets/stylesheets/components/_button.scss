@@ -150,9 +150,6 @@
 }
 
 
-
-
-
 .button-annexe:hover{
   color:#007ff5;
   transform: scale(1.1);
@@ -212,12 +209,17 @@
   text-decoration:none;
   width: 40%;
   text-align: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .button-annexe-draft:hover{
-  color:grey;
+  color:#007ff5;
   transform: scale(1.1);
 }
+
 
 @media (max-width: 1024px) {
   .logout-button {
@@ -235,7 +237,7 @@
     font-size: 16px;
     padding: 0;
     height: 50%;
-    width: 40%;
+    width: 50%;
   }
 }
 

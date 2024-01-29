@@ -23,7 +23,7 @@
         <div class="recreer" >
               <!-- # BUTTON RECREER LA DESCRIPTION PAR CHATGPT -->
           <%= form_for([@post, @gpt_creation], url: recreate_post_gpt_creation_path(@post), method: :patch) do |f| %>
-            <%= f.submit "Recréer ✔️",  class:"button-recreer"%>
+          <%= f.submit "Recréer ✔️",  class:"button-recreer"%>
           <% end %>
         </div>
 
