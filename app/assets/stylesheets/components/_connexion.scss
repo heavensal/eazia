@@ -7,10 +7,6 @@
 
   h1{
   text-align: center;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 0;
-  animation: typing 1.5s steps(7) 0s forwards, blink 0.25s step-end ;
   }
 
   h3{
@@ -38,11 +34,6 @@
 
 }
 
-
-@keyframes typing {
-from { width: 0; }
-to { width: 7ch; }
-}
 
 .form-connexion{
   display: flex;
@@ -102,10 +93,6 @@ to { width: 7ch; }
   }
 }
 
-// .field-checkbox {
-//   display: flex;
-//   align-items: center;
-// }
 
 .field:last-child {
   margin-right: 0;
