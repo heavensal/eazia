@@ -2,7 +2,7 @@
    <section id="navigation" >
     <% if current_user %>
     <input type="checkbox" id="menu-toggle" hidden data-action="click->menu#toggle">
-      <label for="menu-toggle"class="menu-navbar" >☰</label>
+      <label for="menu-toggle" class="menu-navbar" >☰</label>
         <ul class='sub-menus' data-menu-target="menu">
           <li class="text-start"><%= link_to "Nouveau", new_post_path %></li>
           <li class="text-start"><%= link_to "Brouillons", drafts_path%></li>
