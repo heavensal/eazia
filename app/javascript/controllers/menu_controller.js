@@ -37,33 +37,29 @@ export default class extends Controller {
 
 
   adjustMenuHeight() {
-    const navbar = this.navbarTarget;
+    const navbarHeight = 10
     const footer = this.footerTarget;
     const viewportHeight = window.innerHeight;
+
 
     // Par défaut, la hauteur du menu est égale à la hauteur de la fenêtre du navigateur
     let menuHeight = viewportHeight;
 
-    if (navbar) {
+    if (this.navbarTarget) {
       // Si la navbar existe, soustrayez sa hauteur
-      menuHeight -= navbar.offsetHeight;
+      menuHeight -= viewportHeight * (navbarHeight /100);
     }
 
-    if (footer) {
+    if (footer && this.isFooterVisible()) {
       // Si le footer existe, soustrayez sa hauteur
-      const isFooterVisible = this.isFooterVisible();
-
-      if (isFooterVisible) {
-      // Si le pied de page est visible, soustrayez sa hauteur
-      menuHeight -= footer.offsetHeight;
-      }
+      menuHeight -= this.footerTarget.offsetHeight;
     }
 
-    if (!navbar && !footer) {
+    // if (!navbar && !footer) {
 
-      // Utilisez la hauteur de la fenêtre du navigateur par défaut
-      menuHeight = viewportHeight;
-    }
+    //   // Utilisez la hauteur de la fenêtre du navigateur par défaut
+    //   menuHeight = viewportHeight;
+    // }
 
     // Assurez-vous que la hauteur du menu ne soit pas inférieure à 0px
     menuHeight = Math.max(menuHeight, 0);
