@@ -21,14 +21,14 @@ Rails.application.routes.draw do
   # Pages Controller
   get 'pages/cgv'
   get 'pages/legal'
-  get 'pages/account'
+  get 'pages/account', to: 'pages#account', as: 'account'
   get 'pages/quartz_agency'
   get 'pages/contact'
   get 'pages/cgu'
   get 'pages/confidentialite'
+  get 'pages/inscription'
 
-
-
+  patch 'pages/update_account', to: 'pages#update_account', as: 'pages_update_account'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
