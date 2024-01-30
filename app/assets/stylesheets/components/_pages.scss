@@ -65,3 +65,42 @@
   }
 
 }
+
+.account{
+  width: 60%;
+  background-color: rgba(220, 255, 255, 0.5);
+  // box-shadow: 0 3px 3px;
+  margin: 2%;
+  padding: 1%;
+  border-radius: 5px;
+  font-family: 'glacial-indifference' ;
+  font-size: 18px;
+  line-height: 2;
+
+}
+
+.field-update{
+  flex: 1;
+  margin-right: 2%;
+  margin-bottom: 5%;
+  font-family: 'glacial-indifference' ;
+  font-size: 18px;
+
+
+  input{
+    width: 80%;
+    border: none;
+    border-bottom: 2px solid  #cccccc ;
+    height: 6vh;
+    font-family: 'glacial-indifference' ;
+    background-color: transparent;
+    color: #2c2c2c;
+
+
+    input:focus {
+      border-color: #007ff5 ;
+      outline: none;
+    }
+}
+
+}

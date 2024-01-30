@@ -1,10 +1,56 @@
-<div class="inscription">
-  <h1>Bienvenue</h1>
-  <p>EazIA est une plateforme permettant aux entreprises de générer automatiquement du contenu pour les réseaux sociaux (Instagram, LinkedIn, Twitter, ...) que ce soit sous forme de texte ou image+ texte. EazIA s'adapte aux normes des réseaux sociaux sélectionnés pour rendre un contenu adapté.
-  </p>
+<div class="pages">
+  <h1>Mon Compte</h1>
+    <div class="account">
+      <p><b>Votre email :</b> <%= @user.email %></p><br>
+      <h3>Modifier mes informations</h3>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@user.errors.count, "error") %> empêchent cette mise à jour :</h2>
+            <ul>
+              <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+          <% end %>
 
-  <div class="actions-continuer">
-    <%= link_to"Continuer", new_user_registration_path, class:"btn-continuer"%>
-  </div>
+      <%= form_for(current_user, url: pages_update_account_path, html: { method: :patch }) do |f| %>
+        <div class="form-column">
+          <div class="field-update">
+            <%= f.label :first_name, "Prénom :" %><br>
+            <%= f.text_field :first_name %>
+          </div>
 
+          <div class="field-update">
+            <%= f.label :last_name, "Nom :" %><br>
+            <%= f.text_field :last_name %>
+          </div>
+        </div>
+
+        <div class="form-column" >
+          <div class="field-update">
+            <%= f.label :company, "Nom de votre entreprise :" %><br>
+            <%= f.text_field :company %>
+          </div>
+
+          <div class="field-update">
+            <%= f.label :information, "Quelques mots sur votre activité :" %><br>
+            <%= f.text_field :information %>
+          </div>
+        </div>
+
+        <div class="form-column">
+          <div class="field-update">
+            <%= f.label :instagram, "Pseudo instagram :" %><br>
+            <%= f.text_field :instagram %>
+          </div>
+
+          <div class="field-update"></div>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Mettre à jour", class:"btn-update" %>
+        </div>
+      <% end %>
+    </div>
 </div>
