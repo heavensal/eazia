@@ -39,6 +39,18 @@
   text-align: justify;
 }
 
+@media (max-width: 1230px){
+  .brouillons{
+    display: flex;
+    flex-direction: column;
+  }
+
+  // .btn-draft{
+  //   display: flex;
+  //   flex-direction: column;
+  //   width: 40%;
+  // }
+}
 
 @media (max-width: 768px){
   .brouillons{
@@ -53,7 +65,7 @@
   }
 }
 
-@media (max-width: 680px){
+@media (max-width: 480px){
   .brouillons{
     display: flex;
     flex-direction: column;

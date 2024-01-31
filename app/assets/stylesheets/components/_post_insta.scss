@@ -6,6 +6,7 @@
   flex: 1;
   margin-top: 1%;
   z-index: 501;
+
 }
 
 .creation{
@@ -26,6 +27,7 @@
     margin: 1%
 
   }
+
 }
 
 .creation-images > div {
@@ -213,13 +215,27 @@ path {
 
 @media (max-width: 1024px) {
   .creation{
-    width: 100%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0
+  }
+
+  .creation-images{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .creation-images img{
     width: 200px;
     height: 200px;
     margin: 1%
+  }
+
+  .description{
+    margin: 3%
   }
 
   .instagram{

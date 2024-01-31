@@ -20,7 +20,7 @@ export default class extends Controller {
       // Pour empêcher la fermeture lors du clic sur le menu
       event.stopPropagation();
       this.menuTarget.classList.toggle('open');
-      document.body.classList.toggle('menu-open');
+      document.body.classList.toggle('sub-menus-open');
   }
 
   handleClickOutside(event) {
@@ -46,8 +46,8 @@ export default class extends Controller {
     let menuHeight = viewportHeight;
 
     if (this.navbarTarget) {
-      // Si la navbar existe, soustrayez sa hauteur
-      menuHeight -= viewportHeight * (navbarHeight /100);
+     // Si la navbar existe, soustrayez sa hauteur
+    menuHeight -= viewportHeight * (navbarHeight /100);
     }
 
     if (footer && this.isFooterVisible()) {
@@ -62,6 +62,8 @@ export default class extends Controller {
     // }
 
     // Assurez-vous que la hauteur du menu ne soit pas inférieure à 0px
+
+
     menuHeight = Math.max(menuHeight, 0);
 
     this.menuTarget.style.height = `${menuHeight}px`;
