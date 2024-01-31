@@ -6,13 +6,6 @@
 @import 'bootstrap';
 
 
- @font-face {
-  font-family: 'brasika-display';
-  src: url('brasika-display.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 @font-face {
   font-family: 'glacial-indifference';
   src: url('GlacialIndifference-Regular.woff') format('woff');
@@ -100,7 +93,7 @@ body.sub-menus-open .content {
 
 
 h1, h2, h3{
-  font-family: 'brasika-display', 'Inter', 'Arial', 'Helvetica', sans-serif;
+  font-family: 'Times New Roman', Times, sans-serif;
   text-align: center;
   margin: 1rem ;
 }
