@@ -224,7 +224,18 @@
   label{
     font-size: 14px;
     font-family: 'glacial-indifference';
-    color: grey
+    color: grey;
+
+    @media (max-width: 768px){
+      margin: 2%
+      }
+
+  }
+}
+
+.check{
+  @media (max-width: 768px){
+  display: flex;
   }
 }
 

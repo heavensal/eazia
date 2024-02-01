@@ -40,10 +40,26 @@
   flex-direction: column;
   align-items: center;
   width: 80%;
+
+  @media (max-width: 768px){
+    width: 100%;
+  }
+
+  @media (max-width: 480px){
+    width: 100%;
+  }
 }
 
 .new_user{
-  width: 50%
+  width: 50%;
+
+  @media (max-width: 768px){
+    width: 80%;
+  }
+
+  @media (max-width: 480px){
+    width: 80%;
+  }
 }
 
 
@@ -61,6 +77,14 @@
     border-bottom: 2px solid  #f5f5f5 ;
     margin-bottom: 1%;
     font-family: 'glacial-indifference' ;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    @media (max-width: 480px) {
+      width: 100%;
+    }
   }
 
   input:focus {
@@ -68,13 +92,6 @@
     outline: none;
   }
 
-  @media (max-width: 768px) {
-    width: 90%;
-  }
-
-  @media (max-width: 480px) {
-    width: 80%;
-  }
 
 }
 
@@ -85,11 +102,11 @@
   font-family: 'glacial-indifference' ;
 
   @media (max-width: 768px) {
-    width: 80%;
+    width: 100%;
   }
 
   @media (max-width: 480px) {
-    width: 80%;
+    width: 100%;
   }
 }
 
@@ -107,16 +124,16 @@
   margin-right: auto;
 
   @media (max-width: 768px) {
-    width: 60%;
+    width: 100%;
   }
 
   @media (max-width: 480px) {
-    width: 80%;
+    width: 100%;
   }
 }
 
 .btn-connexion, .btn-mdp {
-  width: 70%;
+  width: 50%;
   height: 30%;
   padding: 1%;
   margin: 1%;

@@ -71,7 +71,7 @@
       </div>
 
        <div class="field-checkbox">
-          <div>
+          <div class="check">
             <input type="checkbox"  id="termsCheckbox" data-autorisation-form-target="checkbox" >
             <label for="termsCheckbox"> J'ai pris connaissance et j'accepte les conditions générales de ventes et la politique de confidentialité d'Eazia</label>
           </div>
@@ -85,7 +85,7 @@
         </div>
 
         <div class="actions-inscription">
-          <%= f.submit "S'inscrire", class:"btn-inscription", data: { action: "submit->autorisation-form#validateForm" } %>
+          <%= f.submit "Inscription", class:"btn-inscription", data: { action: "submit->autorisation-form#validateForm" } %>
         </div>
       <% end %>
     </div>
