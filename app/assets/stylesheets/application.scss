@@ -63,12 +63,14 @@ body.sub-menus-open .content {
 
     .description{
       @media (max-width: 1915px){
-        margin-left: 80px;
+        margin-left: auto;
+        margin-right: auto;
         width: 80%;
       }
 
       @media (max-width: 1024px){
-        margin-left: 50px;
+        margin-left: auto;
+        margin-right: auto;
         width: 80%;
       }
     }
