@@ -1,6 +1,6 @@
 <nav  data-menu-target="navbar">
-   <section id="navigation" >
     <% if current_user %>
+   <section id="navigation" >
     <input type="checkbox" id="menu-toggle" hidden data-action="click->menu#toggle">
       <label for="menu-toggle" class="menu-navbar" >☰</label>
         <ul class='sub-menus' data-menu-target="menu">
@@ -18,8 +18,8 @@
           <%= submit_tag "Déconnexion", class:"logout-button" %>
           <% end %></li>
         </ul>
-    <% end %>
     </section>
+    <% end %>
 
 
   <section id="main-titre">
