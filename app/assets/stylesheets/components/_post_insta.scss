@@ -1,12 +1,9 @@
 .show{
   display:flex;
   justify-content: space-around;
-  // position: absolute;
-  // z-index:20;
   flex: 1;
   margin-top: 1%;
   z-index: 501;
-
 }
 
 .creation{
@@ -25,9 +22,7 @@
     width: 200px;
     height: 200px;
     margin: 1%
-
   }
-
 }
 
 .creation-images > div {
@@ -66,53 +61,13 @@
   font-family: 'glacial-indifference';
   z-index: 11 ;
   }
-
-  @media (max-width: 768px){
-    width: 100%;
-    margin-top: 2%;
-  }
-
-  @media (max-width: 680px){
-    width: 100%;
-    margin-top: 2%;
-  }
-
 }
 
-// .edit_gpt_creation{
-// display: flex;
-// flex-direction: column;
-// justify-content: center;
-// margin-top: 2%;
-// margin-bottom: 2%;
-// width: 100%;
-
-
-
-//   @media (max-width: 768px){
-//     width: 100%;
-//   }
-
-//   @media (max-width: 680px){
-//     width: 100%;
-//   }
-// }
 
 .recreer{
-display: flex;
-justify-content: center;
-width: 100%;
-
-@media (max-width: 768px){
+  display: flex;
+  justify-content: center;
   width: 100%;
-  margin-top: 2%;
-}
-
-@media (max-width: 680px){
-  width: 100%;
-  margin-top: 2%;
-}
-
 }
 
 .view-insta{
@@ -142,10 +97,12 @@ width: 100%;
   display: flex;
   align-content: center;
   justify-content: space-between;
+
   b {
     font-size: 12px;
   }
 }
+
 .insta-show {
   width: 350px;
   justify-content:center;
@@ -250,7 +207,6 @@ path {
     h4 {
       font-size: 20px;
     }
-
   }
 
   .insta-show {
@@ -270,7 +226,7 @@ path {
   .textcontent {
     font-size: 12px;
   }
-  }
+}
 
 
 
@@ -284,17 +240,26 @@ path {
   .creation{
     display:flex;
     justify-content: center;
-    width: 90%;
+    width: 100%;
   }
 
- .prompt-insta{
-  font-size: 14px;
- }
+  .prompt-insta{
+    font-size: 14px;
+  }
 
   .creation-images img{
     width: 150px;
     height: 150px;
     margin: 1%
+  }
+
+  .recreer{
+    width: 100%;
+    margin-top: 2%;
+  }
+
+  .instagram{
+    margin-top: 5%;
   }
 
   .insta-show {
@@ -319,7 +284,10 @@ path {
   }
 
   .btn-annexe, .btn-publier {
-    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .textcontent {
@@ -337,6 +305,7 @@ path {
     display:flex;
     flex-direction: column;
   }
+
   .creation{
     width: 90%;
   }
@@ -348,6 +317,16 @@ path {
   .creation-images img{
     width: 50px;
     height: 50px;
+  }
+
+  .gpt{
+    width: 100%;
+    margin-top: 2%;
+  }
+
+  .recreer{
+    width: 100%;
+    margin-top: 2%;
   }
 
   .insta-show img {
@@ -372,7 +351,6 @@ path {
     width: 20px;
     height: 20px;
   }
-
 
   .interactionbtns {
     flex-direction: row;

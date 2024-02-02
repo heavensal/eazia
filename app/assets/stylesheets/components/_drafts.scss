@@ -5,13 +5,9 @@
 }
 
 .brouillons{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
-  // display: flex;
-  // flex-direction: column;
-  // margin-left:auto;
-  // margin-right:auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
   width: 100%;
   margin-bottom: 2%
 }
@@ -21,7 +17,6 @@
   margin-left:auto;
   margin-right:auto;
   margin-bottom: 20px;
-  // box-shadow: 0 0 20px darkgray;
 }
 
 .btn-draft{
@@ -44,12 +39,6 @@
     display: flex;
     flex-direction: column;
   }
-
-  // .btn-draft{
-  //   display: flex;
-  //   flex-direction: column;
-  //   width: 40%;
-  // }
 }
 
 @media (max-width: 768px){
