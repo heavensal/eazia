@@ -6,7 +6,6 @@ nav {
   top: 0;
   z-index:700;
   background: radial-gradient(circle, #6b1e80, #9f2dbe, #a73cc2);
-
 }
 
 
@@ -16,13 +15,11 @@ nav {
   font-size: 1em;
   transform-origin: left;
   transition: transform 0.5s ease-out;
-
 }
 
-  section {
-    width:33%;
-  }
-
+// section {
+//   width:33%;
+// }
 
 .menu-navbar {
   display: flex;
@@ -32,7 +29,6 @@ nav {
   cursor: pointer;
   font-size: 3em;
   height: 10vh;
-
  }
 
  .sub-menus {
@@ -70,7 +66,6 @@ nav {
   div {
     padding: 1em;
   }
-
 }
 
 
@@ -81,15 +76,6 @@ ul li:first-child{
 #menu-toggle:checked + .menu-navbar + .sub-menus {
   display: flex;
   flex-direction: column;
-
-  // @media (max-width: 1024px) {
-  //   display: flex;
-  //   flex-direction: column;
-  //   justify-content: space-between;
-  //   height: calc(100vh - 10vh);
-  //   width: 100%;
-  //   }
-
 
 @media (max-width: 768px) {
   display: flex;
@@ -149,18 +135,20 @@ ul li:first-child{
 @media (max-width: 768px) {
   nav {
     height: 10vh;
+
+    section{
+      width: 33%;
+    }
   }
 
   #navigation {
-    width: 30%;
     font-size: 1em;
     height: 100vh;
   }
 
   .menu-navbar{
     width: 100%;
-    font-size: 2em;
-    margin-left: 1em
+    font-size: 3em;
   }
 
   section {
@@ -180,14 +168,14 @@ ul li:first-child{
     z-index: 100;
     background: linear-gradient(to right, #6b1e80, #9f2dbe, #a73cc2);
     height: calc(100vh - 20vh);
-    width: 350%;
+    width: 400%;
     a {
       font-size: 14px;
     }
   }
 
   #main-titre h3 {
-    font-size: 12px;
+    font-size: 16px;
 
   }
 
@@ -204,8 +192,7 @@ ul li:first-child{
   }
 
   #navigation {
-    width: 50%;
-    font-size: 1em;
+    font-size: 2em;
     height: 100vh;
   }
 
@@ -224,7 +211,7 @@ ul li:first-child{
     justify-content: space-between;
     background: linear-gradient(to right, #6b1e80, #9f2dbe, #a73cc2);
     height: calc(100vh - 20vh);
-    width: 350%;
+    width: 400%;
 
     a {
       font-size: 14px;
