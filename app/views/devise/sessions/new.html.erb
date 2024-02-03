@@ -1,6 +1,9 @@
 <div class="form-connect">
   <h1>Bienvenue !</h1>
     <h3>Se connecter</h3>
+
+    <%= link_to "Se Connecter avec Facebook", user_facebook_omniauth_authorize_path, method: :post, data: { turbo: false } %>
+
   <div class="form-connexion" data-controller="autorisation-form">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>

@@ -65,11 +65,15 @@ group :development do
 end
 
 gem "devise", "~> 4.9"
+gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection'
+
+
+
 gem 'faraday'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 gem "cloudinary"
 gem "bootstrap", "~> 5.2"
-gem 'newrelic_rpm'
 gem 'sidekiq', '~> 7.2', '>= 7.2.1'
 gem 'sidekiq-failures', '~> 1.0', '>= 1.0.4'
 gem 'redis-client', '~> 0.19.1'

@@ -5,6 +5,8 @@
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
+      <%= link_to "Se Connecter avec Facebook", user_facebook_omniauth_authorize_path, method: :post, data: { turbo: false } %>
+
       <div class="form-column">
         <div class="field-inscription">
           <%= f.label :first_name, "Prénom" %><br />
