@@ -6,7 +6,6 @@
   align-items: center;
 }
 
-
 .legales, .cgv, .cgu, .confidentialite {
 
   width: 80%;
@@ -30,11 +29,7 @@
     font-size: 20px;
     font-weight: bold;
   }
-
-
-
 }
-
 
 .contact{
   width: 40%;
@@ -46,7 +41,6 @@
   font-family: 'glacial-indifference' ;
   font-size: 18px;
   line-height: 2;
-
 }
 
 .rs{
@@ -69,7 +63,6 @@
 .account{
   width: 60%;
   background-color: rgba(220, 255, 255, 0.5);
-  // box-shadow: 0 3px 3px;
   margin: 2%;
   padding: 1%;
   border-radius: 5px;
@@ -88,19 +81,90 @@
 
 
   input{
-    width: 80%;
-    border: none;
-    border-bottom: 2px solid  #cccccc ;
-    height: 6vh;
-    font-family: 'glacial-indifference' ;
-    background-color: transparent;
-    color: #2c2c2c;
+  width: 80%;
+  border: none;
+  border-bottom: 2px solid  #cccccc ;
+  height: 6vh;
+  font-family: 'glacial-indifference' ;
+  background-color: transparent;
+  color: #2c2c2c;
 
-
-    input:focus {
-      border-color: #007ff5 ;
-      outline: none;
+  input:focus {
+    border-color: #007ff5 ;
+    outline: none;
     }
+  }
 }
+
+@media (max-width :768px){
+  .account{
+    width: 90%;
+
+    h3{
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    p{
+      font-size: 18px;
+    }
+  }
+
+  .contact, .rs{
+    width: 90%
+  }
+
+  .rs img {
+    height: 30px
+  }
+
+  .legales, .cgv, .cgu, .confidentialite {
+    width: 90%;
+
+    h4{
+      font-size: 20px;
+    }
+
+    p{
+      font-size: 14px;
+    }
+  }
+
+}
+
+
+@media (max-width :480px){
+  .account{
+    width: 90%;
+
+    h3{
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    p{
+      font-size: 16px;
+    }
+  }
+
+  .contact, .rs{
+    width: 90%
+  }
+
+  .rs img {
+    height: 20px
+  }
+
+  .legales, .cgv, .cgu, .confidentialite {
+    width: 90%;
+
+    h4{
+      font-size: 18px;
+    }
+
+    p{
+      font-size: 14px;
+    }
+  }
 
 }
