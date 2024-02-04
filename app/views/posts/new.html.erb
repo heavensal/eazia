@@ -42,11 +42,12 @@
               });
             }
 
-          function checkLoginState() {
-            FB.getLoginStatus(function(response) {
-              statusChangeCallback(response);
-            });
-          }
+        function checkLoginState() {
+          FB.login(function(response) {
+            statusChangeCallback(response);
+          }, {scope: 'email,public_profile'}); // Ajoute d'autres permissions au besoin
+        }
+
 
           (function(d, s, id){
             var js, fjs = d.getElementsByTagName(s)[0];
