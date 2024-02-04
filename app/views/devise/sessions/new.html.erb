@@ -2,11 +2,6 @@
   <h1>Bienvenue !</h1>
     <h3>Se connecter</h3>
 
-    <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v19.0&appId=598892545759939" nonce="vTngHYgd"></script>
-
-<div class="fb-login-button" data-width="100" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="false"></div>
-
   <div class="form-connexion" data-controller="autorisation-form">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
