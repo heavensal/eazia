@@ -14,36 +14,10 @@
 
   <body data-controller="menu">
   <%= render 'layouts/navbar'%>
-  <div>
-    <% if current_user %>
-      <%= current_user.uid %>
-    <% end %>
-  </div>
   <div class="content">
     <%= yield %>
     </div>
     <%= render 'layouts/footer'%>
-
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '<%= ENV["FB_APP_ID"] %>', // Utilise ton Facebook App ID ici
-          cookie     : true,
-          xfbml      : true,
-          version    : 'v19.0' // Assure-toi d'utiliser la dernière version de l'API Graph
-        });
-
-        FB.AppEvents.logPageView();
-      };
-
-      (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "https://connect.facebook.net/fr_FR/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-    </script>
 
 
   </body>
