@@ -14,6 +14,10 @@
 
   <body data-controller="menu">
   <%= render 'layouts/navbar'%>
+  <div>
+    <% if current_user %>
+    <%= current_user.uid %>
+  </div>
   <div class="content">
     <%= yield %>
     </div>
