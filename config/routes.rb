@@ -2,7 +2,8 @@ Rails.application.routes.draw do
 
   root 'posts#new'
 
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users
+  put '/users/update_token', to: 'users#update_token'
 
   resources :posts do
     resource :gpt_creation, only: [], controller: 'gpt_creations' do

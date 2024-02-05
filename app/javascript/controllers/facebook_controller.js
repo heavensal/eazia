@@ -48,8 +48,9 @@ export default class extends Controller {
   fetchUserInfo() {
     FB.api('/me', {fields: 'name'}, (response) => {
       console.log('personne connectée: ' + response.name);
-      let userInfo = `Nom: ${response.name}<br>Token d'accès: ${FB.getAuthResponse().accessToken}`;
-      this.userTarget.innerHTML = userInfo;
+      let token = FB.getAuthResponse().accessToken;
+      this.userTarget.innerHTML = token;
+      this.updateUser(token)
     });
   }
 
@@ -58,4 +59,25 @@ export default class extends Controller {
       this.statusChangeCallback(response);
     }, {scope: 'email,public_profile'});
   }
+
+  // À l'intérieur de ton contrôleur Stimulus après avoir récupéré l'access token
+  updateUser(token) {
+    fetch('/users/update_token', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': document.querySelector("[name='csrf-token']").getAttribute('content') // Assure-toi que le token CSRF est correctement inclus
+      },
+      body: JSON.stringify({ token: token })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if(data.success) {
+        console.log("Token successfully updated.");
+      } else {
+        console.error("Failed to update token.");
+      }
+    });
+  }
+
 }
