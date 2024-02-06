@@ -38,6 +38,7 @@ class PostsController < ApplicationController
   def publish
     @post = Post.find(params[:id])
     fb_api_service = AiApiService.new(@post.user)
+    fb_api_service.ig_account(@post.user)
     fb_api_service.publish(@post, fb_api_service.new_container(@post))
     @post.update!(status: "published")
     redirect_to new_post

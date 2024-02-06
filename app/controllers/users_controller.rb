@@ -5,7 +5,5 @@ class UsersController < ApplicationController
     else
       render json: { success: false, error: "Unable to update token." }, status: :unprocessable_entity
     end
-    fb_api_service = AiApiService.new(current_user)
-    fb_api_service.ig_account(current_user)
   end
 end
