@@ -41,7 +41,7 @@ class PostsController < ApplicationController
     fb_api_service.ig_account(@post.user)
     fb_api_service.publish(@post, fb_api_service.new_container(@post))
     @post.update!(status: "published")
-    redirect_to new_post
+    redirect_to new_post_path
   end
 
   private
