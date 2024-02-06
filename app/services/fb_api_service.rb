@@ -8,12 +8,16 @@ class FbApiService
     request = faraday_fb
     response = request.get("https://graph.facebook.com/v19.0/me/accounts?fields=id&access_token=#{user.token}")
     data = JSON.parse(response.body)
+    p data
     page_id = data['data'].first['id']
+    puts "page_id = " + page_id
 
     request_ig = faraday_fb
     response_ig = request_ig.get("https://graph.facebook.com/v19.0/#{page_id}/?fields=instagram_business_account&access_token=#{user.token}")
     data = JSON.parse(response_ig.body)
+    puts data
     ig_id = data["instagram_business_account"]["id"]
+    puts "ig_id = " + ig_id
     user.update!(ig_page: ig_id)
   end
 
