@@ -24,7 +24,7 @@ class FbApiService
   # créer un container pour le futur post insta
   def new_container(post)
     request = faraday_fb
-    response = request.post("https://graph.facebook.com/v19.0/#{post.user.ig_id}/media?image_url=#{post.photos.first.key}&caption=#{post.gpt_creation.description}&access_token=#{post.user.token}")
+    response = request.post("https://graph.facebook.com/v19.0/#{post.user.ig_page}/media?image_url=#{post.photos.first.key}&caption=#{post.gpt_creation.description}&access_token=#{post.user.token}")
     data = JSON.parse(response.body)
     return data['id']
   end
@@ -32,7 +32,7 @@ class FbApiService
   # publier le post qui a ete créé
   def publish(post, container)
     request = faraday_fb
-    response = request.post("https://graph.facebook.com/v19.0/#{post.user.ig_id}/media_publish?creation_id=#{container}&access_token=#{post.user.token}")
+    response = request.post("https://graph.facebook.com/v19.0/#{post.user.ig_page}/media_publish?creation_id=#{container}&access_token=#{post.user.token}")
   end
 
 
