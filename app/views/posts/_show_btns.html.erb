@@ -5,6 +5,8 @@
   </div>
 
   <div class="btn-publier">
-    <%= link_to "Publier", publish_post_path(post), method: :patch, class:"button-instagram-show" %>
+    <%= form_for(post, url: publish_post_path(post), method: :patch) do |f| %>
+      <%= f.submit "Publier", class: "button-instagram-show" %>
+    <% end %>
   </div>
 </div>
