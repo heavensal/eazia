@@ -35,6 +35,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def publish
+    @post = Post.find(params[:id])
+    fb_api_service = AiApiService.new(@post.user)
+    fb_api_service.publish(@post, fb_api_service.new_container(@post))
+    @post.update!(status: "published")
+    redirect_to new_post
+  end
+
   private
 
   def new_post_params

@@ -6,7 +6,7 @@ class Dalle3Image < ApplicationRecord
   def add_photo
     require "open-uri"
     file = URI.open(link)
-    post.photos.attach(io: file, filename: "#{prompt.chars.sample(10).join}.png", content_type: "image/png")
+    post.photos.attach(io: file, filename: "#{prompt.chars.sample(10).join}.jpeg", content_type: "image/jpeg")
     post.save!
   end
 end

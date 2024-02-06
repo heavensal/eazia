@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   put '/users/update_token', to: 'users#update_token'
 
   resources :posts do
+    member do
+      patch :publish
+    end
     resource :gpt_creation, only: [], controller: 'gpt_creations' do
       get :edit, on: :member
       patch :update, on: :member

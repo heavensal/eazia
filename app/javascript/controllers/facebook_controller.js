@@ -49,7 +49,6 @@ export default class extends Controller {
     FB.api('/me', {fields: 'name'}, (response) => {
       console.log('personne connectée: ' + response.name);
       let token = FB.getAuthResponse().accessToken;
-      this.userTarget.innerHTML = token;
       this.updateUser(token)
     });
   }
