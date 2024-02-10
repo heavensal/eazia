@@ -7,7 +7,7 @@ class AiApiService
   # Réaliser Mission 1: Générer une description insta et des photos
   def work_1(post)
     prompt(post)
-    run(post)
+    status_run(post, run(post))
     answer(post)
     post.save!
   end
@@ -41,13 +41,26 @@ class AiApiService
     end
   end
 
+  # Logique pour exécuter le thread, renvoyer le id du run pour check son status
   def run(post)
-    # Logique pour exécuter le thread
     request = faraday_ai
-    request.post("https://api.openai.com/v1/threads/#{post.user.thread}/runs") do |r|
+    response = request.post("https://api.openai.com/v1/threads/#{post.user.thread}/runs") do |r|
       r.body = {'assistant_id'=> ENV['GPT_ASSISTANT']}.to_json
     end
-    sleep(20)
+    data = JSON.parse(response.body)
+    return data['id']
+  end
+
+  # Boucle pour vérifier si le run est fini
+  def status_run(post, run)
+    status = ''
+    request = faraday_ai
+    begin
+      response = request.get("https://api.openai.com/v1/threads/#{post.user.thread}/runs/#{run}")
+      data = JSON.parse(response.body)
+      status = data['status']
+      sleep(1)
+    end while status != 'completed'
   end
 
   def answer(post)

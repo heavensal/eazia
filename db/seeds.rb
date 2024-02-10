@@ -27,28 +27,28 @@
 
 # puts "Thread ID: #{thread_id}"
 
-kazuya = User.last
-p kazuya
-puts kazuya.thread
+# kazuya = User.last
+# p kazuya
+# puts kazuya.thread
 
-# liste des messages
+# # liste des messages
 
-disp_message = Faraday.new(
-                url: "https://api.openai.com/v1/threads/#{kazuya.thread}/messages",
-                headers: {'Content-Type' => 'application/json',
-                          'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
-                          'OpenAI-Beta' => 'assistants=v1'}
-              )
-response = disp_message.get
-body = JSON.parse(response.body)
-data = body['data']
-data.each do |msg|
-  puts " "
-  puts "auteur -> " + msg['role']
-  puts "said -> " + msg['content'][0]['text']['value']
-  puts " "
-  puts " "
-end
+# disp_message = Faraday.new(
+#                 url: "https://api.openai.com/v1/threads/#{kazuya.thread}/messages",
+#                 headers: {'Content-Type' => 'application/json',
+#                           'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
+#                           'OpenAI-Beta' => 'assistants=v1'}
+#               )
+# response = disp_message.get
+# body = JSON.parse(response.body)
+# data = body['data']
+# data.each do |msg|
+#   puts " "
+#   puts "auteur -> " + msg['role']
+#   puts "said -> " + msg['content'][0]['text']['value']
+#   puts " "
+#   puts " "
+# end
 
 # request = Faraday.new(
 #       url: "https://api.openai.com/v1/threads/#{leila.thread}/messages",
@@ -89,3 +89,11 @@ end
 # img = Dalle3Image.last
 # puts img.link
 # puts img.prompt
+request = Faraday.new(
+              url: "https://api.openai.com/v1/threads/thread_nDueinYDA8gVf0dAca1SuH16/runs/run_Qn1XKPQt6HYT5vdmuTqjmPIc",
+              headers: {'Content-Type' => 'application/json',
+                        'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
+                        'OpenAI-Beta' => 'assistants=v1'})
+response = request.get
+data = JSON.parse(response.body)
+puts data['status']
