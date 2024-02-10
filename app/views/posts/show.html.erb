@@ -11,14 +11,7 @@
 
     <%# <div class="prompt-insta"><%= @post.prompt</div>  %>
     <div class="gpt">
-      <%= turbo_frame_tag @gpt_creation do %>
-        <div class="description">
-          <%= @description if @description %>
-        </div>
-        <div class="modifier">
-          <%= link_to 'Modifier', edit_post_gpt_creation_path(@post), class:"button-modifier" %>
-        </div>
-      <% end %>
+      <%= render 'gpt_creations/recreate', gpt_creation: @gpt_creation %>
 
         <div class="recreer" >
               <!-- # BUTTON RECREER LA DESCRIPTION PAR CHATGPT -->

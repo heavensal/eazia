@@ -1,0 +1,3 @@
+<%= turbo_stream.replace @gpt_creation do %>
+  <%= render "gpt_creations/recreate", gpt_creation: @gpt_creation %>
+<% end %>

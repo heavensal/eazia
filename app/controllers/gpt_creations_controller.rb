@@ -19,7 +19,12 @@ class GptCreationsController < ApplicationController
     @gpt_creation = @post.gpt_creation
     ai_api_service = AiApiService.new(@post.user)
     ai_api_service.work_2(@post)
-    redirect_to post_path(@post)
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: turbo_stream.replace(@gpt_creation, partial: "gpt_creations/recreate", locals: { gpt_creation: @gpt_creation })
+      end
+      format.html { redirect_to post_path(@post) } # Fallback pour les navigateurs sans prise en charge de Turbo
+    end
   end
 
   private

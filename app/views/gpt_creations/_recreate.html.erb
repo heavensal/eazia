@@ -1,0 +1,8 @@
+<%= turbo_frame_tag gpt_creation do %>
+  <div class="description">
+    <%= gpt_creation.description if gpt_creation.description %>
+  </div>
+  <div class="modifier">
+    <%= link_to 'Modifier', edit_post_gpt_creation_path(gpt_creation.post), class: "button-modifier" %>
+  </div>
+<% end %>

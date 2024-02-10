@@ -15,7 +15,7 @@ class AiApiService
   # Réaliser la mission 2: Récréer la description chatgpt
   def work_2(post)
     recreate(post)
-    run(post)
+    status_run(post, run(post))
     answer_2(post)
     post.gpt_creation.save!
   end
