@@ -98,7 +98,7 @@
   font-weight: bold;
   padding:8px 24px;
   text-decoration:none;
-  width: 50%;
+  width: 100%;
   text-align: center;
 
 }
@@ -202,8 +202,7 @@
     position: relative;
     font-size: 16px;
     padding: 0;
-    height: 50%;
-    width: 35%;
+    width: 50%;
   }
 
   .button-annexe-draft{
@@ -238,6 +237,7 @@
   }
 
   .logout-button {
+    width: 100%;
     position: relative;
     font-size: 16px;
     padding: 0;
