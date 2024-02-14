@@ -1,20 +1,16 @@
 <div class="show" data-controller="display">
 
   <div class="creation">
-    <div class="creation-images">
-          <% if @post.photos.attached? %> <!-- Vérifie si le post a des photos attachées -->
-            <% @post.photos.each do |img| %>
-              <%= cl_image_tag img.key, loading: "lazy" %>
-            <% end %>
-          <% end %>
-    </div>
 
-    <%# <div class="prompt-insta"><%= @post.prompt</div>  %>
+<%= turbo_stream_from "post_#{@post.id}" %>
+      <div class="creation-images" id="photos">
+
+      </div>
+
     <div class="gpt">
       <%= render 'gpt_creations/recreate', gpt_creation: @gpt_creation %>
 
         <div class="recreer" >
-              <!-- # BUTTON RECREER LA DESCRIPTION PAR CHATGPT -->
           <%= form_for([@post, @gpt_creation], url: recreate_post_gpt_creation_path(@post), method: :patch) do |f| %>
           <%= f.submit "Recréer ✔️",  class:"button-recreer"%>
           <% end %>
