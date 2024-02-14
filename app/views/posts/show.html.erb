@@ -2,7 +2,7 @@
 
   <div class="creation">
 
-<%= turbo_stream_from "post_#{@post.id}" %>
+<%= turbo_stream_from @post %>
       <div class="creation-images" id="photos">
         <% @post.photos.each do |photo| %>
           <%= cl_image_tag photo.key, loading: "lazy" %>

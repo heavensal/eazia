@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  broadcasts_refreshes
   belongs_to :user
   has_one :gpt_creation, dependent: :destroy
   has_many :dalle3_images, dependent: :destroy
@@ -9,17 +10,17 @@ class Post < ApplicationRecord
   validates :pictures_generated, inclusion: { in: 0..5 }
 
   def broadcast_photos
+    # photos = render_to_string(partial: "posts/photos", locals: {post: self}).to_s
     broadcast_update_to(
-      "post_#{self.id}",
+      self,
       target: "photos",
-      partial: "posts/photos",
-      locals: { post: self }
-    )
+      partial: "posts/photos", locals: {post: self}
+      )
+    # carousel = render_to_string(partial: "posts/insta-photos", locals: {post: self}).to_s
     broadcast_update_to(
-      "post_#{self.id}",
+      self,
       target: "insta-photos",
-      partial: "posts/insta-photos",
-      locals: { images: self.photos }
+      partial: "posts/insta-photos", locals: {post: self}
     )
   end
 end
