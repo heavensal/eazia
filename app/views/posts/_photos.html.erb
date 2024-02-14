@@ -1,6 +1,3 @@
-
-  <div class="creation-images" id="photos">
-      <%= post.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, loading: "lazy" %>
-      <% end %>
-  </div>
+<% post.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, loading: "lazy" %>
+<% end %>

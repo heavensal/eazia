@@ -1,0 +1,20 @@
+<div class="carousel-indicators">
+  <% if images.length > 1 %>
+    <% images.each_with_index do |img, i| %>
+      <div data-bs-slide-to="<%=i%>" class="<%= i== 0 ? "active" : "" %> rounded-circle card-indicator"></div>
+        <%# <%= cl_image_tag img.key, width: 120, height: 120 %>
+    <%end%>
+  <%end%>
+</div>
+
+<div class="carousel-inner" data-controller="show-imgs" id="insta-photos">
+  <% images.each_with_index do |img, i| %>
+    <div class="carousel-item <%= i == 0 ? "active" : "" %>">
+      <%= cl_image_tag img.key , class:"crop", data: { show_imgs_target: "image", src: img.key } %>
+    </div>
+  <% end %>
+  </div>
+
+<% if images.length > 1 %>
+  <%= render "layouts/instagram/btn_carousel_show" %>
+<% end %>
