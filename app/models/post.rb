@@ -10,17 +10,27 @@ class Post < ApplicationRecord
   validates :pictures_generated, inclusion: { in: 0..5 }
 
   def broadcast_photos
-    # photos = render_to_string(partial: "posts/photos", locals: {post: self}).to_s
-    broadcast_update_to(
-      self,
-      target: "photos",
-      partial: "posts/photos", locals: {post: self}
-      )
-    # carousel = render_to_string(partial: "posts/insta-photos", locals: {post: self}).to_s
-    broadcast_update_to(
-      self,
-      target: "insta-photos",
-      partial: "posts/insta-photos", locals: {post: self}
+    html_content = ApplicationController.renderer.render(
+      partial: "posts/photos",
+      locals: { post: self }
     )
+
+    # Diffuse le contenu HTML généré au canal approprié
+    PostChannel.broadcast_to(self, html_content)
   end
+
+  # def broadcast_photos
+  #   # photos = render_to_string(partial: "posts/photos", locals: {post: self}).to_s
+  #   broadcast_update_to(
+  #     self,
+  #     target: "photos",
+  #     partial: "posts/photos", locals: {post: self}
+  #     )
+  #   # carousel = render_to_string(partial: "posts/insta-photos", locals: {post: self}).to_s
+  #   broadcast_update_to(
+  #     self,
+  #     target: "insta-photos",
+  #     partial: "posts/insta-photos", locals: {post: self}
+  #   )
+  # end
 end

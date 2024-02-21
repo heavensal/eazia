@@ -1,9 +1,8 @@
-<div class="show" data-controller="display">
+<div class="show" data-controller="post-subscription" data-post-subscription-post-id-value="<%= @post.id %>">
 
   <div class="creation">
 
-<%= turbo_stream_from @post %>
-      <div class="creation-images" id="photos">
+      <div class="creation-images" id="photos" data-post-subscription-target="photos">
         <% @post.photos.each do |photo| %>
           <%= cl_image_tag photo.key, loading: "lazy" %>
         <% end %>

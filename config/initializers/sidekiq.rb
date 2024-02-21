@@ -1,5 +1,6 @@
 # config/initializers/redis.rb
 url = ENV["REDISCLOUD_URL"]
+Sidekiq.strict_args!(false)
 
 if url
   Sidekiq.configure_server do |config|
