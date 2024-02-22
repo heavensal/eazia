@@ -9,24 +9,25 @@
 
   <div class="insta-show">
     <div id="myCarousel"  class="carousel slide" data-ride="carousel">
-       <div class="carousel-indicators">
-        <% if @images.length > 1 %>
-        <% @images.each_with_index do |img, i| %>
-          <div data-bs-slide-to="<%=i%>" class="<%= i== 0 ? "active" : "" %> rounded-circle card-indicator"></div>
-            <%# <%= cl_image_tag img.key, width: 120, height: 120 %>
-        <%end%>
+
+      <div class="carousel-indicators">
+        <% if images.length > 1 %>
+          <% images.each_with_index do |img, i| %>
+            <div data-bs-slide-to="<%=i%>" class="<%= i== 0 ? "active" : "" %> rounded-circle card-indicator">
+            </div>
+          <%end%>
         <%end%>
       </div>
 
-       <div class="carousel-inner" data-controller="show-imgs" id="insta-photos">
-        <% @images.each_with_index do |img, i| %>
+      <div class="carousel-inner" data-controller="show-imgs" id="insta-photos">
+        <% images.each_with_index do |img, i| %>
           <div class="carousel-item <%= i == 0 ? "active" : "" %>">
             <%= cl_image_tag img.key , class:"crop", data: { show_imgs_target: "image", src: img.key } %>
           </div>
         <% end %>
-       </div>
+      </div>
 
-      <% if @images.length > 1 %>
+      <% if images.length > 1 %>
         <%= render "layouts/instagram/btn_carousel_show" %>
       <% end %>
 
@@ -39,8 +40,8 @@
     <b> <%= current_user.instagram %> </b>
       <span data-action="click->toggledescription#fireplus">
         <span data-toggledescription-target="description" style="cursor:pointer;">
-          <% if @description.size.to_i > 64 %>
-            <%= @description[0..64] %>
+          <% if description.size.to_i > 64 %>
+            <%= description[0..64] %>
             <span style="color: grey;">...plus</span>
           <% else %>
           <%= description %>

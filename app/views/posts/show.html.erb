@@ -2,14 +2,12 @@
 
   <div class="creation">
     <%= turbo_stream_from "post_#{@post.id}" %>
-      <%= turbo_frame_tag "photos" do %>
-      <!-- Contenu initial qui sera remplacé ou rafraîchi par le broadcast -->
-      <% end %>
-      <%# <div class="creation-images" id="photos" data-post-subscription-target="photos">
-        <% @post.photos.each do |photo| %>
-          <%# <%= cl_image_tag photo.key, loading: "lazy" %>
-        <%# <% end %>
-      <%# </div> %>
+
+     <div class="creation-images" id="photos">
+        <% @post.photos.each_with_index do |photo, i| %>
+          <%= cl_image_tag photo.key, loading: "lazy", id: "photo_#{i}" %>
+        <% end %>
+      </div>
 
     <div class="gpt">
       <%= render 'gpt_creations/recreate', gpt_creation: @gpt_creation %>
@@ -24,8 +22,15 @@
   </div>
 
   <div class='view-insta decalage' data-display-target="view">
-    <div class="instagram"><%= render "insta_show", post: @post, description: @description %></div>
-    <div><%= render "show_btns", post: @post %></div>
+
+    <div class="instagram" id="instagram">
+      <%= render "insta_show", post: @post, description: @description, images: @images %>
+    </div>
+
+    <div>
+      <%= render "show_btns", post: @post %>
+    </div>
+
   </div>
 
 </div>
