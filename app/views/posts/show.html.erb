@@ -1,12 +1,15 @@
 <div class="show" data-controller="post-subscription" data-post-subscription-post-id-value="<%= @post.id %>">
 
   <div class="creation">
-
-      <div class="creation-images" id="photos" data-post-subscription-target="photos">
+    <%= turbo_stream_from "post_#{@post.id}" %>
+      <%= turbo_frame_tag "photos" do %>
+      <!-- Contenu initial qui sera remplacé ou rafraîchi par le broadcast -->
+      <% end %>
+      <%# <div class="creation-images" id="photos" data-post-subscription-target="photos">
         <% @post.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, loading: "lazy" %>
-        <% end %>
-      </div>
+          <%# <%= cl_image_tag photo.key, loading: "lazy" %>
+        <%# <% end %>
+      <%# </div> %>
 
     <div class="gpt">
       <%= render 'gpt_creations/recreate', gpt_creation: @gpt_creation %>
