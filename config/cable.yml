@@ -7,6 +7,6 @@ test:
   adapter: test
 
 production:
-  adapter: redis
+  adapter: sidekiq
   url: <%= ENV.fetch("REDISCLOUD_URL") { "redis://localhost:6379/1" } %>
   channel_prefix: eazia_production
