@@ -1,4 +1,5 @@
 class Dalle3Image < ApplicationRecord
+  require 'open-uri'
   belongs_to :post
 
   after_create :add_photo
