@@ -6,13 +6,18 @@ class PhotoJob < ApplicationJob
     ai_api_service = AiApiService.new(post.user)
     post.pictures_generated.times do
       photo = ai_api_service.image(post)
-      Turbo::StreamsChannel.broadcast_append_to "post_#{post_id}",
-                                                  target: "photos",
-                                                  partial: "posts/photo",
-                                                  locals: { photo: post.photos.last }
-      Turbo::StreamsChannel.broadcast_update_to "post_#{post_id}", target: "myCarousel",
-                                                  partial: "posts/insta-photos",
-                                                  locals: { images: post.photos }
+      broadcast_photos(post)
     end
+  end
+
+  def broadcast_photos(post)
+    Turbo::StreamsChannel.broadcast_append_to "post_#{post.id}",
+        target: "photos",
+        partial: "posts/photo",
+        locals: { photo: post.photos.last }
+    Turbo::StreamsChannel.broadcast_update_to "post_#{post.id}",
+        target: "myCarousel",
+        partial: "posts/insta-photos",
+        locals: { images: post.photos }
   end
 end

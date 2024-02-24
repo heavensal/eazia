@@ -4,16 +4,12 @@ class Dalle3Image < ApplicationRecord
   after_create :add_photo
 
   def add_photo
-    require "open-uri"
-    file = URI.open(link)
-    post.photos.attach(io: file, filename: "#{prompt.chars.sample(10).join}.jpeg", content_type: "image/jpeg")
-    post.save!
-    #   Turbo::StreamsChannel.broadcast_append_to(
-    #   post,
-    #   target: "photos",
-    #   partial: "posts/photo",
-    #   locals: { photo: post.photos.last }
-    #   )
-    # end
+    begin
+      file = URI.open(link)
+      filename = "image_#{Time.now.to_i}.jpeg"
+      post.photos.attach(io: file, filename: filename, content_type: "image/jpeg")
+    rescue => e
+      Rails.logger.error "Échec lors de l'opération: #{e.message}"
+    end
   end
 end
