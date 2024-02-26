@@ -10,7 +10,7 @@ class Dalle3Image < ApplicationRecord
       filename = "image_#{Time.now.to_i}.jpeg"
       post.photos.attach(io: file, filename: filename, content_type: "image/jpeg")
     rescue => e
-      Rails.logger.error "Échec lors de l'opération: #{e.message}"
+      Rails.logger.error "ECHEC LORS DE L'OPERATION: #{e.message}"
     end
   end
 end
