@@ -1,7 +1,7 @@
 <nav  data-menu-target="navbar">
     <% if current_user %>
    <section id="navigation" >
-    <input type="checkbox" id="menu-toggle" hidden data-action="click->menu#toggle">
+    <input type="checkbox" id="menu-toggle" hidden data-action="click->menu#toggleMenu">
       <label for="menu-toggle" class="menu-navbar" >☰</label>
         <ul class='sub-menus' data-menu-target="menu">
           <li class="text-start"><%= link_to "Nouveau", new_post_path %></li>
