@@ -14,7 +14,7 @@ class PhotoJob < ApplicationJob
     Turbo::StreamsChannel.broadcast_append_to "post_#{post.id}",
         target: "photos",
         partial: "posts/photo",
-        locals: { photo: post.photos.last }
+        locals: { photo: post.photos.last, post: post }
     Turbo::StreamsChannel.broadcast_update_to "post_#{post.id}",
         target: "myCarousel",
         partial: "posts/insta-photos",

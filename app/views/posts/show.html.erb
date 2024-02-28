@@ -1,5 +1,7 @@
 <div class="show">
 
+  <%= turbo_stream_from "post_#{@post.id}" %>
+
   <div class="creation">
 
      <div class="creation-images" id="photos">
