@@ -13,7 +13,9 @@ Rails.application.routes.draw do
       patch :update, on: :member
       patch :recreate, on: :member
     end
-    resources :photos, only: [:destroy]
+    resources :photos, only: [:create, :destroy] do
+      post :load_my_photo, on: :collection
+    end
   end
   get '/drafts', to: 'posts#drafts', as: "drafts"
 

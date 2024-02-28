@@ -5,9 +5,11 @@
      <div class="creation-images" id="photos">
         <% @post.photos.each_with_index do |photo, i| %>
           <%= cl_image_tag photo.key, loading: "lazy", id: "photo_#{i}", class: "photo_#{photo.id}" %>
-          <%= link_to "❌", post_photo_path(@post, photo), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+          <%= link_to "❌", post_photo_path(@post, photo), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer la photo ?"} %>
         <% end %>
       </div>
+
+
 
     <div class="gpt">
       <%= render 'gpt_creations/recreate', gpt_creation: @gpt_creation %>
@@ -31,6 +33,31 @@
       <%= render "show_btns", post: @post %>
     </div>
 
+    <%= link_to "Supprimer le brouillon", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?"} %>
+
   </div>
 
 </div>
+
+      <%= form_with model: @post, url: post_photos_path(@post), method: :post, local: true do |form| %>
+          <div class="actions">
+            <%= form.submit "Générer une nouvelle photo"%>
+          </div>
+        </div>
+      <% end %>
+
+
+
+      <%= form_with model: @post, url: load_my_photo_post_photos_path(@post), method: :post, local: true do |form| %>
+        <div class="images">
+          <div class="file-upload-wrapper" data-controller="file-upload">
+            <%= form.label :photos, "Charger une photo", class: "custom-file-upload" %>
+            <%= form.file_field :photos, multiple: true, direct_upload: true, data: { action: "change->file-upload#updateFileName", file_upload_target: "source" } %>
+            <span data-file-upload-target="fileName" class="file-name"></span>
+          </div>
+
+          <div class="actions">
+            <%= form.submit "charger les photos"%>
+          </div>
+        </div>
+      <% end %>

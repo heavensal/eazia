@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   def drafts
     @posts = Post.includes(:gpt_creation).where(user: current_user, status: "draft").order(created_at: :desc).with_attached_photos
   end
@@ -24,23 +25,6 @@ class PostsController < ApplicationController
     @description = @post.gpt_creation.description
   end
 
-  def delete_photo
-    @photo = ActiveStorage::Attachment.find(params[:photo_id])
-    @photo.purge
-    redirect_to :see_other
-  end
-
-  def update
-    @post = Post.find(params[:id])
-    new_description = params[:post][:description]
-    @post.description = new_description
-    if @post.save
-      redirect_to post_path(@post)
-    else
-      render 'posts/show', status: :unprocessable_entity
-    end
-  end
-
   def publish
     @post = Post.find(params[:id])
     fb_api_service = FbApiService.new(@post.user)
@@ -48,6 +32,12 @@ class PostsController < ApplicationController
     fb_api_service.publish(@post, fb_api_service.new_container(@post))
     @post.update!(status: "published")
     redirect_to new_post_path
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to drafts_path, status: :see_other
   end
 
   private

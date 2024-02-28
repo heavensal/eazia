@@ -9,13 +9,6 @@
    <% @posts.each do |post| %>
    <%= link_to post_path(post) do %>
       <div class="insta-show-draft">
-        <div class="topbar">
-          <div>
-            <%= image_tag "photo_alice.jpeg", class:"icon" %>
-            <b><%= current_user.instagram %></b>
-          </div>
-          <div><%= render "layouts/instagram/threepoints" %></div>
-        </div>
 
         <div id="myDraftCarousel<%= post.id %>" class="carousel slide" data-ride="carousel">
           <% if post.photos && post.photos.length > 1 %>
@@ -44,7 +37,6 @@
           <%end%>
         </div>
 
-        <%= render "layouts/instagram/interaction_btn" %>
         <div  class="insta-draft-description"data-controller="toggledescription">
           <b> <%= current_user.instagram %> </b>
             <%# <span data-action="click->toggledescription#fireplus"> %>
