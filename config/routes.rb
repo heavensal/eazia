@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   root 'posts#new'
 
   devise_for :users
-  put '/users/update_token', to: 'users#update_token'
 
   resources :posts do
     member do
@@ -14,6 +13,7 @@ Rails.application.routes.draw do
       patch :update, on: :member
       patch :recreate, on: :member
     end
+    resources :photos, only: [:destroy]
   end
   get '/drafts', to: 'posts#drafts', as: "drafts"
 

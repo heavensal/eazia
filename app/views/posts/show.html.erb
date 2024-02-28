@@ -1,11 +1,11 @@
 <div class="show">
 
   <div class="creation">
-    <%= turbo_stream_from "post_#{@post.id}" %>
 
      <div class="creation-images" id="photos">
         <% @post.photos.each_with_index do |photo, i| %>
-          <%= cl_image_tag photo.key, loading: "lazy", id: "photo_#{i}" %>
+          <%= cl_image_tag photo.key, loading: "lazy", id: "photo_#{i}", class: "photo_#{photo.id}" %>
+          <%= link_to "❌", post_photo_path(@post, photo), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
         <% end %>
       </div>
 

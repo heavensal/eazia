@@ -24,6 +24,12 @@ class PostsController < ApplicationController
     @description = @post.gpt_creation.description
   end
 
+  def delete_photo
+    @photo = ActiveStorage::Attachment.find(params[:photo_id])
+    @photo.purge
+    redirect_to :see_other
+  end
+
   def update
     @post = Post.find(params[:id])
     new_description = params[:post][:description]

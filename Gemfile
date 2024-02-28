@@ -56,6 +56,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem 'dotenv-rails'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -64,16 +65,14 @@ group :development do
   # gem "spring"
 end
 
-gem "devise", "~> 4.9"
+gem 'devise'
 gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection'
 
 
-
 gem 'faraday'
-gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 gem "cloudinary"
-gem "bootstrap", "~> 5.2"
+gem "bootstrap"
 gem 'sidekiq', '~> 7.2', '>= 7.2.1'
 gem 'sidekiq-failures', '~> 1.0', '>= 1.0.4'
 gem 'redis-client', '~> 0.19.1'
