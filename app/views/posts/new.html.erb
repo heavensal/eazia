@@ -12,12 +12,14 @@
       </div>
     </div>
 
-
-    <%= form_for(@post) do |f| %>
+  <div  class="form-new" data-controller="autorisation-form">
+    <%= form_for(@post, data: { action: "submit->autorisation-form#validateForm" }) do |f| %>
 
       <div class="prompt">
-        <%= f.label :prompt,  "Saisissez en quelques mots le sujet de votre prochain post : "%>
-        <%= f.text_area :prompt, wrap: "soft" %>
+        <%= f.label :prompt,  "Saisissez en quelques mots le sujet de votre prochain post : " %>
+        <%= f.text_area :prompt, wrap: "soft", data: {action:"blur->autorisation-form#validatePrompt", autorisation_form_target:"prompt"} %>
+        <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" style="font-size: 14px;">la description est obligatoire</p>
+
       </div>
 
       <div class="images">
@@ -36,10 +38,10 @@
       </div>
 
       <div class="actions">
-          <%= f.submit "Générer mon post", class: "btn-valider", "data-action":"click->loader#fire" %>
+          <%= f.submit "Générer mon post", class: "btn-valider", data: { action: "submit->autorisation-form#validateForm" }, "data-action":"click->loader#fire" %>
       </div>
     <% end %>
-
+</div>
   </div>
 
   <div class=" d-none loader" data-loader-target="chargement" >
