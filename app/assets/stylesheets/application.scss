@@ -111,35 +111,54 @@ body.sub-menus-open .content {
   transition: transform 0.3s ease;
 }
 
+// h1{
+// color: var(--Secondary-Black-black-500, #000);
+// /* Titre/Medium/32 */
+// font-family: Inter;
+// font-size: 32px;
+// font-style: normal;
+// font-weight: 500;
+// line-height: 36px; /* 112.5% */
+// }
 
-h1, h2, h3{
-  font-family: 'Times New Roman', Times, sans-serif;
-  text-align: center;
-  margin: 1rem ;
-}
-h1{
-  font-size: 50px;
+// p{
+// color: var(--Secondary-Black-black-200, #8A8A8A);
+// /* Titre/Regular/h4 */
+// font-family: Inter;
+// font-size: 16px;
+// font-style: normal;
+// font-weight: 400;
+// line-height: 20px; /* 125% */
+// }
 
-  @media (max-width: 768px){
-    font-size: 35px;
-  }
+// h2, h3{
+//   font-family: 'Times New Roman', Times, sans-serif;
+//   text-align: center;
+//   margin: 1rem ;
+// }
+// h1{
+//   font-size: 50px;
 
-  @media (max-width: 480px){
-    font-size: 35px;
-  }
-}
+//   @media (max-width: 768px){
+//     font-size: 35px;
+//   }
 
-h3{
-  font-size: 18px;
-}
+//   @media (max-width: 480px){
+//     font-size: 35px;
+//   }
+// }
+
+// h3{
+//   font-size: 18px;
+// }
 
 html {
   scroll-behavior: smooth;
 }
 
-p{
-  margin-bottom: 0;
-}
+// p{
+//   margin-bottom: 0;
+// }
 
 
 * {
@@ -200,3 +219,135 @@ a {
 
 //   }
 // }
+
+
+:root {
+  --secondaryblackblack-50: rgba(230, 230, 230, 1);
+  --secondaryblackblack-100: rgba(176, 176, 176, 1);
+  --secondaryblackblack-200: rgba(138, 138, 138, 1);
+  --secondaryblackblack-300: rgba(84, 84, 84, 1);
+  --secondaryblackblack-400: rgba(51, 51, 51, 1);
+  --secondaryblackblack-500: rgba(0, 0, 0, 1);
+  --secondarywhitewhite-50: rgba(255, 255, 255, 1);
+  --secondarywhitewhite-100: rgba(252, 252, 252, 1);
+  --secondarywhitewhite-200: rgba(245, 245, 245, 1);
+  --secondarywhitewhite-300: rgba(240, 240, 240, 1);
+  --secondarywhitewhite-400: rgba(217, 217, 217, 1);
+  --systemvertg-50: rgba(0, 187, 0, 1);
+  --systemvertg-75: rgba(152, 204, 152, 1);
+  --systemvertg-100: rgba(222, 255, 222, 1);
+  --systemrougeg-50: rgba(255, 86, 86, 1);
+  --systemrougeg-75: rgba(255, 179, 179, 1);
+  --systemrougeg-100: rgba(255, 224, 224, 1);
+  --systemorangeg-50: rgba(255, 192, 29, 1);
+  --systemorangeg-75: rgba(255, 228, 159, 1);
+  --systemorangeg-100: rgba(255, 244, 216, 1);
+  --titre-medium-32-font-family: "Inter", Helvetica;
+  --titre-medium-32-font-weight: 500;
+  --titre-medium-32-font-size: 32px;
+  --titre-medium-32-letter-spacing: 0px;
+  --titre-medium-32-line-height: 36px;
+  --titre-medium-32-font-style: normal;
+  --titre-medium-h1-font-family: "Inter", Helvetica;
+  --titre-medium-h1-font-weight: 500;
+  --titre-medium-h1-font-size: 29px;
+  --titre-medium-h1-letter-spacing: 0px;
+  --titre-medium-h1-line-height: 36px;
+  --titre-medium-h1-font-style: normal;
+  --titre-medium-h2-font-family: "Inter", Helvetica;
+  --titre-medium-h2-font-weight: 500;
+  --titre-medium-h2-font-size: 23px;
+  --titre-medium-h2-letter-spacing: 0px;
+  --titre-medium-h2-line-height: 28px;
+  --titre-medium-h2-font-style: normal;
+  --titre-medium-h3-font-family: "Inter", Helvetica;
+  --titre-medium-h3-font-weight: 500;
+  --titre-medium-h3-font-size: 18px;
+  --titre-medium-h3-letter-spacing: 0px;
+  --titre-medium-h3-line-height: 24px;
+  --titre-medium-h3-font-style: normal;
+  --titre-medium-h4-font-family: "Inter", Helvetica;
+  --titre-medium-h4-font-weight: 500;
+  --titre-medium-h4-font-size: 16px;
+  --titre-medium-h4-letter-spacing: 0px;
+  --titre-medium-h4-line-height: 20px;
+  --titre-medium-h4-font-style: normal;
+  --titre-medium-h5-font-family: "Inter", Helvetica;
+  --titre-medium-h5-font-weight: 500;
+  --titre-medium-h5-font-size: 14px;
+  --titre-medium-h5-letter-spacing: 0px;
+  --titre-medium-h5-line-height: 16px;
+  --titre-medium-h5-font-style: normal;
+  --titre-medium-h6-font-family: "Inter", Helvetica;
+  --titre-medium-h6-font-weight: 500;
+  --titre-medium-h6-font-size: 13px;
+  --titre-medium-h6-letter-spacing: 0px;
+  --titre-medium-h6-line-height: 16px;
+  --titre-medium-h6-font-style: normal;
+  --titre-regular-32-font-family: "Inter", Helvetica;
+  --titre-regular-32-font-weight: 400;
+  --titre-regular-32-font-size: 32px;
+  --titre-regular-32-letter-spacing: 0px;
+  --titre-regular-32-line-height: 36px;
+  --titre-regular-32-font-style: normal;
+  --titre-regular-h1-font-family: "Inter", Helvetica;
+  --titre-regular-h1-font-weight: 400;
+  --titre-regular-h1-font-size: 29px;
+  --titre-regular-h1-letter-spacing: 0px;
+  --titre-regular-h1-line-height: 36px;
+  --titre-regular-h1-font-style: normal;
+  --titre-regular-h2-font-family: "Inter", Helvetica;
+  --titre-regular-h2-font-weight: 400;
+  --titre-regular-h2-font-size: 23px;
+  --titre-regular-h2-letter-spacing: 0px;
+  --titre-regular-h2-line-height: 28px;
+  --titre-regular-h2-font-style: normal;
+  --titre-regular-h3-font-family: "Inter", Helvetica;
+  --titre-regular-h3-font-weight: 400;
+  --titre-regular-h3-font-size: 18px;
+  --titre-regular-h3-letter-spacing: 0px;
+  --titre-regular-h3-line-height: 24px;
+  --titre-regular-h3-font-style: normal;
+  --titre-regular-h4-font-family: "Inter", Helvetica;
+  --titre-regular-h4-font-weight: 400;
+  --titre-regular-h4-font-size: 16px;
+  --titre-regular-h4-letter-spacing: 0px;
+  --titre-regular-h4-line-height: 20px;
+  --titre-regular-h4-font-style: normal;
+  --titre-regular-h5-font-family: "Inter", Helvetica;
+  --titre-regular-h5-font-weight: 400;
+  --titre-regular-h5-font-size: 14px;
+  --titre-regular-h5-letter-spacing: 0px;
+  --titre-regular-h5-line-height: 16px;
+  --titre-regular-h5-font-style: normal;
+  --titre-regular-h6-font-family: "Inter", Helvetica;
+  --titre-regular-h6-font-weight: 400;
+  --titre-regular-h6-font-size: 13px;
+  --titre-regular-h6-letter-spacing: 0px;
+  --titre-regular-h6-line-height: 16px;
+  --titre-regular-h6-font-style: normal;
+  --petit-texte-regular-h1-font-family: "Inter", Helvetica;
+  --petit-texte-regular-h1-font-weight: 400;
+  --petit-texte-regular-h1-font-size: 12px;
+  --petit-texte-regular-h1-letter-spacing: 0px;
+  --petit-texte-regular-h1-line-height: 16px;
+  --petit-texte-regular-h1-font-style: normal;
+  --petit-texte-regular-h2-font-family: "Inter", Helvetica;
+  --petit-texte-regular-h2-font-weight: 400;
+  --petit-texte-regular-h2-font-size: 10px;
+  --petit-texte-regular-h2-letter-spacing: 0px;
+  --petit-texte-regular-h2-line-height: 12px;
+  --petit-texte-regular-h2-font-style: normal;
+  --petit-texte-medium-h1-font-family: "Inter", Helvetica;
+  --petit-texte-medium-h1-font-weight: 500;
+  --petit-texte-medium-h1-font-size: 12px;
+  --petit-texte-medium-h1-letter-spacing: 0px;
+  --petit-texte-medium-h1-line-height: 16px;
+  --petit-texte-medium-h1-font-style: normal;
+  --petit-texte-medium-h2-font-family: "Inter", Helvetica;
+  --petit-texte-medium-h2-font-weight: 500;
+  --petit-texte-medium-h2-font-size: 10px;
+  --petit-texte-medium-h2-letter-spacing: 0px;
+  --petit-texte-medium-h2-line-height: 12px;
+  --petit-texte-medium-h2-font-style: normal;
+}
