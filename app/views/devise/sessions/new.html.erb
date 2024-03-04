@@ -1,38 +1,83 @@
-<div class="form-connect">
-  <h1>Bienvenue !</h1>
-    <h3>Se connecter</h3>
-
-  <div class="form-connexion" data-controller="autorisation-form">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="connexion">
+  <div class="container-login" data-controller="autorisation-form">
+ <%# <div class="toils">
+      <img class="vector" src="img/vector-14.svg" />
+      <img class="img" src="img/vector-16.svg" />
+      <img class="vector-2" src="img/vector-6.svg" />
+      <img class="vector-3" src="img/vector-8.svg" />
+      <img class="vector-4" src="img/vector-15.svg" />
+      <img class="vector-5" src="img/vector-10.svg" />
+      <img class="vector-6" src="img/vector-18.svg" />
+      <img class="vector-7" src="img/vector-9.svg" />
+      <img class="vector-8" src="img/vector-7.svg" />
+      <img class="vector-9" src="img/image.svg" />
+      <img class="vector-10" src="img/vector-5.svg" />
+      <img class="vector-11" src="img/vector-4.svg" />
+      <img class="vector-12" src="img/vector.svg" />
+      <img class="vector-13" src="img/vector-13.svg" />
+      <img class="vector-14" src="img/vector-20.svg" />
+      <img class="vector-15" src="img/vector-12.svg" />
+      <img class="vector-16" src="img/vector-2.svg" />
+      <img class="vector-17" src="img/vector-21.svg" />
+      <img class="vector-18" src="img/vector-11.svg" />
+      <img class="vector-19" src="img/vector-3.svg" />
+      <img class="vector-20" src="img/vector-19.svg" />
+      <img class="vector-21" src="img/vector-17.svg" />
+    </div> %>
+    <%= image_tag("Frame.svg", alt:"logo eazia", class:"logo") %>
+      <div class="text-wrapper">Se connecter</div>
+   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
-    <div class="field">
-      <%= f.label :email %><br>
-      <%= f.email_field :email, autocomplete: "email", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
-      <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[email]" style="font-size: 14px;">l'email est obligatoire</p>
-    </div>
 
-    <div class="field">
-      <%= f.label :password, "Mot de Passe" %><br>
-      <%= f.password_field :password, autocomplete: "current-password", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"}  %>
-      <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[password]" style="font-size: 14px;">le mot de passe est obligatoire</p>
-    </div>
 
-    <% if devise_mapping.rememberable? %>
-      <div class="field-2 ">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me, "Se souvenir de moi" %>
+
+        <div class="formulaire">
+            <%= f.email_field :email, autocomplete: "email", id: "email", class: " div-wrapper property-input", placeholder:"Email", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
+            <p class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[email]" style="font-size: 14px;">L'email est obligatoire</p>
+            <%= f.password_field :password, autocomplete: "current-password", class: "div-wrapper property-input", placeholder:"Mot de Passe", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"}  %>
+            <p class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[password]" style="font-size: 14px;">le mot de passe est obligatoire</p>
+        <div class="mot-de-passe">
+            <div class="lorem-ipsum-wrapper">
+            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+            <div class="mdp"><%= link_to "Mot de passe oublié ?", new_password_path(resource_name) %><br /></div>
+            <% end %>
+            </div>
+        <div>
+          <div><%= f.submit "Connexion", class: "main-bouton text-wrapper-2" %></div>
+          <% end %>
+        </div>
+        </div>
+        </div>
+
+
+
+
+
+
+      <div class="autres-connexions">
+        <div class="titre">
+          <%= image_tag("Line.png", alt:"line", class:"line") %>
+          <div class="text-wrapper-3">ou se connecter avec</div>
+          <%= image_tag("Line.png", alt:"line", class:"line") %>
+        </div>
+        <div class="boutons">
+          <div class="div-2">
+          <%= image_tag("logo_google.png", alt:"logo google", class:"icons-social") %>
+            <div class="text-wrapper-4">Google</div>
+          </div>
+          <div class="div-2">
+          <%= image_tag("logo_fb.png", alt:"logo fb", class:"icons-social") %>
+            <div class="text-wrapper-4">Facebook</div>
+          </div>
+        </div>
       </div>
-    <% end %>
-
-
-    <div class="actions">
-      <%= f.submit "Connexion", class: "btn-connexion" %>
-    </div>
-    <% end %>
-
-  </div>
-
-  <%= render "devise/shared/links" %>
-
+      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+<div class="compte">
+  <p> Vous n'avez pas encore de compte ?  </p>
+  <%= link_to " Créer un compte", pages_inscription_path %>
 </div>
+<% end %>
+    </div>
+    </div>
+    </div>
