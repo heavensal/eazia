@@ -4,7 +4,7 @@ export default class extends Controller {
   static targets = ["input", "error", "checkbox", "myErrorMessage", "prompt"]
 
   connect() {
-    console.log('Autorisation form connected');
+    // console.log('Autorisation form connected');
     this.inputTargets.forEach(input => {
       input.addEventListener('blur', this.validateField.bind(this));
     });

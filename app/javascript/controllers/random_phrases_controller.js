@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ["phrase"];
 
   connect() {
-    console.log("random phrase controller coucou")
+    // console.log("random phrase controller coucou")
     this.hideAllPhrases();
     this.showRandomPhrases();
   }

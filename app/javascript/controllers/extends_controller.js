@@ -20,7 +20,7 @@ export default class extends Controller {
   }
 
   updateTextarea() {
-    console.log("coucou")
+    // console.log("coucou")
       this.resizeTextarea();
   }
 }

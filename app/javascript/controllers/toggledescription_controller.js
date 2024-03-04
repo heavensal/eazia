@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ["description", "plus"]
 
   connect() {
-    console.log("toggle connected");
+    // console.log("toggle connected");
   }
 
   fireplus() {

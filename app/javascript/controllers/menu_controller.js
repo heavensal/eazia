@@ -7,7 +7,7 @@ export default class extends Controller {
 
 
   connect() {
-    console.log("je suis là")
+    // console.log("je suis là")
 
     document.body.addEventListener('click', this.handleClickOutside.bind(this));
     this.adjustMenuHeight();
@@ -44,17 +44,17 @@ export default class extends Controller {
 
 handleClickOutside(event) {
   // Log pour indiquer que le gestionnaire a été déclenché
-  console.log("Gestionnaire d'événements handleClickOutside déclenché");
+  // console.log("Gestionnaire d'événements handleClickOutside déclenché");
 
   // Log de l'élément sur lequel le clic a été effectué
-  console.log("Élément cliqué :", event.target);
+  // console.log("Élément cliqué :", event.target);
 
   // Votre logique existante pour fermer le menu si le clic est en dehors
   if (!this.menuTarget.contains(event.target)) {
     this.menuTarget.classList.remove('sub-menus-open');
-    console.log("Menu fermé car le clic est en dehors de menuTarget");
+    // console.log("Menu fermé car le clic est en dehors de menuTarget");
   } else {
-    console.log("Le clic est à l'intérieur de menuTarget ou le menu n'est pas ouvert; aucune action prise.");
+    // console.log("Le clic est à l'intérieur de menuTarget ou le menu n'est pas ouvert; aucune action prise.");
   }
 }
 
