@@ -22,7 +22,10 @@ class PostsController < ApplicationController
   def show
     @post = Post.includes(:gpt_creation).with_attached_photos.find(params[:id])
     @photos = @post.photos
-    @photos_selected = @post.photos.where(id: @post.photos_selected)
+    photos_selected = @post.photos.where(id: @post.photos_selected)
+    @photos_selected = @post.photos_selected.map do |id|
+      photos_selected.detect { |photo| photo.id == id.to_i }
+    end.compact
     @gpt_creation = @post.gpt_creation
     @description = @post.gpt_creation.description
   end
