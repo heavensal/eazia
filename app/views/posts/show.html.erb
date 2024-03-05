@@ -13,7 +13,7 @@
         <% @post.photos.each_with_index do |photo, i| %>
           <%= cl_image_tag photo.key, loading: "lazy", id: "photo_#{i}", class: "photo_#{photo.id}" %>
           <%= form_for([@post, photo], url: select_post_photo_path(@post, photo), method: :patch) do |f| %>
-            <%= f.submit "Select ?" %>
+            <%= f.submit "Sélectionner ?" %>
           <% end %>
           <%= link_to "❌", post_photo_path(@post, photo), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer la photo ?"} %>
         <% end %>
