@@ -98,11 +98,14 @@
 # data = JSON.parse(response.body)
 # puts data['status']
 
-# Post.all.each do |post|
-#   unless post.photos.empty?
-#     post.photos.each do |photo|
-#       post.photos_selected << photo.id
-#       p post.photos_selected
-#     end
-#   end
-# end
+Post.all.each do |post|
+  unless post.photos.empty?
+    post.photos.each do |photo|
+      unless photo.id.in?(post.photos_selected)
+        post.photos_selected << photo.id
+        p post.photos_selected
+      end
+    end
+  end
+  post.save!
+end
