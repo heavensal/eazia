@@ -7,6 +7,7 @@ class PhotoJob < ApplicationJob
     post.pictures_generated.times do
       photo = ai_api_service.image(post)
       broadcast_photos(post)
+      select_photos(post)
     end
   end
 
@@ -18,6 +19,11 @@ class PhotoJob < ApplicationJob
     Turbo::StreamsChannel.broadcast_update_to "post_#{post.id}",
         target: "myCarousel",
         partial: "posts/insta-photos",
-        locals: { images: post.photos }
+        locals: { images: post.photos, post: post }
+  end
+
+  def select_photos(post)
+    post.photos_selected << post.photos.last.id
+    post.save!
   end
 end

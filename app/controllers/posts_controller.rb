@@ -14,13 +14,15 @@ class PostsController < ApplicationController
     ai_api_service = AiApiService.new(@post.user)
     ai_api_service.work_1(@post)
     GptCreation.create_description(@post) # Creation de la description du post
+    select_photos(@post)
     redirect_to post_path(@post)
     PhotoJob.perform_later(@post.id)
   end
 
   def show
     @post = Post.includes(:gpt_creation).with_attached_photos.find(params[:id])
-    @images = @post.photos
+    @photos = @post.photos
+    @photos_selected = @post.photos.where(id: @post.photos_selected)
     @gpt_creation = @post.gpt_creation
     @description = @post.gpt_creation.description
   end
@@ -44,6 +46,15 @@ class PostsController < ApplicationController
 
   def new_post_params
     params.require(:post).permit(:prompt, :description, :pictures_generated, photos: [])
+  end
+
+  def select_photos(post)
+    unless post.photos.empty?
+      post.photos.each do |photo|
+        post.photos_selected << photo.id
+      end
+    end
+    return if post.save
   end
 
 end

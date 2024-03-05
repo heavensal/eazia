@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
     resources :photos, only: [:create, :destroy] do
       post :load_my_photo, on: :collection
+      patch :select, on: :member
     end
   end
   get '/drafts', to: 'posts#drafts', as: "drafts"

@@ -12,7 +12,9 @@
   <div class="carousel-inner" data-controller="show-imgs" id="insta-photos">
     <% images.each_with_index do |img, i| %>
       <div class="carousel-item <%= i == 0 ? "active" : "" %>">
+      <% if img.id.in?(post.photos_selected) %>
         <%= cl_image_tag img.key , class:"crop", data: { show_imgs_target: "image", src: img.key } %>
+      <% end %>
       </div>
     <% end %>
   </div>

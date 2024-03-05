@@ -1,12 +1,20 @@
 <div class="show">
 
   <%= turbo_stream_from "post_#{@post.id}" %>
+  <%= @post.photos_selected %>
+  <% @post.photos_selected.each do |id| %>
+    <% photo = @post.photos.find(id) %>
+    <%= cl_image_tag photo.key, loading: "lazy", width:50, height: 50 %>
+  <% end %>
 
   <div class="creation">
 
      <div class="creation-images" id="photos">
         <% @post.photos.each_with_index do |photo, i| %>
           <%= cl_image_tag photo.key, loading: "lazy", id: "photo_#{i}", class: "photo_#{photo.id}" %>
+          <%= form_for([@post, photo], url: select_post_photo_path(@post, photo), method: :patch) do |f| %>
+            <%= f.submit "Select ?" %>
+          <% end %>
           <%= link_to "❌", post_photo_path(@post, photo), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer la photo ?"} %>
         <% end %>
       </div>
@@ -28,7 +36,7 @@
   <div class='view-insta decalage' data-display-target="view">
 
     <div class="instagram" id="instagram">
-      <%= render "insta_show", post: @post, description: @description, images: @images %>
+      <%= render "insta_show", post: @post, description: @description, photos_selected: @photos_selected %>
     </div>
 
     <div>

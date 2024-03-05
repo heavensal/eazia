@@ -89,11 +89,20 @@
 # img = Dalle3Image.last
 # puts img.link
 # puts img.prompt
-request = Faraday.new(
-              url: "https://api.openai.com/v1/threads/thread_nDueinYDA8gVf0dAca1SuH16/runs/run_Qn1XKPQt6HYT5vdmuTqjmPIc",
-              headers: {'Content-Type' => 'application/json',
-                        'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
-                        'OpenAI-Beta' => 'assistants=v1'})
-response = request.get
-data = JSON.parse(response.body)
-puts data['status']
+# request = Faraday.new(
+#               url: "https://api.openai.com/v1/threads/thread_nDueinYDA8gVf0dAca1SuH16/runs/run_Qn1XKPQt6HYT5vdmuTqjmPIc",
+#               headers: {'Content-Type' => 'application/json',
+#                         'Authorization' => "Bearer #{ENV['GPT_ANAIS']}",
+#                         'OpenAI-Beta' => 'assistants=v1'})
+# response = request.get
+# data = JSON.parse(response.body)
+# puts data['status']
+
+# Post.all.each do |post|
+#   unless post.photos.empty?
+#     post.photos.each do |photo|
+#       post.photos_selected << photo.id
+#       p post.photos_selected
+#     end
+#   end
+# end
