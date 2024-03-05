@@ -15,13 +15,13 @@
 
  <body >
   <% if user_signed_in? %>
-    <%= render 'layouts/navbar' %>
-  <% end %>
-
-  <div class="content">
-    <%= yield %>
-  </div>
-
+    <div class="navbar">
+      <%= render 'layouts/navbar' %>
+    </div>
+    <div class="content">
+      <%= yield %>
+    </div>
+    <% end %>
   <% if user_signed_in? %>
     <%= render 'layouts/footer' %>
   <% end %>
