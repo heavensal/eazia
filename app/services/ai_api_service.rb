@@ -20,8 +20,8 @@ class AiApiService
     post.gpt_creation.save!
   end
 
+  # Logique pour envoyer un prompt
   def prompt(post)
-    # Logique pour envoyer un prompt
     request = faraday_ai
     request.post("https://api.openai.com/v1/threads/#{post.user.thread}/messages") do |m|
       m.body = {
@@ -31,6 +31,7 @@ class AiApiService
     end
   end
 
+  # Logique pour recréer la description
   def recreate(post)
     request = faraday_ai
     request.post("https://api.openai.com/v1/threads/#{post.user.thread}/messages") do |m|
@@ -59,12 +60,12 @@ class AiApiService
       response = request.get("https://api.openai.com/v1/threads/#{post.user.thread}/runs/#{run}")
       data = JSON.parse(response.body)
       status = data['status']
-      sleep(1)
+      sleep(3)
     end while status != 'completed'
   end
 
+  # Logique pour obtenir la réponse de la mission 1
   def answer(post)
-    # Logique pour obtenir la réponse
     request = faraday_ai
     response = request.get("https://api.openai.com/v1/threads/#{post.user.thread}/messages")
     data = JSON.parse(response.body)
@@ -72,8 +73,8 @@ class AiApiService
     post.description = result
   end
 
+  # Logique pour obtenir la description récréée de la mission 2
   def answer_2(post)
-    # Logique pour obtenir la réponse
     request = faraday_ai
     response = request.get("https://api.openai.com/v1/threads/#{post.user.thread}/messages")
     data = JSON.parse(response.body)
@@ -83,16 +84,16 @@ class AiApiService
 
 
   def image(post)
-    img_prompt = post.description[/(?<={).+?(?=})/]
-    img = Dalle3Image.new(prompt: img_prompt)
+    prompt = post.description[/(?<={).+?(?=})/]
+    img = Dalle3Image.new(prompt: prompt)
     img.post = post
     request = faraday_ai
     response = request.post("https://api.openai.com/v1/images/generations", headers: {'OpenAI-Beta' => nil}) do |r|
       r.body = {'model'=> 'dall-e-3',
-                          'prompt' => img_prompt,
+                          'prompt' => prompt,
                           'size' => "1024x1024",
                           'quality' => 'hd',
-                          'style' => "natural"}.to_json
+                          'style' => "vivid"}.to_json
     end
     data = JSON.parse(response.body)
     img.link = data['data'].first['url']
