@@ -1,220 +1,7 @@
-// .form-new{
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   width: 100%;
-
-//   form{
-//     width: 50%;
-//   }
-
-
-//   @media (max-width: 1024px){
-//     width: 100%;
-
-//     form{
-//       width: 60%;
-//       // height: 100vh;
-//     }
-//   }
-
-//   @media (max-width: 768px) {
-//     width: 100%;
-//     margin-top: 10%;
-
-//     form{
-//       width: 90%;
-//       // height: 100vh
-//     }
-//   }
-
-//   @media (max-width: 480px) {
-//     width: 100%;
-
-//     form{
-//       width: 90%;
-//       // height: 100vh
-//     }
-//   }
-// }
-
-// .prompt {
-//   display: flex;
-//   flex-direction: column;
-//   margin-left: auto;
-//   margin-right: auto;
-//   margin-top: 3%;
-//   width: 100%;
-
-//   label {
-//     font-family: 'glacial-indifference';
-//     font-size: 16px;
-//   }
-
-//   input {
-//    padding-bottom: 5%;
-//   }
-
-//   textarea {
-//     background-color: #f5f5f5;
-//     border: 0;
-//     height: 100px;
-//     border-bottom: 3px solid #cccccc;
-//     border-radius: 10px;
-//     resize: none;
-//     color: #2c2c2c;
-//   }
-
-//   textarea:focus {
-//     border-color: #007ff5;
-//     outline: none;
-//   }
-
-
-//   @media (max-width: 768px) {
-//     width: 100%;
-
-//     label {
-//       font-size: 16px;
-//     }
-
-//     input {
-//       height: 40px;
-//     }
-//   }
-
-
-//   @media (max-width: 480px) {
-//     width: 100%;
-
-//     label {
-//       font-size: 14px;
-//     }
-
-//     input {
-//       height: 35px;
-//     }
-//   }
-// }
-
-
-
-// .file-upload-wrapper label {
-//   color: grey;
-//   font-size: 14px;
-//   padding: 10px ;
-//   border-radius: 5px;
-//   cursor: pointer;
-// }
-
-
-// .file-name {
-  //   margin-top: 10px;
-  //   font-style: italic;
-  //   color: #BDDDFA;
-  //   font-size: 12px
-  // }
-
-
-  // .images {
-    //   display: flex;
-    //   flex-direction: column;
-    //   margin-top: 3%;
-    //   margin-right: auto;
-
-
-    //   label {
-      //     font-family: 'glacial-indifference';
-      //     font-size: 16px;
-      //   }
-
-      //   select {
-        //     padding: 0.3em;
-        //     font-family: 'glacial-indifference';
-        //     width: 20%;
-        //     border: none;
-        //     border-bottom: 2px solid #cccccc;
-        //     background-color: #f5f5f5;
-        //     color: grey;
-        //     border-radius:10px;
-
-        //   }
-
-        //   select:focus {
-          //     border-color: #007ff5;
-          //     outline: none;
-          //   }
-
-          //   input{
-            //     font-family: 'glacial-indifference';
-            //     color: #BDDDFA
-            //   }
-
-            //   @media (max-width: 1024px){
-              //     flex-direction: column;
-              //     margin-left: 0;
-
-              //     label {
-                //       font-size: 16px;
-                //     }
-
-                //     select {
-                  //       padding: 0.25em;
-                  //       width: 50%;
-                  //     }
-                  //   }
-
-                  //   @media (max-width: 768px) {
-                    //     flex-direction: column;
-                    //     margin-left: 0;
-
-
-                    //     label {
-                      //       font-size: 16px;
-                      //     }
-
-                      //     select {
-                        //       padding: 0.25em;
-                        //       width: 50%;
-                        //     }
-                        //   }
-
-
-                        //   @media (max-width: 480px) {
-                          //     flex-direction: column;
-
-
-                          //     label {
-                            //       font-size: 14px;
-                            //     }
-
-                            //     select {
-                              //       padding: 0.2em;
-                              //     }
-                              //   }
-                              // }
-
-                              // #post_description{
-                                //   display: flex;
-                                //   margin-left: auto;
-                                //   margin-right: auto;
-                                //   width: 90%;
-                                //   margin-bottom: 2%;
-                                //   height: 150px;
-                                //   font-size: 14px;
-                                //   font-family: 'glacial-indifference';
-                                //   z-index: 1100; /* Un z-index plus élevé pour le champ de modification */
-                                //   position: relative;
-
-                                // }
-
-
 .contenu {
 display: flex;
 justify-content: center;
 align-items: center;
-width: 1248px;
 height: 100vh;
 }
 
@@ -286,6 +73,7 @@ height: 100vh;
     height: 60px;
     border: 0;
     resize: none;
+
   }
 
   textarea:focus {
@@ -357,9 +145,7 @@ height: 100vh;
     border-color: transparent;
 
   }
-
 }
-
 
 .file-upload-wrapper input[type="file"] {
   display: none;
@@ -384,7 +170,6 @@ letter-spacing: var(--titre-medium-h3-letter-spacing);
 line-height: var(--titre-medium-h3-line-height);
 font-style: var(--titre-medium-h3-font-style);
 }
-
 
 
 .contenu .frame-2 {
@@ -485,6 +270,31 @@ letter-spacing: var(--titre-medium-h5-letter-spacing);
 line-height: var(--titre-medium-h5-line-height);
 white-space: nowrap;
 font-style: var(--titre-medium-h5-font-style);
+}
+
+.contenu .main-bouton:hover {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 48px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #ffffff42;
+  background: linear-gradient(180deg, rgba(28.77, 147.84, 255, 0.8) 0%, rgba(255, 0, 244.8, 0.8) 100%);
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--titre-medium-h4-font-family);
+  font-weight: var(--titre-medium-h4-font-weight);
+  color: #ffffff;
+  font-size: var(--titre-medium-h4-font-size);
+  letter-spacing: var(--titre-medium-h4-letter-spacing);
+  line-height: var(--titre-medium-h4-line-height);
+  white-space: nowrap;
+  font-style: var(--titre-medium-h4-font-style);
 }
 
 .footer-form{
