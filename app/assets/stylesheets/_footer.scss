@@ -1,15 +1,14 @@
 #footer{
   display: flex;
   height: 10vh;
-  background: radial-gradient(circle, #6b1e80, #9f2dbe, #a73cc2);
+  background: linear-gradient(180deg, rgba(229.49, 242.92, 255, 0) 0%, rgb(229.49, 242.92, 255) 44.42%);
+  border-color: var(--secondarywhitewhite-400);
   position: static;
   bottom: 0;
   z-index:11;
   width: 100%;
   transition: margin-left 0.3s, width 0.3s;
 }
-
-
 
 .mentions{
   display: flex;
@@ -21,7 +20,7 @@
   a{
     font-family: 'glacial-indifference';
     font-size: 14px;
-    color: white
+    color: black
   }
 }
 
@@ -32,7 +31,6 @@ align-items: center;
 width: 50%;
   img {
   height: 5vh;
-  //   margin-right: 5px;
   }
 
 }
