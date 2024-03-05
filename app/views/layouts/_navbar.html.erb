@@ -5,7 +5,7 @@
   <%= image_tag("logo_eazia_lettres.svg", alt:"logo eazia") %>
   </div>
       <div class="menu-list">
-        <div class="menu">
+        <div class="nouvelle-publication-wrapper">
           <div class="div-2">
             <%= image_tag("icon_publications", alt:"publications") %>
             <div class="text-wrapper-4"><%= link_to "Nouvelle publication", new_post_path %></div>
@@ -43,53 +43,9 @@
         <div class="text-wrapper-5"><%= link_to "Mon compte", account_path %></div>
       </div>
     </div>
-    <%# <div class="div-3"><img class="icons-3" src="img/icons-5.svg" /></div> %>
+    <div class="div-3">
+    <%# <img class="icons-3" src="img/icons-5.svg" /> %>
+    </div>
   </div>
    <% end %>
 </div>
-
-
-
-
-
-
-
-
-
-<%# <nav  data-menu-target="navbar">
-    <% if current_user %>
-   <%# <section id="navigation" >
-    <input type="checkbox" id="menu-toggle" hidden data-action="click->menu#toggleMenu">
-      <label for="menu-toggle" class="menu-navbar" >☰</label>
-        <ul class='sub-menus' data-menu-target="menu">
-          <li class="text-start"><%= link_to "Nouveau", new_post_path %></li>
-          <%# <li class="text-start"><%= link_to "Brouillons", drafts_path%></li>
-          <%# <li class="text-start"><%= link_to "Posts Programmés", new_post_path %></li>
-          <%# <li class="text-start"><%= link_to "Historique", new_post_path %></li>
-          <%# <li class="text-start"><%= link_to "Générateur d’idées", new_post_path %></li>
-          <%# <li style="font-weight:lighter">_________________</li> %>
-          <%# <li class="text-start", style="font-weight:lighter"><%= link_to "Mon compte", account_path %></li>
-          <%# <li class="text-start", style="font-weight:lighter"><%= link_to "Mes statistiques", new_post_path %></li>
-          <%# <li class="text-start", style="font-weight:lighter"><%= link_to "Contact", pages_contact_path %></li>
-          <%# <li style="font-weight:lighter">_________________</li> %>
-          <%# <%= form_with url: destroy_user_session_path, method: :delete do %>
-          <%# <%= submit_tag "Déconnexion", class:"logout-button" %>
-          <%# <% end %></li>
-        <%# </ul> %>
-    <%# </section> %>
-    <%# <% end %>
-
-
-  <%# <section id="main-titre">
-  <%= link_to root_path do %>
-      <%# <h3>Votre générateur de contenus par l’IA</h3>
-    <% end %>
-  <%# </section> %>
-
-   <%# <section id="main-logo">
-    <%= link_to root_path do %>
-      <%# <%= image_tag("logo-eazia.svg", alt:"logo eazia") %>
-    <%# <% end %>
-  <%# </section> %>
-
-<%# </nav> %>

@@ -357,15 +357,18 @@ a {
 }
 
 .navbar {
-  width: 250px; /* ou la largeur que vous souhaitez pour votre navbar */
+  width: 250px;
   position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
-  overflow-y: auto; /* pour le défilement si le contenu est long */
+  overflow-y: auto;
+  background: linear-gradient(180deg, rgba(229.49, 242.92, 255, 0) 0%, rgb(229.49, 242.92, 255) 44.42%);
+
 }
 
 .content {
-  margin-left: 250px; /* Doit être égal à la largeur de votre navbar pour éviter le chevauchement */
+  margin-left: 250px;
   flex-grow: 1;
+  background: linear-gradient(180deg, rgba(229.49, 242.92, 255, 0) 0%, rgb(229.49, 242.92, 255) 44.42%);
 }
