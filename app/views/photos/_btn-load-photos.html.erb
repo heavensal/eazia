@@ -1,0 +1,16 @@
+<%= form_with model: post, url: load_my_photo_post_photos_path(post), method: :post, local: true do |form| %>
+  <div class="images">
+    <div class="file-upload-wrapper" data-controller="file-upload">
+      <%= form.label :photos, "Charger une photo", class: "custom-file-upload" %>
+      <%= form.file_field :photos, multiple: true, direct_upload: true, data: { action: "change->file-upload#updateFileName", file_upload_target: "source" } %>
+      <span data-file-upload-target="fileName" class="file-name"></span>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "charger les photos"%>
+    </div>
+  </div>
+<% end %>
+
+<%# Permet d'ajouter mes photos dans la show directement %>
+<%# AJOUTER la possibilité de n'en faire qu'un button %>

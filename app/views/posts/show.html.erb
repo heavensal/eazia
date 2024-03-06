@@ -1,21 +1,25 @@
-<div class="show">
-
-  <%= turbo_stream_from "post_#{@post.id}" %>
+  <%# Test des photos sélectionnées pour vérifier les correspondances %>
+  <%# ENLEVER quand il y aura un front pour les images sélectionnées %>
   <%= @post.photos_selected %>
   <% @post.photos_selected.each do |id| %>
     <% photo = @post.photos.find(id) %>
     <%= cl_image_tag photo.key, loading: "lazy", width:50, height: 50 %>
   <% end %>
 
+<div class="show">
+
+  <%# TRES IMPORTANT: Canal de diffusion des changements d'images %>
+  <%= turbo_stream_from "post_#{@post.id}" %>
+
+
   <div class="creation">
 
      <div class="creation-images" id="photos">
         <% @post.photos.each_with_index do |photo, i| %>
-          <%= cl_image_tag photo.key, loading: "lazy", id: "photo_#{i}", class: "photo_#{photo.id}" %>
-          <%= form_for([@post, photo], url: select_post_photo_path(@post, photo), method: :patch) do |f| %>
-            <%= f.submit "Sélectionner ?" %>
-          <% end %>
-          <%= link_to "❌", post_photo_path(@post, photo), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer la photo ?"} %>
+
+          <%# Pour ajouter/enlever la photo des sélections %>
+          <%= render 'photos/btn-select-photo', post: @post, photo: photo, i: i %>
+
         <% end %>
       </div>
 
@@ -25,9 +29,12 @@
       <%= render 'gpt_creations/recreate', gpt_creation: @gpt_creation %>
 
         <div class="recreer" >
+
+          <%# Pour régénérer une description %>
           <%= form_for([@post, @gpt_creation], url: recreate_post_gpt_creation_path(@post), method: :patch) do |f| %>
           <%= f.submit "Recréer ✔️",  class:"button-recreer"%>
           <% end %>
+
         </div>
 
     </div>
@@ -43,31 +50,15 @@
       <%= render "show_btns", post: @post %>
     </div>
 
-    <%= link_to "Supprimer le brouillon", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?"} %>
 
   </div>
 
 </div>
+    <%# Recréer une photo %>
+    <%= render "photos/btn-create-new-photo", post: @post %>
 
-      <%= form_with model: @post, url: post_photos_path(@post), method: :post, local: true do |form| %>
-          <div class="actions">
-            <%= form.submit "Générer une nouvelle photo"%>
-          </div>
-        </div>
-      <% end %>
+    <%# Charger une ou des photos %>
+    <%= render "photos/btn-load-photos", post: @post %>
 
-
-
-      <%= form_with model: @post, url: load_my_photo_post_photos_path(@post), method: :post, local: true do |form| %>
-        <div class="images">
-          <div class="file-upload-wrapper" data-controller="file-upload">
-            <%= form.label :photos, "Charger une photo", class: "custom-file-upload" %>
-            <%= form.file_field :photos, multiple: true, direct_upload: true, data: { action: "change->file-upload#updateFileName", file_upload_target: "source" } %>
-            <span data-file-upload-target="fileName" class="file-name"></span>
-          </div>
-
-          <div class="actions">
-            <%= form.submit "charger les photos"%>
-          </div>
-        </div>
-      <% end %>
+    <%# SUPPRIMER LE BROUILLON DE POST %>
+    <%= link_to "Supprimer le brouillon", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?"}, class: "btn btn-outline-danger" %>
