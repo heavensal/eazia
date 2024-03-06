@@ -13,18 +13,19 @@
     <%= javascript_importmap_tags %>
   </head>
 
- <body >
+ <body>
   <% if user_signed_in? %>
     <div class="navbar">
       <%= render 'layouts/navbar' %>
+    <% end %>
     </div>
     <div class="content">
       <%= yield %>
     </div>
-    <% end %>
-  <% if user_signed_in? %>
-    <%= render 'layouts/footer' %>
-  <% end %>
 </body>
+
+  <div class="footer">
+    <%= render 'layouts/footer'%>
+   </div>
 
 </html>

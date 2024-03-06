@@ -1,82 +1,64 @@
-<div class="frame-show">
-  <div class="div-show">
-    <div class="creation-images">
-      <%# <div class="photo-container"> %>
+<div class="gnration-de-la">
+  <div class="frame-show">
+    <div class="div-show">
+      <div class="creation-images">
         <% @post.photos.each_with_index do |photo, i| %>
           <%= cl_image_tag photo.key, loading: "lazy", id: "photo_#{i}", class: "photo_#{photo.id}" %>
             <%= form_for([@post, photo], url: select_post_photo_path(@post, photo), method: :patch) do |f| %>
             <%= f.submit "Sélectionner ?" %>
-            <% end %>
-          <div class="icon-supprimer">
-            <%= image_tag("icon_supprimer.png", alt:"supprimer") %>
-            <%= link_to "❌", post_photo_path(@post, photo), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer la photo ?"} %>
-            <% end %>
-           </div>
-        </div>
-    </div>
-
-    <%= turbo_stream_from "post_#{@post.id}" %>
-      <%= @post.photos_selected %>
-        <% @post.photos_selected.each do |id| %>
-          <% photo = @post.photos.find(id) %>
-            <%= cl_image_tag photo.key, loading: "lazy", width:50, height: 50 %>
         <% end %>
 
-<%# <div class="creation"> %>
-<div class="frame-bouton">
-  <div class="div-bouton">
-    <%# <div class="secondary-bouton"> %>
-      <%= form_with model: @post, url: load_my_photo_post_photos_path(@post), method: :post, local: true do |form| %>
-        <%# <div class="images"> %>
+      <div class="icon-supprimer">
+        <%= image_tag("icon_supprimer.png", alt:"supprimer") %>
+          <%= link_to "❌", post_photo_path(@post, photo), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer la photo ?"} %>
+          <% end %>
+      </div>
+      </div>
+    </div>
+
+    <div>
+      <%= turbo_stream_from "post_#{@post.id}" %>
+        <%= @post.photos_selected %>
+          <% @post.photos_selected.each do |id| %>
+            <% photo = @post.photos.find(id) %>
+              <%= cl_image_tag photo.key, loading: "lazy", width:50, height: 50 %>
+          <% end %>
+    </div>
+
+    <div class="frame-bouton">
+      <div class="div-bouton">
+        <%= form_with model: @post, url: load_my_photo_post_photos_path(@post), method: :post, local: true do |form| %>
           <div data-controller="file-upload">
             <%# <%= form.label :photos, "Charger une photo", class: "custom-file-upload" %>
             <%= form.file_field :photos, multiple: true, direct_upload: true, class:"secondary-bouton", data: { action: "change->file-upload#updateFileName", file_upload_target: "source" } %>
             <span data-file-upload-target="fileName" class="file-name"></span>
-          <%= form.submit "charger des images", class:"secondary-bouton"%>
+            <%= form.submit "charger des images", class:"secondary-bouton"%>
           </div>
-              <%# <div class="actions"> %>
-              <%# </div> %>
-        <%# </div> %>
-      <% end %>
-    <%= form_with model: @post, url: post_photos_path(@post), method: :post, local: true do |form| %>
-            <%# <div class="actions"> %>
-      <%= form.submit "Générer une image", class:"secondary-bouton"%>
-            <%# </div> %>
-    <% end %>
-  <%# </div> %>
+        <% end %>
+        <%= form_with model: @post, url: post_photos_path(@post), method: :post, local: true do |form| %>
+          <%= form.submit "Générer une image", class:"secondary-bouton"%>
+        <% end %>
+      </div>
     </div>
-  </div>
-<%# </div> %>
 
-  <%# <div class="secondary-bouton"> %>
-</div>
-
- </div>
-
-<div class="box">
-  <%= image_tag("line_2.png", alt:"line") %>
-</div>
-
-<div class="frame-description">
-<div class="text-wrapper-show">Description de votre post</div>
-  <div class="description-de-post">
-      <%= render 'gpt_creations/recreate', gpt_creation: @gpt_creation %>
-
+    <div class="box">
+      <%= image_tag("line_2.png", alt:"line") %>
     </div>
-  </div>
-</div>
-  <div class='view-insta decalage' data-display-target="view">
 
-    <div class="instagram" id="instagram">
+    <div class="frame-description">
+      <div class="text-wrapper-show">
+        Description de votre post
+      </div>
+      <div class="description-de-post">
+        <%= render 'gpt_creations/recreate', gpt_creation: @gpt_creation %>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="view-insta">
       <%= render "insta_show", post: @post, description: @description, photos_selected: @photos_selected %>
-    </div>
-
-    <div>
       <%= render "show_btns", post: @post %>
-    </div>
-
-    <%= link_to "Supprimer le brouillon", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?"} %>
-
   </div>
 
 </div>

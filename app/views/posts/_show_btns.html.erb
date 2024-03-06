@@ -12,31 +12,26 @@
 </div>   %>
 
 
- <div class="frame-bouton-insta">
-      <div class="div">
-        <div class="div-2">
-          <div class="secondary-bouton-wrapper">
-            <%= link_to "💾", drafts_path, class:"secondary-bouton"%>
-
-          </div>
-
-          <div class="secondary-bouton-wrapper">
-            <%= link_to "📅", new_post_path,  class:"secondary-bouton"%>
-
-          </div>
-
-
-            <div class="connexion">
-              <%= form_for(post, url: publish_post_path(post), method: :patch) do |f| %>
-              <%= f.submit "Publier maintenant", class: "main-bouton" %>
-              <% end %>
-            </div>
-
-        </div>
-        <div class="secondary-bouton-wrapper">
-            <%= link_to "🗑️", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?"} %>
-
-        </div>
-
-      </div>
+<div class="frame-bouton-insta">
+  <div class="div-2">
+    <div class="secondary-bouton-wrapper">
+      <%= link_to image_tag("icon_save.png", alt: "Sauvegarder"), drafts_path, class:"secondary-bouton"%>
     </div>
+
+    <div class="secondary-bouton-wrapper">
+      <%= link_to image_tag("icon_prog.png", alt: "Programmer"), new_post_path,  class:"secondary-bouton"%>
+    </div>
+
+    <div class="connexion">
+      <%= form_for(post, url: publish_post_path(post), method: :patch) do |f| %>
+      <%= f.submit "Publier maintenant", class: "main-bouton" %>
+      <% end %>
+    </div>
+
+  </div>
+
+  <div class="secondary-bouton-wrapper">
+    <%= link_to image_tag("icon_delete.png", alt: "Supprimer"), post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?"} %>
+  </div>
+
+</div>
