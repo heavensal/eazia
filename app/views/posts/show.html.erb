@@ -1,11 +1,3 @@
-  <%# Test des photos sélectionnées pour vérifier les correspondances %>
-  <%# ENLEVER quand il y aura un front pour les images sélectionnées %>
-  <%= @post.photos_selected %>
-  <% @post.photos_selected.each do |id| %>
-    <% photo = @post.photos.find(id) %>
-    <%= cl_image_tag photo.key, loading: "lazy", width:50, height: 50 %>
-  <% end %>
-
 <div class="show">
 
   <%# TRES IMPORTANT: Canal de diffusion des changements d'images %>
@@ -17,8 +9,8 @@
      <div class="creation-images" id="photos">
         <% @post.photos.each_with_index do |photo, i| %>
 
-          <%# Pour ajouter/enlever la photo des sélections %>
-          <%= render 'photos/btn-select-photo', post: @post, photo: photo, i: i %>
+          <%# Pour ajouter/enlever la photo des sélections etsupprimer la photo %>
+          <%= render 'photos/show-photo', post: @post, photo: photo, i: i %>
 
         <% end %>
       </div>
