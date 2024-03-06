@@ -1,89 +1,89 @@
-.show{
-  display:flex;
-  justify-content: space-around;
-  flex: 1;
-  margin-top: 1%;
-  z-index: 501;
-}
+// .show{
+//   display:flex;
+//   justify-content: space-around;
+//   flex: 1;
+//   margin-top: 1%;
+//   z-index: 501;
+// }
 
-.creation{
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  margin-left: 2%
-}
+// .creation{
+//   display: flex;
+//   flex-direction: column;
+//   width: 50%;
+//   margin-left: 2%
+// }
 
-.creation-images {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+// .creation-images {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: space-between;
 
-  img{
-    width: 200px;
-    height: 200px;
-    margin: 1%
-  }
-}
+//   img{
+//     width: 200px;
+//     height: 200px;
+//     margin: 1%
+//   }
+// }
 
-.creation-images > div {
-  flex: 0 0 33.333%;
-  max-width: 33.333%;
-}
-
-
-.prompt-insta{
-  font-family: 'glacial-indifference';
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-}
-
-.description{
-  font-family: 'glacial-indifference';
-  font-size: 14px;
-  font-weight: lighter;
-  text-align: justify;
-  margin: 2%
-}
-
-.modifier{
-  display: flex;
-  justify-content: center;
-}
-
-.gpt{
-  display: flex;
-  flex-direction: column;
-
-  textarea{
-  width: 100%;
-  font-size: 14px;
-  font-family: 'glacial-indifference';
-  z-index: 11 ;
-  }
-}
+// .creation-images > div {
+//   flex: 0 0 33.333%;
+//   max-width: 33.333%;
+// }
 
 
-.recreer{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
+// .prompt-insta{
+//   font-family: 'glacial-indifference';
+//   font-size: 18px;
+//   font-weight: bold;
+//   text-align: center;
+// }
 
-.view-insta{
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
+// .description{
+//   font-family: 'glacial-indifference';
+//   font-size: 14px;
+//   font-weight: lighter;
+//   text-align: justify;
+//   margin: 2%
+// }
 
-  h4{
-    font-family: 'glacial-indifference';
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 5%;
-  }
-}
+// .modifier{
+//   display: flex;
+//   justify-content: center;
+// }
+
+// .gpt{
+//   display: flex;
+//   flex-direction: column;
+
+//   textarea{
+//   width: 100%;
+//   font-size: 14px;
+//   font-family: 'glacial-indifference';
+//   z-index: 11 ;
+//   }
+// }
+
+
+// .recreer{
+//   display: flex;
+//   justify-content: center;
+//   width: 100%;
+// }
+
+// .view-insta{
+//   display: flex;
+//   flex-direction: column;
+//   margin-left: auto;
+//   margin-right: auto;
+
+//   h4{
+//     font-family: 'glacial-indifference';
+//     font-size: 20px;
+//     font-weight: bold;
+//     text-align: center;
+//     margin-bottom: 5%;
+//   }
+// }
 
 
 .insta {
@@ -124,36 +124,36 @@
 
 }
 
-.interactionbtns {
-  padding: 8px 0px;
-  border-bottom: 1px solid #e6e6e6;
-  margin: 0 10px 0 10px;
-  display: flex;
-  align-content: center;
-  justify-content: space-between;
-}
+// .interactionbtns {
+//   padding: 8px 0px;
+//   border-bottom: 1px solid #e6e6e6;
+//   margin: 0 10px 0 10px;
+//   display: flex;
+//   align-content: center;
+//   justify-content: space-between;
+// }
 
-.interactionbtns span {
-  width: 95px;
-  display: flex;
-  justify-content: space-between;
-}
+// .interactionbtns span {
+//   width: 95px;
+//   display: flex;
+//   justify-content: space-between;
+// }
 
-.btn-show{
-  display: flex;
-  flex-direction: column;
-}
+// .btn-show{
+//   display: flex;
+//   flex-direction: column;
+// }
 
-.btn-annexe, .btn-publier{
-  display: flex;
-  justify-content: space-around;
-  margin-top: 5%;
+// .btn-annexe, .btn-publier{
+//   display: flex;
+//   justify-content: space-around;
+//   margin-top: 5%;
 
-  @at-root .btn-publier {
-    margin-bottom: 5%;
+//   @at-root .btn-publier {
+//     margin-bottom: 5%;
 
-  }
-}
+//   }
+// }
 
 .textcontent {
   padding: 10px 12px;
@@ -163,215 +163,565 @@
 }
 
 
-path {
-  fill: none;
-  stroke-miterlimit: 10;
-  stroke: #000000;
+// path {
+//   fill: none;
+//   stroke-miterlimit: 10;
+//   stroke: #000000;
+// }
+
+
+// @media (max-width: 1024px) {
+//   .creation{
+//     width: 90%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     margin: 0
+//   }
+
+//   .creation-images{
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//   }
+
+//   .creation-images img{
+//     width: 200px;
+//     height: 200px;
+//     margin: 1%
+//   }
+
+//   .description{
+//     margin: 3%
+//   }
+
+//   .instagram{
+//     margin-left: auto;
+//     margin-right: auto;
+
+//   }
+
+//   .view-insta{
+//     width: 100%;
+
+//     h4 {
+//       font-size: 20px;
+//     }
+//   }
+
+//   .insta-show {
+//     width: 100%;
+//   }
+
+//   .icon {
+//     width: 30px;
+//     height: 30px;
+//   }
+
+
+//   .interactionbtns span {
+//     width: 95px;
+//   }
+
+//   .textcontent {
+//     font-size: 12px;
+//   }
+// }
+
+
+
+// @media  (max-width: 768px) {
+
+//   .show{
+//     display:flex;
+//     flex-direction: column;
+//   }
+
+//   .creation{
+//     display:flex;
+//     justify-content: center;
+//     width: 100%;
+//   }
+
+//   .prompt-insta{
+//     font-size: 14px;
+//   }
+
+//   .creation-images img{
+//     width: 150px;
+//     height: 150px;
+//     margin: 1%
+//   }
+
+//   .recreer{
+//     width: 100%;
+//     margin-top: 2%;
+//   }
+
+//   .instagram{
+//     margin-top: 5%;
+//   }
+
+//   .insta-show {
+//     width: 100%;
+//   }
+
+//   .view-insta h4 {
+//     font-size: 18px;
+//   }
+
+//   .icon {
+//     width: 25px;
+//     height: 25px;
+//   }
+
+//   .interactionbtns {
+//     padding: 8px 10px;
+//   }
+
+//   .interactionbtns span {
+//     width: 80%;
+//   }
+
+//   .btn-annexe, .btn-publier {
+//     display: flex;
+//     flex-direction: column;
+//     margin-left: auto;
+//     margin-right: auto;
+//   }
+
+//   .textcontent {
+//     font-size: 11px;
+//   }
+
+//   .decalage {
+//     margin-top: 250px;
+//   }
+// }
+
+// @media (max-width: 480px) {
+
+//   .show{
+//     display:flex;
+//     flex-direction: column;
+//   }
+
+//   .creation{
+//     width: 90%;
+//   }
+
+//   .prompt-insta{
+//     font-size: 14px;
+//   }
+
+//   .creation-images img{
+//     width: 50px;
+//     height: 50px;
+//   }
+
+//   .gpt{
+//     width: 100%;
+//     margin-top: 2%;
+//   }
+
+//   .recreer{
+//     width: 100%;
+//     margin-top: 2%;
+//   }
+
+//   .insta-show img {
+//     width: 100%;
+//     height: 300px
+//   }
+
+//   .view-insta h4 {
+//     font-size: 16px;
+//     margin-top: 1%
+//   }
+
+//   .insta {
+//     max-width: 100%;
+//   }
+
+//   .insta-show {
+//     width: 100%;
+//   }
+
+//   .icon {
+//     width: 20px;
+//     height: 20px;
+//   }
+
+//   .interactionbtns {
+//     flex-direction: row;
+//     align-items: space-between;
+//   }
+
+//   .interactionbtns span {
+//     width: 100%;
+//     justify-content: left;
+//   }
+
+//   .btn-annexe, .btn-publier {
+//     flex-direction: column;
+//     align-items: center;
+//   }
+
+//   .textcontent {
+//     font-size: 10px;
+//   }
+
+//   .decalage {
+//     margin-top: 250px;
+//   }
+// }
+
+
+
+.frame-show {
+  display: flex;
+  flex-direction: column;
+  width: 664px;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 24px;
+  position: relative;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-color: #dfdfea;
 }
 
 
-@media (max-width: 1024px) {
-  .creation{
-    width: 90%;
+.frame .div-show {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 8px 8px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+
+.creation-images{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 8px 8px;
+  position: relative;
+
+  img{
+    position: relative;
+    width: 148px;
+    height: 148px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-image: url(./img/img-checkbox-3.svg);
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+}
+
+.photo-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background-color: #00000066;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.icon-supprimer {
+  display: none;
+  position: absolute;
+  top: 5px; /* Ajustez selon le besoin */
+  right: 5px;
+  width: 16px;
+  height: 16px;
+}
+
+.photo-container:hover .icon-supprimer {
+  display: block;
+}
+
+.frame-bouton {
+  position: relative;
+  width: 148px;
+  height: 148px;
+  background-color: var(--secondarywhitewhite-100);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px dashed;
+  border-color: var(--secondaryblackblack-50);
+}
+
+.frame-bouton .div-bouton {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  top: 38px;
+  left: 11px;
+}
+
+.frame-bouton .secondary-bouton {
+  display: flex;
+  width: 126px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--secondarywhitewhite-200);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: var(--secondarywhitewhite-300);
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--petit-texte-medium-h1-font-family);
+  font-weight: var(--petit-texte-medium-h1-font-weight);
+  color: var(--secondaryblackblack-300);
+  font-size: var(--petit-texte-medium-h1-font-size);
+  letter-spacing: var(--petit-texte-medium-h1-letter-spacing);
+  line-height: var(--petit-texte-medium-h1-line-height);
+  white-space: nowrap;
+  font-style: var(--petit-texte-medium-h1-font-style);
+}
+
+.box-show {
+  width: 584px;
+  height: 1px;
+
+  img{
+    position: fixed;
+  width: 584px;
+  height: 1px;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+
+  }
+}
+
+.frame-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+}
+
+.text-wrapper-show{
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--titre-medium-h5-font-family);
+  font-weight: var(--titre-medium-h5-font-weight);
+  color: var(--secondaryblackblack-200);
+  font-size: var(--titre-medium-h5-font-size);
+  letter-spacing: var(--titre-medium-h5-letter-spacing);
+  line-height: var(--titre-medium-h5-line-height);
+  white-space: nowrap;
+  font-style: var(--titre-medium-h5-font-style);
+}
+
+.description-de-post {
+  display: flex;
+  flex-direction: column;
+  width: 616px;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 24px;
+  padding: 24px;
+  position: relative;
+  background-color: var(--secondarywhitewhite-100);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: var(--secondaryblackblack-50);
+}
+
+#gpt_creation_2{
+   position: relative;
+   align-self: stretch;
+   margin-top: -1px;
+   font-family: var(--titre-regular-h4-font-family);
+   font-weight: var(--titre-regular-h4-font-weight);
+   color: var(--secondaryblackblack-500);
+   font-size: var(--titre-regular-h4-font-size);
+   letter-spacing: var(--titre-regular-h4-letter-spacing);
+   line-height: var(--titre-regular-h4-line-height);
+   font-style: var(--titre-regular-h4-font-style);
+
+   textarea{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin: 0
-  }
+    width: 616px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 24px;
+    position: relative;
+    background-color: var(--secondarywhitewhite-100);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 0
+   }
+ }
 
-  .creation-images{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.frame-description .div-description {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  flex: 0 0 auto;
+}
 
-  .creation-images img{
-    width: 200px;
-    height: 200px;
-    margin: 1%
-  }
+.frame-description .secondary-bouton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--secondarywhitewhite-200);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: var(--secondaryblackblack-50);
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--titre-medium-h5-font-family);
+  font-weight: var(--titre-medium-h5-font-weight);
+  color: var(--secondaryblackblack-300);
+  font-size: var(--titre-medium-h5-font-size);
+  letter-spacing: var(--titre-medium-h5-letter-spacing);
+  line-height: var(--titre-medium-h5-line-height);
+  white-space: nowrap;
+  font-style: var(--titre-medium-h5-font-style);
+}
 
-  .description{
-    margin: 3%
-  }
+.container-boutons {
+  display: flex;
+  justify-content: left; /* Ajustez en fonction de l'espacement souhaité */
+  align-items: center; /* Centrer les boutons verticalement si leurs tailles diffèrent */
+  gap: 24px;
+  padding-top: 24px;
+}
 
-  .instagram{
-    margin-left: auto;
-    margin-right: auto;
+.frame-instagram {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--titre-medium-h5-font-family);
+  font-weight: var(--titre-medium-h5-font-weight);
+  color: var(--secondaryblackblack-500);
+  font-size: var(--titre-medium-h5-font-size);
+  letter-spacing: var(--titre-medium-h5-letter-spacing);
+  line-height: var(--titre-medium-h5-line-height);
+  white-space: nowrap;
+  font-style: var(--titre-medium-h5-font-style);
+}
 
-  }
+.icons-instagram {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  position: relative;
 
-  .view-insta{
-    width: 100%;
+}
 
-    h4 {
-      font-size: 20px;
-    }
-  }
+.icons-instagram .frame-icon {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
 
-  .insta-show {
-    width: 100%;
-  }
-
-  .icon {
-    width: 30px;
-    height: 30px;
-  }
-
-
-  .interactionbtns span {
-    width: 95px;
-  }
-
-  .textcontent {
-    font-size: 12px;
+  img{
+    position: relative;
+    width: 16px;
+    height: 16px;
   }
 }
 
 
-
-@media  (max-width: 768px) {
-
-  .show{
-    display:flex;
-    flex-direction: column;
-  }
-
-  .creation{
-    display:flex;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .prompt-insta{
-    font-size: 14px;
-  }
-
-  .creation-images img{
-    width: 150px;
-    height: 150px;
-    margin: 1%
-  }
-
-  .recreer{
-    width: 100%;
-    margin-top: 2%;
-  }
-
-  .instagram{
-    margin-top: 5%;
-  }
-
-  .insta-show {
-    width: 100%;
-  }
-
-  .view-insta h4 {
-    font-size: 18px;
-  }
-
-  .icon {
-    width: 25px;
-    height: 25px;
-  }
-
-  .interactionbtns {
-    padding: 8px 10px;
-  }
-
-  .interactionbtns span {
-    width: 80%;
-  }
-
-  .btn-annexe, .btn-publier {
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .textcontent {
-    font-size: 11px;
-  }
-
-  .decalage {
-    margin-top: 250px;
-  }
+.frame-bouton-insta {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 20px;
+  position: relative;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-color: var(--secondaryblackblack-50);
 }
 
-@media (max-width: 480px) {
+.frame-bouton-insta .div {
+  display: flex;
+  width: 464px;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  flex: 0 0 auto;
+}
 
-  .show{
-    display:flex;
-    flex-direction: column;
-  }
+.frame-bouton-insta .div-2 {
+  display: inline-flex;
+  gap: 8px;
+  align-items: flex-start;
+  position: relative;
+  flex: 0 0 auto;
+}
 
-  .creation{
-    width: 90%;
-  }
+.frame-bouton-insta .secondary-bouton-wrapper {
+  display: inline-flex;
+  gap: 12px;
+  align-items: flex-start;
+  position: relative;
+  flex: 0 0 auto;
+}
 
-  .prompt-insta{
-    font-size: 14px;
-  }
+.frame-bouton-insta .secondary-bouton {
+  position: relative;
+  flex: 0 0 auto;
+}
 
-  .creation-images img{
-    width: 50px;
-    height: 50px;
-  }
-
-  .gpt{
-    width: 100%;
-    margin-top: 2%;
-  }
-
-  .recreer{
-    width: 100%;
-    margin-top: 2%;
-  }
-
-  .insta-show img {
-    width: 100%;
-    height: 300px
-  }
-
-  .view-insta h4 {
-    font-size: 16px;
-    margin-top: 1%
-  }
-
-  .insta {
-    max-width: 100%;
-  }
-
-  .insta-show {
-    width: 100%;
-  }
-
-  .icon {
-    width: 20px;
-    height: 20px;
-  }
-
-  .interactionbtns {
-    flex-direction: row;
-    align-items: space-between;
-  }
-
-  .interactionbtns span {
-    width: 100%;
-    justify-content: left;
-  }
-
-  .btn-annexe, .btn-publier {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .textcontent {
-    font-size: 10px;
-  }
-
-  .decalage {
-    margin-top: 250px;
-  }
+.frame-bouton-insta .main-bouton {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  position: relative;
+  flex: 0 0 auto;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #ffffff42;
+  box-shadow: inset 0px 4px 10.9px #ffffff66;
+  background: linear-gradient(180deg, rgb(28.77, 147.84, 255) 0%, rgb(255, 0, 244.8) 100%);
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--titre-medium-h5-font-family);
+  font-weight: var(--titre-medium-h5-font-weight);
+  color: #ffffff;
+  font-size: var(--titre-medium-h5-font-size);
+  letter-spacing: var(--titre-medium-h5-letter-spacing);
+  line-height: var(--titre-medium-h5-line-height);
+  white-space: nowrap;
+  font-style: var(--titre-medium-h5-font-style);
 }
