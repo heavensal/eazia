@@ -370,5 +370,23 @@ a {
 .content {
   margin-left: 250px;
   flex-grow: 1;
+  background: linear-gradient(180deg, rgba(241.76, 64.91, 171.02, 0) 0%, rgb(255, 229.49, 243.27) 44.42%),
+              linear-gradient(180deg, rgba(144, 98, 255, 0) 0%, rgb(245.58, 241.67, 255) 43.01%),
+              linear-gradient(180deg, rgba(229.49, 242.92, 255, 0) 0%, rgb(229.49, 242.92, 255) 44.42%);
+
+  filter: blur(166.3px),
+          blur(166.3px),
+          blur(166.3px);
+}
+
+.footer{
+  display: flex;
+  height: 10vh;
   background: linear-gradient(180deg, rgba(229.49, 242.92, 255, 0) 0%, rgb(229.49, 242.92, 255) 44.42%);
+  border-color: var(--secondarywhitewhite-400);
+  position: static;
+  bottom: 0;
+  z-index:11;
+  width: 100%;
+  transition: margin-left 0.3s, width 0.3s;
 }

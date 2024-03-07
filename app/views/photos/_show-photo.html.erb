@@ -1,11 +1,11 @@
-<div class="photo" style="perspective: 1px;">
+<div class="image-container" style="perspective: 1px;">
 
   <%= form_for([post, photo], url: select_post_photo_path(@post, photo), method: :patch) do |f| %>
     <%= image_submit_tag(cl_image_path(photo.key),
       loading: "lazy",
       id: "photo_#{i}",
       class: "photo_#{photo.id}",
-      width: 200,
+      width: 150,
       style: photo.id.in?(post.photos_selected) ? "border: 4px solid green" : nil) %>
   <% end %>
 

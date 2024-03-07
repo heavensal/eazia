@@ -14,12 +14,12 @@ export default class extends Controller {
       this.checkboxTarget.addEventListener('change', this.validateForm.bind(this));
     }
 
-    this.submitButton = this.element.querySelector('.btn-inscription') || this.element.querySelector('.btn-valider');
+    this.submitButton = this.element.querySelector('.btn-inscription') || this.element.querySelector('.main-bouton');
   }
 
   validateField(event) {
     const field = event.target;
-    const errorTarget = this.errorTargets.find(e => e.getAttribute("data-input-name") === field.name);
+    const errorTarget = this.errorTarget.find(e => e.getAttribute("data-input-name") === field.name);
 
     if (!field.value) {
       field.classList.add("is-invalid");

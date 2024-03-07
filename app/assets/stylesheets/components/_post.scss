@@ -22,6 +22,8 @@ height: 100vh;
   gap: 8px;
   position: relative;
   flex: 0 0 auto;
+
+
 }
 
 .contenu .text-wrapper-post {
@@ -83,7 +85,8 @@ height: 100vh;
 }
 
 .file-upload-wrapper {
-  display: inline-flex;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 8px;
   padding: 12px;
@@ -255,10 +258,8 @@ flex: 0 0 auto;
 margin-left: 160px;
 border-radius: 4px;
 overflow: hidden;
-border: 1px solid;
-border-color: #ffffff42;
-box-shadow: inset 0px 4px 10.9px #ffffff66;
-background: linear-gradient(180deg, rgb(28.77, 147.84, 255) 0%, rgb(255, 0, 244.8) 100%);
+border: 0;
+background: linear-gradient(120deg, #233DFF, #E17AFF 50%, #FD972C);
 position: relative;
 width: fit-content;
 margin-top: -1px;
@@ -281,9 +282,7 @@ font-style: var(--titre-medium-h5-font-style);
   background-color: rgba(255, 255, 255, 1);
   border-radius: 6px;
   overflow: hidden;
-  border: 1px solid;
-  border-color: #ffffff42;
-  background: linear-gradient(180deg, rgba(28.77, 147.84, 255, 0.8) 0%, rgba(255, 0, 244.8, 0.8) 100%);
+  background: linear-gradient(120deg, #233DFF, #E17AFF 50%, #FD972C);
   position: relative;
   width: fit-content;
   margin-top: -1px;
@@ -300,5 +299,6 @@ font-style: var(--titre-medium-h5-font-style);
 .footer-form{
   display: flex;
   flex-direction: row;
+  width: 100%;
   justify-content: space-between;
 }
