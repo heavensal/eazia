@@ -22,6 +22,8 @@ height: 100vh;
   gap: 8px;
   position: relative;
   flex: 0 0 auto;
+
+
 }
 
 .contenu .text-wrapper-post {
@@ -300,5 +302,6 @@ font-style: var(--titre-medium-h5-font-style);
 .footer-form{
   display: flex;
   flex-direction: row;
+  width: 100%;
   justify-content: space-between;
 }

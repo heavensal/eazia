@@ -1,20 +1,37 @@
-<div class="frame-bouton">
-  <div class="div-bouton">
-<%= form_with model: post, url: load_my_photo_post_photos_path(post), method: :post, local: true do |form| %>
+<%# <div class="frame-bouton">
+  <div class="div-bouton"> %>
+<%= form_with model: post, url: load_my_photo_post_photos_path(post), method: :post, local: true, data: { controller: "auto-submit", action: "change->auto-submit#submitOnFileSelect" }  do |form| %>
   <div class="images">
-    <div data-controller="file-upload">
-      <%# <%= form.label :photos, "Charger une photo", class: "custom-file-upload" %>
-      <%= form.file_field :photos, multiple: true, direct_upload: true, class:"secondary-bouton", data: { action: "change->file-upload#updateFileName", file_upload_target: "source" } %>
+    <div  class="file-upload-wrapper-show" data-controller="file-upload">
+      <%= form.label :photos, "Charger une photo", class: "custom-file-upload" %>
+      <%= form.file_field :photos, multiple: true, direct_upload: true, data: { action: "change->file-upload#updateFileName change->auto-submit#submitOnFileSelect", file_upload_target: "source" } %>
+      <%# <label for="photos" class="label-as-bouton">Charger des photos</label> %>
       <span data-file-upload-target="fileName" class="file-name"></span>
     </div>
 
 
-      <%= form.submit "charger les photos" %>
+      <%# <%= form.submit "charger les photos" %>
 
   </div>
 <% end %>
-</div>
-</div>
+
+<script>
+  document.addEventListener('turbolinks:load', function() {
+    // Vérifiez si votre élément existe pour éviter des erreurs JavaScript
+    var fileInput = document.querySelector('#my-photo-form input[type=file]');
+    if(fileInput) {
+      fileInput.addEventListener('change', function() {
+        if(this.files.length > 0) {
+          // Soumettre le formulaire automatiquement quand un fichier est sélectionné
+          var form = document.getElementById('my-photo-form');
+          form.submit();
+        }
+      });
+    }
+  });
+</script>
+<%# </div>
+</div> %>
 
 <%# Permet d'ajouter mes photos dans la show directement %>
 <%# AJOUTER la possibilité de n'en faire qu'un button %>
