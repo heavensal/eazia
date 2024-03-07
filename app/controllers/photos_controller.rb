@@ -8,8 +8,8 @@ class PhotosController < ApplicationController
 
   def load_my_photo
     @post = Post.find(params[:post_id])
-    if @post[:photos]
-      @post[:photos].each do |photo|
+    if photo_params[:photos].present?
+      photo_params[:photos].each do |photo|
         filename = "image_#{Time.now.to_i}.jpeg"
         @post.photos.attach(photo)
         select_photos(@post)
