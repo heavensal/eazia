@@ -1,0 +1,7 @@
+<%= link_to "❌", post_photo_path(@post, photo),
+data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer la photo ?"},
+style: "position: fixed; top: 2px; right: 7px" %>
+
+<%# Supprimer une photo dans la show %>
+<%# AMELIORER le front pour qu'il soit sur la photo %>
+<%# ENLEVER LES STYLES POUR FAIRE DES CLASS %>

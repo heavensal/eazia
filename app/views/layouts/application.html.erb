@@ -19,9 +19,13 @@
       <%= render 'layouts/navbar' %>
     <% end %>
     </div>
+    <% end %>
     <div class="content">
       <%= yield %>
     </div>
+  <% if user_signed_in? %>
+    <%= render 'layouts/footer' %>
+  <% end %>
 </body>
 
   <div class="footer">
