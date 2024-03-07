@@ -10,7 +10,9 @@ class GptCreationsController < ApplicationController
     @post = Post.find(params[:post_id])
     @gpt_creation = @post.gpt_creation
     if @gpt_creation.update(description_params)
-      redirect_to post_path(@post)
+      redirect_to post_path(@post), notice: 'Description mise à jour avec succès.'
+    else
+      redirect_to post_path(@post), status: :unprocessable_entity, notice: 'Erreur lors de la mise à jour de la description. Merci de réessayer.'
     end
   end
 

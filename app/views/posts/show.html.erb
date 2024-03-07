@@ -1,33 +1,35 @@
+<% if flash[:notice] %>
+  <div class="notice" style="position: absolute; top:24px; right:24px; background-color: limegreen; border: solid 2px green; padding: 16px; z-index: 1000;">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
 <div class="show">
 
   <%# TRES IMPORTANT: Canal de diffusion des changements d'images %>
   <%= turbo_stream_from "post_#{@post.id}" %>
 
-
   <div class="creation">
 
-     <div class="creation-images" id="photos">
-        <% @post.photos.each_with_index do |photo, i| %>
+    <div class="creation-images" id="photos">
+      <% @post.photos.each_with_index do |photo, i| %>
 
-          <%# Pour ajouter/enlever la photo des sélections etsupprimer la photo %>
-          <%= render 'photos/show-photo', post: @post, photo: photo, i: i %>
+        <%# Pour ajouter/enlever la photo des sélections etsupprimer la photo %>
+        <%= render 'photos/show-photo', post: @post, photo: photo, i: i %>
 
-        <% end %>
-      </div>
-
-
+      <% end %>
+    </div>
 
     <div class="gpt">
+
       <%= render 'gpt_creations/recreate', gpt_creation: @gpt_creation %>
 
-        <div class="recreer" >
+      <div class="recreer" >
 
-          <%# Pour régénérer une description %>
-          <%= form_for([@post, @gpt_creation], url: recreate_post_gpt_creation_path(@post), method: :patch) do |f| %>
-          <%= f.submit "Recréer ✔️",  class:"button-recreer"%>
-          <% end %>
+        <%# Pour régénérer une description %>
+        <%= button_to "Recréer ✔️", recreate_post_gpt_creation_path(@post), method: :patch, class: "button-recreer" %>
 
-        </div>
+      </div>
 
     </div>
   </div>
@@ -42,15 +44,15 @@
       <%= render "show_btns", post: @post %>
     </div>
 
-
   </div>
 
 </div>
-    <%# Recréer une photo %>
-    <%= render "photos/btn-create-new-photo", post: @post %>
 
-    <%# Charger une ou des photos %>
-    <%= render "photos/btn-load-photos", post: @post %>
+<%# Recréer une photo %>
+<%= render "photos/btn-create-new-photo", post: @post %>
 
-    <%# SUPPRIMER LE BROUILLON DE POST %>
-    <%= link_to "Supprimer le brouillon", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?"}, class: "btn btn-outline-danger" %>
+<%# Charger une ou des photos %>
+<%= render "photos/btn-load-photos", post: @post %>
+
+<%# SUPPRIMER LE BROUILLON DE POST %>
+<%= link_to "Supprimer le brouillon", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?"}, class: "btn btn-outline-danger" %>
