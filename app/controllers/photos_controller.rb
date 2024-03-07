@@ -34,12 +34,13 @@ class PhotosController < ApplicationController
     @post = Post.find(params[:post_id])
     @photo = @post.photos.find(params[:id])
     @post.photos_selected.delete(@photo.id)
-    @post.save!
-    @photo.purge
+    if @post.save
+      @photo.purge
+      redirect_to post_path(@post), notice: 'Photo supprimée avec succès.'
+    else
+      redirect_to post_path(@post), status: :unprocessable_entity, notice: 'Erreur lors de la suppression de la photo. Merci de réessayer.'
     # @post.dalle3_images.all.last.destroy
-    redirect_to post_path(@post), notice: 'Photo supprimée avec succès.'
   end
-
 
   private
 

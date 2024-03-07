@@ -1,12 +1,17 @@
 <div class="image-container" style="perspective: 1px;">
 
   <%= form_for([post, photo], url: select_post_photo_path(@post, photo), method: :patch) do |f| %>
+
+    <%# INDICE de la place de la photo %>
+    <i>
+      <%= photo.id.in?(post.photos_selected) ? post.photos_selected.index(photo.id)+1 : nil %>
+    </i>
+
     <%= image_submit_tag(cl_image_path(photo.key),
       loading: "lazy",
       id: "photo_#{i}",
       class: "photo_#{photo.id}",
-      width: 150,
-      style: photo.id.in?(post.photos_selected) ? "border: 4px solid green" : nil) %>
+      width: 150) %>
   <% end %>
 
   <%# Pour supprimer la photo %>
