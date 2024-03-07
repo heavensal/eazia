@@ -1,4 +1,4 @@
-<div class="photo" style="perspective: 1px;">
+<div class="image-container" style="perspective: 1px;">
 
   <%= form_for([post, photo], url: select_post_photo_path(@post, photo), method: :patch) do |f| %>
     <%= image_submit_tag(cl_image_path(photo.key),

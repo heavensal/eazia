@@ -346,7 +346,8 @@
 
 .frame-show {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   // width: 664px;
   // height: 982px;
   align-items: flex-start;
@@ -361,19 +362,70 @@
 
 .frame-show .div-show {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   gap: 8px 8px;
   position: relative;
   align-self: stretch;
-  width: 100%;
+  width: 50%;
   flex: 0 0 auto;
+
+  form{
+    display: flex;
+    width: 126px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: var(--secondarywhitewhite-200);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: var(--secondarywhitewhite-300);
+    position: relative;
+    width: 100%;
+    margin-top: -1px;
+    font-family: var(--petit-texte-medium-h1-font-family);
+    font-weight: var(--petit-texte-medium-h1-font-weight);
+    color: var(--secondaryblackblack-300);
+    font-size: var(--petit-texte-medium-h1-font-size);
+    letter-spacing: var(--petit-texte-medium-h1-letter-spacing);
+    line-height: var(--petit-texte-medium-h1-line-height);
+    white-space: nowrap;
+    font-style: var(--petit-texte-medium-h1-font-style);
+
+    input{
+      border: 0;
+      background-color: transparent;
+    }
+
+    textarea{
+      position: relative;
+      align-self: stretch;
+      width: 100%;
+      height: 100px;
+      margin-top: -1px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-end;
+      gap: 24px;
+      background-color: var(--secondarywhitewhite-100);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 0;
+      resize: none;
+      font-size: 14px;
+     }
+
+  }
 }
 
 
 .creation-images{
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
   align-items: flex-start;
   gap: 8px 8px;
   position: relative;
@@ -402,17 +454,42 @@
   overflow: hidden;
 }
 
-.icon-supprimer {
-  display: none;
-  position: absolute;
-  top: 5px; /* Ajustez selon le besoin */
-  right: 5px;
-  width: 16px;
-  height: 16px;
+// .icon-supprimer {
+//   display: none;
+//   position: absolute;
+//   top: 5px; /* Ajustez selon le besoin */
+//   right: 5px;
+//   width: 16px;
+//   height: 16px;
+// }
+
+.image-container {
+  position: relative;
+  display: inline-block; /* ou une autre valeur selon la mise en page */
+
 }
 
-.photo-container:hover .icon-supprimer {
-  display: block;
+.delete-icon {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease, visibility 0s linear 0.3s; /* Ajoute une transition douce pour l'effet zoom et la visibilité */
+}
+
+.delete-icon:hover {
+  transform:perspective(1.2s);
+  background-color: white;
+  border-radius: 60%;
+  background-size: 20%;
+}
+
+// .photo-container:hover .icon-supprimer {
+//   display: block;
+// }
+
+.select-images{
+  display: none;
 }
 
 .frame-bouton {
@@ -522,32 +599,41 @@
   border-color: var(--secondaryblackblack-50);
 }
 
-#gpt_creation_2{
+.gpt-creation{
    position: relative;
    align-self: stretch;
    margin-top: -1px;
-   font-family: var(--titre-regular-h4-font-family);
-   font-weight: var(--titre-regular-h4-font-weight);
-   color: var(--secondaryblackblack-500);
-   font-size: var(--titre-regular-h4-font-size);
-   letter-spacing: var(--titre-regular-h4-letter-spacing);
-   line-height: var(--titre-regular-h4-line-height);
-   font-style: var(--titre-regular-h4-font-style);
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: flex-end;
+   gap: 24px;
+   background-color: var(--secondarywhitewhite-100);
+   border-radius: 8px;
+   overflow: hidden;
+   border: 0;
 
-   textarea{
-    display: flex;
-    flex-direction: column;
-    width: 616px;
-    align-items: flex-start;
-    justify-content: flex-end;
-    gap: 24px;
-    position: relative;
-    background-color: var(--secondarywhitewhite-100);
-    border-radius: 8px;
-    overflow: hidden;
-    border: 0
+   turbo-frame{
+    width: 100%;
    }
- }
+  }
+
+  .edit_gpt_creation{
+   position: relative;
+   align-self: stretch;
+   width: 100%;
+   margin-top: -1px;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   justify-content: flex-end;
+   gap: 24px;
+   background-color: var(--secondarywhitewhite-100);
+   border-radius: 8px;
+   overflow: hidden;
+   border: 0;
+
+  }
 
 .frame-description .div-description {
   display: inline-flex;
