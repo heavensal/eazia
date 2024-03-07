@@ -1,10 +1,13 @@
 <div class="gpt-creation">
-<%= turbo_frame_tag gpt_creation do %>
-    <%= gpt_creation.description if gpt_creation.description %>
+  <%= turbo_frame_tag gpt_creation do %>
+      <%= gpt_creation.description if gpt_creation.description %>
 
-  <div class="container-boutons">
-    <%= link_to 'Modifier', edit_post_gpt_creation_path(gpt_creation.post), class: "secondary-bouton" %>
-
-  </div>
-<% end %>
+    <div class="container-boutons">
+      <%= link_to 'Modifier', edit_post_gpt_creation_path(gpt_creation.post), class: "secondary-bouton" %>
+      <%# Pour régénérer une description %>
+      <%= form_for([@post, @gpt_creation], url: recreate_post_gpt_creation_path(@post), method: :patch) do |f| %>
+      <%= f.submit "Générer un nouveau post",  class:"secondary-bouton"%>
+      <% end %>
+    </div>
+  <% end %>
 </div>
