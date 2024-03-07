@@ -1,3 +1,4 @@
+
 <%= turbo_frame_tag @gpt_creation do %>
 
   <%= form_for([@post, @gpt_creation], url: post_gpt_creation_path(@post), method: :patch)  do |f| %>
@@ -15,8 +16,8 @@
       }
       %>
     <div class="d-flex justify-content-around">
-      <%= link_to "Annuler", post_path(@post), class:"button-cancel" %>
-      <%= f.submit "Modifier ✔️", class:"button-annexe" %>
+      <%= link_to "Annuler", post_path(@post), class:"secondary-bouton" %>
+      <%= f.submit "Modifier ✔️", class:"secondary-bouton" %>
     </div>
 
   <% end %>
