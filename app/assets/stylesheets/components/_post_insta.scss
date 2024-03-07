@@ -353,7 +353,7 @@
   // height: 982px;
   align-items: flex-start;
   gap: 40px;
-  padding: 24px 24px 0px;
+  padding: 24px;
   position: relative;
   border-right-width: 1px;
   border-right-style: solid;
@@ -365,11 +365,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px 8px;
+  gap:24px;
   position: relative;
   align-self: stretch;
   width: 50%;
   flex: 0 0 auto;
+
 
   form{
     display: flex;
@@ -529,9 +530,6 @@
   background-size: 20%;
 }
 
-// .photo-container:hover .icon-supprimer {
-//   display: block;
-// }
 
 .select-images{
   display: none;
@@ -611,19 +609,13 @@
   display: none;
 }
 
-.box-show {
+.div-show .box-show {
   width: 584px;
   height: 1px;
-
-  img{
-    position: fixed;
+  position: fixed;
   width: 584px;
   height: 1px;
-  top: 0;
-  left: 0;
   object-fit: cover;
-
-  }
 }
 
 .frame-description {
@@ -743,8 +735,8 @@
 
 .container-boutons {
   display: flex;
-  justify-content: left; /* Ajustez en fonction de l'espacement souhaité */
-  align-items: center; /* Centrer les boutons verticalement si leurs tailles diffèrent */
+  justify-content: left;
+  align-items: center;
   gap: 24px;
   padding-top: 24px;
 }
@@ -841,13 +833,6 @@
   border-color: var(--secondaryblackblack-50);
 }
 
-// .frame-bouton-insta .div {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: flex-start;
-//   position: relative;
-//   flex: 0 0 auto;
-// }
 
 .frame-bouton-insta .div-2-insta {
   display: inline-flex;
@@ -879,10 +864,8 @@
   flex: 0 0 auto;
   border-radius: 4px;
   overflow: hidden;
-  border: 1px solid;
-  border-color: #ffffff42;
-  box-shadow: inset 0px 4px 10.9px #ffffff66;
-  background: linear-gradient(180deg, rgb(28.77, 147.84, 255) 0%, rgb(255, 0, 244.8) 100%);
+  border: 0;
+  background: linear-gradient(120deg, #233DFF, #E17AFF 50%, #FD972C);
   position: relative;
   width: fit-content;
   margin-top: -1px;

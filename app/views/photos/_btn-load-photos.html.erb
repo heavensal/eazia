@@ -15,21 +15,6 @@
   </div>
 <% end %>
 
-<script>
-  document.addEventListener('turbolinks:load', function() {
-    // Vérifiez si votre élément existe pour éviter des erreurs JavaScript
-    var fileInput = document.querySelector('#my-photo-form input[type=file]');
-    if(fileInput) {
-      fileInput.addEventListener('change', function() {
-        if(this.files.length > 0) {
-          // Soumettre le formulaire automatiquement quand un fichier est sélectionné
-          var form = document.getElementById('my-photo-form');
-          form.submit();
-        }
-      });
-    }
-  });
-</script>
 <%# </div>
 </div> %>
 
