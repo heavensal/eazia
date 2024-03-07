@@ -8,99 +8,45 @@
   <div class="frame-show">
     <div class="div-show">
 
-  <%# TRES IMPORTANT: Canal de diffusion des changements d'images %>
-  <%= turbo_stream_from "post_#{@post.id}" %>
+      <%# TRES IMPORTANT: Canal de diffusion des changements d'images %>
+      <%= turbo_stream_from "post_#{@post.id}" %>
 
-  <div class="creation">
+      <div class="creation-images" id="photos">
+        <% @post.photos.each_with_index do |photo, i| %>
 
-    <div class="creation-images" id="photos">
-      <% @post.photos.each_with_index do |photo, i| %>
+          <%# Pour ajouter/enlever la photo des sélections etsupprimer la photo %>
+          <%= render 'photos/show-photo', post: @post, photo: photo, i: i %>
 
-        <%# Pour ajouter/enlever la photo des sélections etsupprimer la photo %>
-        <%= render 'photos/show-photo', post: @post, photo: photo, i: i %>
+        <% end %>
 
-      <% end %>
-    </div>
-
-    <div class="gpt">
-
-      <%= render 'gpt_creations/recreate', gpt_creation: @gpt_creation %>
-
-      <div class="recreer" >
-
-        <%# Pour régénérer une description %>
-        <%= button_to "Recréer ✔️", recreate_post_gpt_creation_path(@post), method: :patch, class: "button-recreer" %>
+        <%# Recréer une photo %>
+        <%= render "photos/btn-create-new-photo", post: @post %>
 
       </div>
 
-    </div>
-  </div>
-
-  <div class='view-insta decalage' data-display-target="view">
-
-    <div class="instagram" id="instagram">
-      <%= render "insta_show", post: @post, description: @description, photos_selected: @photos_selected %>
-    </div>
-
-    <div>
-      <%= render "show_btns", post: @post %>
-    </div>
-
-  </div>
-
-</div>
-
-<%# Recréer une photo %>
-<%= render "photos/btn-create-new-photo", post: @post %>
-
-<%# Charger une ou des photos %>
-<%= render "photos/btn-load-photos", post: @post %>
-
-<%# SUPPRIMER LE BROUILLON DE POST %>
-<%= link_to "Supprimer le brouillon", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?"}, class: "btn btn-outline-danger" %>
-
       <%= image_tag("line_2.png", alt:"line") %>
 
-
-
-<div class="frame-description">
-    <div class="description-de-post">
-      <%= render 'gpt_creations/recreate', gpt_creation: @gpt_creation %>
-
-
+      <div class="frame-description">
+        <div class="description-de-post">
+          <%= render 'gpt_creations/recreate', gpt_creation: @gpt_creation %>
 
           <%# Pour régénérer une description %>
           <%= form_for([@post, @gpt_creation], url: recreate_post_gpt_creation_path(@post), method: :patch) do |f| %>
           <%= f.submit "Générer un nouveau post",  class:"secondary-bouton"%>
           <% end %>
 
-
+        </div>
+      </div>
 
     </div>
-  </div>
 
-
-    <div class="select-images">
-      <%= turbo_stream_from "post_#{@post.id}" %>
-        <%= @post.photos_selected %>
-          <% @post.photos_selected.each do |id| %>
-            <% photo = @post.photos.find(id) %>
-              <%= cl_image_tag photo.key, loading: "lazy", width:50, height: 50 %>
-          <% end %>
+    <div class="view-insta">
+        <%= render "insta_show", post: @post, description: @description, photos_selected: @photos_selected %>
+        <%= render "show_btns", post: @post %>
     </div>
 
-
   </div>
-
-
-
-
-  <div class="view-insta">
-      <%= render "insta_show", post: @post, description: @description, photos_selected: @photos_selected %>
-      <%= render "show_btns", post: @post %>
-  </div>
-
-</div>
 
     <%# SUPPRIMER LE BROUILLON DE POST %>
-    <%# <%= link_to "Supprimer le brouillon", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?"}, class: "btn btn-outline-danger" %>
+    <%= link_to "Supprimer le brouillon", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?"}, class: "btn btn-outline-danger" %>
+</div>
