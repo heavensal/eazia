@@ -73,7 +73,7 @@ export default class extends Controller {
       this.errorTarget.textContent = 'La description doit contenir au moins 20 caractères.';
     } else {
       // Activer le bouton de soumission et cacher le message d'erreur
-      submitButton.disabled = false;
+      // submitButton.disabled = false;
       this.errorTarget.classList.add('d-none');
     }
   }

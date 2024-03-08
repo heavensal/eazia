@@ -375,16 +375,16 @@
   position: relative;
   width: 50%;
 
-  img{
-    position: relative;
-    width: 148px;
-    height: 148px;
-    border-radius: 4px;
-    overflow: hidden;
-    background-image: url(./img/img-checkbox-3.svg);
-    background-size: cover;
-    background-position: 50% 50%;
-  }
+  // img{
+  //   position: relative;
+  //   width: 148px;
+  //   height: 148px;
+  //   border-radius: 4px;
+  //   overflow: hidden;
+  //   // background-image: url(./img/img-checkbox-3.svg);
+  //   background-size: cover;
+  //   background-position: 50% 50%;
+  // }
 }
 
 .generator-image input[type="submit"]{
@@ -897,4 +897,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+
+.connexion-insta{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
 }
