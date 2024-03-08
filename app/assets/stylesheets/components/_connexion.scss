@@ -170,7 +170,7 @@ line-height: normal;
   }
 
   a{
-  background: var(--Primary-Colors-Main, linear-gradient(96deg, #1D94FF 0%, #FF00F5 121.24%));
+  background: linear-gradient(120deg, #233DFF, #E17AFF 50%, #FD972C);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -232,11 +232,19 @@ line-height: 16px; /* 114.286% */
 
 
 .connexion {
-  background-color: #ffffff;
+  background: linear-gradient(180deg, rgba(241.76, 64.91, 171.02, 0) 0%, rgb(255, 229.49, 243.27) 44.42%),
+              linear-gradient(180deg, rgba(144, 98, 255, 0) 0%, rgb(245.58, 241.67, 255) 43.01%),
+              linear-gradient(180deg, rgba(229.49, 242.92, 255, 0) 0%, rgb(229.49, 242.92, 255) 44.42%);
+
+  filter: blur(166.3px),
+          blur(166.3px),
+          blur(166.3px);
+
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100%;
+  padding: 32px;
 }
 
 .container-login {
@@ -447,9 +455,7 @@ line-height: 16px; /* 114.286% */
   background-color: rgba(255, 255, 255, 1);
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid;
-  border-color: #ffffff42;
-  background: linear-gradient(90deg, rgb(28.77, 147.84, 255) 0%, rgb(255, 0, 244.8) 100%);
+  background: linear-gradient(120deg, #233DFF, #E17AFF 50%, #FD972C);
 }
 
 .container-login .frame {
@@ -597,9 +603,8 @@ line-height: 16px; /* 114.286% */
   background-color: rgba(255, 255, 255, 1);
   border-radius: 6px;
   overflow: hidden;
-  border: 1px solid;
-  border-color: #ffffff42;
-  background: linear-gradient(90deg, rgb(28.77, 147.84, 255) 0%, rgb(255, 0, 244.8) 100%);
+  border: 0;
+  background: linear-gradient(120deg, #233DFF, #E17AFF 50%, #FD972C);
 }
 
 
