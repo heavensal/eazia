@@ -1,6 +1,6 @@
 <%# NOTIF: HTML CSS A revoir %>
 <% if flash[:notice] %>
-  <div class="notice" style="position: absolute; top:24px; right:24px; background-color: limegreen; border: solid 2px green; padding: 16px; z-index: 1000;">
+  <div class="notice">
     <%= flash[:notice] %>
   </div>
 <% end %>
@@ -11,19 +11,21 @@
   <div class="frame-show">
     <div class="div-show">
 
+      <p>Sélectionner l'ordre des images</p>
       <div class="creation-images" id="photos">
 
         <% @post.photos.each_with_index do |photo, i| %>
 
           <%# Pour ajouter/enlever la photo des sélections et supprimer la photo %>
           <%# La place de la photo est aussi dans le partial %>
+
           <%= render 'photos/show-photo', post: @post, photo: photo, i: i %>
         <% end %>
 
+</div>
         <%# Recréer une photo %>
         <%= render "photos/btn-create-new-photo", post: @post %>
         <%= render "photos/btn-load-photos", post: @post %>
-
         <%= image_tag("line_2.png", alt:"line") %>
 
 
@@ -36,6 +38,7 @@
         </div>
 
       </div>
+</div>
 
   <div class="view-insta">
       <%= render "insta_show", post: @post, description: @description, photos_selected: @photos_selected %>
@@ -43,8 +46,3 @@
   </div>
 
 </div>
-
-    <%# SUPPRIMER LE BROUILLON DE POST %>
-    <div class="text-center">
-      <%= link_to "Supprimer le brouillon", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?"}, class: "btn btn-outline-danger" %>
-    </div>

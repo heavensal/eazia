@@ -15,7 +15,7 @@ class PhotosController < ApplicationController
         select_photos(@post)
       end
     end
-    redirect_to post_path(@post), notice: 'Photo ajoutée avec succès.'
+    redirect_to post_path(@post), notice: 'Photo ajoutée avec succès'
   end
 
   def select
@@ -23,10 +23,10 @@ class PhotosController < ApplicationController
     @photo = @post.photos.find(params[:id])
     if @photo.id.in?(@post.photos_selected)
       @post.photos_selected.delete(@photo.id)
-      @post.save ? (redirect_to post_path(@post), notice: 'Photo enlevée avec succès.') : (redirect_to post_path(@post), status: :unprocessable_entity, notice: 'Erreur lors de la désélection de la photo. Merci de réessayer.')
+      @post.save ? (redirect_to post_path(@post), notice: 'Photo enlevée avec succès') : (redirect_to post_path(@post), status: :unprocessable_entity, notice: 'Erreur lors de la désélection de la photo. Merci de réessayer.')
     else
       @post.photos_selected << @photo.id
-      @post.save ? (redirect_to post_path(@post), notice: 'Photo sélectionnée avec succès.') : (redirect_to post_path(@post), status: :unprocessable_entity, notice: 'Erreur lors de la sélection de la photo. Merci de réessayer.')
+      @post.save ? (redirect_to post_path(@post), notice: 'Photo sélectionnée avec succès') : (redirect_to post_path(@post), status: :unprocessable_entity, notice: 'Erreur lors de la sélection de la photo. Merci de réessayer.')
     end
   end
 
@@ -36,10 +36,11 @@ class PhotosController < ApplicationController
     @post.photos_selected.delete(@photo.id)
     if @post.save
       @photo.purge
-      redirect_to post_path(@post), notice: 'Photo supprimée avec succès.'
+      redirect_to post_path(@post), notice: 'Photo supprimée avec succès'
     else
       redirect_to post_path(@post), status: :unprocessable_entity, notice: 'Erreur lors de la suppression de la photo. Merci de réessayer.'
-    end # Close the missing if statement
+    # @post.dalle3_images.all.last.destroy
+    end
   end
 
   private
