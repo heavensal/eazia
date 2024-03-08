@@ -1,8 +1,8 @@
 <div id="myCarousel"  class="carousel slide" data-ride="carousel">
 
   <div class="carousel-indicators">
-    <% if images.length > 1 %>
-      <% images.each_with_index do |img, i| %>
+    <% if photos_selected.length > 1 %>
+      <% photos_selected.each_with_index do |photo, i| %>
         <div data-bs-slide-to="<%=i%>" class="<%= i== 0 ? "active" : "" %> rounded-circle card-indicator">
         </div>
       <%end%>
@@ -10,16 +10,14 @@
   </div>
 
   <div class="carousel-inner" data-controller="show-imgs" id="insta-photos">
-    <% images.each_with_index do |img, i| %>
+    <% photos_selected.each_with_index do |photo, i| %>
       <div class="carousel-item <%= i == 0 ? "active" : "" %>">
-      <% if img.id.in?(post.photos_selected) %>
-        <%= cl_image_tag img.key , class:"crop", data: { show_imgs_target: "image", src: img.key } %>
-      <% end %>
+          <%= cl_image_tag photo.key , class:"crop", data: { show_imgs_target: "image", src: photo.key } %>
       </div>
     <% end %>
   </div>
 
-  <% if images.length > 1 %>
+  <% if photos_selected.length > 1 %>
     <%= render "layouts/instagram/btn_carousel_show" %>
   <% end %>
 

@@ -23,7 +23,9 @@ class GptCreationsController < ApplicationController
     ai_api_service.work_2(@post)
     respond_to do |format|
       format.turbo_stream do
+        flash[:notice] = 'Nouvelle description en cours de création. Merci de patienter quelques instants.'
         render turbo_stream: turbo_stream.replace(@gpt_creation, partial: "gpt_creations/recreate", locals: { gpt_creation: @gpt_creation })
+        flash[:notice] = 'Nouvelle description créée avec succès.'
       end
       format.html { redirect_to post_path(@post) } # Fallback pour les navigateurs sans prise en charge de Turbo
     end
