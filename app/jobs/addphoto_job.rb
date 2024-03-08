@@ -10,11 +10,11 @@ class AddphotoJob < ApplicationJob
   end
 
   def broadcast_photos(post)
-    Turbo::StreamsChannel.broadcast_append_to "post_#{post.id}",
+    Turbo::StreamsChannel.broadcast_append_to post,
         target: "photos",
         partial: "posts/photo",
         locals: { photo: post.photos.last, post: post }
-    Turbo::StreamsChannel.broadcast_update_to "post_#{post.id}",
+    Turbo::StreamsChannel.broadcast_update_to post,
         target: "myCarousel",
         partial: "posts/insta-photos",
         locals: { images: post.photos, post: post }

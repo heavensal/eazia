@@ -1,14 +1,11 @@
 class GptCreationsController < ApplicationController
+  before_action :set_vars
 
   def edit
-    @post = Post.find(params[:post_id])
-    @gpt_creation = @post.gpt_creation
     @description = @gpt_creation.description
   end
 
   def update
-    @post = Post.find(params[:post_id])
-    @gpt_creation = @post.gpt_creation
     if @gpt_creation.update(description_params)
       redirect_to post_path(@post), notice: 'Description mise à jour avec succès.'
     else
@@ -17,17 +14,18 @@ class GptCreationsController < ApplicationController
   end
 
   def recreate
-    @post = Post.find(params[:post_id])
     @gpt_creation = @post.gpt_creation
     ai_api_service = AiApiService.new(@post.user)
     ai_api_service.work_2(@post)
-    respond_to do |format|
-      format.turbo_stream do
-        flash[:notice] = 'Nouvelle description en cours de création. Merci de patienter quelques instants.'
+    respond_to do |f|
+      f.turbo_stream do
+        flash.now[:notice] = 'Nouvelle description en cours de création. Merci de patienter quelques instants.'
         render turbo_stream: turbo_stream.replace(@gpt_creation, partial: "gpt_creations/recreate", locals: { gpt_creation: @gpt_creation })
-        flash[:notice] = 'Nouvelle description créée avec succès.'
       end
-      format.html { redirect_to post_path(@post) } # Fallback pour les navigateurs sans prise en charge de Turbo
+      f.html {
+        flash[:notice] = 'Nouvelle description en cours de création. Merci de patienter quelques instants.'
+        redirect_to post_path(@post)
+        flash[:notice] = 'Nouvelle description créée avec succès.' } # Fallback pour les navigateurs sans prise en charge de Turbo
     end
   end
 
@@ -35,5 +33,10 @@ class GptCreationsController < ApplicationController
 
   def description_params
     params.require(:gpt_creation).permit(:description)
+  end
+
+  def set_vars
+    @post = Post.find(params[:post_id])
+    @gpt_creation = @post.gpt_creation
   end
 end

@@ -1,12 +1,10 @@
-<%# NOTIF: HTML CSS A revoir %>
-<% if flash[:notice] %>
-  <div class="notice">
-    <%= flash[:notice] %>
-  </div>
-<% end %>
-
 <%# TRES IMPORTANT: Canal de diffusion des changements d'images %>
-<%= turbo_stream_from "post_#{@post.id}" %>
+<%= turbo_stream_from @post %>
+
+<%# NOTIF: HTML CSS A revoir %>
+<%# Affiche une notif ou alert, changer css de l'alert %>
+<%= render 'layouts/flashes' %>
+
 <div class="gnration-de-la">
   <div class="frame-show">
     <div class="div-show">
@@ -14,18 +12,16 @@
       <p>Sélectionner l'ordre des images</p>
       <div class="creation-images" id="photos">
 
-        <% @post.photos.each_with_index do |photo, i| %>
+        <%# Pour ajouter/enlever la photo des sélections et supprimer la photo %>
+        <%# La place de la photo est aussi dans le partial %>
+        <%= render partial: "photos/show-photo", collection: @post.photos, as: :photo %>
 
-          <%# Pour ajouter/enlever la photo des sélections et supprimer la photo %>
-          <%# La place de la photo est aussi dans le partial %>
+      </div>
 
-          <%= render 'photos/show-photo', post: @post, photo: photo, i: i %>
-        <% end %>
+      <%# Recréer une photo %>
+      <%= render "photos/btn-create-new-photo", post: @post %>
+      <%= render "photos/btn-load-photos", post: @post %>
 
-</div>
-        <%# Recréer une photo %>
-        <%= render "photos/btn-create-new-photo", post: @post %>
-        <%= render "photos/btn-load-photos", post: @post %>
         <%= image_tag("line_2.png", alt:"line") %>
 
 

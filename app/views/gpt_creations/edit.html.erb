@@ -1,6 +1,4 @@
-
 <%= turbo_frame_tag @gpt_creation do %>
-
   <%= form_for([@post, @gpt_creation], url: post_gpt_creation_path(@post), method: :patch)  do |f| %>
 
     <%= f.text_area :description,
@@ -21,5 +19,4 @@
     </div>
 
   <% end %>
-
 <% end %>

@@ -1,0 +1,12 @@
+<% if flash[:notice] %>
+  <div class="notice" id="notice">
+    <%= flash[:notice] %>
+  </div>
+<% elsif flash[:alert] %>
+  <div class="notice" id="alert">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+
+<%# render layouts/flashes %>
+<%# pour afficher notif et alerts, enlever class, placer css dans l'id pour DRY %>
