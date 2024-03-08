@@ -334,23 +334,16 @@
 
 .gnration-de-la {
   background-color: #ffffff;
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: center;
+  display: flex;
+  flex-direction: row;
   width: 100%;
   background-color: #ffffff;
-  // width: 1512px;
-  // height: 982px;
+
   position: relative;
   padding-bottom: 24px;
 }
 
 .frame-show {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  // width: 664px;
-  // height: 982px;
   align-items: flex-start;
   gap: 40px;
   padding: 24px;
@@ -370,58 +363,6 @@
   align-self: stretch;
   width: 50%;
   flex: 0 0 auto;
-
-
-  form{
-    display: flex;
-    width: 126px;
-    align-items: center;
-    justify-content: center;
-    padding: 8px;
-    position: relative;
-    flex: 0 0 auto;
-    background-color: var(--secondarywhitewhite-200);
-    border-radius: 4px;
-    overflow: hidden;
-    border: 1px solid;
-    border-color: var(--secondarywhitewhite-300);
-    position: relative;
-    width: fit-content;
-    margin-top: -1px;
-    font-family: var(--petit-texte-medium-h1-font-family);
-    font-weight: var(--petit-texte-medium-h1-font-weight);
-    color: var(--secondaryblackblack-300);
-    font-size: var(--petit-texte-medium-h1-font-size);
-    letter-spacing: var(--petit-texte-medium-h1-letter-spacing);
-    line-height: var(--petit-texte-medium-h1-line-height);
-    white-space: nowrap;
-    font-style: var(--petit-texte-medium-h1-font-style);
-
-
-    input{
-      border: 0;
-      background-color: transparent;
-    }
-
-    textarea{
-      position: relative;
-      align-self: stretch;
-      width: 100%;
-      height: 100px;
-      margin-top: -1px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-end;
-      gap: 24px;
-      background-color: var(--secondarywhitewhite-100);
-      border-radius: 8px;
-      overflow: hidden;
-      border: 0;
-      resize: none;
-      font-size: 14px;
-     }
-  }
 }
 
 
@@ -446,6 +387,29 @@
   }
 }
 
+.generator-image input[type="submit"]{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  position: relative;
+  background-color: var(--secondarywhitewhite-200);
+  border-radius: 4px;
+  border-color: transparent;
+  overflow: hidden;
+  position: relative;
+  margin-top: -1px;
+  font-family: var(--titre-medium-h5-font-family);
+  font-weight: var(--titre-medium-h5-font-weight);
+  color: var(--secondaryblackblack-300);
+  font-size: var(--titre-medium-h5-font-size);
+  letter-spacing: var(--titre-medium-h5-letter-spacing);
+  line-height: var(--titre-medium-h5-line-height);
+  font-style: var(--titre-medium-h5-font-style);
+
+}
+
+
 .photo-container {
   position: relative;
   display: inline-flex;
@@ -457,63 +421,55 @@
   overflow: hidden;
 }
 
-// .icon-supprimer {
-//   display: none;
-//   position: absolute;
-//   top: 5px; /* Ajustez selon le besoin */
-//   right: 5px;
-//   width: 16px;
-//   height: 16px;
-// }
 
 .image-container {
   position: relative;
   display: inline-block; /* ou une autre valeur selon la mise en page */
 
 }
-.image-container form{
-  display: flex;
-  width: 126px;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  position: relative;
-  flex: 0 0 auto;
-  border-radius: 4px;
-  overflow: hidden;
-  border-color: var(--secondarywhitewhite-300);
-  position: relative;
-  width: 100%;
-  margin-top: -1px;
-  font-family: var(--petit-texte-medium-h1-font-family);
-  font-weight: var(--petit-texte-medium-h1-font-weight);
-  color: var(--secondaryblackblack-300);
-  font-size: var(--petit-texte-medium-h1-font-size);
-  letter-spacing: var(--petit-texte-medium-h1-letter-spacing);
-  line-height: var(--petit-texte-medium-h1-line-height);
-  white-space: nowrap;
-  font-style: var(--petit-texte-medium-h1-font-style);
+// .image-container form{
+//   display: flex;
+//   width: 126px;
+//   align-items: center;
+//   justify-content: center;
+//   padding: 8px;
+//   position: relative;
+//   flex: 0 0 auto;
+//   border-radius: 4px;
+//   overflow: hidden;
+//   border-color: var(--secondarywhitewhite-300);
+//   position: relative;
+//   width: 100%;
+//   margin-top: -1px;
+//   font-family: var(--petit-texte-medium-h1-font-family);
+//   font-weight: var(--petit-texte-medium-h1-font-weight);
+//   color: var(--secondaryblackblack-300);
+//   font-size: var(--petit-texte-medium-h1-font-size);
+//   letter-spacing: var(--petit-texte-medium-h1-letter-spacing);
+//   line-height: var(--petit-texte-medium-h1-line-height);
+//   white-space: nowrap;
+//   font-style: var(--petit-texte-medium-h1-font-style);
 
-}
+// }
 
-.selection-indicator {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 20px; /* Ajustez selon vos besoins */
-  height: 20px; /* Ajustez selon vos besoins */
-  background-color: rgba(255, 255, 255, 0.7); /* Fond semi-transparent */
-  color: black; /* Couleur du texte */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px; /* Ajustez selon vos besoins */
-  visibility: hidden; /* Caché par défaut */
-}
+// .selection-indicator {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   width: 20px; /* Ajustez selon vos besoins */
+//   height: 20px; /* Ajustez selon vos besoins */
+//   background-color: rgba(255, 255, 255, 0.7); /* Fond semi-transparent */
+//   color: black; /* Couleur du texte */
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   font-size: 12px; /* Ajustez selon vos besoins */
+//   visibility: hidden; /* Caché par défaut */
+// }
 
-.photo.selected + .selection-indicator {
-  visibility: visible; /* Affiche le carré quand l'image est sélectionnée */
-}
+// .photo.selected + .selection-indicator {
+//   visibility: visible; /* Affiche le carré quand l'image est sélectionnée */
+// }
 
 .delete-icon {
   position: absolute;
@@ -531,9 +487,35 @@
 }
 
 
-.select-images{
-  display: none;
+// .select-images{
+//   display: none;
+// }
+
+.indice-image{
+  position: absolute;
+  top: 10px;
+  left: 130px;
+  border : 1px solid grey;
+  border-radius: 20%;
+  background-size: 3px;
+  background-color: white;
+  color: black;
+  padding: 5px;
+  font-size: 10px;
 }
+
+
+.notice{
+  position: absolute;
+  top: 5px;
+  right: 24px;
+  background: linear-gradient(120deg, #233DFF, #E17AFF 50%, #FD972C);
+  color: white;
+  padding: 5px;
+  z-index: 1000;
+  font-size: 12px;
+}
+
 
 .frame-bouton {
   position: relative;
@@ -697,6 +679,21 @@
    overflow: hidden;
    border: 0;
 
+
+   textarea{
+    width: 100%;
+    height: 100px;
+    border: 0;
+    resize: none;
+    background: transparent
+   }
+
+  }
+
+  .gpt_edit_bouton{
+    display: flex;
+    flex-direction: row;
+    gap:24px
   }
 
 .frame-description .div-description {
@@ -739,6 +736,10 @@
   align-items: center;
   gap: 24px;
   padding-top: 24px;
+
+  form{
+    border: 0
+  }
 }
 
 .insta {
@@ -883,9 +884,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding: 12px 20px;
   gap: 4px;
-  padding: 0px 40px;
   overflow: hidden;
   position: relative;
   width: 50%;
