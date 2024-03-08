@@ -8,8 +8,8 @@ class PhotosController < ApplicationController
 
   def load_my_photo
     @post = Post.find(params[:post_id])
-    if photo_params[:photos].present?
-      photo_params[:photos].each do |photo|
+    if params[:post][:photos].present?
+      params[:post][:photos].each do |photo|
         filename = "image_#{Time.now.to_i}.jpeg"
         @post.photos.attach(photo)
         select_photos(@post)
@@ -39,7 +39,7 @@ class PhotosController < ApplicationController
       redirect_to post_path(@post), notice: 'Photo supprimée avec succès.'
     else
       redirect_to post_path(@post), status: :unprocessable_entity, notice: 'Erreur lors de la suppression de la photo. Merci de réessayer.'
-    # @post.dalle3_images.all.last.destroy
+    end # Close the missing if statement
   end
 
   private
@@ -52,4 +52,5 @@ class PhotosController < ApplicationController
     post.photos_selected << post.photos.last.id
     post.save!
   end
+
 end
