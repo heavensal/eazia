@@ -8,7 +8,7 @@
       <%= link_to "📅", new_post_path,  class:"secondary-bouton"%>
     </div>
 
-    <div class="connexion">
+    <div class="connexion-insta">
       <%= form_for(post, url: publish_post_path(post), method: :patch) do |f| %>
       <%= f.submit "Publier maintenant", class: "main-bouton" %>
       <% end %>

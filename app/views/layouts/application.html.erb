@@ -27,9 +27,10 @@
     <%# <%= render 'layouts/footer' %>
   <%# <% end %>
 </body>
-
+<% if user_signed_in? %>
   <div class="footer">
     <%= render 'layouts/footer'%>
+    <% end %>
    </div>
 
 </html>
