@@ -5,8 +5,8 @@ class AddphotoJob < ApplicationJob
     post = Post.find_by(id: post_id)
     ai_api_service = AiApiService.new(post.user)
     photo = ai_api_service.image(post)
-    broadcast_photos(post)
     select_photos(post)
+    broadcast_photos(post)
   end
 
   def broadcast_photos(post)

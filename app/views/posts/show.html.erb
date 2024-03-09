@@ -14,7 +14,7 @@
 
         <%# Pour ajouter/enlever la photo des sélections et supprimer la photo %>
         <%# La place de la photo est aussi dans le partial %>
-        <%= render partial: "photos/show-photo", collection: @post.photos, as: :photo %>
+        <%= render partial: "photos/show-photo", collection: @post.photos, as: :photo, locals: {post: @post} %>
 
       </div>
 
