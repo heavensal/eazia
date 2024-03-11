@@ -1,15 +1,21 @@
 .sidebar {
   display: inline-flex;
   flex-direction: column;
-  height: 90vh;
+  height: 100vh;
   align-items: flex-start;
   justify-content: space-between;
   padding: 24px;
-  position: relative;
+  position: absolute;
   background-color: #ffffff33;
   border-right-width: 1px;
   border-right-style: solid;
   border-color: var(--secondaryblackblack-50);
+}
+
+@media (max-width: 768px){
+.sidebar{
+  display: none;
+}
 }
 
 .sidebar .frame-4 {
