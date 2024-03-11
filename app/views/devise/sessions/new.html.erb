@@ -24,7 +24,7 @@
       <img class="vector-20" src="img/vector-19.svg" />
       <img class="vector-21" src="img/vector-17.svg" />
     </div> %>
-    <%= image_tag("Frame.svg", alt:"logo eazia", class:"logo") %>
+    <%= image_tag("Pictogramme-EazIA.png", alt:"logo eazia", class:"logo") %>
       <div class="text-wrapper">Se connecter</div>
    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
@@ -48,23 +48,23 @@
     </div>
 
 
-    <div class="autres-connexions">
+    <%# <div class="autres-connexions">
       <div class="titre">
         <%= image_tag("Line.png", alt:"line", class:"line") %>
-        <div class="text-wrapper-3">ou se connecter avec</div>
+        <%# <div class="text-wrapper-3">ou se connecter avec</div>
         <%= image_tag("Line.png", alt:"line", class:"line") %>
-      </div>
-      <div class="boutons">
-        <div class="div-2">
-          <%= image_tag("logo_google.png", alt:"logo google", class:"icons-social") %>
-          <div class="text-wrapper-4">Google</div>
+      <%# </div>  %>
+      <%# <div class="boutons">
+        <div class="div-2"> %>
+          <%# <%= image_tag("logo_google.png", alt:"logo google", class:"icons-social") %>
+          <%# <div class="text-wrapper-4">Google</div>
         </div>
-        <div class="div-2">
-          <%= image_tag("logo_fb.png", alt:"logo fb", class:"icons-social") %>
-          <div class="text-wrapper-4">Facebook</div>
+        <div class="div-2"> %>
+          <%# <%= image_tag("logo_fb.png", alt:"logo fb", class:"icons-social") %>
+          <%# <div class="text-wrapper-4">Facebook</div>
         </div>
       </div>
-    </div>
+    </div>  %>
 
     <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
       <div class="compte">

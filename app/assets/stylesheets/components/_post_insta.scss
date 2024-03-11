@@ -338,9 +338,15 @@
   flex-direction: row;
   width: 100%;
   background-color: #ffffff;
-
   position: relative;
   padding-bottom: 24px;
+}
+
+@media (max-width: 768px){
+  .gnration-de-la{
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .frame-show {
@@ -353,6 +359,11 @@
   border-color: #dfdfea;
 }
 
+@media (max-width: 768px){
+  .frame-show{
+  padding: 12px
+  }
+}
 
 .frame-show .div-show {
   display: flex;
@@ -365,7 +376,12 @@
   flex: 0 0 auto;
 }
 
-
+@media (max-width: 768px){
+  .frame-show .div-show{
+   gap: 12px;
+   width: 100%
+  }
+}
 
 .creation-images{
   display: grid;
@@ -509,7 +525,7 @@
   position: fixed;
   top: 5px;
   right: 24px;
-  background: linear-gradient(120deg, #233DFF, #E17AFF 50%, #FD972C);
+  background: linear-gradient(120deg, #233DFF, #E17AFF );
   color: white;
   padding: 5px;
   z-index: 1000;
@@ -608,6 +624,12 @@
   position: relative;
 }
 
+@media (max-width: 768px){
+  .frame-description{
+  width: 100%
+  }
+}
+
 .textcontent {
   padding: 10px 12px;
   font-size: 12px;
@@ -643,6 +665,25 @@
   overflow: hidden;
   border: 1px solid;
   border-color: var(--secondaryblackblack-50);
+}
+
+@media (max-width: 768px) {
+  .description-de-post {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 12px;
+    position: relative;
+    background-color: var(--secondarywhitewhite-100);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: var(--secondaryblackblack-50);
+  }
+
 }
 
 .gpt-creation{
@@ -866,7 +907,7 @@
   border-radius: 4px;
   overflow: hidden;
   border: 0;
-  background: linear-gradient(120deg, #233DFF, #E17AFF 50%, #FD972C);
+  background: linear-gradient(120deg, #233DFF, #E17AFF );
   position: relative;
   width: fit-content;
   margin-top: -1px;
@@ -889,8 +930,14 @@
   overflow: hidden;
   position: relative;
   width: 50%;
-  // top: -292px;
-  // left: -448px;
+  background: linear-gradient(to bottom, rgba(253, 151, 44, 0.4) 0%, rgba(255, 255, 255, 0.8) 100%);
+}
+
+@media (max-width: 768px){
+  .view-insta{
+  width: 100%;
+  padding: 12px
+  }
 }
 
 .view-insta-boutons{

@@ -1,14 +1,3 @@
-<%# <div class="gnrer-un-post">
-  <div class="overlap-wrapper">
-    <div class="overlap">
-       <div class="bg">
-        <div class="overlap-group">
-          <div class="ellipse"></div>
-          <div class="div"></div>
-          <div class="ellipse-2"></div>
-        </div>
-      </div> %>
-
 <div class="contenu" data-controller="loader">
   <div class="frame_post" data-loader-target="togglableElement">
     <div class="div_post" >
@@ -24,8 +13,9 @@
     <div class="gnrateur" data-controller="autorisation-form">
       <%= form_for(@post, data: { action: "submit->autorisation-form#validateForm" }) do |f| %>
       <%= f.text_area :prompt, wrap: "soft", placeholder: "Saisissez en quelques mots le sujet de votre prochain post", data: {action:"blur->autorisation-form#validatePrompt", autorisation_form_target:"prompt"} %>
-      <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" style="font-size: 14px;">la description est obligatoire</p>
+      <p  class="d-none fst-italic" data-autorisation-form-target="error" style="font-size: 14px;">la description est obligatoire</p>
       <div class="footer-form">
+      <div class="form-secondary-bouton">
         <div class="file-upload-wrapper" data-controller="file-upload">
           <%= f.label :photos, "Ajouter vos images", class: "custom-file-upload" %>
           <%= f.file_field :photos, as: :file, multiple: true, data: { action: "change->file-upload#updateFileName", file_upload_target: "source" } %>
@@ -36,127 +26,33 @@
           <%end%>
           <%= f.select :pictures_generated, options_for_select(0..5) %>
         </div>
-        <%= f.submit "Générer mon post", class:"main-bouton", data: { action: "submit->autorisation-form#validateForm" }, "data-action":"click->loader#fire" %>
+        </div>
+        <%= f.submit "Générer mon post", class:"main-bouton", data: { action: "submit->autorisation-form#validateForm click->loader#fire" } %>
+
         <% end %>
       </div>
     </div>
+
   </div>
-</div>
-</div>
- </div>
-</div>
-</div>
 
-      <%# <div class="connexion">Générer mon post</div></div> %>
-
-
-<%# <div data-controller="loader">
-  <div class="form-new"  data-loader-target="togglableElement">
-    <h1>Votre prochain post est à 1 clic</h1>
-
-    <div id="user-info" data-controller="facebook">
-      <button data-action="click->facebook#fetchUserInfo">
-        Récupérer le token
-      </button> %>
-
-      <%# <div data-facebook-target="user">
-
+  <div class="d-none loader" data-loader-target="chargement" >
+    <div class="charging">
+      <div class="titre">
+        <span class="lettre">C</span>
+        <span class="lettre">H</span>
+        <span class="lettre">A</span>
+        <span class="lettre">R</span>
+        <span class="lettre">G</span>
+        <span class="lettre">E</span>
+        <span class="lettre">M</span>
+        <span class="lettre">E</span>
+        <span class="lettre">N</span>
+        <span class="lettre">T</span>
       </div>
-    </div> %>
-
-  <%# <div  class="form-new" data-controller="autorisation-form">
-    <%= form_for(@post, data: { action: "submit->autorisation-form#validateForm" }) do |f| %>
-
-      <%# <div class="prompt">
-        <%= f.label :prompt,  "Saisissez en quelques mots le sujet de votre prochain post : " %>
-        <%# <%= f.text_area :prompt, wrap: "soft", data: {action:"blur->autorisation-form#validatePrompt", autorisation_form_target:"prompt"} %>
-        <%# <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" style="font-size: 14px;">la description est obligatoire</p> %>
-
-      <%# </div> %>
-
-      <%# <div class="images">
-        <%= f.label :prompt do %>
-        <%# Ajoutez vos propres photos ? (optionnel) %>
-         <%# <%end%>
-        <%# <div class="file-upload-wrapper" data-controller="file-upload"> %>
-          <%# <%= f.label :photos, "Choisissez vos photos", class: "custom-file-upload" %>
-          <%# <%= f.file_field :photos, as: :file, multiple: true, data: { action: "change->file-upload#updateFileName", file_upload_target: "source" } %>
-          <%# <span data-file-upload-target="fileName" class="file-name"></span> %>
-        <%# </div> %>
-        <%# <%= f.label :pictures_generated do %>
-        <%# Sélectionner le nombre d'images à créer (optionnel) %>
-        <%# <%end%>
-        <%# <%= f.select :pictures_generated, options_for_select(0..5) %>
-      <%# </div>  %>
-
-      <%# <div class="actions">
-          <%= f.submit "Générer mon post", class: "btn-valider", data: { action: "submit->autorisation-form#validateForm" }, "data-action":"click->loader#fire" %>
-      <%# </div> %>
-    <%# <% end %>
-<%# </div>
-  </div> %>
-
-
-
-  <div class=" d-none loader" data-loader-target="chargement" >
-  <div class="charging">
-    <div class="titre">
-      <span class="lettre">C</span>
-      <span class="lettre">H</span>
-      <span class="lettre">A</span>
-      <span class="lettre">R</span>
-      <span class="lettre">G</span>
-      <span class="lettre">E</span>
-      <span class="lettre">M</span>
-      <span class="lettre">E</span>
-      <span class="lettre">N</span>
-      <span class="lettre">T</span>
-    </div>
-    <div class="sous-titre">
-    <span> Les images sont en train de charger</span>
+      <div class="sous-titre">
+        <span> Les images sont en train de charger</span>
+      </div>
     </div>
   </div>
 
-    <%# <div class="sous-titre">
-      <span>Le saviez vous ? </span>
-    </div> %>
-
-    <%# <div id="group">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    </div>  %>
-
-
-    <%# <div class="citation" data-controller="random-phrases">
-      <span class="phrase1" data-random-phrases-target="phrase">Nombre d'utilisateurs actifs : En 2023, Instagram comptait plus de 2 milliards d'utilisateurs actifs mensuels dans le monde.</span>
-      <span class="phrase2" data-random-phrases-target="phrase">Engagement quotidien : Les utilisateurs passent en moyenne 53 minutes par jour sur la plateforme.</span>
-      <span class="phrase3" data-random-phrases-target="phrase">Taux d'engagement : Le taux d'engagement moyen sur Instagram est d'environ 1,22 %, ce qui est généralement plus élevé que sur d'autres réseaux sociaux.</span>
-      <span class="phrase4" data-random-phrases-target="phrase">Nombre de publications partagées : Plus de 100 millions de photos et de vidéos sont partagées sur Instagram chaque jour.</span>
-      <span class="phrase1" data-random-phrases-target="phrase">Utilisation des Stories : Plus de 500 millions d'utilisateurs utilisent les Stories d'Instagram quotidiennement.</span>
-      <span class="phrase2" data-random-phrases-target="phrase">Démographie des utilisateurs : Environ 67 % des utilisateurs d'Instagram ont moins de 34 ans, ce qui en fait une plateforme populaire auprès des jeunes adultes et des adolescents.</span>
-      <span class="phrase3" data-random-phrases-target="phrase">Répartition hommes-femmes : La répartition entre hommes et femmes sur Instagram est relativement équilibrée, avec une légère prédominance féminine (environ 51 % de femmes).</span>
-      <span class="phrase4" data-random-phrases-target="phrase">Entreprises sur Instagram : Plus de 25 millions d'entreprises ont un compte Instagram, et 80 % des utilisateurs suivent au moins une entreprise sur la plateforme.</span>
-      <span class="phrase1" data-random-phrases-target="phrase">Utilisateurs Actifs Mensuels : Instagram avait dépassé le cap du milliard d'utilisateurs actifs mensuels.</span>
-      <span class="phrase2" data-random-phrases-target="phrase">Taux d'Engagement : Le taux d'engagement moyen pour les comptes d'entreprise était autour de 0,96 %.</span>
-      <span class="phrase3" data-random-phrases-target="phrase">Utilisateurs Quotidiens des Stories : Plus de 500 millions d'utilisateurs utilisaient les Stories d'Instagram chaque jour.</span>
-      <span class="phrase4" data-random-phrases-target="phrase">Démographie : La majorité des utilisateurs d'Instagram étaient âgés de 18 à 34 ans.</span>
-      <span class="phrase1" data-random-phrases-target="phrase">Distribution par Sexe : La répartition des utilisateurs par sexe était presque équilibrée, avec une légère prédominance féminine.</span>
-      <span class="phrase2" data-random-phrases-target="phrase">Publicités sur Instagram : Instagram était une plateforme majeure pour la publicité numérique, avec des revenus publicitaires se comptant en milliards.</span>
-      <span class="phrase3" data-random-phrases-target="phrase">Nombre de Publications : Des centaines de millions de photos et vidéos étaient partagées sur Instagram chaque jour.</span>
-      <span class="phrase4" data-random-phrases-target="phrase">Comptes d'Entreprise : Plus de 25 millions d'entreprises avaient un compte sur Instagram.</span>
-      <span class="phrase1" data-random-phrases-target="phrase">Shopping sur Instagram : La fonctionnalité de shopping était largement utilisée, permettant aux entreprises de vendre directement via la plateforme.</span>
-      <span class="phrase2" data-random-phrases-target="phrase">Téléchargements de l'Application : Instagram était régulièrement l'une des applications les plus téléchargées dans le monde.</span>
-      <span class="phrase3" data-random-phrases-target="phrase">Taux d'Engagement : Le taux d'engagement moyen pour les comptes d'entreprise était autour de 0,96 %.</span>
-    </div>
-  </div>
 </div>
