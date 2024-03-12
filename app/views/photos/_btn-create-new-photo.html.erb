@@ -1,6 +1,6 @@
 
 <div class="generator-image">
-<%= form_with model: post, url: post_photos_path(post), method: :post, local: true do |form| %>
+<%= form_with model: post, url: post_photos_path(post), method: :post, local: true, data: { action: "submit->form-submission#submitImage" } do |form| %>
   <%= form.submit "Générer une image", class:"secondary-bouton"%>
   </div>
 <% end %>

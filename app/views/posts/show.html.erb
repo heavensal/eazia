@@ -7,7 +7,7 @@
 
 <div class="gnration-de-la">
   <div class="frame-show">
-    <div class="div-show">
+    <div class="div-show" data-controller="form-submission">
 
       <div class="creation-images" id="photos">
 
@@ -15,7 +15,9 @@
         <%# La place de la photo est aussi dans le partial %>
         <%= render partial: "photos/show-photo", collection: @post.photos, as: :photo, locals: {post: @post} %>
 
-
+      <div class="chargement-images" data-form-submission-target="images" hidden>
+      <%= image_tag("Logotype-Principal-Bleu-EazIA.png", alt:"logo") %>
+      </div>
 
       <%# Recréer une photo %>
       <div class="bouton-images">
