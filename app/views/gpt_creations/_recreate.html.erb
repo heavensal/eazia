@@ -1,13 +1,19 @@
-<div class="gpt-creation">
+<div  data-controller="form-submission"  class="gpt-creation">
   <%= turbo_frame_tag gpt_creation do %>
       <%= gpt_creation.description if gpt_creation.description %>
 
     <div class="container-boutons">
       <%= link_to 'Modifier', edit_post_gpt_creation_path(gpt_creation.post), class: "secondary-bouton" %>
       <%# Pour régénérer une description %>
-      <%= form_for([@post, @gpt_creation], url: recreate_post_gpt_creation_path(@post), method: :patch) do |f| %>
-      <%= f.submit "Générer un nouveau post",  class:"secondary-bouton"%>
+      <div>
+      <%= form_for([@post, @gpt_creation], url: recreate_post_gpt_creation_path(@post), method: :patch,  data: { action: "submit->form-submission#submit" }) do |f| %>
+      <%= f.submit "Générer un nouveau post",  class:"secondary-bouton",   data: { form_submission_target: "submitButton" }%>
+      <div class="chargement" data-form-submission-target="loadingSpinner" hidden>
+      <div id="loading" class="text-chargement">En cours de génération</div>
+      <div  class="loading-spinner"></div>
+      </div>
       <% end %>
+    </div>
     </div>
   <% end %>
 </div>

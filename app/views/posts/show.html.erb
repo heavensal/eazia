@@ -9,19 +9,20 @@
   <div class="frame-show">
     <div class="div-show">
 
-      <p>Sélectionner l'ordre des images</p>
       <div class="creation-images" id="photos">
 
         <%# Pour ajouter/enlever la photo des sélections et supprimer la photo %>
         <%# La place de la photo est aussi dans le partial %>
         <%= render partial: "photos/show-photo", collection: @post.photos, as: :photo, locals: {post: @post} %>
 
-      </div>
+
 
       <%# Recréer une photo %>
-      <%= render "photos/btn-create-new-photo", post: @post %>
-      <%= render "photos/btn-load-photos", post: @post %>
-
+      <div class="bouton-images">
+        <%= render "photos/btn-create-new-photo", post: @post %>
+        <%= render "photos/btn-load-photos", post: @post %>
+      </div>
+      </div>
         <%= image_tag("line_2.png", alt:"line") %>
 
 

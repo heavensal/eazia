@@ -3,7 +3,7 @@
 <%= form_with model: post, url: load_my_photo_post_photos_path(post), method: :post, local: true, data: { controller: "auto-submit", action: "change->auto-submit#submitOnFileSelect" }  do |form| %>
   <div class="images">
     <div  class="file-upload-wrapper-show" data-controller="file-upload">
-      <%= form.label :photos, "Charger une photo", class: "custom-file-upload" %>
+      <%= form.label :photos, "Charger une image", class: "custom-file-upload" %>
       <%= form.file_field :photos, multiple: true, direct_upload: true, data: { action: "change->file-upload#updateFileName change->auto-submit#submitOnFileSelect", file_upload_target: "source" } %>
       <%# <label for="photos" class="label-as-bouton">Charger des photos</label> %>
       <span data-file-upload-target="fileName" class="file-name"></span>
@@ -14,6 +14,7 @@
 
   </div>
 <% end %>
+
 
 <%# </div>
 </div> %>
