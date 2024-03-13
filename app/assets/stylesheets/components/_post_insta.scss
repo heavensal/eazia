@@ -545,6 +545,7 @@ display: inline-block;
 .delete-icon:hover {
   transform: scale(2);
   transition: transform 0.3s ease;
+  opacity: 1;
 }
 
 .image-container:hover .delete-icon {
@@ -774,7 +775,6 @@ display: inline-block;
    justify-content: flex-end;
    gap: 24px;
    background-color: var(--secondarywhitewhite-100);
-   border-radius: 8px;
    overflow: hidden;
    border: 0;
 
@@ -800,7 +800,6 @@ display: inline-block;
    justify-content: flex-end;
    gap: 24px;
    background-color: var(--secondarywhitewhite-100);
-   border-radius: 8px;
    overflow: hidden;
 
 
@@ -851,7 +850,6 @@ display: inline-block;
   border-color: var(--secondaryblackblack-50);
   position: relative;
   width: fit-content;
-  margin-top: -1px;
   font-family: var(--titre-medium-h5-font-family);
   font-weight: var(--titre-medium-h5-font-weight);
   color: var(--secondaryblackblack-300);
@@ -870,7 +868,7 @@ display: inline-block;
   padding-top: 24px;
 
   form{
-    border: 0
+    border: 1px solid transparent
   }
 }
 

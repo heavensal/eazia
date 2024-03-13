@@ -14,24 +14,27 @@
 
         <div class="nouvelle-publication-wrapper">
           <div class="div-2-sidebar">
-            <%# image_tag("icon_programmation", alt:"programmation") %>
-            <div class="text-wrapper-4"><%= link_to "Posts Programmés", new_post_path %></div>
-          </div>
-        </div>
-
-        <div class="nouvelle-publication-wrapper">
-          <div class="div-2-sidebar">
-            <%# image_tag("icon_historique", alt:"historique") %>
-            <div class="text-wrapper-4"><%= link_to "Historique", new_post_path %></div>
-          </div>
-        </div>
-
-        <div class="nouvelle-publication-wrapper">
-          <div class="div-2-sidebar">
             <%# image_tag("icon_brouillons", alt:"brouillons") %>
             <div class="text-wrapper-4"><%= link_to "Brouillons", drafts_path%></div>
           </div>
         </div>
+
+        <%# <div class="nouvelle-publication-wrapper">
+          <div class="div-2-sidebar">
+            <%# image_tag("icon_programmation", alt:"programmation") %>
+            <%# <div class="text-wrapper-4"><%= link_to "Posts Programmés", new_post_path %>
+            <%# </div> %>
+          <%# </div>
+        </div> %>
+<%#
+        <div class="nouvelle-publication-wrapper">
+          <div class="div-2-sidebar"> %>
+            <%# image_tag("icon_historique", alt:"historique") %>
+            <%# <div class="text-wrapper-4"><%= link_to "Historique", new_post_path %>
+            <%# </div> %>
+          <%# </div>
+        </div> %>
+
 
       </div>
   </div>
@@ -41,8 +44,7 @@
       <div class="inner">
         <%# <div class="user"><%#image_tag("icon_user", alt:"compte") %>
         <%# </div>  %>
-        <div class="text-wrapper-5"><%= link_to "Mon compte", account_path %></div>
-        <div class="text-wrapper-5"><%= link_to "Déconnexion", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Etes-vous sûr ?" } %></div>
+        <%= link_to "Mon compte", account_path %></div>
       </div>
     </div>
   </div>

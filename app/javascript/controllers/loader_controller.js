@@ -5,7 +5,6 @@ export default class extends Controller {
   static targets = ["togglableElement", "chargement"]
 
   connect() {
-    // console.log("loader je suis connecté")
   }
 
   fire() {
