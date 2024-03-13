@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'posts#new'
 
   devise_for :users
+  put '/users/update_token', to: 'users#update_token', as: 'update_token'
 
   resources :posts do
     member do
@@ -35,7 +36,7 @@ Rails.application.routes.draw do
   get 'pages/confidentialite'
   get 'pages/inscription'
 
-  put 'pages/update_account', to: 'pages#update_account', as: 'pages_update_account'
+  patch 'pages/update_account', to: 'pages#update_account', as: 'pages_update_account'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
