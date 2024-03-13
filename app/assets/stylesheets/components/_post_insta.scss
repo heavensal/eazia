@@ -551,6 +551,7 @@ display: inline-block;
   display: block;
   visibility: visible;
   opacity: 0.6;
+
 }
 
 
@@ -591,10 +592,10 @@ display: inline-block;
     }
   }
 
-  .image-container input[type="image"]:hover {
-    opacity: 0.6;
+  // .image-container input[type="image"]:hover {
+  //   opacity: 0.6;
 
-  }
+  // }
 
 .notice{
   position: fixed;

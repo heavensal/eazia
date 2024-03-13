@@ -1,8 +1,13 @@
 <div class="pages">
+<div class="titre-compte">
   <h1>Mon Compte</h1>
+  <div class="main-bouton">
+    <%= link_to "Générer un post", new_post_path  %>
+  </div>
+  </div>
     <div class="account">
       <p><b>Votre email :</b> <%= @user.email %></p><br>
-      <h3>Modifier mes informations</h3>
+      <h3>Informations personnelles</h3>
         <% if @user.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(@user.errors.count, "error") %> empêchent cette mise à jour :</h2>
@@ -15,40 +20,40 @@
           <% end %>
 
       <%= form_for(current_user, url: pages_update_account_path, html: { method: :patch }) do |f| %>
-        <div class="form-column">
+        <div class="form-column-compte">
           <div class="field-update">
-            <%= f.label :first_name, "Prénom :" %><br>
+            <%# <%= f.label :first_name, "Prénom :" %>
             <%= f.text_field :first_name %>
           </div>
 
           <div class="field-update">
-            <%= f.label :last_name, "Nom :" %><br>
+            <%# <%= f.label :last_name, "Nom :" %>
             <%= f.text_field :last_name %>
           </div>
         </div>
 
-        <div class="form-column" >
+        <div class="form-column-compte" >
           <div class="field-update">
-            <%= f.label :company, "Nom de votre entreprise :" %><br>
+            <%# <%= f.label :company, "Nom de votre entreprise :" %>
             <%= f.text_field :company %>
           </div>
 
           <div class="field-update">
-            <%= f.label :information, "Quelques mots sur votre activité :" %><br>
+            <%# <%= f.label :information, "Quelques mots sur votre activité :" %>
             <%= f.text_field :information %>
           </div>
         </div>
 
-        <div class="form-column">
+        <div class="form-column-compte">
           <div class="field-update">
-            <%= f.label :instagram, "Pseudo instagram :" %><br>
+            <%# <%= f.label :instagram, "Pseudo instagram :" %>
             <%= f.text_field :instagram %>
           </div>
 
           <div class="field-update"></div>
         </div>
 
-        <div class="actions">
+        <div class="actions-compte">
           <%= f.submit "Mettre à jour", class:"btn-update" %>
           <%= link_to "Déconnexion", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Etes-vous sûr ?" }, class:"btn-deconnexion"  %>
         </div>

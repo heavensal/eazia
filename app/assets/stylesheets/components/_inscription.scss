@@ -89,6 +89,23 @@
 
 }
 
+.form-column-compte {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+}
+
 .form-colum:last-child{
   margin-bottom: 0;
 }
