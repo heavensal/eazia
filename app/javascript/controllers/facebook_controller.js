@@ -56,7 +56,7 @@ export default class extends Controller {
   checkLoginState() {
     FB.login((response) => {
       this.statusChangeCallback(response);
-    }, {scope: 'email,public_profile'});
+    }, {scope: 'public_profile,email,instagram_basic,instagram_content_publish,pages_show_list'});
   }
 
   // À l'intérieur de ton contrôleur Stimulus après avoir récupéré l'access token

@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   get 'pages/confidentialite'
   get 'pages/inscription'
 
-  patch 'pages/update_account', to: 'pages#update_account', as: 'pages_update_account'
+  put 'pages/update_account', to: 'pages#update_account', as: 'pages_update_account'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
