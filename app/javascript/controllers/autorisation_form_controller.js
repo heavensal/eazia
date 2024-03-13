@@ -12,7 +12,7 @@ export default class extends Controller {
     if (this.hasCheckboxTarget) {
       this.checkboxTarget.addEventListener('change', this.validateForm.bind(this));
     }
-    this.submitButton = this.element.querySelector('.btn-inscription') || this.element.querySelector('.main-bouton');
+    this.submitButton = this.element.querySelector('.btn-inscription') || this.element.querySelector('.contenu .main-bouton');
 
     // Ajouter un nouvel écouteur d'événements pour le champ prompt
     this.promptTarget.addEventListener('input', this.validatePrompt.bind(this));
@@ -49,30 +49,36 @@ export default class extends Controller {
     }
 
     if (!isPromptValid) {
-      this.errorTarget.classList.remove('d-none');
-      this.errorTarget.textContent = 'La description doit contenir au moins 20 caractères.';
+      this.myErrorMessageTarget.classList.remove('d-none');
+      // this.errorTarget.textContent = 'La description doit contenir au moins 20 caractères.';
     }
 
     else {
       if (this.hasMyErrorMessageTarget) {
       this.myErrorMessageTarget.classList.add('hidden');
       }
-      this.errorTarget.classList.add('d-none');
+      this.myErrorMessageTarget.classList.add('d-none');
       this.submitButton.disabled = false;
+    }
+
+    this.triggerLoaderAction();
+  }
+
+  triggerLoaderAction() {
+    const loaderController = this.application.getControllerForElementAndIdentifier(document.querySelector("[data-controller='loader']"), "loader");
+
+    if (loaderController) {
+      loaderController.fire();
+    } else {
+      console.error("Loader controller not found");
     }
   }
 
   validatePrompt() {
-  const isPromptValid = this.promptTarget.value.length >= 20;
-
-  if (!isPromptValid) {
-    this.submitButton.disabled = true;
-    this.errorTarget.classList.remove('d-none');
-    this.errorTarget.textContent = 'La description doit contenir au moins 20 caractères.';
-  } else {
-    this.submitButton.disabled = false;
-    this.errorTarget.classList.add('d-none');
+    const isPromptValid = this.promptTarget.value.length >= 20;
+    if (isPromptValid) {
+      this.submitButton.disabled = false;
+    }
   }
 
-}
 }
