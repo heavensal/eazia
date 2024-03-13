@@ -15,7 +15,7 @@
     <div class="gnrateur" data-controller="autorisation-form">
       <%= form_for(@post, data: { action: "submit->autorisation-form#validateForm" }) do |f| %>
       <%= f.text_area :prompt, wrap: "soft", placeholder: "Saisissez en quelques mots le sujet de votre prochain post", data: {action:"blur->autorisation-form#validatePrompt", autorisation_form_target:"prompt"} %>
-      <p  class="d-none fst-italic" data-autorisation-form-target="error" style="font-size: 14px;">la description est obligatoire</p>
+      <p  class="hidden" data-autorisation-form-target="myErrorMessage" style="font-size: 14px; color: red">la description doit contenir au moins 20 caractères</p>
       <div class="footer-form">
       <div class="form-secondary-bouton">
         <div class="file-upload-wrapper" data-controller="file-upload">
@@ -29,8 +29,7 @@
           <%= f.select :pictures_generated, options_for_select(0..5) %>
         </div>
         </div>
-        <%= f.submit "Générer mon post", class:"main-bouton", data: { action: "submit->autorisation-form#validateForm click->loader#fire" } %>
-
+        <%= f.submit "Générer mon post", class:"main-bouton", data: { action: "submit->autorisation-form#validateForm click->loader#fire"} %>
         <% end %>
       </div>
     </div>
@@ -38,22 +37,41 @@
   </div>
 
   <div class="d-none loader" data-loader-target="chargement" >
-    <div class="charging">
-      <div class="titre">
-        <span class="lettre">C</span>
-        <span class="lettre">H</span>
-        <span class="lettre">A</span>
-        <span class="lettre">R</span>
-        <span class="lettre">G</span>
-        <span class="lettre">E</span>
-        <span class="lettre">M</span>
-        <span class="lettre">E</span>
-        <span class="lettre">N</span>
-        <span class="lettre">T</span>
+    <div class="titre"> Chargement de votre post </div>
+    <div class="sous-titre">
+      <span> Les images sont en train de charger</span>
+    </div>
+      <%= image_tag 'Vector.svg', class: 'vector' %>
+      <%= image_tag 'Vector.svg', class: 'vector11' %>
+      <%= image_tag 'Vector.svg', class: 'vector12' %>
+      <%= image_tag 'Vector.svg', class: 'vector13' %>
+      <%= image_tag 'vector1.svg', class: 'vector1' %>
+      <%= image_tag 'Vector2.svg', class: 'vector2' %>
+      <%= image_tag 'Vector3.svg', class: 'vector3' %>
+      <%= image_tag 'Vector3.svg', class: 'vector4' %>
+      <%= image_tag 'Vector4.svg', class: 'vector5' %>
+      <%= image_tag 'Vector2.svg', class: 'vector10' %>
+      <%= image_tag 'Vector5.svg', class: 'vector6' %>
+      <%= image_tag 'Vector6.svg', class: 'vector6' %>
+      <%= image_tag 'Vector2.svg', class: 'vector8' %>
+      <%= image_tag 'Vector7.svg', class: 'vector7' %>
+      <%= image_tag 'Vector2.svg', class: 'vector9' %>
+
+
+
+    </div>
+    <%# <div class="box"> %>
+    <%# </div> %>
+
+      <%# <div class="box2">
+        <img class="vector" src="app/assets/images/Vector.svg" />
       </div>
-      <div class="sous-titre">
-        <span> Les images sont en train de charger</span>
+      <div class="box3">
+        <img class="vector" src="Vector.svg" />
       </div>
+      <div class="box4">
+        <img class="vector" src="Vector.svg" />
+      </div> %>
     </div>
   </div>
 

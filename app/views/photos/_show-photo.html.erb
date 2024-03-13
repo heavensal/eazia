@@ -1,11 +1,11 @@
-<div class="image-container">
-
-  <%= form_for([post, photo], url: select_post_photo_path(post, photo), method: :patch) do |f| %>
+<div class="image-container" >
+    <div class="indice" >
+      <%= form_for([post, photo], url: select_post_photo_path(post, photo), method: :patch) do |f| %>
 
     <%# INDICE de la place de la photo %>
-    <div class="indice-image" >
-    <i><%= photo.id.in?(post.photos_selected) ? post.photos_selected.index(photo.id)+1 : nil %></i>
+    <%= photo.id.in?(post.photos_selected) ? post.photos_selected.index(photo.id)+1 : nil %>
     </div>
+
     <%= image_submit_tag(cl_image_path(photo.key),
       loading: "lazy",
       id: "photo_#{photo.id}",

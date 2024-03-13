@@ -149,9 +149,15 @@
 }
 
 
+.actions{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 8px
+}
+
 .btn-update{
   width: 20%;
-  height: 50px;
   margin-top: 10px;
   background-color: black;
   border-radius: 15px;
@@ -159,6 +165,20 @@
   font-size: 18px;
   font-weight: bold;
   color: white;
+  text-align: center;
+  padding: 15px
+}
+
+.btn-deconnexion{
+  width: 20%;
+  margin-top: 10px;
+  border-radius: 15px;
+  border: 1px solid black;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  padding: 15px
 }
 
 
