@@ -5,19 +5,25 @@
   <%= image_tag("logo_principal_eazia.png", alt:"logo eazia") %>
   </div>
       <div class="menu-list">
+
+      <%= link_to new_post_path do %>
         <div class="nouvelle-publication-wrapper">
           <div class="div-2-sidebar">
             <%# <%= image_tag("icon_publications", alt:"publications") %>
-            <div class="text-wrapper-4"><%= link_to "Nouvelle publication", new_post_path %></div>
+            <div class="text-wrapper-4">Nouvelle publication</div>
           </div>
         </div>
+        <% end %>
 
-        <div class="nouvelle-publication-wrapper">
-          <div class="div-2-sidebar">
-            <%# image_tag("icon_brouillons", alt:"brouillons") %>
-            <div class="text-wrapper-4"><%= link_to "Brouillons", drafts_path%></div>
+
+        <%= link_to drafts_path do %>
+          <div class="nouvelle-publication-wrapper">
+            <div class="div-2-sidebar">
+              <%# image_tag("icon_brouillons", alt:"brouillons") %>
+              <div class="text-wrapper-4">Brouillons</div>
+            </div>
           </div>
-        </div>
+        <% end %>
 
         <%# <div class="nouvelle-publication-wrapper">
           <div class="div-2-sidebar">

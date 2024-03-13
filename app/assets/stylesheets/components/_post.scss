@@ -151,7 +151,6 @@ height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
   padding: 12px;
   position: relative;
   background-color: var(--secondarywhitewhite-200);
@@ -299,7 +298,7 @@ display: inline-flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-padding: 12px 48px;
+padding: 12px;
 position: relative;
 flex: 0 0 auto;
 margin-left: 160px;
@@ -338,10 +337,10 @@ font-style: var(--titre-medium-h5-font-style);
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  padding: 12px 48px;
+  padding: 12px;
   position: relative;
   background-color: rgba(255, 255, 255, 1);
-  border-radius: 6px;
+  border-radius: 4px;
   overflow: hidden;
   background: linear-gradient(120deg, #233DFF, #E17AFF );
   position: relative;
@@ -356,6 +355,7 @@ font-style: var(--titre-medium-h5-font-style);
   white-space: nowrap;
   font-style: var(--titre-medium-h4-font-style);
 }
+
 
 @media (max-width: 768px){
   .contenu .main-bouton:hover{
