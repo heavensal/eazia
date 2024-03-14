@@ -1,0 +1,80 @@
+.modal-dialog-custom {
+  display: flex;
+  align-items: center; /* Centrage vertical */
+  justify-content: center; /* Centrage horizontal pour des cas spécifiques */
+  min-height: calc(100% - 50%); /* Calcule la hauteur pour centrer verticalement, ajustez les marges selon besoin */
+}
+
+.modal {
+  display: flex; /* Assurez-vous que cette règle ne perturbe pas d'autres modals */
+  align-items: center;
+}
+
+.modal-content {
+  background: linear-gradient(to bottom, rgba(253, 151, 44, 0.4) 0%, rgba(255, 255, 255, 0.8) 100%);
+  border-radius: 10px;
+  font-family: var(--petit-texte-medium-h1-font-family);
+  width: 100%;
+  height: 25vh;
+  margin-left: auto;
+  margin-top: auto
+
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff99;
+  color: black;
+
+  p{
+    font-size: var(--petit-texte-regular-h1-font-size);
+  }
+}
+
+.modal-body{
+  display :flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #233DFF, #E17AFF );
+
+}
+
+.btn-primary {
+  display: flex;
+  width: 126px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background-color: var(--secondarywhitewhite-200);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: var(--secondarywhitewhite-300);
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--titre-medium-h5-font-family);
+  font-weight: var(--titre-medium-h5-font-weight);
+  color: var(--secondaryblackblack-300);
+  font-size: var(--titre-medium-h5-font-size);
+  letter-spacing: var(--titre-medium-h5-letter-spacing);
+  line-height: var(--titre-medium-h5-line-height);
+  white-space: nowrap;
+  font-style: var(--titre-medium-h5-font-style);
+}
+
+.btn-primary:hover{
+  background-color: blue;
+  color: white
+}
+
+.close {
+  color: black;
+  opacity: 1;
+  border: 1px solid black
+}
+
+.modal-dialog {
+  max-width: 800px;
+}
