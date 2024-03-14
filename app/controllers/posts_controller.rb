@@ -32,9 +32,8 @@ class PostsController < ApplicationController
 
   def publish
     @post = Post.find(params[:id])
-    fb_api_service = FbApiService.new(@post.user)
-    fb_api_service.ig_account(@post.user)
-    fb_api_service.publish(@post, fb_api_service.new_container(@post))
+    # la je teste avec plusieurs photo, ca doit faire un carrousel
+    FbApiService.new(@post.user).carrousel(@post)
     @post.update!(status: "published")
     redirect_to new_post_path
   end

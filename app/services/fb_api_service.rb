@@ -19,24 +19,6 @@ class FbApiService
     instagram_account.update!(photo_url: profile_picture_url, username: username)
   end
 
-  # récupération le insta_id de l'user
-  def ig_account(user)
-    request = faraday_fb
-    response = request.get("https://graph.facebook.com/v19.0/me/accounts?fields=id&access_token=#{user.token}")
-    data = JSON.parse(response.body)
-    p data
-    page_id = data['data'].first['id']
-    puts "page_id = " + page_id
-
-    request_ig = faraday_fb
-    response_ig = request_ig.get("https://graph.facebook.com/v19.0/#{page_id}/?fields=instagram_business_account&access_token=#{user.token}")
-    data = JSON.parse(response_ig.body)
-    puts data
-    ig_id = data["instagram_business_account"]["id"]
-    puts "ig_id = " + ig_id
-    user.update!(ig_page: ig_id)
-  end
-
   # créer un container pour le futur post insta
   def new_container(post)
     caption = URI.encode_www_form_component(post.gpt_creation.description)
@@ -46,13 +28,36 @@ class FbApiService
     return data['id']
   end
 
+  def carrousel(post)
+    caption = URI.encode_www_form_component(post.gpt_creation.description)
+    # S'il y a 1 photo ?
+
+    # si il y a plusieurs photos, je crée un carroussel
+    containers = []
+    post.photos_selected.each do |photo|
+      # pour chaque photo selected, je crée un container pour le carroussel insta
+      response = Faraday.new.post("https://graph.facebook.com/v19.0/#{post.user.instagram_account.instagram_business}/media?image_url=https://res.cloudinary.com/dhsr2pymr/image/upload/v1/production/#{photo.key}&is_carousel_item=true&access_token=#{post.user.instagram_account.access_token}")
+      data = JSON.parse(response.body)
+      container = data['id']
+      # je stocke les containers dans un tableau
+      containers << container
+    end
+    # je crée un container pour le carroussel
+    # j'ajoute la description de post "caption"
+    # je crée un carroussel avec les containers
+    response = Faraday.new.post("https://graph.facebook.com/v19.0/#{post.user.instagram_account.instagram_business}/media?caption=#{caption}&media_type=CAROUSEL&children=#{containers.join('%')}&access_token=#{post.user.instagram_account.access_token}")
+    data = JSON.parse(response.body)
+    # ca c'est le id du container du carroussel
+    carrousel = data['id']
+    # je publie le carrousel
+    Faraday.new.post("https://graph.facebook.com/v19.0/#{post.user.instagram_account.instagram_business}/media_publish?creation_id=#{carrousel}&access_token=#{post.user.instagram_account.access_token}")
+  end
+
   # publier le post qui a ete créé
   def publish(post, container)
     request = faraday_fb
-    response = request.post("https://graph.facebook.com/v19.0/#{post.user.ig_page}/media_publish?creation_id=#{container}&access_token=#{post.user.token}")
+    response = request.post("https://graph.facebook.com/v19.0/#{post.user.instagram_account.instagram_business}/media_publish?creation_id=#{container}&access_token=#{post.user.token}")
   end
-
-
 
   private
 

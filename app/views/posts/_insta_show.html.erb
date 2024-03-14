@@ -1,6 +1,7 @@
 <div class="card carousel-card insta text-center">
   <div class="topbar">
     <div>
+      <%# Image du instagram à publier et username, possible uniquement si il s'est bien connecté %>
       <%= image_tag current_user.instagram_account.photo_url, class:"icon" %>
       <b><%= current_user.instagram_account.username %></b>
     </div>
