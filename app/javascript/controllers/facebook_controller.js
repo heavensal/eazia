@@ -36,6 +36,8 @@ export default class extends Controller {
           FB.api('/me', function(response) {
             that.buttonTarget.innerHTML = 'Vous êtes bien connecté sur le compte Facebook liée à ' + response.name + '.';
             that.buttonTarget.classList.add('disabled');
+            let token = FB.getAuthResponse().accessToken;
+            that.update(token)
           });
         } else {
           console.log('Vous n\'êtes pas connecté à Facebook.');
