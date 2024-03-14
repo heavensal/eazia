@@ -15,7 +15,7 @@
     <%= render "posts/modal_facebook", post: @post %>
 
     <div class="gnrateur" data-controller="autorisation-form">
-      <%= form_for(@post, data: { action: "submit->autorisation-form#validateForm", facebook_target: "form" }) do |f| %>
+      <%= form_for(@post, data: { action: "submit->autorisation-form#validateForm"}) do |f| %>
       <%= f.text_area :prompt, wrap: "soft", placeholder: "Saisissez en quelques mots le sujet de votre prochain post", data: {action:"blur->autorisation-form#validatePrompt", autorisation_form_target:"prompt"} %>
       <p  class="hidden" data-autorisation-form-target="myErrorMessage" style="font-size: 14px; color: red">la description doit contenir au moins 20 caractères</p>
       <div class="footer-form">
