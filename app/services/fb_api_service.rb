@@ -68,7 +68,7 @@ class FbApiService
   end
 
   def publish_container(post, container_id)
-    Faraday.new.post("#{FB_URL}/#{post.user.instagram_account.instagram_business}/media_publish?creation_id=#{container_id}&access_token=#{post.user.instagram_account.access_token}")
+    response = Faraday.new.post("#{FB_URL}/#{post.user.instagram_account.instagram_business}/media_publish?creation_id=#{container_id}&access_token=#{post.user.instagram_account.access_token}")
     # id de la publication
     return JSON.parse(response.body)
   end
