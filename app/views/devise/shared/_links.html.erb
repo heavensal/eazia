@@ -1,7 +1,9 @@
+<div class="compte">
 <%- if controller_name != 'sessions' %>
 <p>Vous avez déjà un compte ? </p>
   <%= link_to "Connexion", new_session_path(resource_name) %>
 <% end %>
+</div>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
 <div class="compte">

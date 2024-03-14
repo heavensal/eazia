@@ -14,13 +14,14 @@ export default class extends Controller {
     }
     this.submitButton = this.element.querySelector('.btn-inscription') || this.element.querySelector('.contenu .main-bouton');
 
-    // Ajouter un nouvel écouteur d'événements pour le champ prompt
-    this.promptTarget.addEventListener('input', this.validatePrompt.bind(this));
+    if (this.hasPromptTarget) {
+      this.promptTarget.addEventListener('input', this.validatePrompt.bind(this));
+    }
   }
 
   validateField(event) {
     const field = event.target;
-    const errorTarget = this.errorTarget.find(e => e.getAttribute("data-input-name") === field.name);
+    const errorTarget = this.errorTargets.find(e => e.getAttribute("data-input-name") === field.name);
 
     if (!field.value) {
       field.classList.add("is-invalid");
@@ -32,7 +33,12 @@ export default class extends Controller {
   }
 
   validateForm(event) {
-    const isPromptValid = this.promptTarget.value.length >= 20;
+    let isPromptValid = true; // Présumer vrai si le prompt n'existe pas
+    // Vérifier et valider le prompt seulement s'il est présent
+    if (this.hasPromptTarget) {
+      isPromptValid = this.promptTarget.value.length >= 20;
+    }
+
     let isCheckboxChecked = true;
        // Présumez true si pas de checkbox, pour la logique suivante.
     if (this.hasCheckboxTarget) {
@@ -75,10 +81,11 @@ export default class extends Controller {
   }
 
   validatePrompt() {
-    const isPromptValid = this.promptTarget.value.length >= 20;
-    if (isPromptValid) {
-      this.submitButton.disabled = false;
+    if (this.hasPromptTarget) {
+      const isPromptValid = this.promptTarget.value.length >= 20;
+      if (isPromptValid) {
+        this.submitButton.disabled = false;
+      }
     }
   }
-
 }
