@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  get 'instragram_accounts/update'
 
   root 'posts#new'
 
   devise_for :users
-  put '/instagram_accounts/update', to: 'instagram_accounts#update', as: 'update'
+  put 'instagram_accounts/update', to: 'instagram_accounts#update', as: 'update'
 
   resources :posts do
     member do
