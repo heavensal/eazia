@@ -11,8 +11,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(new_post_params)
     @post.user = current_user
-    ai_api_service = AiApiService.new(@post.user)
-    ai_api_service.work_1(@post)
+    AiApiService.new(@post.user).work_1(@post) # Creation de la réponse de l'IA
     GptCreation.create_description(@post) # Creation de la description du post
     select_photos(@post)
     redirect_to post_path(@post)
@@ -22,21 +21,22 @@ class PostsController < ApplicationController
   def show
     @post = Post.includes(:gpt_creation).with_attached_photos.find(params[:id])
     @photos = @post.photos
-    photos_selected = @post.photos.where(id: @post.photos_selected)
     @photos_selected = @post.photos_selected.map do |id|
-      photos_selected.detect { |photo| photo.id == id.to_i }
-    end.compact
+      @post.photos.where(id: @post.photos_selected).detect { |photo| photo.id == id.to_i }
+    end.compact # j'assigne les photos sélectionnées à une variable
     @gpt_creation = @post.gpt_creation
-    @description = @post.gpt_creation.description
-    logger.info(@description)
+    @description = @post.gpt_creation.description # description du post
   end
 
   def publish
     @post = Post.find(params[:id])
     # la je teste avec plusieurs photo, ca doit faire un carrousel
-    FbApiService.new(@post.user).carrousel(@post)
-    @post.update!(status: "published")
-    redirect_to new_post_path
+    FbApiService.new(@post.user).publish(@post)
+    if @post.update(status: "published")
+      redirect_to new_post_path, notice: "Votre poste a été publié avec succès"
+    else
+      redirect_to post_path(@post), alert: "Suite à une erreur, votre poste n'a pas été publié"
+    end
   end
 
   def destroy
