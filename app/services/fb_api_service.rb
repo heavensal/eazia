@@ -34,7 +34,11 @@ class FbApiService
 
     # si il y a plusieurs photos, je crée un carroussel
     containers = []
-    post.photos_selected.each do |photo|
+    # je récupère les photos selected
+    photos_selected = post.photos_selected.map do |id|
+      post.photos.where(id: post.photos_selected).detect { |photo| photo.id == id.to_i }
+    end.compact
+    photos_selected.each do |photo|
       # pour chaque photo selected, je crée un container pour le carroussel insta
       response = Faraday.new.post("https://graph.facebook.com/v19.0/#{post.user.instagram_account.instagram_business}/media?image_url=https://res.cloudinary.com/dhsr2pymr/image/upload/v1/production/#{photo.key}&is_carousel_item=true&access_token=#{post.user.instagram_account.access_token}")
       data = JSON.parse(response.body)
