@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_29_093311) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_13_220919) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -59,6 +59,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_29_093311) do
     t.index ["post_id"], name: "index_gpt_creations_on_post_id"
   end
 
+  create_table "instagram_accounts", force: :cascade do |t|
+    t.text "access_token"
+    t.text "photo_url"
+    t.string "username"
+    t.bigint "instagram_business"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_instagram_accounts_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "prompt"
     t.text "description"
@@ -102,5 +113,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_29_093311) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "dalle3_images", "posts"
   add_foreign_key "gpt_creations", "posts"
+  add_foreign_key "instagram_accounts", "users"
   add_foreign_key "posts", "users"
 end

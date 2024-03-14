@@ -6,10 +6,10 @@
     </div>
 
     <div id="user-info" data-controller="facebook">
-      <button data-action="click->facebook#fetchUserInfo">
+      <button data-facebook-target="button" data-action="click->facebook#facebookLogin" class="btn btn-primary">
         Se connecter à Facebook
       </button>
-      <div data-facebook-target="user"></div>
+      <div data-facebook-target="user" class="w-50 mx-auto"></div>
     </div>
 
     <div class="gnrateur" data-controller="autorisation-form">

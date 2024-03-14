@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_create :user_thread
+  after_create :user_thread, :instagram_account
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -7,6 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable,omniauth_providers: %i[facebook]
 
   has_many :posts, dependent: :destroy
+  has_one :instagram_account, dependent: :destroy
 
   def user_thread
     # creation d'une conversation entre un USER et CHATGPT
@@ -20,6 +21,10 @@ class User < ApplicationRecord
     response = thread_creator.post
     data = JSON.parse(response.body)
     self.update!(thread: data['id'])
+  end
+
+  def my_instagram
+    InstagramAccount.create(user: self)
   end
 
 end

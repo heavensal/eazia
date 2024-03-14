@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  get 'instragram_accounts/update'
 
   root 'posts#new'
 
   devise_for :users
-  put '/users/update_token', to: 'users#update_token', as: 'update_token'
+  put '/instagram_accounts/update', to: 'instagram_accounts#update', as: 'update'
 
   resources :posts do
     member do
