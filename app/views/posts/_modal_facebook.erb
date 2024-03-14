@@ -1,0 +1,24 @@
+<div data-controller="facebook-login">
+   <div class="modal fade" id="facebookLoginModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-custom" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Connexion Facebook</h5>
+          <p>Pour continuer vous devez vous connecter à Facebook</p>
+          <%# <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button> %>
+        </div>
+        <div class="modal-body">
+          <!-- Votre contenu ici -->
+          <div id="user-info" data-controller="facebook">
+            <button data-facebook-target="button" data-action="click->facebook#facebookLogin" class="btn-primary">
+              Se connecter
+            </button>
+            <div data-facebook-target="user" class="w-50 mx-auto"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
