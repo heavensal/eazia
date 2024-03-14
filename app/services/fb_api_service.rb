@@ -49,7 +49,7 @@ class FbApiService
     # je crée un container pour le carroussel
     # j'ajoute la description de post "caption"
     # je crée un carroussel avec les containers
-    response = Faraday.new.post("https://graph.facebook.com/v19.0/#{post.user.instagram_account.instagram_business}/media?caption=#{caption}&media_type=CAROUSEL&children=#{containers.join('%')}&access_token=#{post.user.instagram_account.access_token}")
+    response = Faraday.new.post("https://graph.facebook.com/v19.0/#{post.user.instagram_account.instagram_business}/media?caption=#{caption}&media_type=CAROUSEL&children=#{containers.join(',')}&access_token=#{post.user.instagram_account.access_token}")
     data = JSON.parse(response.body)
     # ca c'est le id du container du carroussel
     carrousel = data['id']
