@@ -1,7 +1,7 @@
 class InstragramAccountsController < ApplicationController
-  def update
+  def update_token
     @instagram_account = current_user.instagram_account
-    if @instagram_account.update(token: params[:token])
+    if @instagram_account.update(access_token: params[:token])
       instagram_business = FbApiService.new(current_user).instagram_account(@instagram_account.token)
       @instagram_account.update!(instagram_business: instagram_business)
       FbApiService.new(current_user).instagram_profile(@instagram_account)

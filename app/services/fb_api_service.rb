@@ -4,8 +4,8 @@ class FbApiService
   end
 
   # update le instagram_account du user
-  def instagram_account(user)
-    response = Faraday.new.get("https://graph.facebook.com/v19.0/me/accounts?fields=instagram_business_account&access_token=#{user.instagram_account.access_token}")
+  def instagram_account(access_token)
+    response = Faraday.new.get("https://graph.facebook.com/v19.0/me/accounts?fields=instagram_business_account&access_token=#{access_token}")
     data = JSON.parse(response.body)
     instagram_business = data["data"].first["instagram_business_account"]["id"]
     return instagram_business
@@ -16,7 +16,7 @@ class FbApiService
     data = JSON.parse(response.body)
     profile_picture_url = data["profile_picture_url"]
     username = data["username"]
-    instagram_account.update!(profile_picture_url: profile_picture_url, username: username)
+    instagram_account.update!(photo_url: profile_picture_url, username: username)
   end
 
   # récupération le insta_id de l'user

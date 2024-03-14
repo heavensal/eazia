@@ -1,8 +1,8 @@
 <div class="card carousel-card insta text-center">
   <div class="topbar">
     <div>
-      <%= image_tag "photo_alice.jpeg", class:"icon" %>
-      <b><%= current_user.instagram %></b>
+      <%= image_tag current_user.instagram_account.photo_url, class:"icon" %>
+      <b><%= current_user.instagram_account.username %></b>
     </div>
     <div>
       <%= render "layouts/instagram/threepoints" %>

@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   root 'posts#new'
 
   devise_for :users
-  put 'instagram_accounts/update', to: 'instagram_accounts#update', as: 'update'
-
+  put 'users/update_token', to: 'users#update_token', as: 'update_user_token'
   resources :posts do
     member do
       patch :publish

@@ -69,7 +69,7 @@ export default class extends Controller {
           // console.log('Vous êtes bien connecté sur le compte Facebook liée à ' + response.name + '.');
           // CHANGER LE BOUTON DE CONNEXION EN BOUTON DE DECONNEXION
           let token = FB.getAuthResponse().accessToken;
-          // console.log(token);
+          console.log(token);
           // ETAPE 6
           that.update(token)
           // MAINTENANT QUE JE SUIS CONNECTE? Je peux modifier les infos dans la target user
@@ -96,7 +96,7 @@ export default class extends Controller {
   // DERNIERE ETAPE AVANT DE MODIFIER LE TOKEN
   // ETAPE 7
   update(token) {
-    fetch('/instagram_accounts/update', {
+    fetch('/users/update_token', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
