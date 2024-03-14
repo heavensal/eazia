@@ -55,12 +55,8 @@ class FbApiService
     carrousel = data['id']
     # je publie le carrousel
     Faraday.new.post("https://graph.facebook.com/v19.0/#{post.user.instagram_account.instagram_business}/media_publish?creation_id=#{carrousel}&access_token=#{post.user.instagram_account.access_token}")
-  end
-
-  # publier le post qui a ete créé
-  def publish(post, container)
-    request = faraday_fb
-    response = request.post("https://graph.facebook.com/v19.0/#{post.user.instagram_account.instagram_business}/media_publish?creation_id=#{container}&access_token=#{post.user.token}")
+    data = JSON.parse(response.body)
+    logger.info(data['id'])
   end
 
   private

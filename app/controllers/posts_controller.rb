@@ -28,6 +28,7 @@ class PostsController < ApplicationController
     end.compact
     @gpt_creation = @post.gpt_creation
     @description = @post.gpt_creation.description
+    logger.info(@description)
   end
 
   def publish
