@@ -30,7 +30,6 @@ class PostsController < ApplicationController
 
   def publish
     @post = Post.find(params[:id])
-    # la je teste avec plusieurs photo, ca doit faire un carrousel
     FbApiService.new(@post.user).publish(@post)
     if @post.update(status: "published")
       redirect_to new_post_path, notice: "Votre poste a été publié avec succès"

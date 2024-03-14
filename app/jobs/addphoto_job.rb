@@ -10,14 +10,17 @@ class AddphotoJob < ApplicationJob
   end
 
   def broadcast_photos(post)
+    photos_selected = post.photos_selected.map do |id|
+      post.photos.where(id: post.photos_selected).detect { |photo| photo.id == id.to_i }
+    end.compact
     Turbo::StreamsChannel.broadcast_append_to post,
         target: "photos",
         partial: "photos/show-photo",
         locals: { photo: post.photos.last, post: post }
     Turbo::StreamsChannel.broadcast_update_to post,
         target: "myCarousel",
-        partial: "posts/insta-photos",
-        locals: { images: post.photos, post: post }
+        partial: "photos/insta-photos",
+        locals: { photos_selected: photos_selected, post: post }
   end
 
   def select_photos(post)
