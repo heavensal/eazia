@@ -34,14 +34,23 @@
         <p class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[email]" style="font-size: 14px;">L'email est obligatoire</p>
       <%= f.password_field :password, autocomplete: "current-password", class: "div-wrapper property-input", placeholder:"Mot de Passe", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"}  %>
         <p class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[password]" style="font-size: 14px;">Le mot de passe est obligatoire</p>
+
+
     <div class="mot-de-passe">
       <div class="lorem-ipsum-wrapper">
         <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-          <div class="mdp"><%= link_to "Mot de passe oublié ?", new_password_path(resource_name) %><br /></div>
+        <%= link_to "Mot de passe oublié ?", new_password_path(resource_name) %><br />
         <% end %>
       </div>
+
+        <% if devise_mapping.rememberable? %>
+      <div class="field-2 ">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, "Se souvenir de moi" %>
+       </div>
+    <% end %>
     <div>
-      <div><%= f.submit "Connexion", class: "main-bouton text-wrapper-2" %></div>
+      <%= f.submit "Connexion", class: "main-bouton text-wrapper-2" %>
        <% end %>
     </div>
     </div>

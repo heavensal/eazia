@@ -762,7 +762,6 @@ display: inline-block;
   gap: 24px;
   padding: 24px;
   position: relative;
-  background-color: var(--secondarywhitewhite-100);
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid;
@@ -797,7 +796,6 @@ display: inline-block;
    align-items: flex-start;
    justify-content: flex-end;
    gap: 24px;
-   background-color: var(--secondarywhitewhite-100);
    overflow: hidden;
    border: 0;
 
@@ -1044,9 +1042,9 @@ display: inline-block;
 .frame-bouton-insta {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
-  width: 95%;
+  width: 100%;
   gap: 4px;
   padding: 20px;
   position: relative;

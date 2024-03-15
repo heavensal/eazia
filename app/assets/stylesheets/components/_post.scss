@@ -18,6 +18,7 @@ height: 100vh;
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  width: 70%;
 
 }
 
@@ -83,6 +84,7 @@ height: 100vh;
 }
 
 .contenu .gnrateur {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
@@ -97,6 +99,10 @@ height: 100vh;
   border: 1px solid;
   border-color: var(--secondarywhitewhite-400);
   backdrop-filter: blur(20px) brightness(100%);
+
+  form{
+    width: 100%
+  }
 
   textarea{
     position: relative;
@@ -132,7 +138,7 @@ height: 100vh;
     -webkit-backdrop-filter: blur(20px) brightness(100%);
 
     form{
-      width: 100%
+      width: 100%;
     }
 
     textarea{
@@ -294,18 +300,17 @@ height: 12px;
 }
 
 .contenu .main-bouton {
-display: inline-flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding: 12px;
-position: relative;
-flex: 0 0 auto;
-margin-left: 160px;
-border-radius: 4px;
-overflow: hidden;
-border: 0;
-background: linear-gradient(120deg, #233DFF, #E17AFF );
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 48px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid;
+  border-color: #ffffff42;
+  background: linear-gradient(90deg, rgba(28.77, 147.84, 255, 0.8) 0%, rgba(255, 0, 244.8, 0.8) 100%);
 position: relative;
 width: fit-content;
 margin-top: -1px;
@@ -334,25 +339,28 @@ font-style: var(--titre-medium-h5-font-style);
 
 
 .contenu .main-bouton:hover {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
+  width: 30%;
   align-items: center;
   padding: 12px;
   position: relative;
   background-color: rgba(255, 255, 255, 1);
   border-radius: 4px;
   overflow: hidden;
-  background: linear-gradient(120deg, #233DFF, #E17AFF );
-  position: relative;
-  width: fit-content;
+  border: 1px solid;
+  border-color: #ffffff42;
+  background: linear-gradient(90deg, rgb(28.77, 147.84, 255) 0%, rgb(255, 0, 244.8) 100%);
+
+  align-self: stretch;
   margin-top: -1px;
   font-family: var(--titre-medium-h4-font-family);
   font-weight: var(--titre-medium-h4-font-weight);
   color: #ffffff;
   font-size: var(--titre-medium-h4-font-size);
+  text-align: center;
   letter-spacing: var(--titre-medium-h4-letter-spacing);
   line-height: var(--titre-medium-h4-line-height);
-  white-space: nowrap;
   font-style: var(--titre-medium-h4-font-style);
 }
 
