@@ -1,0 +1,41 @@
+<div class="modal fade" id="modalAccountId" data-modal-account-target="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-custom-account" role="document">
+      <div class="modal-content">
+          <h5 class="modal-title-account" id="modalLabel">Modifier votre profil</h5>
+        <div class="modal-body-account">
+          <%= form_for(current_user, url: pages_update_account_path, html: { method: :patch }) do |f| %>
+            <div class="modal-field-update">
+              <%= f.label :first_name, "Prénom :" %>
+              <%= f.text_field :first_name %>
+            </div>
+
+            <div class="modal-field-update">
+              <%= f.label :last_name, "Nom :" %>
+              <%= f.text_field :last_name %>
+            </div>
+
+            <div class="modal-field-update">
+              <%= f.label :company, "Nom de votre entreprise :" %>
+              <%= f.text_field :company %>
+            </div>
+
+            <div class="modal-field-update">
+              <%= f.label :information, "Quelques mots sur votre activité :" %>
+              <%= f.text_field :information %>
+            </div>
+
+            <div class="modal-field-update">
+              <%= f.label :instagram, "Pseudo instagram :" %>
+              <%= f.text_field :instagram %>
+            </div>
+
+            <div class="actions-compte">
+              <button data-action="click->modal#close">Annuler</button>
+              <%= f.submit "Confirmer les changements", class:"btn-update" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>

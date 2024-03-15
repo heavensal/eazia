@@ -156,31 +156,36 @@
   gap: 8px
 }
 
-.actions-compte{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 8px
-}
 
 .btn-update{
-  width: 20%;
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 8px;
   padding: 12px;
   position: relative;
-  background-color: var(--secondarywhitewhite-200);
+  flex: 0 0 auto;
   border-radius: 4px;
   overflow: hidden;
-  border: 1px solid;
-  border-color: var(--secondaryblackblack-50);
+  border: 0;
+  background: linear-gradient(180deg, rgb(28.77, 147.84, 255) 0%, rgb(255, 0, 244.8) 100%);
+  width: fit-content;
+  margin-top: -1px;
+  font-family: var(--titre-medium-h4-font-family);
+  font-weight: var(--titre-medium-h4-font-weight);
+  color: #ffffff;
+  font-size: var(--titre-medium-h4-font-size);
+  letter-spacing: var(--titre-medium-h4-letter-spacing);
+  line-height: var(--titre-medium-h4-line-height);
+  white-space: nowrap;
+  font-style: var(--titre-medium-h4-font-style);
 }
 
+
+
 .btn-deconnexion{
-  width: 20%;
-  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
   color: red;
   text-align: end;
   padding: 12px;
