@@ -113,20 +113,27 @@
 
 
 
-// // .field-2 {
-// //   width: 100%;
-// //   margin-left: auto;
-// //   margin-right: auto;
-// //   font-family: 'glacial-indifference' ;
+.field-2 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: var(--titre-regular-h4-font-family);
+  font-weight: var(--titre-regular-h4-font-weight);
+  color: var(--secondaryblackblack-200);
+  font-size: var(--titre-regular-h4-font-size);
+  letter-spacing: var(--titre-regular-h4-letter-spacing);
+  line-height: var(--titre-regular-h4-line-height);
+  font-style: var(--titre-regular-h4-font-style);
 
-// //   @media (max-width: 768px) {
-// //     width: 100%;
-// //   }
 
-// //   @media (max-width: 480px) {
-// //     width: 100%;
-// //   }
-// // }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+}
 
 
 // // .field:last-child {
@@ -156,6 +163,7 @@
 .compte{
   display: flex;
 justify-content: center;
+gap:8px;
 
 
   p{
@@ -170,8 +178,8 @@ line-height: normal;
   }
 
   a{
-  background: linear-gradient(120deg, #233DFF, #E17AFF 50%, #FD972C);
-  background-clip: text;
+    background: linear-gradient(180deg, rgb(28.77, 147.84, 255) 0%, rgb(255, 0, 244.8) 100%);
+    background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   /* Titre/Regular/h5 */
@@ -509,7 +517,6 @@ padding: 32px;
   align-items: flex-start;
   gap: 12px;
   position: relative;
-  flex: 0 0 auto;
 }
 
 
@@ -538,8 +545,8 @@ padding: 32px;
   }
 
  .label {
-  position: relative;
-  width: fit-content;
+  // position: relative;
+  // width: fit-content;
   margin-top: -1px;
   font-family: var(--titre-regular-h4-font-family);
   font-weight: var(--titre-regular-h4-font-weight);
@@ -603,7 +610,7 @@ padding: 32px;
   display: inline-flex;
   flex-direction: column;
   width: 100%;
-  gap: 8px;
+  gap: 24px;
   position: relative;
   flex: 0 0 auto;
 }
@@ -614,12 +621,6 @@ padding: 32px;
   justify-content: flex-end;
   position: relative;
   flex: 0 0 auto;
-}
-
-.container-login .lorem-ipsum {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
   font-family: var(--titre-regular-h5-font-family);
   font-weight: var(--titre-regular-h5-font-weight);
   color: var(--secondaryblackblack-200);
@@ -630,35 +631,52 @@ padding: 32px;
   font-style: var(--titre-regular-h5-font-style);
 }
 
-.container-login .main-bouton {
+.container-login .lorem-ipsum {
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
+}
 
+.container-login .main-bouton {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 400px;
   align-items: center;
   padding: 12px;
   position: relative;
   background-color: rgba(255, 255, 255, 1);
-  border-radius: 6px;
+  border-radius: 4px;
   overflow: hidden;
-  border: 0;
-  background: linear-gradient(120deg, #233DFF, #E17AFF);
-}
-
-
-.container-login .text-wrapper-2 {
-  position: relative;
-  // width: fit-content;
+  border: 1px solid;
+  border-color: #ffffff42;
+  background: linear-gradient(90deg, rgb(28.77, 147.84, 255) 0%, rgb(255, 0, 244.8) 100%);
+  align-self: stretch;
   margin-top: -1px;
   font-family: var(--titre-medium-h4-font-family);
   font-weight: var(--titre-medium-h4-font-weight);
   color: #ffffff;
   font-size: var(--titre-medium-h4-font-size);
+  text-align: center;
   letter-spacing: var(--titre-medium-h4-letter-spacing);
   line-height: var(--titre-medium-h4-line-height);
-  white-space: nowrap;
   font-style: var(--titre-medium-h4-font-style);
+
 }
+
+
+// .container-login .text-wrapper-2 {
+//   position: relative;
+//   // width: fit-content;
+//   margin-top: -1px;
+//   font-family: var(--titre-medium-h4-font-family);
+//   font-weight: var(--titre-medium-h4-font-weight);
+//   color: #ffffff;
+//   font-size: var(--titre-medium-h4-font-size);
+//   letter-spacing: var(--titre-medium-h4-letter-spacing);
+//   line-height: var(--titre-medium-h4-line-height);
+//   white-space: nowrap;
+//   font-style: var(--titre-medium-h4-font-style);
+// }
 
 .container-login .autres-connexions {
   display: inline-flex;
