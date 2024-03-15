@@ -3,6 +3,7 @@
 
     <%= f.text_area :description,
       label: false,
+      autofocus: true,
       value: @description,
       input_html: { id:"modif-description" ,
                     class:"description",
@@ -13,9 +14,9 @@
                     }
       }
       %>
-    <div class="gpt_edit_bouton">
-      <%= link_to "Annuler", post_path(@post), class:"secondary-bouton" %>
-      <%= f.submit "Modifier ✔️", class:"secondary-bouton" %>
+    <div class="gpt-edit-bouton">
+      <%= link_to "Annuler", post_path(@post), class:"secondary-bouton-annuler" %>
+      <%= f.submit "Modifier ✔️", class:"secondary-bouton-modifier" %>
     </div>
 
   <% end %>
