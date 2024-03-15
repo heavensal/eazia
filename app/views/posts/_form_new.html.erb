@@ -1,0 +1,27 @@
+<div class="gnrateur" data-controller="autorisation-form">
+  <%= form_for(@post, data: { action: "submit->autorisation-form#validateForm"}) do |f| %>
+    <%= f.text_area :prompt, wrap: "soft", placeholder: "Saisissez en quelques mots le sujet de votre prochain post", data: {action:"blur->autorisation-form#validatePrompt", autorisation_form_target:"prompt"} %>
+      <p  class="hidden" data-autorisation-form-target="myErrorMessage" style="font-size: 14px; color: red">la description doit contenir au moins 20 caractères</p>
+        <div class="footer-form">
+
+          <div class="form-secondary-bouton">
+
+            <div class="file-upload-wrapper" data-controller="file-upload">
+              <%= f.label :photos, "Ajouter vos images", class: "custom-file-upload" %>
+              <%= f.file_field :photos, as: :file, multiple: true, data: { action: "change->file-upload#updateFileName", file_upload_target: "source" } %>
+              <span data-file-upload-target="fileName" class="file-name"></span>
+            </div >
+
+            <div class="generateur-images">
+              <%= f.label :pictures_generated do %> Générer des images
+              <%end%>
+              <%= f.select :pictures_generated, options_for_select(0..5) %>
+            </div>
+
+          </div>
+
+          <%= f.submit "Générer mon post", class:"main-bouton", data: { action: "submit->autorisation-form#validateForm click->loader#fire"} %>
+          <% end %>
+
+        </div>
+</div>

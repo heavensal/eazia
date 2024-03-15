@@ -1,39 +1,30 @@
 <%# TRES IMPORTANT: Canal de diffusion des changements d'images %>
 <%= turbo_stream_from @post %>
 
-<%# NOTIF: HTML CSS A revoir %>
-<%# Affiche une notif ou alert, changer css de l'alert %>
-<%= render 'layouts/flashes' %>
+<%= render 'layouts/flashes' %><%# Affiche une notif ou alert, changer css de l'alert %>
 
 <div class="gnration-de-la">
   <div class="frame-show">
     <div class="div-show" data-controller="form-submission">
-
       <div class="creation-images" id="photos">
-
-        <%# Pour ajouter/enlever la photo des sélections et supprimer la photo %>
-        <%# La place de la photo est aussi dans le partial %>
         <%= render partial: "photos/show-photo", collection: @post.photos, as: :photo, locals: {post: @post} %>
 
-      <%# Recréer une photo %>
-      <div class="bouton-images">
-        <%= render "photos/btn-create-new-photo", post: @post %>
-        <%= render "photos/btn-load-photos", post: @post %>
-      </div>
-      </div>
-        <%= image_tag("line_2.png", alt:"line") %>
-
-
-
-        <div class="frame-description">
-          <div class="description-de-post">
-            <%# Description + générer ou modifier une description %>
-            <%= render 'gpt_creations/recreate', gpt_creation: @gpt_creation %>
-          </div>
+        <div class="bouton-images">
+          <%= render "photos/btn-create-new-photo", post: @post %>
+          <%= render "photos/btn-load-photos", post: @post %>
         </div>
-
       </div>
-</div>
+
+      <%= image_tag("line_2.png", alt:"line") %>
+
+      <div class="frame-description">
+        <div class="description-de-post">
+          <%= render 'gpt_creations/recreate', gpt_creation: @gpt_creation %>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
   <div class="view-insta">
       <%= render "insta_show", post: @post, description: @description, photos_selected: @photos_selected %>
