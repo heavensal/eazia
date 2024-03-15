@@ -8,14 +8,21 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  require 'timeout'
   def create
-    @post = Post.new(new_post_params)
-    @post.user = current_user
-    AiApiService.new(@post.user).work_1(@post) # Creation de la réponse de l'IA
-    GptCreation.create_description(@post) # Creation de la description du post
-    select_photos(@post)
-    redirect_to post_path(@post)
-    PhotoJob.perform_later(@post.id)
+    begin
+      Timeout::timeout(29) do
+        @post = Post.new(new_post_params)
+        @post.user = current_user
+        AiApiService.new(@post.user).work_1(@post) # Creation de la réponse de l'IA
+        GptCreation.create_description(@post) # Creation de la description du post
+        select_new_photos(@post)
+        redirect_to post_path(@post)
+      end
+      PhotoJob.perform_later(@post.id)
+    rescue
+      redirect_to new_post_path, alert: "Suite à une erreur de l'IA, votre poste n'a pas été créé. Merci de réessayer ultérieurement."
+    end
   end
 
   def show
@@ -30,18 +37,25 @@ class PostsController < ApplicationController
 
   def publish
     @post = Post.find(params[:id])
-    FbApiService.new(@post.user).publish(@post)
-    if @post.update(status: "published")
-      redirect_to new_post_path, notice: "Votre poste a été publié avec succès"
-    else
+    begin
+      FbApiService.new(@post.user).publish(@post)
+      if @post.update(status: "published")
+        redirect_to new_post_path, notice: "Votre poste a été publié avec succès"
+      else
+        redirect_to post_path(@post), alert: "Suite à une erreur, votre poste n'a pas été publié"
+      end
+    rescue
       redirect_to post_path(@post), alert: "Suite à une erreur, votre poste n'a pas été publié"
     end
   end
 
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to drafts_path, status: :see_other
+    if @post.destroy
+      redirect_to drafts_path, status: :see_other, notice: "Votre poste a été supprimé avec succès."
+    else
+      redirect_to post_path(@post), status: :unprocessable_entity, alert: "Suite à une erreur, votre poste n'a pas été supprimé."
+    end
   end
 
   private
@@ -50,7 +64,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:prompt, :description, :pictures_generated, photos: [])
   end
 
-  def select_photos(post)
+  def select_new_photos(post)
     unless post.photos.empty?
       post.photos.each do |photo|
         post.photos_selected << photo.id

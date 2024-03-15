@@ -1,6 +1,7 @@
 class FbApiService
   FB_URL = "https://graph.facebook.com/v19.0"
   CLOUDINARY_URL = "https://res.cloudinary.com/dhsr2pymr/image/upload/v1/production"
+
   def initialize(user)
     @user = user
   end

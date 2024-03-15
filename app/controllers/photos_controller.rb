@@ -3,7 +3,6 @@ class PhotosController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     AddphotoJob.perform_later(@post.id)
-    redirect_to post_path(@post), notice: 'Photo en cours de création. Merci de patienter quelques instants.'
   end
 
   def load_my_photo
@@ -12,10 +11,14 @@ class PhotosController < ApplicationController
       params[:post][:photos].each do |photo|
         filename = "image_#{Time.now.to_i}.jpeg"
         @post.photos.attach(photo)
-        select_photos(@post)
+        select_new_photo(@post)
       end
     end
-    redirect_to post_path(@post)
+    if @post.save
+      redirect_to post_path(@post)
+    else
+      redirect_to post_path(@post), status: :unprocessable_entity, alert: 'Erreur lors de l\'ajout de la photo. Merci de réessayer.'
+    end
   end
 
   def select
@@ -34,9 +37,8 @@ class PhotosController < ApplicationController
     @post = Post.find(params[:post_id])
     @photo = @post.photos.find(params[:id])
     @post.photos_selected.delete(@photo.id)
-    if @post.save
-      @photo.purge
-      redirect_to post_path(@post), notice: 'Photo supprimée avec succès'
+    if @post.save && @photo.purge
+      redirect_to post_path(@post)
     else
       redirect_to post_path(@post), status: :unprocessable_entity, alert: 'Erreur lors de la suppression de la photo. Merci de réessayer.'
     # @post.dalle3_images.all.last.destroy
@@ -49,9 +51,8 @@ class PhotosController < ApplicationController
     params.require(:post).permit(photos: [])
   end
 
-  def select_photos(post)
+  def select_new_photo(post)
     post.photos_selected << post.photos.last.id
-    post.save!
   end
 
 end
