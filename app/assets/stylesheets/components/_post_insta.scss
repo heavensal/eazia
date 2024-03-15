@@ -433,6 +433,11 @@ display: inline-block;
 
 }
 
+.generator-image input[type="submit"]:hover{
+  color:  #FD972C;
+
+}
+
 
 .photo-container {
   position: relative;
@@ -543,14 +548,18 @@ display: inline-block;
 }
 
 .delete-icon:hover {
-  transform: scale(2);
+  position: absolute;
+  top: 75px;
+  left: 75px;
+  transform: translate(-50%, -50%) scale(2);
   transition: transform 0.3s ease;
+  background-color: black;
 }
 
 .image-container:hover .delete-icon {
   display: block;
   visibility: visible;
-  opacity: 0.6;
+  opacity: 1;
 
 }
 
@@ -691,9 +700,14 @@ display: inline-block;
 
 }
 
+.file-upload-wrapper-show:hover {
+  color:  #FD972C;
+}
+
 .file-upload-wrapper-show input[type="file"] {
   display: none;
 }
+
 
 .div-show .box-show {
   width: 584px;
@@ -816,7 +830,9 @@ display: inline-block;
    textarea{
     width: 100%;
     height: 80px;
-    border: 1px solid grey;
+    border: 2px solid blue;
+    padding: 8px;
+    height: 150px;
     resize: none;
     background: transparent;
     font-family: var(--titre-regular-h4-font-family);
@@ -830,10 +846,70 @@ display: inline-block;
 
   }
 
-  .gpt_edit_bouton{
+  .gpt-edit-bouton{
     display: flex;
     flex-direction: row;
     gap:24px
+  }
+
+  .gpt-edit-bouton .secondary-bouton-annuler{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: var(--secondarywhitewhite-200);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: var(--secondaryblackblack-50);
+    position: relative;
+    width: fit-content;
+    font-family: var(--titre-medium-h5-font-family);
+    font-weight: var(--titre-medium-h5-font-weight);
+    color: var(--secondaryblackblack-300);
+    font-size: var(--titre-medium-h5-font-size);
+    letter-spacing: var(--titre-medium-h5-letter-spacing);
+    line-height: var(--titre-medium-h5-line-height);
+    white-space: nowrap;
+    font-style: var(--titre-medium-h5-font-style);
+  }
+
+  .gpt-edit-bouton .secondary-bouton-modifier{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    position: relative;
+    flex: 0 0 auto;
+    background-color: var(--secondarywhitewhite-200);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: var(--secondaryblackblack-50);
+    position: relative;
+    width: fit-content;
+    font-family: var(--titre-medium-h5-font-family);
+    font-weight: var(--titre-medium-h5-font-weight);
+    color: var(--secondaryblackblack-300);
+    font-size: var(--titre-medium-h5-font-size);
+    letter-spacing: var(--titre-medium-h5-letter-spacing);
+    line-height: var(--titre-medium-h5-line-height);
+    white-space: nowrap;
+    font-style: var(--titre-medium-h5-font-style);
+  }
+
+
+
+  .gpt-edit-bouton .secondary-bouton-annuler:hover{
+    color: red;
+  }
+
+  .gpt-edit-bouton .secondary-bouton-modifier:hover{
+    color: green;
   }
 
 .frame-description .div-description {
@@ -867,6 +943,11 @@ display: inline-block;
   line-height: var(--titre-medium-h5-line-height);
   white-space: nowrap;
   font-style: var(--titre-medium-h5-font-style);
+}
+
+.frame-description .secondary-bouton:hover{
+  color: blue
+
 }
 
 .container-boutons {
