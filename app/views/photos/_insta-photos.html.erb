@@ -1,11 +1,15 @@
 <div id="myCarousel"  class="carousel slide" data-ride="carousel">
 
-  <div class="carousel-indicators">
-    <% if photos_selected.length > 1 %>
+  <div class="carousel-indicators-images">
+    <% if photos_selected.length >= 1 %>
       <% photos_selected.each_with_index do |photo, i| %>
         <div data-bs-slide-to="<%=i%>" class="<%= i== 0 ? "active" : "" %> rounded-circle card-indicator">
         </div>
       <%end%>
+      <%else%>
+      <div class="no-image">
+      <%= image_tag("no_image_insta.png", alt:"insta no image")%>
+      </div>
     <%end%>
   </div>
 

@@ -1,10 +1,12 @@
 <% if flash[:notice] %>
-  <div class="notice" id="notice">
+  <div class="notice" data-controller="flash" id="notice">
     <%= flash[:notice] %>
+     <button data-action="flash#close">X</button>
   </div>
 <% elsif flash[:alert] %>
-  <div class="notice" id="alert">
+  <div class="alert" data-controller="flash" id="alert">
     <%= flash[:alert] %>
+     <button data-action="flash#close">X</button>
   </div>
 <% end %>
 

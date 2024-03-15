@@ -601,11 +601,20 @@ display: inline-block;
   position: fixed;
   top: 5px;
   right: 24px;
-  background: linear-gradient(120deg, #233DFF, #E17AFF );
-  color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid #233DFF;
+  border-radius: 4px;
+  color: var(--secondaryblackblack-300);
   padding: 5px;
   z-index: 1000;
   font-size: 12px;
+
+  button{
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    font-size: 12px;
+    color: #233DFF;
+  }
 }
 
 
