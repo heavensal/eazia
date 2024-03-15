@@ -5,9 +5,25 @@
     <%= link_to "Générer un post", new_post_path  %>
   </div>
   </div>
-    <div class="account">
-      <p><b>Votre email :</b> <%= @user.email %></p><br>
+    <div class="account" data-controller="modal-account">
+    <div class="account-header">
       <h3>Informations personnelles</h3>
+       <a href="#" data-action="click->modal-account#open" class="edit-profile-link">
+      <i class="fa fa-edit"></i> Modifier le profil
+      </a>
+    </div>
+    <div class="account-body">
+    <div class="account-column">
+      <p><%= @user.email %></p>
+      <p> <%= @user.last_name %></p>
+      </div>
+      <div class="account-column">
+      <p> <%= @user.first_name %></p>
+      <p> <%= @user.company %></p>
+      </div>
+      <div class="account-column">
+      <p> <%= @user.instagram %></p>
+      </div>
         <% if @user.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(@user.errors.count, "error") %> empêchent cette mise à jour :</h2>
@@ -19,46 +35,12 @@
           </div>
           <% end %>
 
-      <%= form_for(current_user, url: pages_update_account_path, html: { method: :patch }) do |f| %>
-        <div class="form-column-compte">
-          <div class="field-update">
-            <%# <%= f.label :first_name, "Prénom :" %>
-            <%= f.text_field :first_name %>
-          </div>
+        <%= link_to "Déconnexion", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Etes-vous sûr ?" }, class:"btn-deconnexion"  %>
 
-          <div class="field-update">
-            <%# <%= f.label :last_name, "Nom :" %>
-            <%= f.text_field :last_name %>
-          </div>
-        </div>
-
-        <div class="form-column-compte" >
-          <div class="field-update">
-            <%# <%= f.label :company, "Nom de votre entreprise :" %>
-            <%= f.text_field :company %>
-          </div>
-
-          <div class="field-update">
-            <%# <%= f.label :information, "Quelques mots sur votre activité :" %>
-            <%= f.text_field :information %>
-          </div>
-        </div>
-
-        <div class="form-column-compte">
-          <div class="field-update">
-            <%# <%= f.label :instagram, "Pseudo instagram :" %>
-            <%= f.text_field :instagram %>
-          </div>
-
-          <div class="field-update"></div>
-        </div>
-
-        <div class="actions-compte">
-          <%= f.submit "Mettre à jour", class:"btn-update" %>
-          <%= link_to "Déconnexion", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Etes-vous sûr ?" }, class:"btn-deconnexion"  %>
-        </div>
-      <% end %>
+    </div>
 
 
+
+    <%= render "pages/modal_account"%>
     </div>
 </div>

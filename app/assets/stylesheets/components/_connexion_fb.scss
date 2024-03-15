@@ -10,15 +10,12 @@
   align-items: center;
 }
 
-.modal-content {
+.modal-content-fb {
   background: linear-gradient(to bottom, rgba(253, 151, 44, 0.4) 0%, rgba(255, 255, 255, 0.8) 100%);
   border-radius: 10px;
   font-family: var(--petit-texte-medium-h1-font-family);
   width: 100%;
   height: 25vh;
-  margin-left: auto;
-  margin-top: auto
-
 }
 
 .modal-header {
@@ -26,6 +23,7 @@
   flex-direction: column;
   background-color: #ffffff99;
   color: black;
+  border-bottom: 0;
 
   p{
     font-size: var(--petit-texte-regular-h1-font-size);
@@ -36,7 +34,6 @@
   display :flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(120deg, #233DFF, #E17AFF );
 
 }
 
