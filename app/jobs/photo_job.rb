@@ -6,8 +6,6 @@ class PhotoJob < ApplicationJob
     ai_api_service = AiApiService.new(post.user)
     post.pictures_generated.times do |i|
       broadcast_loading_photo(post, i)
-    end
-    post.pictures_generated.times do |i|
       ai_api_service.image(post)
       select_photos(post)
       broadcast_photos(post, i)
@@ -18,7 +16,7 @@ class PhotoJob < ApplicationJob
 
   def broadcast_loading_photo(post, i)
     Turbo::StreamsChannel.broadcast_before_to post,
-        target: "create-load-photo",
+        target: "btn-create-load-photo",
         partial: "photos/loading-photo",
         locals: { i: i }
   end

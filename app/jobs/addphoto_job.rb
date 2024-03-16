@@ -11,11 +11,11 @@ class AddphotoJob < ApplicationJob
 
   private
 
-  def broadcast_loading_photo(post, i = 0)
+  def broadcast_loading_photo(post)
     Turbo::StreamsChannel.broadcast_before_to post,
-        target: "create-load-photo",
+        target: "btn-create-load-photo",
         partial: "photos/loading-photo",
-        local: { i: i }
+        locals: { i: 0 }
   end
 
   def select_photos(post)
