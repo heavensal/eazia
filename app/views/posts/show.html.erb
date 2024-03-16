@@ -9,6 +9,8 @@
       <div class="creation-images" id="photos">
         <%= render partial: "photos/show-photo", collection: @post.photos, as: :photo, locals: {post: @post} %>
 
+        <%= render 'photos/loading-photo' %>
+
         <div class="bouton-images">
           <%= render "photos/btn-create-new-photo", post: @post %>
           <%= render "photos/btn-load-photos", post: @post %>
@@ -28,12 +30,12 @@
 
   <div class="view-insta">
   <div class="bg">
-          <div class="overlap-group-2">
-            <div class="ellipse-2-show"></div>
-            <div class="ellipse-show"></div>
-            <div class="ellipse-3-show"></div>
-          </div>
-        </div>
+    <div class="overlap-group-2">
+      <div class="ellipse-2-show"></div>
+      <div class="ellipse-show"></div>
+      <div class="ellipse-3-show"></div>
+    </div>
+  </div>
       <%= render "insta_show", post: @post, description: @description, photos_selected: @photos_selected %>
       <%# <%= render "show_btns", post: @post %>
   </div>
