@@ -1,5 +1,5 @@
 <%# TRES IMPORTANT: Canal de diffusion des changements d'images %>
-<%= turbo_stream_from @post %>
+<%= turbo_stream_from "post_#{@post.id}" %>
 
 <%= render 'layouts/flashes' %><%# Affiche une notif ou alert, changer css de l'alert %>
 

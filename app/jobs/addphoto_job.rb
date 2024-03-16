@@ -12,7 +12,7 @@ class AddphotoJob < ApplicationJob
   private
 
   def broadcast_loading_photo(post)
-    Turbo::StreamsChannel.broadcast_before_to post,
+    Turbo::StreamsChannel.broadcast_before_to "post_#{post.id}",
         target: "btn-create-load-photo",
         partial: "photos/loading-photo",
         locals: { i: 0 }
@@ -27,11 +27,11 @@ class AddphotoJob < ApplicationJob
     photos_selected = post.photos_selected.map do |id|
       post.photos.where(id: post.photos_selected).detect { |photo| photo.id == id.to_i }
     end.compact
-    Turbo::StreamsChannel.broadcast_replace_to post,
+    Turbo::StreamsChannel.broadcast_replace_to "post_#{post.id}",
         target: "loading-photo_0",
         partial: "photos/show-photo",
         locals: { photo: post.photos.last, post: post }
-    Turbo::StreamsChannel.broadcast_update_to post,
+    Turbo::StreamsChannel.broadcast_update_to "post_#{post.id}",
         target: "myCarousel",
         partial: "photos/insta-photos",
         locals: { photos_selected: photos_selected, post: post }
