@@ -7,11 +7,12 @@
   <div class="frame-show">
     <div class="div-show" data-controller="form-submission">
       <div class="creation-images" id="photos">
+
         <%= render partial: "photos/show-photo", collection: @post.photos, as: :photo, locals: {post: @post} %>
 
-        <%= render 'photos/loading-photo' %>
+        <%# render 'photos/loading-photo' %>
 
-        <div class="bouton-images">
+        <div class="bouton-images" id="create-load-photo">
           <%= render "photos/btn-create-new-photo", post: @post %>
           <%= render "photos/btn-load-photos", post: @post %>
         </div>

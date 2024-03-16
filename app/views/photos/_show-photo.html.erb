@@ -1,5 +1,5 @@
 <%# photos/_show-photo.html.erb %>
-<div class="image-container" >
+<div class="image-container">
         <%# INDICE de la place de la photo %>
         <div class="indice" >
           <%= photo.id.in?(post.photos_selected) ? post.photos_selected.index(photo.id)+1 : nil %>
