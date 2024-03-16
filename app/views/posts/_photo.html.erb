@@ -1,2 +1,0 @@
-<%= cl_image_tag photo.key, loading: "lazy", id: "photo_#{photo.record.photos.length - 1}" %>
- <%= link_to "❌", post_photo_path(post, photo), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer la photo ?"} %>

@@ -19,7 +19,9 @@ class PostsController < ApplicationController
         select_new_photos(@post)
         redirect_to post_path(@post)
       end
-      PhotoJob.perform_later(@post.id)
+      if @post.pictures_generated.positive?
+        PhotoJob.perform_later(@post.id)
+      end
     rescue
       redirect_to new_post_path, alert: "Suite à une erreur de l'IA, votre poste n'a pas été créé. Merci de réessayer ultérieurement."
     end
