@@ -21,7 +21,7 @@
   <%= render "layouts/instagram/interaction_btn" %>
 
   <%# Description du post dans la vue instagram %>
-  <%= render "gpt_creations/insta-description", description: description %>
+  <%= render "gpt_creations/insta-description", gpt_creation: gpt_creation, description: description %>
 
 <%= render "show_btns", post: @post %>
 </div>
