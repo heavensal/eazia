@@ -339,7 +339,6 @@
   width: 100%;
   background-color: #ffffff;
   position: relative;
-  padding-bottom: 24px;
 }
 
 @media (max-width: 768px){
@@ -352,7 +351,7 @@
 .frame-show {
   align-items: flex-start;
   gap: 40px;
-  padding: 24px;
+  padding: 24px 24px 0;
   position: relative;
   border-right-width: 1px;
   border-right-style: solid;
@@ -596,7 +595,10 @@ display: inline-block;
     text-align: center;
 
     form{
-      background: linear-gradient(120deg, #233DFF, #E17AFF );
+      border: 1px solid;
+      border-color: var(--secondarywhitewhite-50);
+      box-shadow: 0px 0px 12px #00000066;
+      background: linear-gradient(180deg, rgb(28.77, 147.84, 255) 0%, rgb(255, 0, 244.8) 100%);
       color: white
     }
   }
@@ -820,19 +822,20 @@ display: inline-block;
    align-items: flex-start;
    justify-content: flex-end;
    gap: 24px;
-   background-color: var(--secondarywhitewhite-100);
    overflow: hidden;
 
 
 
    textarea{
     width: 100%;
-    height: 80px;
-    border: 2px solid blue;
-    padding: 8px;
     height: 150px;
     resize: none;
-    background: transparent;
+    gap: 10px;
+    padding: 12px;
+    position: relative;
+    border-radius: 8px;
+    border: 1px solid;
+    border-color: #e6e6e6;
     font-family: var(--titre-regular-h4-font-family);
     font-weight: var(--titre-regular-h4-font-weight);
     color: var(--secondaryblackblack-500);
@@ -903,11 +906,31 @@ display: inline-block;
 
 
   .gpt-edit-bouton .secondary-bouton-annuler:hover{
-    color: red;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    position: relative;
+    background-color: var(--secondarywhitewhite-300);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: var(--secondaryblackblack-50);
   }
 
   .gpt-edit-bouton .secondary-bouton-modifier:hover{
-    color: green;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    position: relative;
+    background-color: var(--secondarywhitewhite-200);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid;
+    border-color: var(--secondaryblackblack-50);
   }
 
 .frame-description .div-description {
@@ -1083,8 +1106,9 @@ display: inline-block;
   flex: 0 0 auto;
   border-radius: 4px;
   overflow: hidden;
-  border: 0;
-  background: linear-gradient(120deg, #233DFF, #E17AFF );
+  border: 1px solid;
+  border-color: #ffffff42;
+  background: linear-gradient(90deg, rgb(28.77, 147.84, 255) 0%, rgb(255, 0, 244.8) 100%);
   position: relative;
   width: fit-content;
   margin-top: -1px;
@@ -1107,7 +1131,54 @@ display: inline-block;
   overflow: hidden;
   position: relative;
   width: 50%;
-  background: linear-gradient(to bottom, rgba(253, 151, 44, 0.4) 0%, rgba(255, 255, 255, 0.8) 100%);
+}
+
+.bg {
+  position: absolute;
+  width: 1480px;
+  height: 1566px;
+  top: -292px;
+  left: -448px;
+}
+
+.overlap-group-2 {
+  position: relative;
+  height: 1566px;
+}
+
+
+.ellipse-show{
+  position: absolute;
+  width: 615px;
+  height: 735px;
+  top: 649px;
+  left: 865px;
+  border-radius: 307.5px/367.5px;
+  filter: blur(166.3px);
+  background: linear-gradient(180deg, rgba(144, 98, 255, 0) 0%, rgb(245.58, 241.67, 255) 43.01%);
+}
+
+.ellipse-2-show{
+  position: absolute;
+  width: 859px;
+  height: 929px;
+  top: 0;
+  left: 212px;
+  border-radius: 429.5px/464.5px;
+  filter: blur(166.3px);
+  background: linear-gradient(180deg, rgba(241.76, 64.91, 171.02, 0) 0%, rgb(255, 229.49, 243.27) 44.42%);
+  opacity: 0.4;
+}
+
+.ellipse-3-show {
+  position: absolute;
+  width: 859px;
+  height: 929px;
+  top: 637px;
+  left: 0;
+  border-radius: 429.5px/464.5px;
+  filter: blur(166.3px);
+  background: linear-gradient(180deg, rgba(229.49, 242.92, 255, 0.73) 52.93%, rgba(229.49, 242.92, 255, 0) 95.2%);
 }
 
 @media (max-width: 768px){

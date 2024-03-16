@@ -366,6 +366,7 @@ a {
   top: 0;
   bottom: 0;
   overflow-y: auto;
+  background-color: #ffffff33;
   // background: linear-gradient(to bottom, #FD972C 0%, #FFFFFF 100%);
 }
 
@@ -397,13 +398,48 @@ a {
   margin-left: 0;
   margin-top: 0;
   flex-grow: 1;
-  background: linear-gradient(to bottom, rgba(253, 151, 44, 0.4) 0%, rgba(255, 255, 255, 0.8) 100%);
+  display:flex;
+  flex-direction: column;
 }
 
 .user-logged-in .content {
-  /* Styles ajustés quand l'utilisateur est connecté et que la navbar et le footer sont présents */
-  margin-left: 250px; /* Ajustez selon l'espace occupé par votre navbar */
-  margin-bottom: 50px; /* Ajustez selon la hauteur de votre footer */
+  margin-left: 250px;
+  // margin-bottom: 50px;
+  // box-shadow: 0px 4px 4px #00000040;
+}
+
+.ellipse {
+  width: 1225px;
+  height: 1324px;
+  top: 0;
+  left: 302px;
+  border-radius: 612.5px/662px;
+  background: linear-gradient(180deg, rgba(253, 151, 44, 0) 0%, rgba(255, 162.72, 133.58, 0.25) 43.5%);
+  opacity: 0.4;
+  position: fixed;
+  filter: blur(166.3px);
+}
+
+.ellipse-3 {
+  width: 877px;
+  height: 1048px;
+  top: 300px;
+  left: 1233px;
+  border-radius: 438.5px/524px;
+  background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(246.77, 218.51, 255, 0.57) 43.01%);
+  position: fixed;
+  filter: blur(166.3px);
+}
+
+.ellipse-2 {
+  width: 1225px;
+  height: 1324px;
+  top: 250px;
+  left: 250px;
+  border-radius: 612.5px/662px;
+  background: linear-gradient(180deg, rgba(229.49, 242.92, 255, 0) 0%, rgb(229.49, 242.92, 255) 44.42%);
+  position: fixed;
+  filter: blur(166.3px);
 }
 
 @media (max-width: 768px){
@@ -417,7 +453,7 @@ a {
   display: flex;
   margin-left: 250px;
   flex-grow: 1;
-  height: 10vh;
+  height: 7vh;
   // background: linear-gradient(to bottom, #FD972C 0%, #FFFFFF 100%), rgba(255, 255, 255, 0.2);
   border-color: var(--secondarywhitewhite-400);
   position: static;

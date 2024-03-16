@@ -19,7 +19,7 @@
         <%= link_to drafts_path do %>
           <div class="nouvelle-publication-wrapper">
             <div class="div-2-sidebar">
-              <%# image_tag("icon_brouillons", alt:"brouillons") %>
+              <%= image_tag("icon_brouillons.png", alt:"brouillons") %>
               <div class="text-wrapper-4">Brouillons</div>
             </div>
           </div>
@@ -45,14 +45,16 @@
       </div>
   </div>
 
-  <div class="div-2-sidebar">
-    <div class="div-3">
-      <div class="inner">
-        <%# <div class="user"><%#image_tag("icon_user", alt:"compte") %>
-        <%# </div>  %>
-        <%= link_to "Mon compte", account_path %></div>
-      </div>
-    </div>
-  </div>
+  <%# <div class="div-2-sidebar"> %>
+    <%# <div class="div-3"> %>
+      <%# <div class="inner"> %>
+        <div class="user">
+        <%= image_tag("icon_user.png", alt:"compte") %>
+        <%= link_to "Mon compte", account_path %>
+        </div>
+        </div>
+      <%# </div> %>
+    <%# </div> %>
+  <%# </div> %>
 <% end %>
 </div>
