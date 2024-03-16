@@ -15,6 +15,7 @@ class GptCreationsController < ApplicationController
 
   def recreate
     @gpt_creation = @post.gpt_creation
+    @gpt_creation.consume_token
     begin
       ai_api_service = AiApiService.new(@post.user)
       ai_api_service.work_2(@post)

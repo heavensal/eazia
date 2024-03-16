@@ -17,23 +17,21 @@
   <% if user_signed_in? %>
     <div class="navbar">
       <%= render 'layouts/navbar' %>
-    <% end %>
     </div>
+  <% end %>
 
-    <div class="content">
-      <div class="ellipse"></div>
-      <div class="ellipse-3"></div>
-      <div class="ellipse-2"></div>
-      <%= yield %>
+  <div class="content">
+    <div class="ellipse"></div>
+    <div class="ellipse-3"></div>
+    <div class="ellipse-2"></div>
+    <%= yield %>
+  </div>
+
+  <% if user_signed_in? %>
+    <div class="footer">
+      <%= render 'layouts/footer'%>
     </div>
-  <%# <% if user_signed_in? %>
-    <%# <%= render 'layouts/footer' %>
-  <%# <% end %>
+  <% end %>
 </body>
-<% if user_signed_in? %>
-  <div class="footer">
-    <%= render 'layouts/footer'%>
-    <% end %>
-   </div>
 
 </html>

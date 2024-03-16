@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_create :user_thread, :instagram_account
+  after_create :user_thread, :initialize_wallet, :initialize_instagram
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_one :instagram_account, dependent: :destroy
+  has_one :wallet, dependent: :destroy
 
   def user_thread
     # creation d'une conversation entre un USER et CHATGPT
@@ -23,8 +24,12 @@ class User < ApplicationRecord
     self.update!(thread: data['id'])
   end
 
-  def my_instagram
-    InstagramAccount.create(user: self)
+  def initialize_instagram
+    create_instagram_account
+  end
+
+  def initialize_wallet
+    create_wallet
   end
 
 end

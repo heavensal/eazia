@@ -48,6 +48,9 @@
   <%# <div class="div-2-sidebar"> %>
     <%# <div class="div-3"> %>
       <%# <div class="inner"> %>
+        <div>
+          <%= current_user.wallet.tokens %> 👛
+        </div>
         <div class="user">
         <%= image_tag("icon_user.png", alt:"compte") %>
         <%= link_to "Mon compte", account_path %>
