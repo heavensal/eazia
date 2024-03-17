@@ -1,7 +1,7 @@
 <div class="compte">
 <%- if controller_name != 'sessions' %>
 <p>Vous avez déjà un compte ? </p>
-  <%= link_to "Connexion", new_session_path(resource_name) %>
+  <%= link_to "Se connecter", new_session_path(resource_name) %>
 <% end %>
 </div>
 
@@ -24,8 +24,8 @@
   <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
 <% end %>
 
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= button_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), data: { turbo: false } %><br />
-  <% end %>
-<% end %>
+<%# <%- if devise_mapping.omniauthable? %>
+  <%# <%- resource_class.omniauth_providers.each do |provider| %>
+    <%# <%= button_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), data: { turbo: false } %>
+  <%# <% end %>
+<%# <% end %>
