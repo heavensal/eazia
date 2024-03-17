@@ -391,7 +391,7 @@ textarea{
   border-radius: 4px;
   border-top: 1px solid #ffffff42;
   border-bottom: 1px solid #ffffff42;
-  border-right: 1px solid rgba(255, 0, 244, 0.6); /* Rose, correspond au côté droit du dégradé */
+  border-right: 1px solid rgba(255, 0, 244, 0.6);
   border-left: 1px solid rgba(29, 148, 255, 0.6);
   overflow: hidden;
   box-shadow: inset 0px 4px 10.9px 0px rgba(255, 255, 255, 0.4);
@@ -405,6 +405,23 @@ textarea{
   letter-spacing: var(--titre-medium-h4-letter-spacing);
   line-height: var(--titre-medium-h4-line-height);
   font-style: var(--titre-medium-h4-font-style);
+}
+
+.inscription .main-bouton:hover{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  align-items: center;
+  padding: 12px;
+  position: relative;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 4px;
+  overflow: hidden;
+  border-top: 1px solid #ffffff42;
+  border-bottom: 1px solid #ffffff42;
+  border-right: 1px solid rgba(255, 0, 244, 0.6);
+  border-left: 1px solid rgba(29, 148, 255, 0.6);
+  background: linear-gradient(90deg, rgba(28.77, 147.84, 255, 0.8) 0%, rgba(255, 0, 244.8, 0.8) 100%);
 }
 
 

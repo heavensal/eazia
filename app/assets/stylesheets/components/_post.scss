@@ -312,8 +312,8 @@ height: 12px;
   border-bottom: 1px solid  #ffffff42;
   border-right: 1px solid rgb(255, 0, 244.8); /* Rose, correspond au côté droit du dégradé */
   border-left: 1px solid rgb(28.77, 147.84, 255);
-  background: linear-gradient(90deg, rgba(28.77, 147.84, 255, 0.8) 0%, rgba(255, 0, 244.8, 0.8) 100%);
-position: relative;
+  background: linear-gradient(90deg, rgba(28.77, 147.84, 255, 0.4) 0%, rgba(255, 0, 244.8, 0.4) 100%);
+  position: relative;
 width: fit-content;
 margin-top: -1px;
 font-family: var(--titre-medium-h5-font-family);
@@ -335,24 +335,24 @@ font-style: var(--titre-medium-h5-font-style);
     margin-left: 0;
     width: 100%;
     padding: 12px;
-    background: linear-gradient(120deg, #233DFF, #E17AFF );
+    background: linear-gradient(90deg, rgba(28.77, 147.84, 255, 0.4) 0%, rgba(255, 0, 244.8, 0.4) 100% );
+    position: relative;
   }
   }
 
 
 .contenu .main-bouton:hover {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  width: 30%;
   align-items: center;
-  padding: 12px;
+  padding: 12px 48px;
   position: relative;
   background-color: rgba(255, 255, 255, 1);
   border-radius: 4px;
   overflow: hidden;
   border: 1px solid;
   border-color: #ffffff42;
-  background: linear-gradient(90deg, rgb(28.77, 147.84, 255) 0%, rgb(255, 0, 244.8) 100%);
+  background: linear-gradient(90deg, rgba(28.77, 147.84, 255, 0.8) 0%, rgba(255, 0, 244.8, 0.8) 100%);
 
   align-self: stretch;
   margin-top: -1px;
