@@ -12,50 +12,52 @@
 
         <div class="field-inscription">
           <%= f.text_field :first_name, class: " div-wrapper property-input-inscription", placeholder: "Prenom", data: {action:"blur->autorisation-form#validateField", autorisation_form_target:"input"} %>
-          <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[first_name]" style="font-size: 14px;">le prénom est obligatoire</p>
+          <p  class="d-none" data-autorisation-form-target="error" data-input-name="user[first_name]">le prénom est obligatoire</p>
         </div>
 
         <div class="field-inscription">
           <%= f.text_field :last_name, class: " div-wrapper property-input-inscription", placeholder: "Nom", data: {action:"blur->autorisation-form#validateField", autorisation_form_target:"input"} %>
-          <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[last_name]" style="font-size: 14px;">le nom est obligatoire</p>
+          <p  class="d-none" data-autorisation-form-target="error" data-input-name="user[last_name]">le nom est obligatoire</p>
         </div>
 
 
 
         <div class="field-inscription">
           <%= f.email_field :email, autocomplete: "email", class: " div-wrapper property-input-inscription", placeholder: "Email", data: {action:"blur->autorisation-form#validateField", autorisation_form_target:"input"} %>
-          <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[email]" style="font-size: 14px;">l'email est obligatoire</p>
+          <p  class="d-none" data-autorisation-form-target="error" data-input-name="user[email]">l'email est obligatoire</p>
         </div>
 
         <div class="field-inscription">
           <% if @minimum_password_length %>
           <% end %>
           <%= f.password_field :password, autocomplete: "new-password", class: " div-wrapper property-input-inscription", placeholder: "Mot de passe (6 caractères min)", data: {action:"blur->autorisation-form#validateField", autorisation_form_target:"input"} %>
-          <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[password]" style="font-size: 14px;">le mot de passe est obligatoire</p>
+          <p  class="d-none " data-autorisation-form-target="error" data-input-name="user[password]">le mot de passe est obligatoire</p>
         </div>
 
 
 
         <div class="field-inscription">
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: " div-wrapper property-input-inscription", placeholder: "Confirmation du mot de passe", data: {action:"blur->autorisation-form#validateField", autorisation_form_target:"input"} %>
-          <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[password_confirmation]"style="font-size: 14px;">la confirmation du mot de passe est obligatoire</p>
+          <p  class="d-none" data-autorisation-form-target="error" data-input-name="user[password_confirmation]">la confirmation du mot de passe est obligatoire</p>
         </div>
 
         <div class="field-inscription">
           <%= f.text_field :company, class: " div-wrapper property-input-inscription", placeholder: "Nom de votre entreprise", data: {action:"blur->autorisation-form#validateField", autorisation_form_target:"input"}%>
-          <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[company]" style="font-size: 14px;">le nom de votre entreprise est obligatoire</p>
+          <p  class="d-none" data-autorisation-form-target="error" data-input-name="user[company]">le nom de votre entreprise est obligatoire</p>
         </div>
+
 
 
         <div class="field-inscription">
           <%= f.text_area :information, class:"activite", class: " div-wrapper property-input-inscription", placeholder: "Quelques mots sur votre entreprise", data: {action:"blur->autorisation-form#validateField", autorisation_form_target:"input"} %>
-          <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[information]" style="font-size: 14px;">Ce champs est obligatoire</p>
+          <p  class="d-none" data-autorisation-form-target="error" data-input-name="user[information]">ce champs est obligatoire</p>
         </div>
+
 
 
         <div class="field-inscription">
           <%= f.text_field :instagram, class: " div-wrapper property-input-inscription", placeholder: "Pseudo instagram", data: {action:"blur->autorisation-form#validateField", autorisation_form_target:"input"} %>
-          <p  class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[instagram]" style="font-size: 14px;">Votre identifiant instagram est obligatoire</p>
+          <p  class="d-none" data-autorisation-form-target="error" data-input-name="user[instagram]">Votre identifiant instagram est obligatoire</p>
         </div>
 
 

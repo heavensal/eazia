@@ -31,9 +31,9 @@
 
     <div class="formulaire">
       <%= f.email_field :email, autocomplete: "email", id: "email", class: " div-wrapper property-input", placeholder:"Email", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"} %>
-        <p class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[email]" style="font-size: 14px;">L'email est obligatoire</p>
+        <p class="d-none" data-autorisation-form-target="error" data-input-name="user[email]">L'email est obligatoire</p>
       <%= f.password_field :password, autocomplete: "current-password", class: "div-wrapper property-input", placeholder:"Mot de Passe", data: {action:"blur->autorisation-form#validate", autorisation_form_target:"input"}  %>
-        <p class="d-none text-danger fst-italic" data-autorisation-form-target="error" data-input-name="user[password]" style="font-size: 14px;">Le mot de passe est obligatoire</p>
+        <p class="d-none" data-autorisation-form-target="error" data-input-name="user[password]">Le mot de passe est obligatoire</p>
 
 
     <div class="mot-de-passe">

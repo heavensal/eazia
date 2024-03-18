@@ -18,9 +18,14 @@
   width: 50%;
 
   a{
-    font-family: 'glacial-indifference';
-    font-size: 12px;
-    color: black
+    font-family: var(--titre-regular-h4-font-family);
+  font-weight: var(--titre-regular-h4-font-weight);
+  color: #000000;
+  font-size: var(--titre-regular-h4-font-size);
+  letter-spacing: var(--titre-regular-h4-letter-spacing);
+  line-height: var(--titre-regular-h4-line-height);
+  white-space: nowrap;
+  font-style: var(--titre-regular-h4-font-style);
   }
 }
 

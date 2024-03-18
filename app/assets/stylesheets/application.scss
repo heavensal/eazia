@@ -6,19 +6,19 @@
 @import 'bootstrap';
 
 
-@font-face {
-  font-family: 'glacial-indifference';
-  src: url('GlacialIndifference-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: 'glacial-indifference';
+//   src: url('GlacialIndifference-Regular.woff') format('woff');
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
-@font-face {
-  font-family: 'glacial-indifference';
-  src: url('GlacialIndifference-Bold.woff') format('woff');
-  font-weight: normal;
-  font-style: italic;
-}
+// @font-face {
+//   font-family: 'glacial-indifference';
+//   src: url('GlacialIndifference-Bold.woff') format('woff');
+//   font-weight: normal;
+//   font-style: italic;
+// }
 
 
 
@@ -163,9 +163,9 @@ html {
 // }
 
 
-* {
-  margin: 0;
-}
+// * {
+//   margin: 0;
+// }
 
 a {
   text-decoration: none;
@@ -452,8 +452,8 @@ a {
 .footer{
   display: flex;
   margin-left: 250px;
-  flex-grow: 1;
-  height: 7vh;
+  // flex-grow: 1;
+  height: 10vh;
   // background: linear-gradient(to bottom, #FD972C 0%, #FFFFFF 100%), rgba(255, 255, 255, 0.2);
   border-color: var(--secondarywhitewhite-400);
   position: static;
