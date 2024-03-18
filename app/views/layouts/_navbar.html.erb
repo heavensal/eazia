@@ -48,11 +48,12 @@
   <%# <div class="div-2-sidebar"> %>
     <%# <div class="div-3"> %>
       <%# <div class="inner"> %>
-        <div>
-          <%= link_to payments_checkout_path do %>
-          <%= current_user.wallet.tokens %> 👛
-          <% end %>
+       <!-- <div>
+          <%# link_to payments_checkout_path do %>
+          <%# current_user.wallet.tokens %> 👛
+          <%# end %>
         </div>
+        -->
         <div class="user">
         <%= image_tag("icon_user.png", alt:"compte") %>
         <%= link_to "Mon compte", account_path %>
