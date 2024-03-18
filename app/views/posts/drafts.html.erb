@@ -23,10 +23,10 @@
               </label>
                 <div class='sub-menus' data-post-options-target="menu">
                 <div class="modif-draft">
-                  <%= image_tag("Icons-modifs-drafts") %><%= link_to "Modifier", post_path(post), class:"btn-modifier-draft"%>
+                  <%= image_tag("Icons-modifs-drafts.png") %><%= link_to "Modifier", post_path(post), class:"btn-modifier-draft"%>
                   </div>
                   <div class="modif-draft">
-                  <%= image_tag("Icons-supp-drafts") %><%= link_to "Supprimer", post_path(post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?",  action: "click->post-options#delete"}, class:"btn-supprimer-draft" %>
+                  <%= image_tag("Icons-supp-drafts.png") %><%= link_to "Supprimer", post_path(post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?",  action: "click->post-options#delete"}, class:"btn-supprimer-draft" %>
                   </div>
                 </div>
 
