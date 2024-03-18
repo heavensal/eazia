@@ -166,8 +166,8 @@
   flex: 0 0 auto;
   border-radius: 4px;
   overflow: hidden;
-  border: 0;
-  background: linear-gradient(90deg, rgb(28.77, 147.84, 255) 0%, rgb(255, 0, 244.8) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  background:linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
   width: fit-content;
   margin-top: -1px;
   font-family: var(--titre-medium-h4-font-family);

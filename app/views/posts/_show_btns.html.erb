@@ -1,11 +1,16 @@
 <div class="frame-bouton-insta">
   <div class="div-2-insta">
     <div class="secondary-bouton-wrapper">
-      <%= link_to "💾", drafts_path, class:"secondary-bouton"%>
+      <%= link_to drafts_path, class:"secondary-bouton" do %>
+       <%= image_tag('icone-draft.svg', alt: 'Supprimer') %>
+    <% end %>
+
     </div>
 
     <div class="secondary-bouton-wrapper">
-      <%= link_to "📅", new_post_path,  class:"secondary-bouton"%>
+      <%= link_to new_post_path,  class:"secondary-bouton" do %>
+       <%= image_tag('icone-prog.svg', alt: 'Supprimer') %>
+    <% end %>
     </div>
 
     <div class="connexion-insta">
@@ -17,7 +22,9 @@
   </div>
 
   <div class="secondary-bouton-wrapper">
-    <%= link_to "🗑️", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?"} %>
+    <%= link_to post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?"} do %>
+    <%= image_tag('icone-supp.svg', alt: 'Supprimer') %>
+    <% end %>
   </div>
 
 
