@@ -32,6 +32,18 @@ class User < ApplicationRecord
     create_wallet
   end
 
+  def admin?
+    self.status == "admin"
+  end
+
+  def premium?
+    self.status == "premium"
+  end
+
+  def freemium?
+    self.status == "freemium"
+  end
+
 end
 
 # POST

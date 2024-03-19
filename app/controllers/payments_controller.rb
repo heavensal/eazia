@@ -36,7 +36,7 @@ class PaymentsController < ApplicationController
     begin
       stripe_session = Stripe::Checkout::Session.retrieve(session[:stripe_session_id])
       if stripe_session.payment_status == "paid"
-        current_user.status = "premium" unless current_user.status == "admin"
+        current_user.status = "premium" unless current_user.admin?
         current_user.save!
         session.delete(:stripe_session_id)
       end
