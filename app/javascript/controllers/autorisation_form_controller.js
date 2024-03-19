@@ -16,6 +16,8 @@ export default class extends Controller {
 
     if (this.hasPromptTarget) {
       this.promptTarget.addEventListener('input', this.validatePrompt.bind(this));
+      this.promptTarget.addEventListener('focus', this.onPromptFocus.bind(this));
+      this.promptTarget.addEventListener('blur', this.onPromptBlur.bind(this));
     }
   }
 
@@ -45,6 +47,8 @@ export default class extends Controller {
       isCheckboxChecked = this.checkboxTarget.checked;
     }
 
+    let formIsValid = isPromptValid && isCheckboxChecked;
+
     if (!isCheckboxChecked || !isPromptValid) {
       event.preventDefault();
       if (this.hasMyErrorMessageTarget) {
@@ -67,13 +71,25 @@ export default class extends Controller {
       this.submitButton.disabled = false;
     }
 
-    this.triggerLoaderAction();
+    if (formIsValid) {
+    this.triggerLoaderAction(); // Déclencher le loader ici, après avoir passé la validation
+  } else {
+    event.preventDefault(); // Empêcher la soumission si le formulaire n'est pas valide
+    // Afficher des messages d'erreur, etc.
   }
 
+  }
+
+
   triggerLoaderAction() {
-    const loaderController = this.application.getControllerForElementAndIdentifier(document.querySelector("[data-controller='loader']"), "loader");
+    console.log("Attempting to trigger loader action"); // Pour vérifier que cette méthode est appelée
+    const loaderController = this.application.getControllerForElementAndIdentifier(
+      document.querySelector("[data-controller='loader']"),
+      "loader"
+    );
 
     if (loaderController) {
+      console.log("Loader controller found, triggering fire");
       loaderController.fire();
     } else {
       console.error("Loader controller not found");
@@ -87,5 +103,16 @@ export default class extends Controller {
         this.submitButton.disabled = false;
       }
     }
+  }
+
+  onPromptFocus() {
+    this.submitButton.style.backgroundColor = "#FF0000";
+    this.submitButton.style.color = '#fff'; // Exemple: change la couleur du texte à blanc
+  }
+
+  onPromptBlur() {
+    // Réinitialisez le style du bouton principal ici après le blur
+    this.submitButton.style.backgroundColor = 'linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);';
+    this.submitButton.style.color = ''; // Réinitialise la couleur du texte
   }
 }

@@ -1,13 +1,12 @@
 <%# photos/_show-photo.html.erb %>
-<div class="image-container">
-        <%# INDICE de la place de la photo %>
-        <div class="indice" >
-          <%= photo.id.in?(post.photos_selected) ? post.photos_selected.index(photo.id)+1 : nil %>
-        </div>
-      <%= form_for([post, photo], url: select_post_photo_path(post, photo), method: :patch) do |f| %>
+ <div class="image-container" data-controller="clic-indice">
+  <%# INDICE de la place de la photo %>
+  <button class="indice" data-action="click->clic-indice#submitForm">
+    <%= photo.id.in?(post.photos_selected) ? post.photos_selected.index(photo.id)+1 : nil %>
+  </button>
 
-
-  <%= image_submit_tag(cl_image_path(photo.key),
+  <%= form_for([post, photo], url: select_post_photo_path(post, photo), method: :patch, html: { id: "photoForm", data: { clic_indice_target: "form" }}) do |f| %>
+    <%= image_submit_tag(cl_image_path(photo.key),
     loading: "lazy",
     id: "photo_#{photo.id}",
     class: "photo_#{photo.id}",
@@ -15,5 +14,4 @@
   <% end %>
 
   <%= render 'photos/btn-delete-photo', post: post, photo: photo %>
-
 </div>

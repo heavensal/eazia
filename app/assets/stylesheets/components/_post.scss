@@ -346,10 +346,11 @@ font-style: var(--titre-medium-h5-font-style);
   padding: 12px 48px;
   position: relative;
   border-radius: 4px;
+  border-radius: 4px;
+  opacity: 1;
   border: 1px solid rgba(255, 255, 255, 0.26);
-  background:linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
+  background: var(--2, linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%));
   box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
-
   align-self: stretch;
   margin-top: -1px;
   font-family: var(--titre-medium-h4-font-family);

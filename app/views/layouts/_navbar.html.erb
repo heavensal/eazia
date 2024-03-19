@@ -69,4 +69,73 @@
     <%# </div> %>
   <%# </div> %>
 <% end %>
+
+
+<%# LE RESPONSIVE DE LA NAVBAR %>
+
+<div  class="sidebar-responsive" data-controller="menu">
+  <div class= "logo-responsive">
+    <%= link_to new_post_path do %>
+    <%= image_tag("logo_principal_eazia.png", alt:"logo eazia") %>
+    <% end %>
+  </div>
+
+  <div class="navbar-elements">
+    <div class="hamburger-lines" data-action="click->menu#toggleMenu">
+      <span class="line line1"></span>
+      <span class="line line2"></span>
+      <span class="line line3"></span>
+    </div>
+
+    <div class="menu-list-responsive" data-menu-target="menu">
+      <div class="div-2-sidebar-responsive">
+          <%= link_to new_post_path do %>
+           <%# <div class="nouvelle-publication-wrapper"> %>
+               <%= image_tag "icon_publications.png", alt:"publications" %>
+              <div class="text-wrapper-4">Nouvelle publication</div>
+           <%# </div> %>
+          <% end %>
+              </div>
+
+
+              <div class="div-2-sidebar-responsive">
+           <%= link_to drafts_path do %>
+            <%# <div class="nouvelle-publication-wrapper"> %>
+                 <%= image_tag("icon_brouillons.png", alt:"brouillons") %>
+                <div class="text-wrapper-4">Brouillons</div>
+              <%# </div> %>
+          <% end %>
+            </div>
+
+          <%# <div class="nouvelle-publication-wrapper">
+            <div class="div-2-sidebar">
+              <%# image_tag("icon_programmation", alt:"programmation") %>
+              <%# <div class="text-wrapper-4"><%= link_to "Posts Programmés", new_post_path %>
+              <%# </div> %>
+            <%# </div>
+          </div> %>
+          <%#
+          <div class="nouvelle-publication-wrapper">
+            <div class="div-2-sidebar"> %>
+              <%# image_tag("icon_historique", alt:"historique") %>
+              <%# <div class="text-wrapper-4"><%= link_to "Historique", new_post_path %>
+              <%# </div> %>
+            <%# </div>
+          </div> %>
+
+
+     </div>
+
+    <div class="user-responsive">
+      <%= link_to account_path do %>
+      <%= image_tag("icon_user.png", alt:"compte") %>
+      <% end%>
+    </div>
+
+
+    <div class="responsive-link" data-target="navbar.link">
+        <%= link_to "Post", new_post_path %>
+    </div>
+
+  </div>
 </div>

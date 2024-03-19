@@ -28,6 +28,20 @@ align-items: flex-start;
 gap: 12px 12px;
 padding: 24px;
 position: relative;
+
+
+
+@media (max-width: 768px){
+display: grid;
+grid-template-columns: 1fr 1fr;
+grid-gap: 20px;
+width: 100%;
+align-items: flex-start;
+gap: 12px 12px;
+padding: 24px;
+margin-top: 20vh;
+
+}
 }
 
 
@@ -42,7 +56,12 @@ border-radius: 8px;
 overflow: hidden;
 border: 0.88px solid;
 border-color: #e6e6e6;
-width: 370px
+width: 370px;
+
+@media (max-width: 768px){
+  width: 100%
+
+}
 }
 
 // .btn-draft{
@@ -128,6 +147,10 @@ width: 370px
   white-space: nowrap;
   font-style: var(--titre-medium-h4-font-style);
   }
+
+  @media (max-width: 768px){
+    display: none;
+  }
 }
 
 .titre-brouillon .main-bouton{
@@ -154,6 +177,10 @@ width: 370px
   white-space: nowrap;
   font-style: var(--titre-medium-h4-font-style);
 
+  @media (max-width: 768px){
+    display: none;
+  }
+
 }
 
 
@@ -175,7 +202,7 @@ width: 370px
   background-color: rgba(255, 255, 255, 1);
   border: 1px solid;
   border-color: var(--secondarywhitewhite-50);
-  background: linear-gradient(90deg, rgb(28.77, 147.84, 255) 0%, rgb(255, 0, 244.8) 100%);
+  background: linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
   border-radius: 20%;
   overflow: hidden;
   font-size: 12px;
@@ -189,6 +216,10 @@ width: 370px
   z-index: 500;
   overflow: hidden;
   cursor: pointer;
+
+  @media (max-width: 768px){
+    left: 270px;
+  }
 
 }
 
@@ -303,6 +334,10 @@ width: 370px
   left:250px;
   padding: 12px;
   gap: 8px;
+
+  @media (max-width: 768px){
+    left: 180px
+  }
 }
 
 // .btn-modif-supp{
