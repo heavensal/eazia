@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'pages#landing'
+  # root 'pages#landing'
+  root 'posts#new'
 
   resources :products, only: [:index] do
     get 'payments/checkout'
