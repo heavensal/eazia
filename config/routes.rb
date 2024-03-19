@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
 
-  root 'posts#new'
+  root 'pages#landing'
+
+  resources :products, only: [:index] do
+    get 'payments/checkout'
+    get 'payments/success'
+    get 'payments/cancel'
+  end
+
 
   devise_for :users
   put 'users/update_token', to: 'users#update_token', as: 'update_user_token'
