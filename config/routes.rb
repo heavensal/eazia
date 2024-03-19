@@ -2,9 +2,11 @@ Rails.application.routes.draw do
 
   root 'pages#landing'
 
-  get 'payments/checkout'
-  get 'payments/success'
-  get 'payments/cancel'
+  resources :products, only: [:index] do
+    get 'payments/checkout'
+    get 'payments/success'
+    get 'payments/cancel'
+  end
 
 
   devise_for :users

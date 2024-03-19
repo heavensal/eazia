@@ -401,7 +401,7 @@ a {
   flex-grow: 1;
   display:flex;
   flex-direction: column;
-  background-image: url('app/assets/images/bg-blur.png'); /* Remplacez par le chemin réel de votre image */
+  background-image: url('bg-blur.png'); /* Remplacez par le chemin réel de votre image */
   background-size: cover; /* Couvre entièrement la div sans perdre les proportions de l'image */
   background-position: center; /* Centre l'image dans la div */
 }

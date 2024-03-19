@@ -98,14 +98,39 @@
 # data = JSON.parse(response.body)
 # puts data['status']
 
-Post.all.each do |post|
-  unless post.photos.empty?
-    post.photos.each do |photo|
-      unless photo.id.in?(post.photos_selected)
-        post.photos_selected << photo.id
-        p post.photos_selected
-      end
-    end
-  end
-  post.save!
-end
+# Post.all.each do |post|
+#   unless post.photos.empty?
+#     post.photos.each do |photo|
+#       unless photo.id.in?(post.photos_selected)
+#         post.photos_selected << photo.id
+#         p post.photos_selected
+#       end
+#     end
+#   end
+#   post.save!
+# end
+
+# Product.create(name: "Starter Pack", price: 19, description: "30 jetons crédités dans votre porte-monnaie. Le pack idéal pour débuter et découvrir l'ensemble des fonctionnalités d'Eazia.", mode: "payment", stripe_price_id: "price_1OvgwEGGbOzXfEYBDiBtOljC")
+
+# Product.create(name: "Ultimate Pack", price: 59, description: "100 jetons crédités dans votre porte-monnaie. Le pack ultime pour les utilisateurs réguliers d'Eazia. La puissance de l'IA n'a pas de secret pour vous.", mode: "payment", stripe_price_id: "price_1OvgwiGGbOzXfEYBpp6pZnCM")
+
+# Product.create(name: "1 mois d'abonnement Premium", price: 59, description: "100 jetons crédités mensuellement dans votre porte-monnaie. Abonnez-vous aux services d'Eazia et exploitez le potentiel de l'IA à son maximum.", mode: "subscription", stripe_price_id: "price_1Ovh26GGbOzXfEYBtvoxZqXs")
+
+# Product.create(name: "3 mois d'abonnement Premium", price: 159, description: "100 jetons crédités mensuellement dans votre porte-monnaie. Souscrivez à l'abonnement Premium d'Eazia pendant 3 mois et bénéficiez d'une réduction de 10% par mois.", mode: "subscription", stripe_price_id: "price_1Ovh6CGGbOzXfEYB6x8t5x8T")
+
+# Product.create(name: "1 an d'abonnement Premium", price: 495, description: "100 jetons crédités mensuellement dans votre porte-monnaie. Souscrivez 1 année à Eazia et profitez d'avantages exclusifs à Eazia.", mode: "payment", stripe_price_id: "price_1Ovh7RGGbOzXfEYBG8d8mWzI")
+
+
+Product.create(name: "Ultimate Pack TEST",
+               price: 59,
+               amount: 100,
+               description: "TEST 100 jetons crédités Le pack ultime pour les utilisateurs réguliers d'Eazia. La puissance de l'IA n'a pas de secret pour vous.",
+               mode: "payment",
+               stripe_price_id: "price_1OvzMLGGbOzXfEYBkzZDqlXO")
+
+Product.create(name: "Premium x3 TEST",
+               price: 159,
+               description: "TEST 100 jetons crédités mensuellement dans votre porte-monnaie. L'IA n'a pas de secret pour vous. Bénéficiez d'une réduction de 10% par mois en achetant 3 mois.",
+               mode: "subscription",
+               stripe_price_id: "price_1OvzQUGGbOzXfEYBgVyFme6b",
+               subscribe_type: "tous les 3 mois")
