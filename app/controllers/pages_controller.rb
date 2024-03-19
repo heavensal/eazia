@@ -1,5 +1,9 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:inscription, :contact, :confidentialite, :contact, :cgu, :legal, :cgv]
+  skip_before_action :authenticate_user!, only: [:landing, :inscription, :contact, :confidentialite, :contact, :cgu, :legal, :cgv]
+
+  def landing
+  end
+
   def cgv
   end
 
