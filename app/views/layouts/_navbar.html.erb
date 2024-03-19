@@ -2,7 +2,9 @@
 <% if current_user %>
   <div class="frame-4">
   <div class= "logo">
+  <%= link_to new_post_path do %>
   <%= image_tag("logo_principal_eazia.png", alt:"logo eazia") %>
+  <% end %>
   </div>
       <div class="menu-list">
 
@@ -55,8 +57,12 @@
         </div>
         -->
         <div class="user">
+        <%= link_to account_path do %>
+        <div class="div-2-sidebar">
         <%= image_tag("icon_user.png", alt:"compte") %>
-        <%= link_to "Mon compte", account_path %>
+        <div class="text-wrapper-4"> Mon compte</div>
+        </div>
+        <% end%>
         </div>
         </div>
       <%# </div> %>
