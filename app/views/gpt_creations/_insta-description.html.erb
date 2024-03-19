@@ -1,23 +1,23 @@
-<%# <%= turbo_frame_tag "insta-#{gpt_creation.id}" do %>
-  <%# <div class="textcontent" data-controller="toggledescription"> %>
+<%= turbo_frame_tag "insta-#{gpt_creation.id}" do %>
+<div class="textcontent" data-controller="toggledescription">
 
-    <%# <b>
+    <b>
       <% if current_user.instagram_account.username %>
-        <%# <%= current_user.instagram_account.username %>
-      <%# <% end %>
-    <%# </b> %>
+        <%= current_user.instagram_account.username %>
+      <% end %>
+    </b>
 
-      <%# <span data-action="click->toggledescription#fireplus"> %>
-        <%# <span data-toggledescription-target="description" style="cursor:pointer;"> %>
-            <%# <% if description.size.to_i > 64 %>
-              <%# <%= description[0..64] %>
-              <%# <span style="color: grey;">...plus</span> %>
-            <%# <% else %>
-            <%# <%= description %>
-            <%# <% end %>
-        <%# </span> %>
-        <%# <span data-toggledescription-target="plus" class="d-none" style="cursor:pointer;"><%= description %>
-        <%# </span> %>
-      <%# </span> %>
-  <%# </div> %>
-<%# <% end %>
+      <span data-action="click->toggledescription#fireplus">
+      <span data-toggledescription-target="description" style="cursor:pointer;">
+          <% if description.size.to_i > 64 %>
+              <%= description[0..64] %>
+              <span style="color: grey;">...plus</span>
+          <% else %>
+          <%= description %>
+          <% end %>
+        </span>
+      <span data-toggledescription-target="plus" class="d-none" style="cursor:pointer;"><%= description %>
+      </span>
+    </span>
+  </div>
+<% end %>
