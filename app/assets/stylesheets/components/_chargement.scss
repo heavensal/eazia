@@ -8,7 +8,7 @@
 //   background: white
 // }
 .loader{
-position: relative;
+position: absolute;
 display: inline-flex;
 flex-direction: column;
 align-items: center;
@@ -17,7 +17,7 @@ margin-left: auto;
 margin-right: auto;
 justify-content: center;
 justify-items: center;
-width: 60%;
+width: 30%;
 height: 10vh;
 background-color: rgba(255, 255, 255, 1);
 background:linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
@@ -26,6 +26,11 @@ overflow: hidden;
 border: 1px solid;
 border-color: transparent;
 }
+
+// .d-none{
+//   display: none;
+// }
+
 
 
 // .box {

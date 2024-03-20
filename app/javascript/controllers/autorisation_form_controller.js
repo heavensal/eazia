@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["input", "error", "checkbox", "myErrorMessage", "prompt"]
+  static targets = ["input", "error", "checkbox", "myErrorMessage", "prompt", "form"]
 
   connect() {
     // Ajout des écouteurs existants
@@ -49,6 +49,11 @@ export default class extends Controller {
 
     let formIsValid = isPromptValid && isCheckboxChecked;
 
+    if (formIsValid) {
+      this.triggerLoaderAction(); // Déclencher le loader ici, après avoir passé la validation
+
+    }
+
     if (!isCheckboxChecked || !isPromptValid) {
       event.preventDefault();
       if (this.hasMyErrorMessageTarget) {
@@ -71,28 +76,22 @@ export default class extends Controller {
       this.submitButton.disabled = false;
     }
 
-    if (formIsValid) {
-    this.triggerLoaderAction(); // Déclencher le loader ici, après avoir passé la validation
-  } else {
-    event.preventDefault(); // Empêcher la soumission si le formulaire n'est pas valide
-    // Afficher des messages d'erreur, etc.
-  }
+
 
   }
 
 
   triggerLoaderAction() {
-    console.log("Attempting to trigger loader action"); // Pour vérifier que cette méthode est appelée
-    const loaderController = this.application.getControllerForElementAndIdentifier(
-      document.querySelector("[data-controller='loader']"),
-      "loader"
-    );
-
-    if (loaderController) {
-      console.log("Loader controller found, triggering fire");
-      loaderController.fire();
+    console.log("Attempting to trigger loader action");
+    const loaderElement = document.querySelector("[data-controller='loader']");
+    if (loaderElement) {
+      console.log("Loader element found, triggering fire");
+      // Création d'un événement personnalisé qui correspond à l'action dans Stimulus
+      const event = new CustomEvent("click", { bubbles: true, cancelable: true });
+      // Dispatch de l'événement sur l'élément du contrôleur loader
+      loaderElement.dispatchEvent(event);
     } else {
-      console.error("Loader controller not found");
+      console.error("Loader element not found");
     }
   }
 
@@ -115,4 +114,6 @@ export default class extends Controller {
     this.submitButton.style.backgroundColor = 'linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);';
     this.submitButton.style.color = ''; // Réinitialise la couleur du texte
   }
+
+
 }

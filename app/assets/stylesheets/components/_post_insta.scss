@@ -343,8 +343,8 @@
 
 @media (max-width: 768px){
   .gnration-de-la{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     margin-top: 20vh;
   }
 }
@@ -361,7 +361,8 @@
 
 @media (max-width: 768px){
   .frame-show{
-  padding: 12px
+  padding: 12px;
+  width: 100%
   }
 }
 
@@ -400,9 +401,11 @@ display: inline-block;
   align-items: center;
   gap: 8px;
 
-  @media (max-width: 768px){
-    width: 100%;
-    height: 200px
+}
+@media (max-width: 768px){
+  .bouton-images{
+  width: 100%;
+  height: 100px;
   }
 }
 
@@ -414,7 +417,7 @@ display: inline-block;
 
   @media (max-width: 768px) {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:1fr;
     grid-auto-rows: minmax(100px, auto); /* Ajustez 100px à la hauteur minimale désirée */
     gap: 8px;
     width: 100%
@@ -446,6 +449,10 @@ display: inline-block;
   font-style: var(--petit-texte-medium-h1-font-style);
   transition: background-color ease-in-out 0.3s;
 
+  @media (max-width: 768px){
+    font-size: 10px;
+  }
+
 }
 
 .generator-image input[type="submit"]:hover{
@@ -472,7 +479,9 @@ display: inline-block;
   display: inline-block;
 
   @media (max-width: 768px){
-    width:100%
+    display: flex;
+    justify-content: center;
+    width:90%
   }
 
 }
@@ -481,7 +490,7 @@ display: inline-block;
   border-radius: 4px;
 
   @media (max-width: 768px){
-    width:100%
+    width:150px;
   }
 
  }
@@ -608,7 +617,6 @@ display: inline-block;
 
 
 .indice-image{
-
   top: 10px;
   left: 130px;
   border : 1px solid white;
@@ -619,7 +627,6 @@ display: inline-block;
   padding: 5px;
   font-size: 10px;
   width: 15px;
-
 }
 
 
@@ -645,7 +652,7 @@ display: inline-block;
 
     @media (max-width: 768px){
       top: 10px;
-      left: 170px;
+      left: 100px;
     }
   }
 
@@ -731,6 +738,10 @@ display: inline-block;
 
   label{
     cursor: pointer;
+
+    @media (max-width: 768px){
+      font-size: 10px;
+    }
   }
 
   label:hover{
@@ -768,7 +779,8 @@ display: inline-block;
 
 @media (max-width: 768px){
   .frame-description{
-  width: 100%
+  width: 100%;
+  display: block
   }
 }
 
@@ -1005,6 +1017,11 @@ display: inline-block;
   white-space: nowrap;
   font-style: var(--titre-medium-h5-font-style);
   transition: background-color ease-in-out 0.3s;
+
+
+  @media (max-width: 768px){
+    font-size: 10px;
+  }
 }
 
 .frame-description .secondary-bouton:hover{
@@ -1032,6 +1049,7 @@ display: inline-block;
   form{
     border: 1px solid transparent
   }
+
 }
 
 .insta {
@@ -1193,6 +1211,11 @@ box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
   overflow: hidden;
   position: relative;
   width: 50%;
+
+  @media (max-width: 768px){
+    width: 100%;
+    display: block;
+  }
 }
 
 .bg {
