@@ -102,14 +102,19 @@ import { Controller } from "@hotwired/stimulus"
 
 
 export default class extends Controller {
-  static targets = ["menu", "link"];
+  static targets = ["hamburger", "link"];
 
   connect() {
     this.menuTarget.style.display = 'none'; // Cache le menu par défaut
   }
 
-  toggleMenu() {
-    const display = this.menuTarget.style.display;
-    this.menuTarget.style.display = display === 'block' ? 'none' : 'block';
+  toggleMenu(event) {
+    event.stopPropagation()
+    if (!this.element.contains(event.target)) {
+      // Si non, retourne immédiatement sans exécuter le reste de la méthode
+      return;
+    }
+    const display = this.hamburgerTarget.style.display;
+    this.hamburgerTarget.style.display = display === 'block' ? 'none' : 'block';
   }
 }

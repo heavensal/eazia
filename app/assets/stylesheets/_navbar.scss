@@ -231,7 +231,7 @@ box-shadow: 0px 0px 20px #00000014;
     width: 50%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     gap: 12px;
     position: relative;
@@ -248,33 +248,54 @@ box-shadow: 0px 0px 20px #00000014;
     // }
 
     /* Masquer le menu par défaut */
-    .menu-list {
+    .menu-list-responsive {
         display: none;
     }
 
     .menu-list-responsive{
-      display: flex;
+      display: none;
       width: 100%;
       padding: 20px;
       flex-direction: column;
       align-items: flex-start;
       position: fixed;
       z-index: 700;
-      margin-top: 40vh;
+      margin-top: 10vh;
       gap: 20px;
       border-bottom: 1px solid var(--Secondary-Black-black-50, #E6E6E6);
       background: rgba(255, 255, 255, 0.20);
       backdrop-filter: blur(20px);
+
+    }
+
+    .menu-list-responsive.is-open{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     .div-2-sidebar-responsive{
       width: 100%;
-      padding: 20px;
+      padding: 8px;
 
       a{
         display: flex;
         flex-direction: row;
         gap: 8px;
+
+        img{
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      a:hover{
+        background-color: #ffffff66;
+        border-radius: 4px;
+        border: 1px solid;
+        border-color: #ffffff99;
+        box-shadow: 0px 0px 20px #00000014;
+
       }
     }
 
@@ -326,14 +347,22 @@ box-shadow: 0px 0px 20px #00000014;
     }
 
     .responsive-link {
-      width: 30%;
+    width: 30%;
     display: flex; /* Affiche le lien en mode responsive */
     padding: 6px;
     align-items: flex-start;
     justify-content: center;
     gap: 6px;
     border-radius: 2px;
-    background: var(--Primary-Colors-Main, linear-gradient(96deg, #1D94FF 0%, #FF00F5 121.24%));
+    background: linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
+    font-family: var(--petit-texte-medium-h1-font-family);
+    font-weight: var(--petit-texte-medium-h1-font-weight);
+    color: #ffffff;
+    font-size: var(--petit-texte-medium-h1-font-size);
+    letter-spacing: var(--petit-texte-medium-h1-letter-spacing);
+    line-height: var(--petit-texte-medium-h1-line-height);
+    white-space: nowrap;
+    font-style: var(--petit-texte-medium-h1-font-style);
   }
 
 

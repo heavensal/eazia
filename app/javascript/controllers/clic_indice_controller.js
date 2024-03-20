@@ -27,10 +27,11 @@ export default class extends Controller {
   static targets = ["form"]
 
   connect(){
-    console.log("connect clic")
+
   }
 
-  submitForm() {
+  submitForm(event) {
+    event.stopPropagation()
     this.formTarget.submit();
   }
 }

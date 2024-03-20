@@ -381,7 +381,12 @@
 @media (max-width: 768px){
   .frame-show .div-show{
    gap: 12px;
-   width: 100%
+   width: 100%;
+
+    img{
+      width: 100%
+    }
+
   }
 }
 
@@ -404,8 +409,8 @@ display: inline-block;
 }
 @media (max-width: 768px){
   .bouton-images{
-  width: 100%;
-  height: 100px;
+    width: 300px;
+    height: 300px;
   }
 }
 
@@ -418,10 +423,9 @@ display: inline-block;
   @media (max-width: 768px) {
     display: grid;
     grid-template-columns:1fr;
-    grid-auto-rows: minmax(100px, auto); /* Ajustez 100px à la hauteur minimale désirée */
+    // grid-auto-rows: minmax(100px, auto); /* Ajustez 100px à la hauteur minimale désirée */
     gap: 8px;
-    width: 100%
-
+    width: 100%;
   }
 }
 
@@ -450,7 +454,7 @@ display: inline-block;
   transition: background-color ease-in-out 0.3s;
 
   @media (max-width: 768px){
-    font-size: 10px;
+    font-size: 16px;
   }
 
 }
@@ -479,9 +483,9 @@ display: inline-block;
   display: inline-block;
 
   @media (max-width: 768px){
-    display: flex;
-    justify-content: center;
-    width:90%
+    display: grid;
+    grid-template-columns: 1fr;
+    width:100%
   }
 
 }
@@ -490,7 +494,7 @@ display: inline-block;
   border-radius: 4px;
 
   @media (max-width: 768px){
-    width:150px;
+    width:300px;
   }
 
  }
@@ -587,8 +591,8 @@ display: inline-block;
   transition: transform 0.3s ease, visibility 0s linear 0.3s;
 
   @media (max-width: 768px){
-    left: 100px;
-    top: 100px;
+    left: 150px;
+    top: 150px;
   }
 }
 
@@ -603,8 +607,8 @@ display: inline-block;
   backdrop-filter: blur(10px);
 
   @media (max-width: 768px){
-    top: 100px;
-    left: 100px;
+    top: 150px;
+    left: 150px;
   }
 }
 
@@ -652,7 +656,7 @@ display: inline-block;
 
     @media (max-width: 768px){
       top: 10px;
-      left: 100px;
+      left: 270px;
     }
   }
 
@@ -740,7 +744,7 @@ display: inline-block;
     cursor: pointer;
 
     @media (max-width: 768px){
-      font-size: 10px;
+      font-size: 16px;
     }
   }
 
@@ -767,6 +771,8 @@ display: inline-block;
   width: 584px;
   height: 1px;
   object-fit: cover;
+
+
 }
 
 .frame-description {
