@@ -14,8 +14,12 @@
     </div>
 
     <div class="connexion-insta">
-      <%= form_for(post, url: publish_post_path(post), method: :patch) do |f| %>
-      <%= f.submit "Publier maintenant", class: "main-bouton" %>
+      <%= form_for(post, url: publish_post_path(post), method: :patch, data: { action: "submit->form-submission#submit" }) do |f| %>
+      <%= f.submit "Publier maintenant", class: "main-bouton", data: { form_submission_target: "submitButton" } %>
+      <div class="chargement" data-form-submission-target="loadingSpinner" hidden>
+      <div id="loading" class="text-chargement-publication">En cours de publication </div>
+      <div  class="loading-spinner"></div>
+      </div>
       <% end %>
     </div>
 

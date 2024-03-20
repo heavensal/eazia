@@ -20,11 +20,11 @@ justify-items: center;
 width: 60%;
 height: 10vh;
 background-color: rgba(255, 255, 255, 1);
+background:linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
 border-radius: 12px;
 overflow: hidden;
 border: 1px solid;
 border-color: transparent;
-background: linear-gradient(120deg, #233DFF, #E17AFF);
 }
 
 
@@ -196,23 +196,23 @@ left: 25px;
 }
 
 .lettre {
-  color: black;
+  color: var(--secondarywhitewhite-50);
   font-size: 20px;
-  animation: flash 1.2s linear infinite;
+  animation: flashy 1.2s linear infinite;
 }
 
 
 
 @keyframes flashy {
   0% {
-    color: white;
+    color: transparent
   }
   90% {
     color:var(--secondarywhitewhite-300);
     text-shadow: none;
   }
   100% {
-    color:var(--secondarywhitewhite-500);
+    color:var(--secondarywhitewhite-200);
 
   }
 }

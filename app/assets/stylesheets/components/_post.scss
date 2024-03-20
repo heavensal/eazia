@@ -173,6 +173,11 @@ height: 100vh;
   letter-spacing: var(--titre-medium-h5-letter-spacing);
   line-height: var(--titre-medium-h5-line-height);
   font-style: var(--titre-medium-h5-font-style);
+  cursor: pointer;
+
+  label{
+    cursor: pointer;
+  }
 
 }
 
@@ -203,6 +208,12 @@ height: 100vh;
   line-height: var(--titre-medium-h5-line-height);
   white-space: nowrap;
   font-style: var(--titre-medium-h5-font-style);
+  cursor: pointer;
+
+  label{
+  cursor: pointer;
+
+  }
 
   select{
   border: 0;
@@ -215,6 +226,7 @@ height: 100vh;
   line-height: var(--titre-medium-h5-line-height);
   white-space: nowrap;
   font-style: var(--titre-medium-h5-font-style);
+  cursor: pointer;
   }
 
   select:focus{
@@ -260,6 +272,7 @@ border-radius: 4px;
 overflow: hidden;
 border: 1px dashed;
 border-color: var(--secondarywhitewhite-400);
+cursor: pointer;
 
 input{
 position: relative;
@@ -322,6 +335,7 @@ letter-spacing: var(--titre-medium-h5-letter-spacing);
 line-height: var(--titre-medium-h5-line-height);
 white-space: nowrap;
 font-style: var(--titre-medium-h5-font-style);
+transition: background-color ease-in-out 0.3s;
 }
 
 @media (max-width: 768px){
@@ -335,6 +349,7 @@ font-style: var(--titre-medium-h5-font-style);
     padding: 12px;
     background: linear-gradient(90deg, rgba(28.77, 147.84, 255, 0.4) 0%, rgba(255, 0, 244.8, 0.4) 100% );
     position: relative;
+
   }
   }
 
@@ -397,7 +412,9 @@ font-style: var(--titre-medium-h5-font-style);
 .form-secondary-bouton{
   display: flex;
   flex-direction: row;
-  gap: 8px
+  gap: 8px;
+  cursor: pointer;
+
 }
 
 @media (max-width: 768px){

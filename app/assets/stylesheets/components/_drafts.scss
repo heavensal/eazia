@@ -58,6 +58,8 @@ border: 0.88px solid;
 border-color: #e6e6e6;
 width: 370px;
 
+
+
 @media (max-width: 768px){
   width: 100%
 
@@ -80,6 +82,9 @@ width: 370px;
 // }
 
 .insta-draft-description{
+  padding: 16px;
+  align-items: flex-start;
+  gap: 4px;
   font-family: var(--petit-texte-regular-h1-font-family);
   font-weight: var(--petit-texte-regular-h1-font-weight);
   color: #000000;
@@ -176,6 +181,7 @@ width: 370px;
   line-height: var(--titre-medium-h4-line-height);
   white-space: nowrap;
   font-style: var(--titre-medium-h4-font-style);
+  transition: background-color ease-in-out 0.3s;
 
   @media (max-width: 768px){
     display: none;

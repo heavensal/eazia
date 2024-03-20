@@ -50,16 +50,17 @@
           </div>
 
           <div  class="insta-draft-description"data-controller="toggledescription">
+          <%= truncate(post.gpt_creation.description, length: 100, omission: '...') if post.gpt_creation %>
             <%# <b> <%= current_user.instagram %>
-               <span>
+               <%# <span>
                   <%# <% if post.gpt_creation.description.size.to_i > 64 %>
                     <%# <%= post.gpt_creation.description %>
-                    <span style="color: grey;">...</span>
+                    <%# <span style="color: grey;">...</span> %>
                   <%# <% else %>
                   <%# <%= post.gpt_creation.description if post.gpt_creation %>
                   <%# <% end%>
-                 </p>
-               </span>
+                 <%# </p> %>
+               <%# </span> %>
            </div>
 
         </div>
