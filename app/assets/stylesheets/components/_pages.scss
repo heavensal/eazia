@@ -4,7 +4,11 @@
   justify-content: center;
   text-align: justify;
   align-items: center;
-  gap: 24px
+  gap: 24px;
+
+  @media (max-width: 768px){
+    margin-top: 20vh;
+  }
 }
 
 .legales, .cgv, .cgu, .confidentialite {
@@ -162,6 +166,13 @@
   justify-content: space-between;
   padding: 24px;
   width: 100%;
+
+  @media (max-width: 768px){
+
+    h3{
+    display: none;
+    }
+  }
 }
 
 .account-body{
@@ -204,6 +215,17 @@
   a{
     display: flex;
     justify-content: flex-end;
+  }
+
+  @media (max-width: 768px){
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+
+    p{
+      width: 100%;
+    }
+
   }
 }
 
@@ -389,18 +411,18 @@ gap: 16px;
 }
 
 @media (max-width :768px){
-  .account{
-    width: 90%;
+  // .account{
+  //   width: 90%;
 
-    h3{
-      font-size: 20px;
-      font-weight: bold;
-    }
+  //   h3{
+  //     font-size: 20px;
+  //     font-weight: bold;
+  //   }
 
-    p{
-      font-size: 18px;
-    }
-  }
+  //   p{
+  //     font-size: 18px;
+  //   }
+  // }
 
   .contact, .rs{
     width: 90%
@@ -425,38 +447,38 @@ gap: 16px;
 }
 
 
-@media (max-width :480px){
-  .account{
-    width: 90%;
+// @media (max-width :480px){
+//   .account{
+//     width: 90%;
 
-    h3{
-      font-size: 18px;
-      font-weight: bold;
-    }
+//     h3{
+//       font-size: 18px;
+//       font-weight: bold;
+//     }
 
-    p{
-      font-size: 16px;
-    }
-  }
+//     p{
+//       font-size: 16px;
+//     }
+//   }
 
-  .contact, .rs{
-    width: 90%
-  }
+//   .contact, .rs{
+//     width: 90%
+//   }
 
-  .rs img {
-    height: 20px
-  }
+//   .rs img {
+//     height: 20px
+//   }
 
-  .legales, .cgv, .cgu, .confidentialite {
-    width: 90%;
+//   .legales, .cgv, .cgu, .confidentialite {
+//     width: 90%;
 
-    h4{
-      font-size: 18px;
-    }
+//     h4{
+//       font-size: 18px;
+//     }
 
-    p{
-      font-size: 14px;
-    }
-  }
+//     p{
+//       font-size: 14px;
+//     }
+//   }
 
-}
+// }
