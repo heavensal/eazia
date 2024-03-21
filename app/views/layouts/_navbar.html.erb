@@ -11,7 +11,7 @@
       <%= link_to new_post_path do %>
         <div class="nouvelle-publication-wrapper">
           <div class="div-2-sidebar">
-            <%= image_tag "icon_publications.png", alt:"publications" %>
+            <%= image_tag "icon-new.svg", alt:"publications" %>
             <div class="text-wrapper-4">Nouvelle publication</div>
           </div>
         </div>
@@ -21,7 +21,7 @@
         <%= link_to drafts_path do %>
           <div class="nouvelle-publication-wrapper">
             <div class="div-2-sidebar">
-              <%= image_tag("icon_brouillons.png", alt:"brouillons") %>
+              <%= image_tag("icon-draft.svg", alt:"brouillons") %>
               <div class="text-wrapper-4">Brouillons</div>
             </div>
           </div>
@@ -51,23 +51,23 @@
     <%# <div class="div-3"> %>
       <%# <div class="inner"> %>
 
-        <%= link_to products_path do %>
-          <div class="nouvelle-publication-wrapper">
-            <div class="div-2-sidebar">
+        <%# <%= link_to products_path do %>
+          <%# <div class="nouvelle-publication-wrapper"> %>
+            <%# <div class="div-2-sidebar"> %>
               👛
-              <div class="text-wrapper-4"><%= current_user.wallet.tokens %>
-               </div>
-               <div class="text-wrapper-4"><%= current_user.status %>
-               </div>
-               <div class="text-wrapper-4">Acheter</div>
-            </div>
-          </div>
-        <% end %>
+              <%# <div class="text-wrapper-4"><%= current_user.wallet.tokens %>
+               <%# </div> %>
+               <%# <div class="text-wrapper-4"><%= current_user.status %>
+               <%# </div> %>
+               <%# <div class="text-wrapper-4">Acheter</div> %>
+            <%# </div> %>
+          <%# </div> %>
+        <%# <% end %>
 
         <div class="user">
           <%= link_to account_path do %>
             <div class="div-2-sidebar">
-              <%= image_tag("icon_user.png", alt:"compte") %>
+              <%= image_tag("icon-user.svg", alt:"compte") %>
             <div class="text-wrapper-4"> Mon compte</div>
           </div>
           <% end%>
@@ -99,7 +99,7 @@
       <div class="div-2-sidebar-responsive">
           <%= link_to new_post_path do %>
            <%# <div class="nouvelle-publication-wrapper"> %>
-               <%= image_tag "icon_publications.png", alt:"publications" %>
+               <%= image_tag "icon-new.svg", alt:"publications" %>
               <div class="text-wrapper-4">Nouvelle publication</div>
            <%# </div> %>
           <% end %>
@@ -109,7 +109,7 @@
               <div class="div-2-sidebar-responsive">
            <%= link_to drafts_path do %>
             <%# <div class="nouvelle-publication-wrapper"> %>
-                 <%= image_tag("icon_brouillons.png", alt:"brouillons") %>
+                 <%= image_tag("icon-draft.svg", alt:"brouillons") %>
                 <div class="text-wrapper-4">Brouillons</div>
               <%# </div> %>
           <% end %>
@@ -137,7 +137,7 @@
 
     <div class="user-responsive">
       <%= link_to account_path do %>
-      <%= image_tag("icon_user.png", alt:"compte") %>
+      <%= image_tag("icon-user.svg", alt:"compte") %>
       <% end%>
     </div>
 

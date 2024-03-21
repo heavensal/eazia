@@ -141,6 +141,7 @@ width: 370px;
   border-color: #dfdfea;
 
   h1{
+  margin-bottom: 0;
   position: relative;
   width: 100%;
   font-family: var(--titre-medium-h4-font-family);
@@ -201,8 +202,8 @@ width: 370px;
 }
 
 .btn-draft-post{
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   top: 15px;
   left: 330px;
   background-color: rgba(255, 255, 255, 1);
@@ -233,7 +234,7 @@ width: 370px;
   color: white;
   font-size: 20px;
   position: relative;
-  top: -4px;
+  top: -5px;
 }
 
 
@@ -339,7 +340,6 @@ width: 370px;
   top :50px;
   left:250px;
   padding: 12px;
-  gap: 8px;
 
   @media (max-width: 768px){
     left: 180px
