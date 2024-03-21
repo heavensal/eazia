@@ -353,7 +353,7 @@
 .frame-show {
   align-items: flex-start;
   gap: 40px;
-  padding: 24px 0 0;
+  // padding: 24px 0 0;
   position: relative;
   border-right-width: 1px;
   border-right-style: solid;
@@ -372,7 +372,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap:24px;
-  padding: 24px 24px 0;
+  padding: 24px;
   position: relative;
   align-self: stretch;
   // width: 50%;
@@ -423,7 +423,7 @@ display: inline-block;
 
   @media (max-width: 768px) {
     display: grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr;
     // grid-auto-rows: minmax(100px, auto); /* Ajustez 100px à la hauteur minimale désirée */
     gap: 8px;
     width: 100%;
@@ -767,6 +767,7 @@ display: inline-block;
   align-items: flex-start;
   gap: 12px;
   position: relative;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 768px){
@@ -777,10 +778,9 @@ display: inline-block;
 }
 
 .textcontent {
-  padding: 10px 12px;
+  padding: 12px;
   font-size: 12px;
-  margin-bottom: 18px;
-  text-align: left;
+  text-align: justify;
 }
 
 .text-wrapper-show{
@@ -1104,7 +1104,7 @@ display: inline-block;
   align-items: flex-start;
   justify-content: space-between;
   position: relative;
-  padding: 20px;
+  padding: 20px 20px 0;
 
 }
 
@@ -1130,9 +1130,9 @@ display: inline-block;
   align-items: flex-start;
   width: 100%;
   gap: 4px;
-  padding: 20px;
+  padding:20px;
   position: relative;
-  border-top-width: 1px;
+  border-top: 1px solid;
   border-color: var(--secondaryblackblack-50);
 }
 
@@ -1168,7 +1168,7 @@ display: inline-block;
   border-radius: 4px;
   overflow: hidden;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.26);
+  border: 0;
   background:linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
   position: relative;
   width: fit-content;
@@ -1186,7 +1186,7 @@ display: inline-block;
 
 .frame-bouton-insta .main-bouton:hover{
 border-radius: 4px;
-border: 1px solid rgba(255, 255, 255, 0.26);
+border:0;
 opacity: 0.6;
 background: var(--2, linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%));
 box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
@@ -1285,7 +1285,7 @@ box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  border-left-color: grey;
+  border-left-color: var(--secondaryblackblack-200);
   animation: spin 1s linear infinite;
 }
 
@@ -1298,38 +1298,38 @@ box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
   }
 }
 
-.chargement{
+.chargement-publier{
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 12px 24px;
-  position: relative;
-  flex: 0 0 auto;
-  background-color: var(--secondarywhitewhite-200);
-  border-radius: 4px;
-  overflow: hidden;
-  border: 1px solid;
-  border-color: var(--secondaryblackblack-50);
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
+
+
 }
 
 .text-chargement{
-  display: flex;
-  width: 126px;
-  align-items: center;
-  justify-content: center;
-  padding: 0 8px;
+  flex: 0 0 auto;
+  border-radius: 4px;
+  overflow: hidden;
+  border-radius: 4px;
+  border: 0;
+  position: relative;
+  width: fit-content;
+  margin-top: -1px;
   font-family: var(--titre-medium-h5-font-family);
   font-weight: var(--titre-medium-h5-font-weight);
-  color: var(--secondaryblackblack-300);
+  color: #ffffff;
   font-size: var(--titre-medium-h5-font-size);
   letter-spacing: var(--titre-medium-h5-letter-spacing);
   line-height: var(--titre-medium-h5-line-height);
   white-space: nowrap;
   font-style: var(--titre-medium-h5-font-style);
+  transition: background-color ease-in-out 0.3s;
+  display: flex;
+  width: 126px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+
 }
 
 
@@ -1340,7 +1340,7 @@ box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
   align-items: flex-start;
   gap: 8px;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.26);
+  border:0;
   background:linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
   box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
   font-family: var(--titre-medium-h5-font-family);

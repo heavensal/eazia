@@ -389,13 +389,9 @@ textarea{
   position: relative;
   background-color: rgba(255, 255, 255, 1);
   border-radius: 4px;
-  border-top: 1px solid #ffffff42;
-  border-bottom: 1px solid #ffffff42;
-  border-right: 1px solid rgba(255, 0, 244, 0.6);
-  border-left: 1px solid rgba(29, 148, 255, 0.6);
-  overflow: hidden;
-  box-shadow: inset 0px 4px 10.9px 0px rgba(255, 255, 255, 0.4);
-  background: linear-gradient(90deg, rgb(28.77, 147.84, 255) 0%, rgb(255, 0, 244.8) 100%);  align-self: stretch;
+  border:0;
+  background:linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
+  box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
   margin-top: -1px;
   font-family: var(--titre-medium-h4-font-family);
   font-weight: var(--titre-medium-h4-font-weight);
@@ -418,7 +414,7 @@ textarea{
   border-radius: 4px;
   overflow: hidden;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.26);
+  border: 0;
   background:linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
 }
 
