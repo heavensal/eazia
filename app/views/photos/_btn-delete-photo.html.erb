@@ -1,3 +1,4 @@
-<%= link_to "🚮", post_photo_path(post, photo), class:"delete-icon",
-data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer la photo ?"}
-%>
+<%= link_to post_photo_path(post, photo), class:"delete-icon",
+data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer la photo ?"} do %>
+<%= image_tag("icon-delete.svg") %>
+<% end %>

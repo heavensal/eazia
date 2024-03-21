@@ -337,6 +337,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 100vh;
   background-color: #ffffff;
   position: relative;
 }
@@ -352,7 +353,7 @@
 .frame-show {
   align-items: flex-start;
   gap: 40px;
-  padding: 24px 24px 0;
+  padding: 24px 0 0;
   position: relative;
   border-right-width: 1px;
   border-right-style: solid;
@@ -422,7 +423,7 @@ display: inline-block;
 
   @media (max-width: 768px) {
     display: grid;
-    grid-template-columns:1fr;
+    grid-template-columns:1fr 1fr;
     // grid-auto-rows: minmax(100px, auto); /* Ajustez 100px à la hauteur minimale désirée */
     gap: 8px;
     width: 100%;
@@ -509,32 +510,16 @@ display: inline-block;
     width: 150px;
     height:150px;
     justify-items: center;
-    animation: rotate 3s normal linear infinite;
+    animation: oppacity 3s  infinite;
   }
 }
 
-  @keyframes rotate {
-    0% {
-      -webkit-transform: rotate3d(0, 0, 1, 0deg);
-      transform: rotate3d(0, 0, 1, 0deg);
-    }
-    25% {
-      -webkit-transform: rotate3d(0, 0, 1, 90deg);
-      transform: rotate3d(0, 0, 1, 90deg);
-    }
-    50% {
-      -webkit-transform: rotate3d(0, 0, 1, 180deg);
-      transform: rotate3d(0, 0, 1, 180deg);
-    }
-    75% {
-      -webkit-transform: rotate3d(0, 0, 1, 270deg);
-      transform: rotate3d(0, 0, 1, 270deg);
-    }
-    100% {
-      -webkit-transform: rotate3d(0, 0, 1, 360deg);
-      transform: rotate3d(0, 0, 1, 360deg);
-    }
-  }
+@keyframes oppacity{
+  0%    { opacity: 0; }
+  20%   { opacity: 1; }
+  80%   { opacity: 0; }
+  100%  { opacity: 1; }
+}
 
 
 
@@ -586,6 +571,7 @@ display: inline-block;
   position: absolute;
   top: 75px;
   left: 75px;
+  padding: 0 2px 2px;
   display: none;
   transform: translate(-50%, -50%);
   transition: transform 0.3s ease, visibility 0s linear 0.3s;
@@ -603,7 +589,7 @@ display: inline-block;
   transform: translate(-50%, -50%) scale(2);
   transition: transform 0.3s ease;
   border-radius: 4px;
-  background: rgba(0, 0, 0, 0.40);
+  background: rgba(0.40, 0.40, 0.40, 0.40);
   backdrop-filter: blur(10px);
 
   @media (max-width: 768px){
@@ -635,10 +621,10 @@ display: inline-block;
 
 
 .indice {
-    width: 20px;
-    height: 20px;
+  width: 25px;
+  height: 25px;
     top: 15px;
-    left:125px;
+    left:120px;
     background-color: rgba(255, 255, 255, 1);
     position: absolute;
     border-radius: 20%;
@@ -1296,8 +1282,8 @@ box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
 
 .loading-spinner {
   border: 4px solid rgba(0, 0, 0, .1);
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   border-left-color: grey;
   animation: spin 1s linear infinite;
@@ -1316,8 +1302,8 @@ box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 12px;
+  gap: 20px;
+  padding: 12px 24px;
   position: relative;
   flex: 0 0 auto;
   background-color: var(--secondarywhitewhite-200);
@@ -1335,6 +1321,7 @@ box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
   width: 126px;
   align-items: center;
   justify-content: center;
+  padding: 0 8px;
   font-family: var(--titre-medium-h5-font-family);
   font-weight: var(--titre-medium-h5-font-weight);
   color: var(--secondaryblackblack-300);
