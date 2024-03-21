@@ -78,7 +78,7 @@
     <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
       <div class="compte">
         <p> Vous n'avez pas encore de compte ?  </p>
-        <%= link_to " Créer un compte", pages_inscription_path %>
+        <%= link_to " Créer un compte", new_user_registration_path %>
       </div>
     <% end %>
 </div>

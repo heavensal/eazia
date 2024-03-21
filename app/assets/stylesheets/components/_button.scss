@@ -1,23 +1,23 @@
-.btn-valider{
-  width: 50%;
-  height: 50px;
-  margin: 1%;
-  background: white;
-  border-radius: 5px;
-  border: none;
-  border:3px solid #9f2dbe;
-  font-size: 18px;
-  font-weight: bold;
-  color: #9f2dbe;
+// .btn-valider{
+//   width: 50%;
+//   height: 50px;
+//   margin: 1%;
+//   background: white;
+//   border-radius: 5px;
+//   border: none;
+//   border:3px solid #9f2dbe;
+//   font-size: 18px;
+//   font-weight: bold;
+//   color: #9f2dbe;
 
-  &:hover {
-    color: white;
-    background-color:#a73cc2;
-    border: none;
-    border-bottom:5px solid #dcffff;
-  }
+//   &:hover {
+//     color: white;
+//     background-color:#a73cc2;
+//     border: none;
+//     border-bottom:5px solid #dcffff;
+//   }
 
-}
+// }
 
 .button-annexe, .button-cancel{
   border: none;
@@ -166,7 +166,7 @@
   flex: 0 0 auto;
   border-radius: 4px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.26);
+  border: 0;
   background:linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
   width: fit-content;
   margin-top: -1px;
@@ -214,12 +214,12 @@
 
 @media (max-width: 768px) {
 
-  .btn-valider {
-    font-size: 14px;
-    padding: 1.5%;
-    height: 30%;
-    width: 100%;
-  }
+  // .btn-valider {
+  //   font-size: 14px;
+  //   padding: 1.5%;
+  //   height: 30%;
+  //   width: 100%;
+  // }
 
   .button-modifier{
     width: 50%;
@@ -258,11 +258,11 @@
 
 @media (max-width: 480px) {
 
-  .btn-valider {
-    font-size: 14px;
-    padding: 2%;
-    width: 100%;
-  }
+  // .btn-valider {
+  //   font-size: 14px;
+  //   padding: 2%;
+  //   width: 100%;
+  // }
 
   .button-modifier{
     width: 50%;

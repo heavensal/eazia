@@ -16,9 +16,9 @@
     <div class="connexion-insta">
       <%= form_for(post, url: publish_post_path(post), method: :patch, data: { action: "submit->form-submission#submit" }) do |f| %>
       <%= f.submit "Publier maintenant", class: "main-bouton", data: { form_submission_target: "submitButton" } %>
-      <div class="chargement" data-form-submission-target="loadingSpinner" hidden>
-      <div id="loading" class="text-chargement-publication">En cours de publication </div>
-      <div  class="loading-spinner"></div>
+      <div class="chargement-publier" data-form-submission-target="loadingSpinner" hidden>
+      <div id="loading" class="text-chargement-publication">En cours <div  class="loading-spinner"></div></div>
+
       </div>
       <% end %>
     </div>
@@ -27,7 +27,7 @@
 
   <div class="secondary-bouton-wrapper">
     <%= link_to post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?"} do %>
-    <%= image_tag('icone-supp.svg', alt: 'Supprimer') %>
+    <%= image_tag('icon-supp-post-insta.svg', alt: 'Supprimer') %>
     <% end %>
   </div>
 

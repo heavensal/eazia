@@ -170,7 +170,7 @@ width: 370px;
   border-radius: 4px;
   overflow: hidden;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.26);
+  border: 0;
   background:linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
   width: fit-content;
   margin-top: -1px;
@@ -425,6 +425,17 @@ line-height: 14.6px;
   img{
     width: 12px;
     height: 12px;
+
+  }
+}
+
+.no-image{
+  width: 370px;
+  height: 350px;
+
+  img{
+    width: 370px;
+    height: 350px;
 
   }
 }

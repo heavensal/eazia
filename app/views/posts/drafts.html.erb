@@ -15,9 +15,11 @@
                   <div data-target="#myDraftCarousel<%= post.id %>" data-bs-slide-to="<%= i %>" class="<%= 'active' if i.zero? %>"></div>
                 <% end %>
               </div>
-            <% end %>
-            <div class="carousel-inner">
 
+            <% end %>
+
+
+            <div class="carousel-inner">
               <label class="btn-draft-post" data-action="click->post-options#toggle">
                 <span>...</span>
               </label>
@@ -38,6 +40,12 @@
                   <%= cl_image_tag img.key, width: 370, height: 350 %>
                 </div>
               <% end %>
+
+                <% if post.photos && post.photos.length < 1%>
+             <div class="no-image">
+            <%= image_tag("aucune-image.webp") %>
+            </div>
+            <%end%>
             </div>
 
             <% if post.photos && post.photos.length > 1%>
@@ -50,7 +58,10 @@
               <span class="visually-hidden">Next</span>
             </button>
             <%end%>
+
           </div>
+
+
 
           <div  class="insta-draft-description"data-controller="toggledescription">
           <%= truncate(post.gpt_creation.description, length: 100, omission: '...') if post.gpt_creation %>
