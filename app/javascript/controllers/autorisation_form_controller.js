@@ -82,16 +82,16 @@ export default class extends Controller {
 
 
   triggerLoaderAction() {
-    console.log("Attempting to trigger loader action");
+    // console.log("Attempting to trigger loader action");
     const loaderElement = document.querySelector("[data-controller='loader']");
     if (loaderElement) {
-      console.log("Loader element found, triggering fire");
+      // console.log("Loader element found, triggering fire");
       // Création d'un événement personnalisé qui correspond à l'action dans Stimulus
       const event = new CustomEvent("click", { bubbles: true, cancelable: true });
       // Dispatch de l'événement sur l'élément du contrôleur loader
       loaderElement.dispatchEvent(event);
     } else {
-      console.error("Loader element not found");
+      // console.error("Loader element not found");
     }
   }
 
