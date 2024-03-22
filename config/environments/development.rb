@@ -47,7 +47,7 @@ Rails.application.configure do
     port: 587,
     domain: "eazia.fr",
     user_name: "noreply@eazia.fr",
-    password: "4492abmdNAMECHEAP!",
+    password: ENV['EMAIL_PASSWORD'],
     authentication: "plain",
     enable_starttls_auto: true
   }
