@@ -24,11 +24,7 @@
   </head>
 
  <body class="<%= 'user-logged-in' if user_signed_in? %>">
-  <% if user_signed_in? %>
-    <div class="navbar">
-      <%= render 'layouts/navbar' %>
-    </div>
-  <% end %>
+  <%= render_navbar %>
 
   <%= render 'layouts/flashes' %>
 
