@@ -3,6 +3,7 @@
     <%= flash[:notice] %>
      <button data-action="flash#close"><%= image_tag('icon-croix-verte.svg', alt: 'croix') %></button>
   </div>
+
 <% elsif flash[:alert] %>
   <div class="alert-message" data-controller="flash" data-flash-target="alert" id="alert">
     <%= flash[:alert] %>

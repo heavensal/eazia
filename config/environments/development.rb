@@ -38,6 +38,21 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :cloudinary
 
+
+  # DEVISE MAILER for development
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.privateemail.com",
+    port: 587,
+    domain: "eazia.fr",
+    user_name: "noreply@eazia.fr",
+    password: "4492abmdNAMECHEAP!",
+    authentication: "plain",
+    enable_starttls_auto: true
+  }
+  ##############################
+
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 

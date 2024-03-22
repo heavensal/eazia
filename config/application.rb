@@ -35,6 +35,10 @@ module Eazia
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    # DEVISE pour avoir les traductions françaises
+    config.i18n.default_locale = :fr
+    ##############################
+
     # Don't generate system test files.
     config.generators.system_tests = nil
   end

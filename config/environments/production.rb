@@ -87,6 +87,20 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+    # DEVISE MAILER for production
+    config.action_mailer.default_url_options = { host: 'https://www.eazia.fr' }
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address: "smtp.privateemail.com",
+      port: 587,
+      domain: "eazia.fr",
+      user_name: "noreply@eazia.fr",
+      password: "4492abmdNAMECHEAP!",
+      authentication: "plain",
+      enable_starttls_auto: true
+    }
+    ##############################
+
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
   #   "example.com",     # Allow requests from example.com
