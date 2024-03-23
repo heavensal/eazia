@@ -6,7 +6,7 @@
 
   <div class="brouillons">
     <% @posts.each do |post| %>
-      <%# <%= link_to post_path(post) do %>
+      <%= link_to post_path(post) do %>
       <div class="insta-show-draft">
           <div id="myDraftCarousel<%= post.id %>" class="carousel slide" data-ride="carousel">
             <% if post.photos && post.photos.length > 1 %>
@@ -78,7 +78,7 @@
            </div>
 
         </div>
-      <%# <% end %>
+       <% end %>
     <% end %>
   </div>
 </div>

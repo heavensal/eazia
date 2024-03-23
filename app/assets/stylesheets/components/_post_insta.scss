@@ -507,9 +507,10 @@ display: inline-block;
   fill: var(--Secondary-White-White-200, #F5F5F5);
 
   img{
-    width: 150px;
-    height:150px;
+    width: 50px;
+    height: 50px;
     justify-items: center;
+    align-items: center;
     animation: oppacity 3s  infinite;
   }
 }
