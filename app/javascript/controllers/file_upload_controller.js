@@ -4,11 +4,11 @@ export default class extends Controller {
   static targets = ["source", "fileName", "prompt"];
 
   connect(){
-    console.log("je suis là")
   }
 
-  updateFileName() {
 
+  updateFileName() {
+console.log('upddate file name')
     const input = this.sourceTarget;
     const file = input.files[0];
     if (file) {
