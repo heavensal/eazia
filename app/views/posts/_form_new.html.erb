@@ -2,13 +2,13 @@
   <%= form_for(@post, data: { action: "submit->autorisation-form#validateForm"}) do |f| %>
     <%= f.text_area :prompt, wrap: "soft", placeholder: "Saisissez en quelques mots le sujet de votre prochain post", data: {action:"blur->autorisation-form#validatePrompt", autorisation_form_target:"prompt"} %>
 
-    <div data-controller="modal">
-  <a href="#" data-action="click->modal#open"><i class="fa fa-info-circle"></i></a>
-    <div class="modal hidden" data-modal-target="info">
+    <div data-controller="modal-account">
+  <a href="#" data-action="click->modal-account#open"><i class="fa fa-info-circle"></i></a>
+    <div class="modal hidden" data-modal-account-target="info">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Informations</h5>
+        <h5 class="modal-title">I</h5>
         <button data-action="click->modal#close">Fermer</button>
           <span aria-hidden="true">&times;</span>
         </button>
