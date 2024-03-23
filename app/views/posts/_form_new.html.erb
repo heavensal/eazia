@@ -1,6 +1,6 @@
 <div class="gnrateur" data-controller="autorisation-form">
   <%= form_for(@post, data: { action: "submit->autorisation-form#validateForm"}) do |f| %>
-    <%= f.text_area :prompt, wrap: "soft", placeholder: "Saisissez en quelques mots le sujet de votre prochain post", data: {action:"blur->autorisation-form#validatePrompt", autorisation_form_target:"prompt"} %>
+    <%= f.text_area :prompt, wrap: "soft", placeholder: " quelques mots le sujet de votre prochain post", data: {action:"blur->autorisation-form#validatePrompt", autorisation_form_target:"prompt"} %>
 
     <div data-controller="modal-account">
   <a href="#" data-action="click->modal-account#open"><i class="fa fa-info-circle"></i></a>
