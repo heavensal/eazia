@@ -11,28 +11,58 @@ export default class extends Controller {
   open(event) {
     event.preventDefault();
     event.stopPropagation();
+
+    if (this.hasModalTarget) {
     this.modalTarget.classList.add("show");
     this.modalTarget.style.display = "block";
     this.modalTarget.removeAttribute("aria-hidden");
     this.modalTarget.setAttribute("aria-modal", "true");
     this.modalTarget.setAttribute("role", "dialog");
+    }
+    if (this.hasOverlayTarget) {
     this.overlayTarget.style.display = "block"; // Afficher l'overlay
-    document.body.classList.add("modal-open");
+    }
 
-    this.infoTarget.classList.remove("hidden")
+    if (this.hasModalTarget || this.hasOverlayTarget || this.infoTarget) {
+      document.body.classList.add("modal-open");
+    }
+
+
+    if (this.hasInfoTarget) {
+    this.infoTarget.classList.add("show");
+    this.infoTarget.style.display = "block";
+    this.infoTarget.removeAttribute("aria-hidden");
+    this.infoTarget.setAttribute("aria-modal", "true");
+    this.infoTarget.setAttribute("role", "dialog");
+    }
 
 
   }
 
   close() {
+    if (this.hasModalTarget) {
     this.modalTarget.classList.remove("show");
     this.modalTarget.style.display = "none";
     this.modalTarget.setAttribute("aria-hidden", "true");
     this.modalTarget.removeAttribute("aria-modal");
     this.modalTarget.removeAttribute("role");
-    this.overlayTarget.style.display = "none"; // Cacher l'overlay
-    document.body.classList.remove("modal-open");
+    }
 
-    this.infoTarget.classList.add("hidden")
+    if (this.hasOverlayTarget) {
+    this.overlayTarget.style.display = "none"; // Cacher l'overlay
+    }
+
+    if (this.hasModalTarget || this.hasOverlayTarget || this.infoTarget) {
+      document.body.classList.remove("modal-open");
+    }
+
+    if (this.hasInfoTarget) {
+      console.log("close là")
+      this.infoTarget.classList.remove("show");
+      this.infoTarget.style.display = "none";
+      this.infoTarget.setAttribute("aria-hidden", "true");
+      this.infoTarget.removeAttribute("aria-modal");
+      this.infoTarget.removeAttribute("role");
+    }
   }
 }

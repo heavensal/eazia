@@ -2,26 +2,21 @@
   <%= form_for(@post, data: { action: "submit->autorisation-form#validateForm"}) do |f| %>
     <%= f.text_area :prompt, wrap: "soft", placeholder: "Saisissez en quelques mots le sujet de votre prochain post", data: {action:"blur->autorisation-form#validatePrompt", autorisation_form_target:"prompt"} %>
 
-    <div data-controller="modal-account">
-  <a href="#" data-action="click->modal-account#open"><i class="fa fa-info-circle"></i></a>
-    <div class="modal hidden" data-modal-account-target="info">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">I</h5>
-        <button data-action="click->modal#close">Fermer</button>
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+    <div class="informations" data-controller="modal-account">
+      <a href="#" data-action="click->modal-account#open"><i class="fa fa-info-circle"></i></a>
+      <div class="modal-info fade" id="modalAccountId" data-modal-account-target="info" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog-custom-account" role="document">
+      <div class="modal-content-info">
         <p>Pour optimiser au maximum votre post, n'hésitez pas à donner un maximum de détails. Pas la peine de commencer par "génère moi un post Instagram" Par exemple, vous pouvez écrire : "Balade à vélo en famille dans les Calanques de Marseille au soleil."</p>
+        <div class="action-compte">
+          <button data-action="click->modal#close">X</button>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
-</div>
+
+
       <p  class="hidden" data-autorisation-form-target="myErrorMessage" style="font-size: 14px; color: red">la description doit contenir au moins 20 caractères</p>
         <div class="footer-form">
 
