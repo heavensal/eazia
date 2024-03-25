@@ -504,35 +504,36 @@ border-color: var(--secondarywhitewhite-400);
 
 .modal-info{
   position: absolute;
-  // z-index: 1050;
+  z-index: 1050;
   display: flex;
   flex-direction: row;
-  width: 50%;
-  padding: 20px;
+  width: 80%;
+  padding: 20px 0 0 ;
   top: -10px;
-  left: 100px
+  left: 40px
 
 }
 
 .modal-info-photo{
   position: absolute;
-  // z-index: 1050;
+  z-index: 1050;
   display: flex;
   flex-direction: row;
-  width: 50%;
+  width: 80%;
+  padding: 20px 0 0;
   top: -10px;
-  left: 100px
+  left: 40px
 }
 
 .modal-info-ia{
   position: absolute;
-  // z-index: 1050;
+  z-index: 1050;
   display: flex;
   flex-direction: row;
-  width: 50%;
-  padding: 20px;
+  width: 80%;
+  padding: 20px 0 ;
   top: -10px;
-  left: 100px
+  left: 40px
 }
 
 .modal-info.fade.show {
