@@ -105,13 +105,13 @@ export default class extends Controller {
   }
 
   onPromptFocus() {
-    this.submitButton.style.backgroundColor = "#FF0000";
+    this.submitButton.style.opacity = "1";
     this.submitButton.style.color = '#fff'; // Exemple: change la couleur du texte à blanc
   }
 
   onPromptBlur() {
     // Réinitialisez le style du bouton principal ici après le blur
-    this.submitButton.style.backgroundColor = 'linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);';
+    this.submitButton.style.opacity = '0.4';
     this.submitButton.style.color = ''; // Réinitialise la couleur du texte
   }
 
