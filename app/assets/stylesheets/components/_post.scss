@@ -507,10 +507,11 @@ border-color: var(--secondarywhitewhite-400);
   z-index: 1050;
   display: flex;
   flex-direction: row;
-  width: 80%;
+  max-width: 50%;
+  max-height: 30vh;
   padding: 20px 0 0 ;
   top: -10px;
-  left: 40px
+  left: 450px
 
 }
 
@@ -519,10 +520,11 @@ border-color: var(--secondarywhitewhite-400);
   z-index: 1050;
   display: flex;
   flex-direction: row;
-  width: 80%;
-  padding: 20px 0 0;
+  max-width: 50%;
+  max-height: 30vh;
+  padding: 20px 0 0 ;
   top: -10px;
-  left: 40px
+  left: 450px
 }
 
 .modal-info-ia{
@@ -530,10 +532,11 @@ border-color: var(--secondarywhitewhite-400);
   z-index: 1050;
   display: flex;
   flex-direction: row;
-  width: 80%;
-  padding: 20px 0 ;
+  max-width: 50%;
+  max-height: 30vh;
+  padding: 20px 0 0 ;
   top: -10px;
-  left: 40px
+  left: 450px
 }
 
 .modal-info.fade.show {
