@@ -1,43 +1,67 @@
-<div class="gnrateur" data-controller="autorisation-form">
-  <%= form_for(@post, data: { action: "submit->autorisation-form#validateForm"}) do |f| %>
+<div class="gnrateur" data-controller="autorisation-form modal-account">
+  <div class="informations">
+    <a href="#" data-action="click->modal-account#open" data-modal-name="info"><i class="fa fa-info-circle"></i></a>
+      <div class="modal-info fade " id="modalAccountId" data-modal-account-target="info" data-modal-name="info" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog-custom-infos" role="document">
+          <div class="modal-content-info">
+            <div class="action-compte">
+              <button data-action="click->modal-account#close">X</button>
+            </div>
+            <p>Pour optimiser au maximum votre post, n'hésitez pas à donner un maximum de détails. Pas la peine de commencer par "génère moi un post Instagram" Par exemple, vous pouvez écrire : "Balade à vélo en famille dans les Calanques de Marseille au soleil."</p>
+          </div>
+        </div>
+      </div>
+
+    <%= form_for(@post, data: { action: "submit->autorisation-form#validateForm"}) do |f| %>
     <%= f.text_area :prompt, wrap: "soft", placeholder: "Saisissez en quelques mots le sujet de votre prochain post", data: {action:"blur->autorisation-form#validatePrompt", autorisation_form_target:"prompt"} %>
 
-    <div class="informations" data-controller="modal-account">
-      <a href="#" data-action="click->modal-account#open"><i class="fa fa-info-circle"></i></a>
-      <div class="modal-info fade" id="modalAccountId" data-modal-account-target="info" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-      <div class="modal-dialog-custom-account" role="document">
-      <div class="modal-content-info">
-        <p>Pour optimiser au maximum votre post, n'hésitez pas à donner un maximum de détails. Pas la peine de commencer par "génère moi un post Instagram" Par exemple, vous pouvez écrire : "Balade à vélo en famille dans les Calanques de Marseille au soleil."</p>
-        <div class="action-compte">
-          <button data-action="click->modal#close">X</button>
-        </div>
-      </div>
-      </div>
-    </div>
-  </div>
 
+    <p  class="hidden" data-autorisation-form-target="myErrorMessage" style="font-size: 14px; color: red">la description doit contenir au moins 20 caractères</p>
 
-      <p  class="hidden" data-autorisation-form-target="myErrorMessage" style="font-size: 14px; color: red">la description doit contenir au moins 20 caractères</p>
-        <div class="footer-form">
-
-          <div class="form-secondary-bouton">
-
-            <div class="file-upload-wrapper" data-controller="file-upload">
-              <%= f.label :photos, "Ajouter vos images", class: "custom-file-upload" %>
-              <%= f.file_field :photos, as: :file, multiple: true, data: { action: "change->file-upload#updateFileName", file_upload_target: "source" } %>
-              <span data-file-upload-target="fileName" class="file-name"></span>
-            </div >
-
-            <div class="generateur-images">
-              <%= f.label :pictures_generated do %> Générer des images
-              <%end%>
-              <%= f.select :pictures_generated, options_for_select(0..5) %>
+</div>
+    <div class="footer-form">
+      <div class="form-secondary-bouton">
+      <div class="informations">
+        <a href="#" data-action="click->modal-account#open" data-modal-name="photo"><i class="fa fa-info-circle"></i></a>
+          <div class="modal-info-photo fade" id="modalAccountId" data-modal-account-target="photo" data-modal-name="photo"tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog-custom-infos" role="document">
+              <div class="modal-content-info">
+                <div class="action-compte">
+                  <button data-action="click->modal-account#close">X</button>
+                </div>
+                <p>Si vous avez des images de vos produits, n'hésitez pas à les télécharger pour que celles-ci apparaissent dans le carrousel Instagram. En revanche vos photos n'impacteront pas celles générées par l'IA. Il est également bon de noter qu'il n'est pas nécessaire d'ajouter des images si vous n'en avez pas </p>
+              </div>
             </div>
-
+          </div>
           </div>
 
-          <%= f.submit "Générer mon post", class:"main-bouton", data: { action: "submit->autorisation-form#validateForm"} %>
-          <% end %>
+        <div class="file-upload-wrapper" data-controller="file-upload">
+          <%= f.label :photos, "Ajouter vos images", class: "custom-file-upload" %>
+          <%= f.file_field :photos, as: :file, multiple: true, data: { action: "change->file-upload#updateFileName", file_upload_target: "source" } %>
+          <span data-file-upload-target="fileName" class="file-name"></span>
+        </div >
 
+        <div class="generateur-images">
+          <%= f.label :pictures_generated do %> Générer des images
+          <%end%>
+          <%= f.select :pictures_generated, options_for_select(0..5) %>
         </div>
+
+      <div class="informations">
+        <a href="#" data-action="click->modal-account#open" data-modal-name="ia"><i class="fa fa-info-circle"></i></a>
+          <div class="modal-info-ia fade" id="modalAccountId" data-modal-account-target="ia" data-modal-name="ia" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog-custom-infos" role="document">
+              <div class="modal-content-info">
+                <div class="action-compte">
+                  <button data-action="click->modal-account#close">X</button>
+                </div>
+                <p>Choisissez le nombre d'images à générer par l'IA. Celles-ci seront libres de droit et uniques. Profitez-en ! </p>
+              </div>
+            </div>
+          </div>
+    </div>
+  </div>
+      <%= f.submit "Générer mon post", class:"main-bouton", data: { action: "submit->autorisation-form#validateForm"} %>
+      <% end %>
+</div>
 </div>

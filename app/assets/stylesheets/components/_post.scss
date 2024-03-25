@@ -90,7 +90,7 @@ height: 100vh;
 
 .contenu .gnrateur {
   width: 100%;
-  display: flex;
+  // display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
@@ -431,14 +431,19 @@ height: 12px;
 
 
 .modal-content-info{
-  background-color: var(--secondaryblackblack-200);
+  background-color: var(--secondarywhitewhite-200);
   border-radius: 4px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 8px;
+  padding: 10px;
 
   p{
-    font-size: 10px;
+    font-size: 12px;
+    text-align: justify;
+    letter-spacing: var(--titre-regular-h4-letter-spacing);
+    padding: 5px
   }
 
   button{
@@ -448,10 +453,10 @@ align-items: center;
 // padding: 12px;
 position: relative;
 flex: 0 0 auto;
-background-color: var(--secondarywhitewhite-200);
-border-radius: 4px;
+background-color: transparent;
+// border-radius: 4px;
 overflow: hidden;
-border: 1px dashed;
+border: 0;
 border-color: var(--secondarywhitewhite-400);
     cursor: pointer;
 
@@ -459,18 +464,112 @@ border-color: var(--secondarywhitewhite-400);
 
 }
 
+// .modal-content-info-ia{
+//   background-color: var(--secondarywhitewhite-200);
+//   border-radius: 4px;
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   gap: 8px;
+//   padding: 10px;
+
+//   p{
+//     font-size: 12px;
+//     text-align: justify;
+//     letter-spacing: var(--titre-regular-h4-letter-spacing);
+//     padding: 5px
+//   }
+
+//   button{
+//     display: inline-flex;
+// align-items: center;
+// // gap: 8px;
+// // padding: 12px;
+// position: relative;
+// flex: 0 0 auto;
+// background-color: transparent;
+// // border-radius: 4px;
+// overflow: hidden;
+// border: 0;
+// border-color: var(--secondarywhitewhite-400);
+//     cursor: pointer;
+
+//   }
+
+// }
+
+
+
+
 
 .modal-info{
+  position: absolute;
+  // z-index: 1050;
   display: flex;
   flex-direction: row;
-  width: 100%;
-  padding: 20px
+  width: 50%;
+  padding: 20px;
+  top: -10px;
+  left: 100px
 
 }
 
-.informations{
+.modal-info-photo{
   position: absolute;
-  z-index: 1000;
+  // z-index: 1050;
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  top: -10px;
+  left: 100px
+}
+
+.modal-info-ia{
+  position: absolute;
+  // z-index: 1050;
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  padding: 20px;
+  top: -10px;
+  left: 100px
+}
+
+.modal-info.fade.show {
+  display: block; /* Montrer la modale */
+}
+
+.modal-info-photo.fade.show {
+  display: block; /* Montrer la modale */
+}
+
+.modal-info-ia.fade.show {
+  display: block; /* Montrer la modale */
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1040; /* Derrière la modale mais au-dessus du reste */
+}
+
+
+.informations{
+  // position: absolute;
+  // z-index: 1000;
   top: 10px;
   left: 500px;
+}
+
+
+.modal-dialog-custom-infos{
+  display: flex;
+  align-items: center; /* Centrage vertical */
+  justify-content: center; /* Centrage horizontal pour des cas spécifiques */
+  width: 100%;
 }
