@@ -1,88 +1,19 @@
 <div class="draft" data-controller="post-options">
+  <% if @posts.any? %>
   <div class="titre-brouillon">
     <h1>Brouillons</h1>
     <div class="main-bouton"><%= link_to "Générer un post", new_post_path  %></div>
   </div>
 
-  <div class="brouillons">
-    <% @posts.each do |post| %>
-      <div class="insta-show-draft">
-      <%# <%= link_to post_path(post) do %>
-          <div id="myDraftCarousel<%= post.id %>" class="carousel slide" data-ride="carousel">
-            <% if post.photos && post.photos.length > 1 %>
-              <div class="carousel-indicators">
-                <% post.photos.each.with_index do |img, i| %>
-                  <div data-target="#myDraftCarousel<%= post.id %>" data-bs-slide-to="<%= i %>" class="<%= 'active' if i.zero? %>"></div>
-                <% end %>
-              </div>
+  <%= render "posts/brouillons", post: @post %>
 
-             <% end %>
+<% else %>
+    <div class="no-posts">
+      <p>Aucun brouillon n'est disponible pour le moment.</p>
+      <div class="main-bouton"><%= link_to "Créer un nouveau post", new_post_path, class: "btn btn-primary" %></div>
+    </div>
+<% end %>
 
-
-            <div class="carousel-inner">
-              <label class="btn-draft-post" data-action="click->post-options#toggle">
-                <span>...</span>
-              </label>
-                <div class='sub-menus' data-post-options-target="menu">
-                <div class="modif-draft">
-                  <%= image_tag("icon-modifier-draft.svg") %><%= link_to "Modifier", post_path(post), class:"btn-modifier-draft"%>
-                  </div>
-                  <div>
-                  <%= image_tag("line-23.svg") %>
-                  </div>
-                  <div class="modif-draft">
-                  <%= image_tag("icon-delete-draft.svg") %><%= link_to "Supprimer", post_path(post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?",  action: "click->post-options#delete"}, class:"btn-supprimer-draft" %>
-                  </div>
-                </div>
-
-              <% post.photos.each.with_index do |img, i| %>
-                <div class="carousel-item <%= 'active' if i.zero? %>">
-                  <%= cl_image_tag img.key, width: 370, height: 350 %>
-                </div>
-              <% end %>
-
-                <% if post.photos && post.photos.length < 1%>
-             <div class="no-image">
-            <%= image_tag("aucune-image.webp") %>
-            </div>
-            <%end%>
-            </div>
-
-            <% if post.photos && post.photos.length > 1%>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myDraftCarousel<%= post.id %>" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myDraftCarousel<%= post.id %>" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-            <%end%>
-
-            <%# <% end %>
-
-          </div>
-
-
-
-          <div  class="insta-draft-description"data-controller="toggledescription">
-          <%= truncate(post.gpt_creation.description, length: 100, omission: '...') if post.gpt_creation %>
-            <%# <b> <%= current_user.instagram %>
-               <%# <span>
-                  <%# <% if post.gpt_creation.description.size.to_i > 64 %>
-                    <%# <%= post.gpt_creation.description %>
-                    <%# <span style="color: grey;">...</span> %>
-                  <%# <% else %>
-                  <%# <%= post.gpt_creation.description if post.gpt_creation %>
-                  <%# <% end%>
-                 <%# </p> %>
-               <%# </span> %>
-           </div>
-
-        </div>
-       <% end %>
-
-  </div>
 </div>
 
 
