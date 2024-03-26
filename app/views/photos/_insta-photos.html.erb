@@ -3,7 +3,7 @@
   <div class="carousel-indicators-images">
     <% if photos_selected.length >= 1 %>
       <% photos_selected.each_with_index do |photo, i| %>
-        <div data-bs-slide-to="<%=i%>" class="<%= i== 0 ? "active" : "" %> rounded-circle card-indicator">
+        <div data-bs-slide-to="<%= i %>" class="<%= i == photos_selected.length-1 ? "active" : "" %> rounded-circle card-indicator">
         </div>
       <%end%>
       <%else%>
@@ -15,7 +15,7 @@
 
   <div class="carousel-inner" data-controller="show-imgs" id="insta-photos">
     <% photos_selected.each_with_index do |photo, i| %>
-      <div class="carousel-item <%= i == 0 ? "active" : "" %>">
+      <div class="carousel-item <%= i == photos_selected.length-1 ? "active" : "" %>">
         <%= cl_image_tag photo.key, class:"crop", data: { show_imgs_target: "image", src: photo.key } %>
       </div>
     <% end %>
