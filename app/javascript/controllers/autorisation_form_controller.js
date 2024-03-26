@@ -19,6 +19,8 @@ export default class extends Controller {
       this.promptTarget.addEventListener('focus', this.onPromptFocus.bind(this));
       this.promptTarget.addEventListener('blur', this.onPromptBlur.bind(this));
     }
+
+    this.isPromptValid = false;
   }
 
   validateField(event) {
@@ -39,6 +41,7 @@ export default class extends Controller {
     // Vérifier et valider le prompt seulement s'il est présent
     if (this.hasPromptTarget) {
       isPromptValid = this.promptTarget.value.length >= 20;
+      this.submitButton.disabled = false;
     }
 
     let isCheckboxChecked = true;
@@ -96,24 +99,38 @@ export default class extends Controller {
   }
 
   validatePrompt() {
-    if (this.hasPromptTarget) {
-      const isPromptValid = this.promptTarget.value.length >= 20;
-      if (isPromptValid) {
-        this.submitButton.disabled = false;
+      if (this.hasPromptTarget) {
+        this.isPromptValid = this.promptTarget.value.length >= 20; // Met à jour la propriété de la classe
+        this.updateSubmitButtonStyle();
       }
+  }
+
+  updateSubmitButtonStyle() {
+    if (this.isPromptValid) {
+      // Style pour un bouton actif
+      this.submitButton.disabled = false;
+      this.submitButton.style.opacity = "1";
+      this.submitButton.style.color = '#fff'; // Texte blanc
+    } else {
+      // Style par défaut ou pour un bouton inactif
+      this.submitButton.style.opacity = '0.4';
+      this.submitButton.style.color = ''; // Réinitialise la couleur du texte
     }
   }
 
   onPromptFocus() {
     this.submitButton.style.opacity = "1";
     this.submitButton.style.color = '#fff'; // Exemple: change la couleur du texte à blanc
+    this.updateSubmitButtonStyle();
   }
 
   onPromptBlur() {
     // Réinitialisez le style du bouton principal ici après le blur
     this.submitButton.style.opacity = '0.4';
     this.submitButton.style.color = ''; // Réinitialise la couleur du texte
+    this.updateSubmitButtonStyle();
   }
+
 
 
 }
