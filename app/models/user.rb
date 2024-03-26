@@ -13,7 +13,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :company, presence: true
-  validates :status, inclusion: { in: %w(admin premium freemium) }
+  # validates :status, inclusion: { in: %w(admin premium freemium) }
 
   def user_thread
     # creation d'une conversation entre un USER et CHATGPT
