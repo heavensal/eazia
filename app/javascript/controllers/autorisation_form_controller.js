@@ -37,8 +37,9 @@ export default class extends Controller {
   }
 
   validateForm(event) {
+    event.preventDefault();
     let isPromptValid = true; // Présumer vrai si le prompt n'existe pas
-    // Vérifier et valider le prompt seulement s'il est présent
+    // // Vérifier et valider le prompt seulement s'il est présent
     if (this.hasPromptTarget) {
       isPromptValid = this.promptTarget.value.length >= 20;
       this.submitButton.disabled = false;
@@ -52,17 +53,17 @@ export default class extends Controller {
 
     let formIsValid = isPromptValid && isCheckboxChecked;
 
-    if (formIsValid) {
-      this.triggerLoaderAction(); // Déclencher le loader ici, après avoir passé la validation
+    // if (formIsValid) {
+    //   this.triggerLoaderAction(); // Déclencher le loader ici, après avoir passé la validation
 
-    }
+    // }
 
     if (!isCheckboxChecked || !isPromptValid) {
       event.preventDefault();
       if (this.hasMyErrorMessageTarget) {
       this.myErrorMessageTarget.classList.remove('hidden');
     }
-    this.submitButton.disabled = true;
+    // this.submitButton.disabled = true;
 
     }
 
@@ -131,21 +132,21 @@ export default class extends Controller {
   }
 
 
-  validate(event) {
-    this.errorTargets.forEach((errorElement, index) => {
-      const inputTarget = this.inputTargets[index];
-      const isInputFilled = inputTarget.value.trim() !== "";
+  // validate(event) {
+  //   this.errorTargets.forEach((errorElement, index) => {
+  //     const inputTarget = this.inputTargets[index];
+  //     const isInputFilled = inputTarget.value.trim() !== "";
 
-      // Assurez-vous que les noms correspondent pour lier correctement les erreurs aux champs
-      if (errorElement.dataset.inputName === `user[${inputTarget.name}]`) {
-        if (isInputFilled) {
-          errorElement.classList.add("d-none");
-        } else {
-          errorElement.classList.remove("d-none");
-        }
-      }
-    });
-  }
+  //     // Assurez-vous que les noms correspondent pour lier correctement les erreurs aux champs
+  //     if (errorElement.dataset.inputName === `user[${inputTarget.name}]`) {
+  //       if (isInputFilled) {
+  //         errorElement.classList.add("d-none");
+  //       } else {
+  //         errorElement.classList.remove("d-none");
+  //       }
+  //     }
+  //   });
+  // }
 
 
 }
