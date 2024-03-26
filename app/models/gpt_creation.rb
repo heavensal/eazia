@@ -3,7 +3,7 @@ class GptCreation < ApplicationRecord
 
   before_create :consume_token
 
-  validates :description, presence: true, length: { maximum: 2200 }
+  # validates :description, presence: true, length: { maximum: 2200 }
 
   def self.create_description(post)
     description = extract(post)
