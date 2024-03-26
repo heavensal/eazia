@@ -7,7 +7,8 @@ class GptCreationsController < ApplicationController
 
   def update
     if @gpt_creation.update(description_params)
-      turbo_render(@post, @gpt_creation)
+      flash.now[:notice] = "Description mise à jour avec succès."
+      turbo_render(@post, @gpt_creation, flash)
     else
       redirect_to post_path(@post), status: :unprocessable_entity, notice: 'Erreur lors de la mise à jour de la description. Merci de réessayer.'
     end
@@ -19,7 +20,8 @@ class GptCreationsController < ApplicationController
     begin
       ai_api_service = AiApiService.new(@post.user)
       ai_api_service.work_2(@post)
-      turbo_render(@post, @gpt_creation)
+      flash.now[:notice] = "Nouvelle description générée avec succès."
+      turbo_render(@post, @gpt_creation, flash)
     rescue
       redirect_to post_path(@post), alert: "Suite à une erreur de l'IA, la description de votre brouillon n'a pas pu être recréée. Merci de réessayer ultérieurement."
     end
@@ -36,10 +38,11 @@ class GptCreationsController < ApplicationController
     params.require(:gpt_creation).permit(:description)
   end
 
-  def turbo_render(post, gpt_creation)
+  def turbo_render(post, gpt_creation, flash)
     respond_to do |f|
       f.turbo_stream do
         render turbo_stream: [
+          turbo_stream.replace('flashes', partial: "layouts/flashes", locals: { flash: flash }),
           turbo_stream.replace(gpt_creation, partial: "gpt_creations/recreate", locals: { gpt_creation: gpt_creation }),
           turbo_stream.replace("insta-#{gpt_creation.id}" , partial: "gpt_creations/insta-description", locals: { gpt_creation: gpt_creation, description: gpt_creation.description })
         ]

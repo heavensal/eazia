@@ -10,6 +10,11 @@ class User < ApplicationRecord
   has_one :instagram_account, dependent: :destroy
   has_one :wallet, dependent: :destroy
 
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :company, presence: true
+  validates :status, inclusion: { in: %w(admin premium freemium) }
+
   def user_thread
     # creation d'une conversation entre un USER et CHATGPT
     thread_creator = Faraday.new(
@@ -42,6 +47,18 @@ class User < ApplicationRecord
 
   def freemium?
     self.status == "freemium"
+  end
+
+  def admin!
+    self.update!(status: "admin")
+  end
+
+  def premium!
+    self.update!(status: "premium") unless self.admin?
+  end
+
+  def freemium!
+    self.update!(status: "freemium")
   end
 
 end

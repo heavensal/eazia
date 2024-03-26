@@ -16,7 +16,6 @@ class Dalle3Image < ApplicationRecord
   end
 
   def consume_token
-    self.post.user.wallet.tokens -= 1
-    self.post.user.wallet.save
+    self.post.user.wallet.remove_tokens(1)
   end
 end

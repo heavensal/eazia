@@ -1,14 +1,16 @@
-<% if flash[:notice] %>
-  <div class="notice" data-controller="flash" data-flash-target="notice" id="notice">
-    <%= flash[:notice] %>
-     <button data-action="flash#close"><%= image_tag('icon-croix-verte.svg', alt: 'croix') %></button>
-  </div>
+<%= turbo_frame_tag 'flashes' do %>
+  <% if flash[:notice] %>
+    <div class="notice" data-controller="flash" data-flash-target="notice" id="notice">
+      <%= flash[:notice] %>
+      <button data-action="flash#close"><%= image_tag('icon-croix-verte.svg', alt: 'croix') %></button>
+    </div>
 
-<% elsif flash[:alert] %>
-  <div class="alert-message" data-controller="flash" data-flash-target="alert" id="alert">
-    <%= flash[:alert] %>
-     <button data-action="flash#close"><%= image_tag('icon-croix-rouge.svg', alt: 'croix') %></button>
-  </div>
+  <% elsif flash[:alert] %>
+    <div class="alert-message" data-controller="flash" data-flash-target="alert" id="alert">
+      <%= flash[:alert] %>
+      <button data-action="flash#close"><%= image_tag('icon-croix-rouge.svg', alt: 'croix') %></button>
+    </div>
+  <% end %>
 <% end %>
 
 <%# render layouts/flashes %>

@@ -36,8 +36,7 @@ class PaymentsController < ApplicationController
     begin
       stripe_session = Stripe::Checkout::Session.retrieve(session[:stripe_session_id])
       if stripe_session.payment_status == "paid"
-        current_user.status = "premium" unless current_user.admin?
-        current_user.save!
+        current_user.premium! unless current_user.admin?
         session.delete(:stripe_session_id)
       end
     rescue
@@ -49,8 +48,7 @@ class PaymentsController < ApplicationController
     begin
       stripe_session = Stripe::Checkout::Session.retrieve(session[:stripe_session_id])
       if stripe_session.payment_status == "paid"
-        current_user.wallet.tokens += product.amount
-        current_user.wallet.save!
+        current_user.wallet.add_tokens(product.amount)
         session.delete(:stripe_session_id)
       end
     rescue

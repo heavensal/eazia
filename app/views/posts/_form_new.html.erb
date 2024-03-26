@@ -38,7 +38,9 @@
         <div class="generateur-images">
           <%= f.label :pictures_generated do %> Générer des images
           <%end%>
-          <%= f.select :pictures_generated, options_for_select(0..5) %>
+
+          <%# helper pour ne pas créer plus de photos que de jetons cf: PostsHelper %>
+          <%= f.select :pictures_generated, options_for_select(options(@tokens)), selected: 0 %>
         </div>
 
       <div class="informations">

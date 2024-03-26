@@ -5,5 +5,4 @@ class Post < ApplicationRecord
   has_many_attached :photos, dependent: :purge
 
   validates :prompt, presence: true
-  validates :pictures_generated, inclusion: { in: 0..5 }
 end
