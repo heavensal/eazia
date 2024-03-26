@@ -19,6 +19,8 @@ export default class extends Controller {
       this.promptTarget.addEventListener('focus', this.onPromptFocus.bind(this));
       this.promptTarget.addEventListener('blur', this.onPromptBlur.bind(this));
     }
+
+    this.isPromptValid = false;
   }
 
   validateField(event) {
@@ -28,17 +30,19 @@ export default class extends Controller {
     if (!field.value) {
       field.classList.add("is-invalid");
       errorTarget.classList.remove('d-none');
-    } else {
-      field.classList.remove("is-invalid");
-      errorTarget.classList.add('d-none');
+    // } else {
+    //   field.classList.remove("is-invalid");
+      // errorTarget.classList.add('d-none');
     }
   }
 
   validateForm(event) {
+    console.log(this);
     let isPromptValid = true; // Présumer vrai si le prompt n'existe pas
     // Vérifier et valider le prompt seulement s'il est présent
     if (this.hasPromptTarget) {
       isPromptValid = this.promptTarget.value.length >= 20;
+      this.submitButton.disabled = false;
     }
 
     let isCheckboxChecked = true;
@@ -80,7 +84,6 @@ export default class extends Controller {
 
   }
 
-
   triggerLoaderAction() {
     // console.log("Attempting to trigger loader action");
     const loaderElement = document.querySelector("[data-controller='loader']");
@@ -96,23 +99,53 @@ export default class extends Controller {
   }
 
   validatePrompt() {
-    if (this.hasPromptTarget) {
-      const isPromptValid = this.promptTarget.value.length >= 20;
-      if (isPromptValid) {
-        this.submitButton.disabled = false;
+      if (this.hasPromptTarget) {
+        this.isPromptValid = this.promptTarget.value.length >= 20; // Met à jour la propriété de la classe
+        this.updateSubmitButtonStyle();
       }
+  }
+
+  updateSubmitButtonStyle() {
+    if (this.isPromptValid) {
+      // Style pour un bouton actif
+      this.submitButton.disabled = false;
+      this.submitButton.style.opacity = "1";
+      this.submitButton.style.color = '#fff'; // Texte blanc
+    } else {
+      // Style par défaut ou pour un bouton inactif
+      this.submitButton.style.opacity = '0.4';
+      this.submitButton.style.color = ''; // Réinitialise la couleur du texte
     }
   }
 
   onPromptFocus() {
     this.submitButton.style.opacity = "1";
     this.submitButton.style.color = '#fff'; // Exemple: change la couleur du texte à blanc
+    this.updateSubmitButtonStyle();
   }
 
   onPromptBlur() {
     // Réinitialisez le style du bouton principal ici après le blur
     this.submitButton.style.opacity = '0.4';
     this.submitButton.style.color = ''; // Réinitialise la couleur du texte
+    this.updateSubmitButtonStyle();
+  }
+
+
+  validate(event) {
+    this.errorTargets.forEach((errorElement, index) => {
+      const inputTarget = this.inputTargets[index];
+      const isInputFilled = inputTarget.value.trim() !== "";
+
+      // Assurez-vous que les noms correspondent pour lier correctement les erreurs aux champs
+      if (errorElement.dataset.inputName === `user[${inputTarget.name}]`) {
+        if (isInputFilled) {
+          errorElement.classList.add("d-none");
+        } else {
+          errorElement.classList.remove("d-none");
+        }
+      }
+    });
   }
 
 

@@ -22,7 +22,7 @@ class PostsController < ApplicationController
       end
       PhotoJob.perform_later(@post.id)
     rescue
-      redirect_to new_post_path, alert: "Suite à une erreur de l'IA, votre poste n'a pas été créé. Merci de réessayer ultérieurement."
+      redirect_to new_post_path, alert: "Suite à une erreur de l'IA, votre post n'a pas été créé. Merci de réessayer ultérieurement."
     end
   end
 
@@ -41,21 +41,21 @@ class PostsController < ApplicationController
     begin
       FbApiService.new(@post.user).publish(@post)
       if @post.update(status: "published")
-        redirect_to new_post_path, notice: "Votre poste a été publié avec succès"
+        redirect_to new_post_path, notice: "Votre post a été publié avec succès"
       else
-        redirect_to post_path(@post), alert: "Suite à une erreur, votre poste n'a pas été publié"
+        redirect_to post_path(@post), alert: "Suite à une erreur, votre post n'a pas été publié"
       end
     rescue
-      redirect_to post_path(@post), alert: "Suite à une erreur, votre poste n'a pas été publié"
+      redirect_to post_path(@post), alert: "Suite à une erreur, votre post n'a pas été publié"
     end
   end
 
   def destroy
     @post = Post.find(params[:id])
     if @post.destroy
-      redirect_to drafts_path, status: :see_other, notice: "Votre poste a été supprimé avec succès."
+      redirect_to drafts_path, status: :see_other, notice: "Votre post a été supprimé avec succès."
     else
-      redirect_to post_path(@post), status: :unprocessable_entity, alert: "Suite à une erreur, votre poste n'a pas été supprimé."
+      redirect_to post_path(@post), status: :unprocessable_entity, alert: "Suite à une erreur, votre post n'a pas été supprimé."
     end
   end
 
