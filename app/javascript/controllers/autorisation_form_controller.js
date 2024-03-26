@@ -31,8 +31,8 @@ export default class extends Controller {
       field.classList.add("is-invalid");
       errorTarget.classList.remove('d-none');
     } else {
-      field.classList.remove("is-invalid");
-      errorTarget.classList.add('d-none');
+    //   field.classList.remove("is-invalid");
+      // errorTarget.classList.add('d-none');
     }
   }
 
@@ -83,7 +83,6 @@ export default class extends Controller {
 
   }
 
-
   triggerLoaderAction() {
     // console.log("Attempting to trigger loader action");
     const loaderElement = document.querySelector("[data-controller='loader']");
@@ -131,6 +130,22 @@ export default class extends Controller {
     this.updateSubmitButtonStyle();
   }
 
+
+  validate(event) {
+    this.errorTargets.forEach((errorElement, index) => {
+      const inputTarget = this.inputTargets[index];
+      const isInputFilled = inputTarget.value.trim() !== "";
+
+      // Assurez-vous que les noms correspondent pour lier correctement les erreurs aux champs
+      if (errorElement.dataset.inputName === `user[${inputTarget.name}]`) {
+        if (isInputFilled) {
+          errorElement.classList.add("d-none");
+        } else {
+          errorElement.classList.remove("d-none");
+        }
+      }
+    });
+  }
 
 
 }
