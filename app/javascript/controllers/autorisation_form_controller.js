@@ -37,6 +37,7 @@ export default class extends Controller {
   }
 
   validateForm(event) {
+    console.log(this);
     let isPromptValid = true; // Présumer vrai si le prompt n'existe pas
     // Vérifier et valider le prompt seulement s'il est présent
     if (this.hasPromptTarget) {
