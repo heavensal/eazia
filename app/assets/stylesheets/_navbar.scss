@@ -201,10 +201,6 @@ box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
 
 @media (max-width: 768px){
 
-  .sidebar{
-    display: none;
-  }
-
   .sidebar-responsive{
     display: flex;
     flex-direction: row;
@@ -212,7 +208,7 @@ box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
     justify-content: space-between;
     align-items: center;
     gap: 137px;
-    width: 100%;
+    // width: 100%;
     height: 10vh;
     background-color: #ffffff66;
     // border-bottom-width: 1px;
@@ -234,7 +230,7 @@ box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
     width: 50%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     gap: 12px;
     position: relative;
@@ -251,19 +247,31 @@ box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
     // }
 
     /* Masquer le menu par défaut */
-    .menu-list-responsive {
-        display: none;
-    }
+
+    .menu-toggle {
+      display: none; /* Cache la case à cocher elle-même */
+  }
+
+  .menu-toggle:checked + .menu-button + .menu-list-responsive {
+    display: block;
+}
+
+.menu-button {
+  /* Styles pour le bouton de menu, pour le rendre plus attrayant */
+  cursor: pointer;
+}
+
 
     .menu-list-responsive{
       display: none;
       width: 100%;
-      padding: 20px;
+      padding:0 0 0 20px;
       flex-direction: column;
       align-items: flex-start;
       position: fixed;
       z-index: 700;
-      margin-top: 10vh;
+      margin-top: 20vh;
+      left: -1px;
       gap: 20px;
       border-bottom: 1px solid var(--Secondary-Black-black-50, #E6E6E6);
       background: rgba(255, 255, 255, 0.20);
@@ -306,7 +314,7 @@ box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
    .hamburger-lines {
       display: block;
       height: 26px;
-      width: 10%;
+      width: 20%;
       // position: absolute;
       // // top: 17px;
       // // left: 20px;
@@ -349,6 +357,13 @@ box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
         width: 30px;
         height: 30px
       }
+    }
+
+
+    .nouvelle-publication-wrapper-responsive{
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
     }
 
     .responsive-link {
