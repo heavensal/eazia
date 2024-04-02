@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-     @tokens = current_user.wallet.tokens
+    @tokens = current_user.wallet.tokens
   end
 
   require 'timeout'
