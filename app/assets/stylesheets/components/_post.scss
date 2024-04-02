@@ -20,6 +20,7 @@ height: 100vh;
   align-items: center;
   gap: 20px;
   width: 70%;
+  position: relative;
 
 }
 
@@ -442,7 +443,9 @@ height: 12px;
 
 .modal-content-info{
   background-color: var(--secondarywhitewhite-200);
+  // opacity: 0.8;
   border-radius: 5px;
+  border: 1px solid grey;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -450,28 +453,22 @@ height: 12px;
   height: 15vh;
 
   p{
-    font-size: 12px;
+    font-size: 14px;
     text-align: justify;
     letter-spacing: var(--titre-regular-h4-letter-spacing);
     padding: 0 8px 0  0;
   }
 
-//   button{
-//     display: inline-flex;
-// align-items: center;
-// // gap: 8px;
-// // padding: 12px;
-// position: relative;
-// flex: 0 0 auto;
-// background-color: transparent;
-// // border-radius: 4px;
-// overflow: hidden;
-// border: 0;
-// border-color: var(--secondarywhitewhite-400);
-//     cursor: pointer;
+}
 
-//   }
+@media (max-width: 768px){
+  .modal-content-info{
+    opacity: 1;
 
+    p{
+      font-size: 10px;
+    }
+  }
 }
 
 // .modal-content-info-ia{
@@ -517,12 +514,22 @@ height: 12px;
   z-index: 1050;
   display: flex;
   flex-direction: row;
-  max-width: 50%;
+  max-width: 80%;
+  max-height: 0vh;
+  padding: 20px 0 0 ;
+  top: -20px;
+  left: 80px
+
+}
+
+@media (max-width: 768px){
+.modal-info{
+  max-width: 100%;
   max-height: 30vh;
   padding: 20px 0 0 ;
-  top: -10px;
-  left: 450px
-
+  top: 0px;
+  left: 50px
+}
 }
 
 .modal-info-photo{
@@ -530,23 +537,33 @@ height: 12px;
   z-index: 1050;
   display: flex;
   flex-direction: row;
-  max-width: 50%;
-  max-height: 30vh;
+  max-width: 80%;
+  max-height: 20vh;
   padding: 20px 0 0 ;
-  top: -10px;
-  left: 450px
+  top: -20px;
+  left: 80px
 }
+
+@media (max-width: 768px){
+  .modal-info-photo{
+    max-width: 100%;
+    max-height: 30vh;
+    padding: 20px 0 0 ;
+    top: 0px;
+    left: 50px
+  }
+  }
 
 .modal-info-ia{
   position: absolute;
   z-index: 1050;
   display: flex;
   flex-direction: row;
-  max-width: 50%;
-  max-height: 30vh;
+  max-width: 80%;
+  max-height: 20vh;
   padding: 20px 0 0 ;
-  top: -10px;
-  left: 450px
+  top: -20px;
+  left: 80px
 }
 
 .modal-info.fade.show {
@@ -587,4 +604,11 @@ height: 12px;
   justify-content: center; /* Centrage horizontal pour des cas spécifiques */
   width: 100%;
   height: 15vh
+}
+
+.modal-dialog-custom-infos-ia{
+  display: flex;
+  align-items: center; /* Centrage vertical */
+  justify-content: center; /* Centrage horizontal pour des cas spécifiques */
+  width: 100%;
 }

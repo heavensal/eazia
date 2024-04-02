@@ -4,8 +4,23 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["modal", "overlay", "info", "photo", "ia"];
 
-  connect(){
-    console.log("Modal account controller connected");
+  connect() {
+    this.setEventListeners();
+  }
+
+  setEventListeners() {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+      // Ajoutez ici l'écouteur pour le 'click' sur mobile
+      this.element.addEventListener("click", this.open.bind(this));
+
+     }
+    // else {
+    //   // Ajoutez ici les écouteurs pour 'mouseenter' et 'mouseleave' pour desktop
+    //   this.element.addEventListener("mouseenter", this.open.bind(this));
+    //   this.element.addEventListener("mouseleave", this.close.bind(this));
+    // }
   }
 
   open(event) {
