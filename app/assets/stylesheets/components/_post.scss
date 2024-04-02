@@ -9,7 +9,8 @@ height: 100vh;
   .contenu{
     display: inline-flex;
     width: 100%;
-    padding: 12px
+    padding: 12px;
+    height: 50vh;
   }
 }
 
@@ -189,6 +190,7 @@ height: 100vh;
 @media (max-width: 768px){
   .file-upload-wrapper{
   width: 50%;
+  text-align: center;
   }
 }
 .generateur-images{
@@ -239,10 +241,16 @@ height: 100vh;
 
   }
 
-  @media (max-width: 768px){
-    .generateur-images{
-    width: 50%;
-    }
+}
+
+@media (max-width: 768px){
+  .generateur-images{
+  display: flex;
+  flex-direction: column;
+
+  label{
+    padding: 0 12px
+  }
   }
 }
 
@@ -352,7 +360,8 @@ height: 12px;
     margin-left: 0;
     width: 100%;
     padding: 12px;
-    background: linear-gradient(90deg, rgba(28.77, 147.84, 255, 0.4) 0%, rgba(255, 0, 244.8, 0.4) 100% );
+    // opacity: 0.4;
+    // background: linear-gradient(90deg, rgba(28.77, 147.84, 255, 0.4) 0%, rgba(255, 0, 244.8, 0.4) 100% );
     position: relative;
 
   }

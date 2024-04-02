@@ -59,35 +59,6 @@ export default class extends Controller {
       document.body.classList.add("modal-open");
     }
 
-
-    // if (this.hasInfoTarget) {
-    //   console.log(this.infoTarget);
-    // this.infoTarget.classList.add("show");
-    // this.infoTarget.style.display = "block";
-    // this.infoTarget.removeAttribute("aria-hidden");
-    // this.infoTarget.setAttribute("aria-modal", "true");
-    // this.infoTarget.setAttribute("role", "dialog");
-    // }
-
-    // if (this.hasPhotoTarget) {
-    //   this.photoTarget.classList.add("show");
-    //   this.photoTarget.style.display = "block";
-    //   this.photoTarget.removeAttribute("aria-hidden");
-    //   this.photoTarget.setAttribute("aria-modal", "true");
-    //   this.photoTarget.setAttribute("role", "dialog");
-    //   }
-
-
-    // if (this.hasIaTarget) {
-    //   this.iaTarget.classList.add("show");
-    //   this.iaTargetTarget.style.display = "block";
-    //   this.iaTarget.removeAttribute("aria-hidden");
-    //   this.iaTarget.setAttribute("aria-modal", "true");
-    //   this.iaTarget.setAttribute("role", "dialog");
-    //   }
-
-
-
   }
 
   close() {

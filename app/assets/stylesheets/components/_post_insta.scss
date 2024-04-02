@@ -346,7 +346,7 @@
   .gnration-de-la{
     display: grid;
     grid-template-columns: 1fr;
-    margin-top: 20vh;
+    // margin-top: 20vh;
   }
 }
 
@@ -410,8 +410,8 @@ display: inline-block;
 }
 @media (max-width: 768px){
   .bouton-images{
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
   }
 }
 
@@ -423,7 +423,7 @@ display: inline-block;
 
   @media (max-width: 768px) {
     display: grid;
-    grid-template-columns:1fr;
+    grid-template-columns:1fr 1fr;
     // grid-auto-rows: minmax(100px, auto); /* Ajustez 100px à la hauteur minimale désirée */
     gap: 8px;
     width: 100%;
@@ -455,7 +455,7 @@ display: inline-block;
   transition: background-color ease-in-out 0.3s;
 
   @media (max-width: 768px){
-    font-size: 16px;
+    font-size: 12px;
   }
 
 }
@@ -483,11 +483,11 @@ display: inline-block;
   position: relative;
   display: inline-block;
 
-  @media (max-width: 768px){
-    display: grid;
-    grid-template-columns: 1fr;
-    width:100%
-  }
+  // @media (max-width: 768px){
+  //   display: grid;
+  //   grid-template-columns: 1fr 1fr;
+  //   width:100%
+  // }
 
 }
 
@@ -495,7 +495,7 @@ display: inline-block;
   border-radius: 4px;
 
   @media (max-width: 768px){
-    width:300px;
+    width:150px;
   }
 
  }
@@ -578,8 +578,10 @@ display: inline-block;
   transition: transform 0.3s ease, visibility 0s linear 0.3s;
 
   @media (max-width: 768px){
-    left: 150px;
-    top: 150px;
+    left: 75px;
+    top: 75px;
+    display: block;
+    background-color: black;
   }
 }
 
@@ -594,8 +596,8 @@ display: inline-block;
   backdrop-filter: blur(10px);
 
   @media (max-width: 768px){
-    top: 150px;
-    left: 150px;
+    top: 75px;
+    left: 75px;
   }
 }
 
@@ -643,7 +645,7 @@ display: inline-block;
 
     @media (max-width: 768px){
       top: 10px;
-      left: 270px;
+      // left: 270px;
     }
   }
 
@@ -703,7 +705,6 @@ display: inline-block;
 
 .file-upload-wrapper-show {
   display: flex;
-  width: 126px;
   align-items: center;
   justify-content: center;
   padding: 8px;
@@ -731,7 +732,7 @@ display: inline-block;
     cursor: pointer;
 
     @media (max-width: 768px){
-      font-size: 16px;
+      font-size: 12px;
     }
   }
 
@@ -741,6 +742,8 @@ display: inline-block;
   }
 
 }
+
+
 
 // .file-upload-wrapper-show:hover {
 //   color:  #FD972C;
@@ -1208,6 +1211,8 @@ box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
   @media (max-width: 768px){
     width: 100%;
     display: block;
+    overflow:visible;
+    padding: 12px;
   }
 }
 
@@ -1217,7 +1222,14 @@ box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
   height: 1566px;
   top: -292px;
   left: -448px;
+
+  @media (max-width: 768px){
+   height: 100vh;
+   width:100%
+  }
 }
+
+
 
 .overlap-group-2 {
   position: relative;
@@ -1259,12 +1271,6 @@ box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
   background: linear-gradient(180deg, rgba(229.49, 242.92, 255, 0.73) 52.93%, rgba(229.49, 242.92, 255, 0) 95.2%);
 }
 
-@media (max-width: 768px){
-  .view-insta{
-  width: 100%;
-  padding: 12px
-  }
-}
 
 .view-insta-boutons{
   display: flex;
