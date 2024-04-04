@@ -1,7 +1,7 @@
 <%# "app/views/payments/_product.html.erb" %>
 
-<%= link_to subscription_payments_checkout_path(subscription) do %>
-  <div class="col-4">
+<%= link_to subscription_payments_checkout_path(subscription), class:"col-4" do %>
+  <div>
     <h4>
       <%= subscription.name %>
     </h4>

@@ -135,6 +135,8 @@
 #                stripe_price_id: "price_1OvzQUGGbOzXfEYBgVyFme6b",
 #                subscribe_type: "tous les 3 mois")
 
+
+
 Subscription.create!(name: "Offre spéciale Eazia 1.0",
 description: "Bénéficiez de l'offre spéciale pour la sortie de la version 1.0 d'Eazia. 6 mois d'abonnement Premium au prix unique de 19.00 €. Aucun paiement mensuel supplémentaire n'est requis ! 100 jetons crédités mensuellement dans votre porte-monnaie.",
 price: 19,
@@ -148,6 +150,18 @@ price: 59,
 mode: "subscription",
 duration: "mois",
 stripe_price_id: "price_1Ovh26GGbOzXfEYBtvoxZqXs")
+
+Product.create!(name: "Starter Pack - 30 jetons",
+price: 19,
+description: "30 jetons crédités dans votre porte-monnaie. Le pack idéal pour débuter et découvrir l'ensemble des fonctionnalités d'Eazia.",
+mode: "payment",
+stripe_price_id: "price_1OvgwEGGbOzXfEYBDiBtOljC")
+
+Product.create!(name: "Ultimate Pack - 100 jetons",
+price: 59,
+description: "100 jetons crédités dans votre porte-monnaie. Le pack ultime pour les utilisateurs réguliers d'Eazia. La puissance de l'IA n'a pas de secret pour vous.",
+mode: "payment",
+stripe_price_id: "price_1OvgwiGGbOzXfEYBpp6pZnCM")
 
 # Subscription.create!(name: "Offre spéciale Eazia 1.0",
 # description: "Bénéficiez de l'offre spéciale pour la sortie de la version 1.0 d'Eazia. 6 mois d'abonnement Premium au prix unique de 19.00 €. Aucun paiement mensuel supplémentaire n'est requis ! 100 jetons crédités mensuellement dans votre porte-monnaie.",
