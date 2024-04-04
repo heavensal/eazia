@@ -9,6 +9,13 @@ Rails.application.routes.draw do
     get 'payments/cancel'
   end
 
+  get 'cart', to: 'payments#index', as: 'cart'
+
+  resources :subscriptions, only: [:index] do
+    get 'payments/checkout'
+    get 'payments/success'
+    get 'payments/cancel'
+  end
 
   devise_for :users
   put 'users/update_token', to: 'users#update_token', as: 'update_user_token'

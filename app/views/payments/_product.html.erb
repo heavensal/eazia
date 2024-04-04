@@ -1,13 +1,12 @@
-<%# "products/_card-product.html.erb" %>
+<%# "app/views/payments/_product.html.erb" %>
 
 <%= link_to product_payments_checkout_path(product) do %>
-  <div class="card">
+  <div class="col-4">
     <h4>
       <%= product.name %>
     </h4>
     <h5>
       <%= product.price %> €
-      <%= product.mode == "subscription" ? product.subscribe_type : "" %>
     </h5>
     <p>
       <% if product.amount %>

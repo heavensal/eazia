@@ -4,15 +4,16 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
-         :recoverable, :rememberable, :validatable, :omniauthable,omniauth_providers: %i[facebook]
+  :recoverable, :rememberable, :validatable
 
   has_many :posts, dependent: :destroy
   has_one :instagram_account, dependent: :destroy
-  has_one :wallet, dependent: :destroy
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :company, presence: true
+  # after_create -> { add_tokens(10) }
+  # validates :tokens, presence: true, numericality: { greater_than_or_equal_to: 0 }
+  # validates :first_name, presence: true
+  # validates :last_name, presence: true
+  # validates :company, presence: true
   # validates :status, inclusion: { in: %w(admin premium freemium) }
 
   def user_thread
@@ -33,9 +34,8 @@ class User < ApplicationRecord
     create_instagram_account
   end
 
-  def initialize_wallet
-    create_wallet
-  end
+  ##################################################
+  # STATUS
 
   def admin?
     self.status == "admin"
@@ -54,12 +54,48 @@ class User < ApplicationRecord
   end
 
   def premium!
+    self.gold_for_premium
     self.update!(status: "premium") unless self.admin?
   end
 
   def freemium!
     self.update!(status: "freemium")
   end
+  ##################################################
+
+
+  ##################################################
+  # STATUS
+
+  def wallet_empty?
+    self.wallet.zero?
+  end
+
+  def add_gold(amount)
+    self.update!(wallet: self.wallet + amount)
+  end
+
+  def remove_gold(amount)
+    self.update!(wallet: self.wallet - amount)
+  end
+
+  def enough_gold?(amount)
+    self.wallet >= amount
+  end
+
+  def gold_for_freemium
+    add_gold(10)
+  end
+
+  def gold_for_premium
+    add_gold(100)
+  end
+
+  def force_gold(amount)
+    self.update!(wallet: amount)
+  end
+
+  ##################################################
 
 end
 

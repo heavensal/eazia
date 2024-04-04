@@ -1,7 +1,7 @@
 class GptCreation < ApplicationRecord
   belongs_to :post
 
-  before_create :consume_token
+  before_create :consume_wallet
 
   # validates :description, presence: true, length: { maximum: 2200 }
 
@@ -10,8 +10,8 @@ class GptCreation < ApplicationRecord
     create(description: description, post: post)
   end
 
-  def consume_token
-    self.post.user.wallet.remove_tokens(1)
+  def consume_wallet
+    self.post.user.remove_gold(1)
   end
 
   private

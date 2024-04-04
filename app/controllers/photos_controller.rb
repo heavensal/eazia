@@ -11,7 +11,6 @@ class PhotosController < ApplicationController
       params[:post][:photos].each do |photo|
         filename = "image_#{Time.now.to_i}.jpeg"
         @post.photos.attach(photo)
-        select_new_photo(@post)
       end
     end
     if @post.save

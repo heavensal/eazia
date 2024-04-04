@@ -36,10 +36,10 @@
 
 
 
-   <%= link_to products_path do %>
+   <%= link_to cart_path do %>
      <div class="nouvelle-publication-wrapper">
        <div class="div-2-sidebar">
-         <div class="text-wrapper-4"><%= current_user.wallet.tokens %>
+         <div class="text-wrapper-4"><%= @wallet %>
         </div>
         <div class="text-wrapper-4"><%= current_user.status %>
          </div>

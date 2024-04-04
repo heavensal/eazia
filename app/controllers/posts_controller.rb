@@ -6,7 +6,6 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @tokens = current_user.wallet.tokens
   end
 
   require 'timeout'
@@ -21,7 +20,8 @@ class PostsController < ApplicationController
         redirect_to post_path(@post)
       end
       PhotoJob.perform_later(@post.id)
-    rescue
+    rescue => e
+      logger.error "Une erreur s'est produite : #{e.message}"
       redirect_to new_post_path, alert: "Suite à une erreur de l'IA, votre post n'a pas été créé. Merci de réessayer ultérieurement."
     end
   end

@@ -2,7 +2,7 @@ class Dalle3Image < ApplicationRecord
   require 'open-uri'
   belongs_to :post
 
-  before_create :consume_token
+  before_create :consume_wallet
   after_create :add_photo
 
   def add_photo
@@ -15,7 +15,7 @@ class Dalle3Image < ApplicationRecord
     end
   end
 
-  def consume_token
-    self.post.user.wallet.remove_tokens(1)
+  def consume_wallet
+    self.post.user.remove_gold(1)
   end
 end
