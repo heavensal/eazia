@@ -1,18 +1,18 @@
-<h3 class="text-center my-5">
+<h2 class="text-center my-5">
   Nos packs de jetons
-</h3>
+</h2>
 
-<section class="row d-flex">
+<section class="row justify-content-center gap-5">
   <% @products.each do |product| %>
     <%= render "payments/product", product: product %>
   <% end %>
 </section>
 
-<h3 class="text-center my-5">
+<h2 class="text-center my-5">
   Nos abonnements
-</h3>
+</h2>
 
-<section class="row">
+<section class="row justify-content-center gap-5">
     <% @subscriptions.each do |subscription| %>
       <%= render "payments/subscription", subscription: subscription %>
     <% end %>

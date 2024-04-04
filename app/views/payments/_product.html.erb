@@ -2,12 +2,12 @@
 
 <%= link_to product_payments_checkout_path(product), class:"col-4" do %>
   <div>
-    <h4 class="text-center">
-      <%= product.name %>
-    </h4>
     <h5 class="text-center">
-      <%= product.price %> €
+      <%= product.name %>
     </h5>
+    <h6 class="text-center">
+      <%= product.price %> €
+    </h6>
     <p>
       <% if product.amount %>
         <%= product.amount %>

@@ -2,14 +2,14 @@
 
 <%= link_to subscription_payments_checkout_path(subscription), class:"col-4" do %>
   <div>
-    <h4>
+    <h5 class="text-center">
       <%= subscription.name %>
-    </h4>
-    <h5>
+    </h5>
+    <h6 class="text-center">
       <%= subscription.price %> €
        /
       <%= subscription.duration %>
-    </h5>
+    </h6>
     <p>
       <%= subscription.description %>
     </p>
