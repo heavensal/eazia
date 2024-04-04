@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  after_create :user_thread, :initialize_wallet, :initialize_instagram
+  after_create :user_thread, :initialize_instagram
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
