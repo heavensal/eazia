@@ -1,7 +1,14 @@
-<h1>Payments#cancel</h1>
-<p>Find me in app/views/payments/cancel.html.erb</p>
+<section class="text-center">
+  <h1 class="my-5">
+    Il semblerait que vous ayez eu un problème ?
+  </h1>
 
-<p>
-  quelque chose s'est mal passé ? Souhaiteriez-vous retenter ?
-  <%= link_to "Accueil", root_path %>
-</p>
+  <p class="my-5">
+    Contactez notre service client pour obtenir de l'aide.
+    <%= mail_to "contact@eazia.fr", "Contacter le service client", class: "btn btn-primary" %>
+  </p>
+
+  <div class="text-center">
+    <%= link_to "Revenir à l'accueil", new_post_path, class: "btn btn-primary" %>
+  </div>
+</section>

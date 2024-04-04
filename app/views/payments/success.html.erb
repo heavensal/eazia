@@ -1,8 +1,13 @@
-<h1>Payments#success</h1>
-<p>Find me in app/views/payments/success.html.erb</p>
-<section>
-  <p>
-    Merci d'avoir acheté
-    <a href="mailto:orders@example.com">orders@example.com</a>.
+<section class="text-center">
+  <h1 class="my-5">
+    Merci pour votre achat !
+  </h1>
+
+  <p class="my-5">
+    Votre porte-monnaie a été crédité des jetons achetés.
   </p>
+
+  <div class="text-center">
+    <%= link_to "Revenir à l'accueil", new_post_path, class: "btn btn-primary" %>
+  </div>
 </section>

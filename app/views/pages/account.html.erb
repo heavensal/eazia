@@ -21,9 +21,7 @@
       <p> <%= @user.first_name %></p>
       <p> <%= @user.company %></p>
       </div>
-      <div class="account-column">
-      <p> <%= @user.instagram %></p>
-      </div>
+
         <% if @user.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(@user.errors.count, "error") %> empêchent cette mise à jour :</h2>
