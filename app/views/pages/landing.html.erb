@@ -1,13 +1,6 @@
-
-
-<%# La landing page par EMMA %>
-<div>
-
-<%# Comportement de la navbar a revoir, surement au niveau des nommages de class et id, tu rentres surement en conflit avec le css de base %>
-
-<!-- ########################################################################
+<div class="landcontent">
         <nav>
-          <div class="bar-nav menu">
+          <div class="bar-nav landmenu">
             <div class="logo">
               <%= image_tag 'landing/logo.svg', alt: "Logo Eazia", id: "logo" %>
             </div>
@@ -17,17 +10,17 @@
                 <li><a href="#Dashboard">Dashboard</a></li>
                 <li><a href="#Fonctionnement">Fonctionnement</a></li>
                 <li><a href="#Prix">Prix</a></li>
-                <li><a href="#Contact">Contact</a></li>
+                <%# <li><a href="#Contact">Contact</a></li> %>
               </ul>
             </div>
             <div class="button-nav">
-              <li class="button-demo"><a href="#contact">Demo</a></li>
-              <li class="main-button"><%= link_to 'connexion', new_user_session_path %></li>
+              <%# <li class="button-demo"><a href="#contact">Demo</a></li> %>
+              <%=link_to new_user_session_path do%>
+                <li class="main-button">Essayer gratuitement</li>
+              <%end%>
             </div>
           </div>
-        </nav>
 
-        <nav>
           <div class="menu-responsive">
 
             <div class="bar-nav">
@@ -37,22 +30,26 @@
 
               <div class="resp">
                 <button class="openbtn" onclick="openNav()"><%= image_tag 'landing/dropdown.svg'%></button>
-                <div id="mySidebar" class="sidebar show">
+                <div id="mySidebar" class="sidebarresp show">
                   <div class="liste">
                     <ul>
                       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                       <li><a href="#Dashboard" onclick="closeNav()">Dashboard</a></li>
                       <li><a href="#Fonctionnement" onclick="closeNav()">Fonctionnement</a></li>
                       <li><a href="#Prix" onclick="closeNav()">Prix</a></li>
-                      <li><a href="#Contact" onclick="closeNav()">Contact</a></li>
+                      <%# <li><a href="#Contact" onclick="closeNav()">Contact</a></li> %>
                     </ul>
                   </div>
                 </div>
 
                 <div class="button-nav">
-                  <li class="main-button">
-                    <a href="#contact"> <%= image_tag 'landing/baguette.svg', alt: "1" %> Essayer </a>
-                  </li>
+
+                    <%= link_to new_user_session_path do %>
+                      <li class="main-button">
+                        <%= image_tag 'landing/baguette.svg', alt: "1" %> Essayer
+                      </li>
+                    <%end%>
+
                 </div>
 
               </div>
@@ -60,13 +57,7 @@
           </div>
         </nav>
 
-############################################################################ -->
-
         <section id ="intro">
-
-          <div class="text-center my-5">
-            <%= link_to 'connexion', new_user_session_path, class:'btn btn-primary' %>
-          </div>
 
           <div class="section-1">
               <div class="titreintro">
@@ -81,7 +72,9 @@
               <h2> Générateur de contenus pour les réseaux sociaux par l'IA</h2>
 
               <%# S'inscrire - #SEO il faut un btn %>
-              <p class="intro-button"><%= link_to 'Tester gratuitement', new_user_registration_path %></p>
+              <%= link_to new_user_registration_path, class: "intro-btn" do %>
+                <p class="intro-button">Tester gratuitement</p>
+              <%end%>
 
             </div>
 
@@ -122,7 +115,7 @@
               <p>Création illimitée</p>
             </div>
             <h1>Optimisez votre stratégie Instagram avec EAZIA</h1>
-            <%= image_tag 'landing/Insta.png', alt: "Insta", class: "insta" %>
+            <%= image_tag 'landing/Insta.png', alt: "Insta", class: "instalanding" %>
           </div>
 
         </section>
@@ -155,7 +148,11 @@
                       <h3>Freemium</h3>
                       <p class="price" data-landing--offer-target="pricemensuf pricetrimf priceanuf"><span class="prix">0€</span><span>/mois</span></p>
                     </div>
-                    <p class="price-button">Choisir</p>
+                    <%= link_to cart_path do %>
+                      <p class="price-button">
+                        Choisir
+                      </p>
+                    <%end%>
                     <div class="pricecomponents">
 
                       <div class="pricecomponent">
@@ -189,7 +186,11 @@
                       <p class="price" data-landing--offer-target="pricetrimb priceanub pricemensub"><span class="prix prixbarre">19€</span><span>/mois</span> <i class="fa-solid fa-arrow-right"></i><span class="lancement prix">19€</span><span class="lancement"> pour 6 mois !</span></p>
                     </div>
 
-                    <p class="price-button">Choisir</p>
+                    <%= link_to cart_path do %>
+                      <p class="price-button">
+                        Choisir
+                      </p>
+                    <%end%>
 
                     <div class="pricecomponents">
 
@@ -227,7 +228,11 @@
                       <h3>PREMIUM</h3>
                       <p class="price" data-landing--offer-target="pricetrimp priceanup pricemensup" ><span class="prix">59€</span><span>/mois</span></p>
                     </div>
-                    <p class="price-button">Choisir</p>
+                    <%= link_to cart_path do %>
+                      <p class="price-button">
+                        Choisir
+                      </p>
+                    <%end%>
                     <div class="pricecomponents">
                       <div class="pricecomponent"><%= image_tag 'landing/jeton.svg', alt: "Icône jeton" %><p>100 Jetons disponibles pour créer des posts*</p></div>
                       <div class="pricecomponent"><%= image_tag 'landing/folder.svg', alt: "Icône dossier" %><p>Entre 6 et 24 posts/mois</p></div>
@@ -238,7 +243,7 @@
                   </div>
                 </div>
               </div>
-              <p style="color: #B0B0B0; font-size: 14px;" class="asterisque">* 1 image = 1 jeton / 1 description = 1 jeton</p>
+              <p style="color: #B0B0B0; font-size: 14px; padding-left: 20px;" class="asterisque">* 1 image = 1 jeton / 1 description = 1 jeton</p>
             </div>
 
             <!-- <div class="title">
@@ -352,12 +357,13 @@
 .main-button{
   display: flex;
   padding: 8px 12px;
-  flex-direction: column;
   align-items: center;
   border-radius: 4px;
-
   background: linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
   box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
+  img{
+    margin-right:5px;
+  }
 }
 
 .button-demo{
@@ -384,9 +390,13 @@
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
-  }
+}
 
-.price-button{
+.intro-btn{
+  width:auto;
+}
+
+.price-button {
   display: flex;
   width: 100%;
   padding: 12px 48px;
@@ -506,7 +516,7 @@
   border-radius: 20px;
   border: 2px solid #FFF;
   max-width: 400px;
-  height: 450px;
+  height: 570px;
 }
 
 .cardprice p, .cardprice h1 {
@@ -630,7 +640,7 @@ gap: 20px;
   backdrop-filter: blur(10px);
   margin-bottom: 128px;
   margin-top: 40px;
-  width: 26%;
+  width: 35%;
 }
 
 .cardprice {
@@ -663,7 +673,7 @@ gap: 20px;
    }
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 890px) {
   .cardgain{
     width: 70%;
   }
@@ -710,7 +720,7 @@ gap: 20px;
   display: none;
 }
 
-.sidebar {
+.sidebarresp {
   height: auto;
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed;
@@ -725,7 +735,7 @@ gap: 20px;
 }
 
 
-.sidebar a {
+.sidebarresp a {
   padding: 8px 8px 8px 8px;
   text-decoration: none;
   font-size: 70px;
@@ -736,10 +746,9 @@ gap: 20px;
 }
 
 /* Position and style the close button (top right corner) */
-.sidebar .closebtn {
+.sidebarresp .closebtn {
   position: absolute;
   top: 0;
-  right: 25px;
   font-size: 50px;
   margin-left: 50px;
 }
@@ -774,14 +783,14 @@ gap: 20px;
     display: flex;
     transition: margin-right .5s;
   }
-  .sidebar {
+  .sidebarresp {
     padding-top: 70px;
   }
-  .sidebar a {
+  .sidebarresp a {
     font-size: 20px;
   }
 
-  .menu{
+  .bar-nav.landmenu{
     display: none;
   }
 
@@ -878,6 +887,8 @@ gap: 28px;
   line-height: 28px;
   margin-bottom: 0 !important;
   text-align: center;
+  padding-left:20px;
+  padding-right:20px;
  }
 }
 
@@ -898,6 +909,8 @@ gap: 28px;
     font-weight: 700;
     line-height: normal;
     margin-top: 0;
+    padding-left: 0px;
+    padding-right: 0px;
    }
 }
 
@@ -977,10 +990,17 @@ nav {
   background: rgba(255, 255, 255, 0.20);
   backdrop-filter: blur(6px);
   width: 100%;
+  max-width: 100%;
   height: auto;
-  position: absolute;
+  position: sticky;
+  right:0;
+  top:0;
+  left:0;
+  z-index: 900;
 }
-
+nav.landmenu{
+  height:80px;
+}
 .liste ul {
   display: inline-flex;
   align-items: center;
@@ -988,6 +1008,7 @@ nav {
   gap: 40px;
   list-style-type: none;
   text-decoration: none;
+  margin-bottom: 0;
 }
 
 .bar-nav {
@@ -1015,7 +1036,7 @@ nav {
   line-height: 24px;
 }
 
-.main-button a {
+a .main-button {
   color: #FFF;
   font-family: Inter;
   font-size: 16px;
@@ -1064,11 +1085,6 @@ nav {
     gap: 20px;
     list-style-type: none;
     text-decoration: none;
-  }
-
-  nav{
-    position: fixed;
-    z-index: 1000;
   }
 
 }
@@ -1127,6 +1143,7 @@ nav {
 /* *********************************** */
 
 /* style.css */
+
 p{
 color: #000;
 font-family: Inter;
@@ -1189,6 +1206,8 @@ h1 {
   line-height: 120% !important;
   margin-bottom: 0 !important;
   text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 h3 {
@@ -1212,7 +1231,7 @@ h4{
   line-height: 20px;
 }
 
-.insta{
+.instalanding{
   width: 107%;
   margin-top: 80px;
   margin-bottom: 128px;
@@ -1227,10 +1246,16 @@ h4{
   border-width: 2px;
   border-style: solid;
   border-color: transparent;
+  margin-left:20px;
+  margin-right:20px;
 }
 
 .section{
   width: 100% !important;
+}
+
+a{
+  width:100%;
 }
 
 
@@ -1238,7 +1263,7 @@ h4{
   .section-1{
     padding-top: 80px;
   }
-  .insta{
+  .instalanding{
     width: 200%;
   }
 }
