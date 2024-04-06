@@ -2,6 +2,28 @@
   Admin Mode - Utilisateurs d'Eazia
 </h1>
 
+<section class="row" id="big-wallets-action">
+  <div class="col-md-4">
+    <div class="d-flex justify-content-center">
+      <%= link_to 'FREEMIUM +10 ?', increase_wallets_10_admin_users_path, turbo_method: :post, class: 'btn btn-primary', data: { turbo_method: :patch , turbo_confirm: 'Êtes-vous sûr de vouloir augmenter les freemiums de 10 crédits ?' } %>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="d-flex justify-content-center">
+      <%= link_to 'BEGINNER +30 ?', increase_wallets_30_admin_users_path, turbo_method: :post, class: 'btn btn-primary', data: { turbo_method: :patch , turbo_confirm: 'Êtes-vous sûr de vouloir augmenter les beginners de 30 crédits ?' } %>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="d-flex justify-content-center">
+      <%= link_to 'PREMIUM +100 ?', increase_wallets_100_admin_users_path, turbo_method: :post, class: 'btn btn-primary', data: { turbo_method: :patch , turbo_confirm: 'Êtes-vous sûr de vouloir augmenter les premiums de 100 crédits ?' } %>
+    </div>
+  </div>
+
+
+
+</section>
 <table class="table">
 
   <thead>

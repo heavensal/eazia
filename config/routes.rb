@@ -66,7 +66,11 @@ Rails.application.routes.draw do
   ##############################
   # ADMIN
   namespace :admin do
-    resources :users, only: [:index, :show, :edit, :update, :destroy]
+    resources :users, only: [:index, :show, :edit, :update, :destroy] do
+      patch 'increase_wallets_10', on: :collection
+      patch 'increase_wallets_30', on: :collection
+      patch 'increase_wallets_100', on: :collection
+    end
     resources :posts, only: [:index, :show, :edit, :update, :destroy]
     resources :gpt_creations, only: [:index, :show]
     resources :instagram_accounts, only: [:index, :show]
