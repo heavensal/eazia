@@ -2,11 +2,14 @@
 <html>
   <head>
     <title>Eazia</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta charset="UTF-8">
     <meta name="turbo-refresh-method" content="morph">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
@@ -14,21 +17,22 @@
     <%= render 'layouts/scripts/hotjar' %>
   </head>
 
- <body class="<%= 'user-logged-in' if user_signed_in? %>">
-  <%= render_navbar %>
+  <body <% if user_signed_in? %> class="user-logged-in" <% end %>>
+    <% unless @landing_page %> <!-- condition pour vérifier si ce n'est pas la landing page -->
+      <%= render_navbar %>
+    <% end %>
 
-  <%= render 'layouts/flashes' %>
+    <%= render 'layouts/flashes' %>
 
-  <div class="content">
-    <%= render 'layouts/background/ellipse' %>
+    <% unless @landing_page %> <!--condition pour vérifier si ce n'est pas la landing page -->
+      <div class="content">
+        <%= render 'layouts/background/ellipse' %>
+    <% end %>
+
     <%= yield %>
-  </div>
 
-  <%# <% if user_signed_in? %>
-    <%# <div class="footer"> %>
-      <%# <%= render 'layouts/footer'%>
-    <%# </div> %>
-  <%# <% end %>
-</body>
-
+    <% unless @landing_page %> <!-- Fermeture de la condition pour vérifier si ce n'est pas la landing page -->
+      </div>
+    <% end %>
+  </body>
 </html>

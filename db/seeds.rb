@@ -188,3 +188,5 @@ stripe_price_id: "price_1OvzMLGGbOzXfEYBkzZDqlXO")
 # mode: "payment",
 # duration: "Durant 6 mois",
 # stripe_price_id: "price_1P1ZSkGGbOzXfEYBaSg77JyE")
+
+User.create(email: 'test@example.com', password: '123456', confirmed_at: Time.now)
