@@ -1,27 +1,67 @@
-<!--
-<div data-controller="facebook-login">
-   <div class="modal fade" id="facebookLoginModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-custom" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalLabel">Connexion Facebook</h5>
-          <p>Pour continuer vous devez vous connecter à Facebook</p>
-          <%# <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button> %>
-        </div>
-        <div class="modal-body">
 
-          <div id="user-info" data-controller="facebook">
-            <button data-facebook-target="button" data-action="click->facebook#facebookLogin" class="btn-primary">
-              Se connecter
-            </button>
-            <div data-facebook-target="user" class="w-50 mx-auto"></div>
+<% if current_user.premium? || current_user.admin? %>
+
+  <div data-controller="facebook">
+    <div class="modal fade" id="facebookLoginModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+
+            <%# SEO très mauvais %>
+            <h5 class="modal-title" id="modalLabel">Vos réseaux Sociaux</h5>
+            <p>Connectez vous aux réseaux de votre choix pour publier</p>
+            <%# <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button> %>
+          </div>
+
+          <div class="modal-body my-3">
+
+            <div id="user-info">
+              <button class="facebook-login-btn" data-facebook-target="button" data-action="click->facebook#facebookLogin">
+                  <i class="fab fa-facebook-f"></i> Se connecter à Meta
+              </button>
+              <div data-facebook-target="user" class="w-50 mx-auto"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
--->
+  <style>
+    .facebook-login-btn {
+      background-color: #1877F2; /* Couleur bleue de Facebook */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      cursor: pointer;
+      font-size: 16px;
+  }
+
+  .facebook-login-btn i {
+      margin-right: 10px; /* Espace entre l'icône et le texte */
+  }
+
+  .facebook-login-btn:hover {
+      background-color: #165db1; /* Légèrement plus foncé lorsque survolé */
+  }
+
+  .fb-disabled {
+      background-color: #D0E0FB; /* Un bleu clair pour rester dans le thème de Facebook */
+      color: #8A9BA8; /* Une couleur de texte plus claire pour indiquer que le bouton est désactivé */
+      cursor: not-allowed; /* Curseur de souris indiquant l'interdiction */
+      border: 1px solid #B4C6E7; /* Une bordure légère pour le bouton désactivé */
+      padding: 10px 20px; /* Padding pour la taille du bouton */
+      text-align: center; /* Centrer le texte dans le bouton */
+      border-radius: 5px; /* Bords arrondis */
+      font-size: 16px; /* Taille de texte appropriée */
+      display: inline-block; /* Pour permettre le padding et les bordures */
+  }
+
+  </style>
+
+<% end %>

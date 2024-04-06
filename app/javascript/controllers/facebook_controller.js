@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
-
+import * as bootstrap from "bootstrap";
 
 // PLUSIEURS ETAPES DANS LA CONNEXION VERS FACEBOOK
 // 1. On charge le SDK Facebook
@@ -16,6 +16,7 @@ export default class extends Controller {
   static targets = ['user', 'button']
 
   connect() {
+    new bootstrap.Modal(document.getElementById('facebookLoginModal')).show();
     this.loadFacebookSDK();
   }
 
@@ -35,12 +36,13 @@ export default class extends Controller {
         if (response.status === 'connected') {
           FB.api('/me', function(response) {
             that.buttonTarget.innerHTML = 'Vous êtes bien connecté sur le compte Facebook liée à ' + response.name + '.';
-            that.buttonTarget.classList.add('disabled');
+            that.buttonTarget.disabled = true;
+            that.buttonTarget.classList.add('fb-disabled');
             let token = FB.getAuthResponse().accessToken;
             that.update(token)
           });
         } else {
-          console.log('Vous n\'êtes pas connecté à Facebook.');
+          console.log("Vous n'êtes pas connecté à Facebook.");
         }
       });
       FB.AppEvents.logPageView();

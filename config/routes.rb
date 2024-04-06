@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
-  # root 'pages#landing'
-  root 'posts#new'
+  root 'pages#landing'
 
   resources :products, only: [:index] do
     get 'payments/checkout'
@@ -17,7 +16,9 @@ Rails.application.routes.draw do
     get 'payments/cancel'
   end
 
-  devise_for :users
+  devise_for :users, controllers: {
+        sessions: 'users/sessions'
+      }
   put 'users/update_token', to: 'users#update_token', as: 'update_user_token'
   resources :posts do
     member do
@@ -49,7 +50,6 @@ Rails.application.routes.draw do
   get 'pages/cgu'
   get 'pages/confidentialite'
   get 'pages/inscription'
-  get 'pages/landing'
 
   patch 'pages/update_account', to: 'pages#update_account', as: 'pages_update_account'
 
