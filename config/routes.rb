@@ -17,8 +17,10 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, controllers: {
-        sessions: 'users/sessions'
-      }
+    sessions: 'users/sessions'
+  }
+
+
   put 'users/update_token', to: 'users#update_token', as: 'update_user_token'
   resources :posts do
     member do
@@ -60,4 +62,13 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
   # Defines the root path route ("/")
   # root "posts#index"
+
+  ##############################
+  # ADMIN
+  namespace :admin do
+    resources :users, only: [:index, :show, :edit, :update, :destroy]
+    resources :posts, only: [:index, :show, :edit, :update, :destroy]
+    resources :gpt_creations, only: [:index, :show]
+    resources :instagram_accounts, only: [:index, :show]
+  end
 end

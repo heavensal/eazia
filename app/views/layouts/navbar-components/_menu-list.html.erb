@@ -48,4 +48,15 @@
      </div>
    <% end %>
 
+<% if current_user.admin? %>
+  <%= link_to admin_users_path do %>
+    <div class="nouvelle-publication-wrapper">
+      <div class="div-2-sidebar">
+        <%# image_tag("icon-admin.svg", alt:"admin") %>
+        <div class="text-wrapper-4">Admin-Mode</div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
 </div>

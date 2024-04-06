@@ -1,7 +1,7 @@
 
 <% if current_user.premium? || current_user.admin? %>
 
-  <div data-controller="facebook">
+  <div data-controller="facebook--facebook">
     <div class="modal fade" id="facebookLoginModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -18,7 +18,7 @@
           <div class="modal-body my-3">
 
             <div id="user-info">
-              <button class="facebook-login-btn" data-facebook-target="button" data-action="click->facebook#facebookLogin">
+              <button class="facebook-login-btn" data-facebook-target="facebook--button" data-action="click->facebook--facebook#facebookLogin">
                   <i class="fab fa-facebook-f"></i> Se connecter à Meta
               </button>
               <div data-facebook-target="user" class="w-50 mx-auto"></div>
