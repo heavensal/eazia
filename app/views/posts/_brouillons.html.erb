@@ -28,12 +28,13 @@
       <% post.photos.each.with_index do |img, i| %>
         <div class="carousel-item <%= 'active' if i.zero? %>">
         <%= link_to post_path(post) do %>
-          <%= cl_image_tag img.key, width: 370, height: 350 %>
+          <%= cl_image_tag img.key, :aspect_ratio=>"1:1", :crop=>"fill",
+          width: 370 %>
         <% end %>
         </div>
       <% end %>
 
-      <% if post.photos && post.photos.length < 1%>
+      <% if post.photos && post.photos.length < 1 %>
         <div class="no-image">
           <%= image_tag("aucune-image.webp") %>
         </div>
