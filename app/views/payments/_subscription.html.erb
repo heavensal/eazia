@@ -1,6 +1,6 @@
 <%# "app/views/payments/_product.html.erb" %>
 
-<%= link_to subscription_payments_checkout_path(subscription), class:"col-4" do %>
+<%= link_to subscription_payments_checkout_path(subscription), class:"subscription-card col-4" do %>
   <div>
     <h5 class="text-center">
       <%= subscription.name %>
@@ -16,3 +16,30 @@
   </div>
 
   <% end %>
+
+  <style>
+    /* Dans app/assets/stylesheets/application.css ou un autre fichier CSS */
+
+.subscription-card {
+  display: block;
+  background: linear-gradient(180deg, #FFF2F2 0.16%, #FFF 28.99%);
+  text-decoration: none;
+  color: black;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.subscription-card:hover {
+  transform: scale(1.05);
+}
+
+.subscription-card div {
+  padding: 16px;
+}
+
+.subscription-card h5, .subscription-card h6, .subscription-card p {
+  margin: 8px 0;
+}
+
+  </style>

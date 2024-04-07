@@ -57,6 +57,10 @@ class User < ApplicationRecord
       self.status == "premium"
     end
 
+    def beginner?
+      self.status == "beginner"
+    end
+
     def freemium?
       self.status == "freemium"
     end
@@ -68,6 +72,10 @@ class User < ApplicationRecord
     def premium!
       self.gold_for_premium
       self.update!(status: "premium") unless self.admin?
+    end
+
+    def beginner!
+      self.update!(status: "beginner")
     end
 
     def freemium!
