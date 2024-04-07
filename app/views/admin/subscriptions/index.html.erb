@@ -1,0 +1,37 @@
+<h1 class="text-center my-5">
+  Admin Mode - Abonnements
+</h1>
+
+<section class="row">
+
+  <% @subscriptions.each do |subscription| %>
+
+    <div class="col-md-4 p-5 my-3">
+
+        <h5 class="text-center">
+          <%= subscription.name %>
+        </h5>
+
+        <h6 class="text-center">
+          <%= subscription.price %> € / <%= subscription.duration %>
+        </h6>
+
+        <p>
+          <%= subscription.description %>
+        </p>
+
+        <div class="edit-buttons row">
+              <div class="col-md-6 text-center">
+                <%= link_to 'Modifier', edit_admin_subscription_path(subscription), class: "btn btn-outline-warning" %>
+              </div>
+
+              <div class="col-md-6 text-center">
+                <%= link_to 'Supprimer', admin_product_path(subscription), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le produit d'abonnement ?"}, class: "btn btn-danger" %>
+              </div>
+        </div>
+
+    </div>
+
+  <% end %>
+
+</section>

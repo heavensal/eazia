@@ -3,6 +3,9 @@ class Admin::BaseController < ApplicationController
   before_action :authenticate_user!  # Assure-toi que l'utilisateur est connecté
   before_action :check_admin         # Vérifie que l'utilisateur est un admin
 
+  def dashboard
+  end
+
   private
 
   def check_admin

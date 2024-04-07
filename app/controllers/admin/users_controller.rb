@@ -4,8 +4,6 @@ class Admin::UsersController < Admin::BaseController
     @users = User.order(first_name: :asc)
   end
 
-
-
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.includes(:gpt_creation).order(created_at: :desc).with_attached_photos

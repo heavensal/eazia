@@ -1,0 +1,35 @@
+<h1 class="text-center my-5">
+  Admin Mode - Produits
+</h1>
+
+<section class="row">
+
+  <% @products.each do |product| %>
+
+  <div class="col-md-4 p-5 my-3">
+
+      <h5 class="text-center">
+        <%= product.name %>
+      </h5>
+      <h6 class="text-center">
+        <%= product.price %> €
+      </h6>
+
+      <p>
+        <%= product.description %>
+      </p>
+
+        <div class="edit-buttons row">
+              <div class="col-md-6 text-center">
+                <%= link_to 'Modifier', edit_admin_product_path(product), class: "btn btn-outline-warning" %>
+              </div>
+
+              <div class="col-md-6 text-center">
+                <%= link_to 'Supprimer', admin_product_path(product), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le produit ?"}, class: "btn btn-danger" %>
+              </div>
+        </div>
+
+  </div>
+
+  <% end %>
+</section>
