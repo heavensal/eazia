@@ -18,7 +18,7 @@
   border-color: var(--secondaryblackblack-50);
 }
 
-@media (max-width: 768px){
+@media screen and (max-width: 768px){
 .sidebar{
   display: none;
 }
@@ -136,6 +136,12 @@ box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
   width:100%;
 }
 
+.icon-basket img{
+  width: 16px;
+  height: 16px;
+  text-align: center;
+}
+
 // .sidebar .inner {
 //   display: flex;
 //   flex-direction: row;
@@ -199,7 +205,7 @@ box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
 }
 
 
-@media (max-width: 768px){
+@media screen and (max-width: 768px){
 
   .sidebar-responsive{
     display: flex;

@@ -190,3 +190,4 @@ stripe_price_id: "price_1OvzMLGGbOzXfEYBkzZDqlXO")
 # stripe_price_id: "price_1P1ZSkGGbOzXfEYBaSg77JyE")
 
 User.create(email: 'test@example.com', password: '123456', confirmed_at: Time.now)
+User.create(email: 'emma@example.com', password: '123456', confirmed_at: Time.now)
