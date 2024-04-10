@@ -130,8 +130,8 @@
                   <!-- onglets prix -->
                   <div class="button-prix">
                     <p class="btn-prix mensuel active" data-action="click->landing--offer#convertToMensuel">Mensuel</p>
-                    <p class="btn-prix trimestriel" data-action="click->landing--offer#convertToTrimester">Trimestriel -10%</p>
-                    <p class="btn-prix annuel" data-action="click->landing--offer#convertToAnnuel">Annuel -30%</p>
+                    <div class="btn-prix trimestriel" data-action="click->landing--offer#convertToTrimester"><div class="offrereduc">Trimestriel <div class="reduction">-10%</div></div></div>
+                    <div class="btn-prix annuel" data-action="click->landing--offer#convertToAnnuel"><div class="offrereduc">Annuel <div class="reduction">-30%</div></div></div>
                   </div>
                   <h1 class="lancement encadre">Offre de lancement !</h1>
                 </div>
@@ -355,9 +355,10 @@
   border-radius: 4px;
   background: linear-gradient(135deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
   box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
-  img{
-    margin-right:5px;
-  }
+}
+
+.main-button img{
+  margin-right:5px;
 }
 
 .button-demo{
@@ -500,6 +501,19 @@
   line-height: 18px !important;
 }
 
+.reduction{
+  border: black 0.5px solid;
+  border-radius: 5px;
+  font-size: 11px;
+  padding: 1px 2px;
+}
+
+.offrereduc{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
 .cardprice{
   flex-shrink: 1;
   display: flex;
@@ -553,17 +567,18 @@
   font-style: normal;
   font-weight: 500;
   line-height: 16px;
-   p {
-    background: var(--2, linear-gradient(135deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 16px;
-   }
+}
+
+.encadrepopulaire p {
+  background: var(--2, linear-gradient(135deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
 }
 
 .cardjeton p{
@@ -641,45 +656,20 @@ gap: 20px;
   flex: 1; /* Permet à toutes les cartes d'occuper un espace égal */
 }
 
-.card-lancement{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 28px;
-  padding: 60px;
-  margin-bottom: 128px;
-  border-radius: 12px;
-  background: #FEFEFE;
-  box-shadow: 0px 0px 59.7px 0px rgba(0, 0, 0, 0.06);
-  backdrop-filter: blur(10px);
-  background: linear-gradient(99deg, rgba(35, 61, 255, 0.12) 0.82%, rgba(225, 122, 255, 0.12) 38.59%, rgba(253, 151, 44, 0.12) 95.25%);
-  box-shadow: 0px 4px 10.9px 0px rgba(54, 54, 54, 0.4);
-   h1{
-    margin:0;
-   }
-   p{
-    color: black;
-    font-family: Inter;
-    font-size: 23px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
-   }
-}
 
 @media screen and (max-width: 890px) {
   .cardgain{
-    width: 70%;
+    width: 90%;
   }
 
   .cardprice{
-    max-width: 70%;
+    max-width: 90%;
   }
 
   .card{
     width: 100%; /* Assure que chaque carte occupe toute la largeur */
     margin-bottom: 20px; /* Ajoute un espacement entre les cartes */
-    max-width: 70%;
+    max-width: 90%;
   }
 
   .card  img{
@@ -692,13 +682,7 @@ gap: 20px;
     max-width: 100%;
   }
 
-  .card-lancement{
-    max-width: 70%;
-    p{
-      text-align: center;
-      line-height: 40px;
-    }
-  }
+
 }
 
 @media screen and (max-width: 1100px) and (min-width: 790px) {
@@ -873,7 +857,9 @@ gap: 20px;
 flex-direction: column;
 align-items: center;
 gap: 28px;
- h2{
+}
+
+.textintro h2, .titreintro h2{
   color: var(--Secondary-Black-black-300, #545454);
   font-family: Inter;
   font-size: 23px;
@@ -884,7 +870,6 @@ gap: 28px;
   text-align: center;
   padding-left:20px;
   padding-right:20px;
- }
 }
 
 .phraseintro{
@@ -895,18 +880,19 @@ gap: 28px;
   padding: 8px 16px;
   justify-content: center;
   align-items: center;
-   h1{
-    margin-bottom: 0;
-    color: #000;
-    font-family: Inter;
-    font-size: 52px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-top: 0;
-    padding-left: 0px;
-    padding-right: 0px;
-   }
+}
+
+.phraseintro h1{
+  margin-bottom: 0;
+  color: #000;
+  font-family: Inter;
+  font-size: 52px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 0;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 #logo{
@@ -946,14 +932,15 @@ max-width:80%;
   }
   .phraseintro{
     max-width: 80%;
-    h1{
-      color: #000;
-      font-family: Inter;
-      font-size: 18px !important;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 24px;
-    }
+  }
+
+  .phraseintro h1{
+    color: #000;
+    font-family: Inter;
+    font-size: 18px !important;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
   }
 
   #logo{
@@ -963,10 +950,10 @@ max-width:80%;
 
   .titreintro{
     max-width: 100%;
-    img{
-      width: 100%;
-      height: auto;
-    }
+  }
+  .titreintro img{
+    width: 100%;
+    height: auto;
   }
 }
 /* ************************************************** */
