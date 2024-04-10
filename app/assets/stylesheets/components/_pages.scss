@@ -121,7 +121,7 @@
   font-style: var(--titre-medium-h4-font-style);
   transition: background-color ease-in-out 0.3s;
 
-  @media (max-width: 768px){
+  @media screen and (max-width: 768px){
     display: none;
   }
 
@@ -154,7 +154,7 @@
     font-style: var(--titre-regular-h4-font-style);
   }
 
-  @media (max-width: 768px){
+  @media screen and (max-width: 768px){
     margin-top: 20px;
   }
 
@@ -169,7 +169,7 @@
   padding: 24px;
   width: 100%;
 
-  @media (max-width: 768px){
+  @media screen and (max-width: 768px){
 
     h3{
     display: none;

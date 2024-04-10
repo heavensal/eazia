@@ -4,6 +4,7 @@ export default class extends Controller {
   static targets = ["input", "error", "checkbox", "myErrorMessage", "prompt", "form"]
 
   connect() {
+    console.log("Connected to autorisation form controller");
     // Ajout des écouteurs existants
     this.inputTargets.forEach(input => {
       input.addEventListener('blur', this.validateField.bind(this));

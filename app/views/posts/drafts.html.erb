@@ -7,12 +7,12 @@
 
   <%= render "posts/brouillons", post: @post %>
 
-<% else %>
-    <div class="no-posts">
-      <p>Aucun brouillon n'est disponible pour le moment.</p>
-      <div class="main-bouton"><%= link_to "Créer un nouveau post", new_post_path, class: "btn btn-primary" %></div>
-    </div>
-<% end %>
+  <% else %>
+      <div class="no-posts">
+        <p>Aucun brouillon n'est disponible pour le moment.</p>
+        <div class="main-bouton"><%= link_to "Créer un nouveau post", new_post_path, class: "btn btn-primary" %></div>
+      </div>
+  <% end %>
 
 </div>
 

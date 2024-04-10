@@ -118,6 +118,7 @@ height: 100vh;
     border: 0;
     resize: none;
     background-color: transparent;
+    margin-bottom: 20px;
   }
 
   textarea:focus {
@@ -125,7 +126,7 @@ height: 100vh;
   }
 }
 
-@media (max-width: 768px){
+@media screen and (max-width: 768px){
   .contenu .gnrateur{
     display: inline-flex;
     flex-direction: column;
@@ -154,7 +155,10 @@ height: 100vh;
       height: 60px;
       border: 0;
       resize: none;
-      font-size: var(--petit-texte-regular-h1-font-size);
+      font-size: 14px;
+      font-family: Inter;
+      margin-bottom: 10px;
+
     }
 
   }
@@ -349,6 +353,7 @@ height: 12px;
   white-space: nowrap;
   font-style: var(--titre-medium-h5-font-style);
   transition: background-color ease-in-out 0.3s;
+  margin-left: 10px;
 }
 
 
