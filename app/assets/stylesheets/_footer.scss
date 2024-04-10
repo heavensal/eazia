@@ -1,14 +1,13 @@
-// #footer{
-//   display: flex;
-//   height: 10vh;
-//   background: linear-gradient(180deg, rgba(229.49, 242.92, 255, 0) 0%, rgb(229.49, 242.92, 255) 44.42%);
-//   border-color: var(--secondarywhitewhite-400);
-//   position: static;
-//   bottom: 0;
-//   z-index:11;
-//   width: 100%;
-//   transition: margin-left 0.3s, width 0.3s;
-// }
+footer{
+  display: flex;
+  height: 10vh;
+  position: static;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
 
 .mentions{
   display: flex;
@@ -31,7 +30,7 @@
 
 .main-logo-footer {
 display: flex;
-justify-content: center;
+justify-content: flex-start;
 align-items: center;
 width: 50%;
   img {

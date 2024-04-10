@@ -1,21 +1,21 @@
-<div class="mentions" data-controller="resize">
-    <div class="text-start" style="font-weight:lighter">
-      <%= link_to pages_cgv_path do %>
-        <span data-resize-target="cgv">Conditions Générales de Ventes</span>
-      <% end %>
-    </div>
-    <div class="text-start" style="font-weight:lighter">
-      <%= link_to pages_cgu_path do %>
-        <span data-resize-target="cgu">Conditions Générales d'Utilisateurs</span>
-      <% end %>
-    </div>
-  </div>
+<div class="main-logo-footer">
+  <%= image_tag("new_logo_eazia.png", alt:"logo eazia", class:"logofooter") %>
+</div>
 
-  <div class="main-logo-footer">
-    <%= link_to root_path do %>
-      <%= image_tag("new_logo_eazia.png", alt:"logo eazia") %>
+<div class="mentions" data-controller="resize">
+  <div class="text-start" style="font-weight:lighter">
+    <%= link_to pages_cgv_path do %>
+      <span data-resize-target="cgv">Conditions Générales de Ventes</span>
     <% end %>
   </div>
+  <div class="text-start" style="font-weight:lighter">
+    <%= link_to pages_cgu_path do %>
+      <span data-resize-target="cgu">Conditions Générales d'Utilisateurs</span>
+    <% end %>
+  </div>
+</div>
+
+
 <div class="mentions">
   <div class="text-start", style="font-weight:lighter"><%= link_to "Mentions Légales", pages_legal_path %></div>
   <div class="text-start", style="font-weight:lighter"><%= link_to "Politique de confidentialité", pages_confidentialite_path %></div>
