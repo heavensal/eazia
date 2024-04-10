@@ -18,7 +18,7 @@ class PaymentsController < ApplicationController
       @product = Product.find(params[:product_id])
       add_gold_from(@product)
     elsif params[:subscription_id]
-      get_premium
+      get_beginner
     end
   end
 
@@ -67,15 +67,16 @@ class PaymentsController < ApplicationController
     redirect_to @session.url, allow_other_host: true
   end
 
-  def get_premium
+  def get_beginner
     begin
       stripe_session = Stripe::Checkout::Session.retrieve(session[:stripe_session_id])
       if stripe_session.payment_status == "paid"
-        current_user.premium! unless current_user.admin?
+        current_user.beginner! unless current_user.admin?
+        current_user.add_gold(30)
         session.delete(:stripe_session_id)
       end
     rescue
-      redirect_to new_post_path, notice: "Vous avez bien souscrit à l'offre premium."
+      redirect_to new_post_path, notice: "Vous avez bien souscrit à l'offre Beginner."
     end
   end
 

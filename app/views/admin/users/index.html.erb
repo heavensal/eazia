@@ -1,0 +1,55 @@
+<h1 class="text-center my-5">
+  Admin Mode - Utilisateurs d'Eazia
+</h1>
+
+<section class="row" id="big-wallets-action">
+  <div class="col-md-4">
+    <div class="d-flex justify-content-center">
+      <%= link_to 'FREEMIUM +10 ?', increase_wallets_10_admin_users_path, turbo_method: :post, class: 'btn btn-primary', data: { turbo_method: :patch , turbo_confirm: 'Êtes-vous sûr de vouloir augmenter les freemiums de 10 crédits ?' } %>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="d-flex justify-content-center">
+      <%= link_to 'BEGINNER +30 ?', increase_wallets_30_admin_users_path, turbo_method: :post, class: 'btn btn-primary', data: { turbo_method: :patch , turbo_confirm: 'Êtes-vous sûr de vouloir augmenter les beginners de 30 crédits ?' } %>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <div class="d-flex justify-content-center">
+      <%= link_to 'PREMIUM +100 ?', increase_wallets_100_admin_users_path, turbo_method: :post, class: 'btn btn-primary', data: { turbo_method: :patch , turbo_confirm: 'Êtes-vous sûr de vouloir augmenter les premiums de 100 crédits ?' } %>
+    </div>
+  </div>
+
+
+
+</section>
+<table class="table">
+
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Prénom</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Email</th>
+      <th scope="col">Porte-monnaie</th>
+      <th scope="col">Statut</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+        <tr>
+              <th scope="row"><%= user.id %></th>
+
+              <td><%= link_to user.first_name, admin_user_path(user), class: "text-primary" %></td>
+
+              <td><%= user.last_name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.wallet %></td>
+              <td><%= user.status %></td>
+        </tr>
+    <% end %>
+  </tbody>
+
+</table>

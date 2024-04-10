@@ -6,11 +6,13 @@
   </button>
 
   <%= form_for([post, photo], url: select_post_photo_path(post, photo), method: :patch, html: { id: "photoForm", data: { clic_indice_target: "form" }}) do |f| %>
-    <%= image_submit_tag(cl_image_path(photo.key),
+    <%= image_submit_tag(cl_image_path(photo.key,
     loading: "lazy",
+    :aspect_ratio =>"1:1",
+    :crop=>"fill",
     id: "photo_#{photo.id}",
     class: "photo_#{photo.id}",
-    width: 150) %>
+    width: 150)) %>
   <% end %>
 
   <%= render 'photos/btn-delete-photo', post: post, photo: photo %>

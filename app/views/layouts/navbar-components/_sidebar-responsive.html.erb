@@ -35,6 +35,20 @@
             <% end %>
           </div>
 
+          <% if current_user.admin? %>
+            <div class="div-2-sidebar-responsive">
+
+              <%= link_to admin_root_path do %>
+                <div class="nouvelle-publication-wrapper-responsive">
+                  <div class="text-wrapper-4">
+                    Admin Mode
+                  </div>
+                </div>
+              <% end %>
+
+            </div>
+          <% end %>
+
           <%# <div class="div-2-sidebar-responsive">
             <div class="nouvelle-publication-wrapper-responsive">
               <%= image_tag("icon_programmation.png", alt:"programmation") %>
