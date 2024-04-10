@@ -13,7 +13,7 @@ export default class extends Controller {
 
     if (isMobile) {
       // Ajoutez ici l'écouteur pour le 'click' sur mobile
-      this.element.addEventListener("click", this.open.bind(this));
+      this.element.addEventListener("tap", this.open.bind(this));
 
      }
     // else {

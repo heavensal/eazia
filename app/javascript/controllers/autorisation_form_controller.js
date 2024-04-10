@@ -95,7 +95,7 @@ export default class extends Controller {
       // Dispatch de l'événement sur l'élément du contrôleur loader
       loaderElement.dispatchEvent(event);
     } else {
-      // console.error("Loader element not found");
+      console.error("Loader element not found");
     }
   }
 
