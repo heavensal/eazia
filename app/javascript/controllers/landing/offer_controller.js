@@ -17,8 +17,8 @@ export default class extends Controller {
     buttonClicked.classList.add('active'); // Ajoute la classe active au bouton cliqué
 
     this.pricetrimfTarget.innerHTML = '<span class="prix">0€</span><span>/trimestre</span>'; // Met à jour l'affichage du prix
-    this.pricetrimbTarget.innerHTML = '<span class="prix">51,30€</span><span>/trimestre</span>';
-    this.pricetrimpTarget.innerHTML = '<span class="prix">159,30€</span><span>/trimestre</span>';
+    this.pricetrimbTarget.innerHTML = '<span class="prix">49€</span><span>/trimestre</span>';
+    this.pricetrimpTarget.innerHTML = '<span class="prix">159€</span><span>/trimestre</span>';
   }
 
   convertToMensuel(event) {
@@ -43,8 +43,8 @@ export default class extends Controller {
     buttonClicked.classList.add('active'); // Ajoute la classe active au bouton cliqué
 
     this.priceanufTarget.innerHTML = '<span class="prix">0€</span><span>/an</span>'; // Met à jour l'affichage du prix
-    this.priceanubTarget.innerHTML = '<span class="prix">159,60€</span><span>/an</span>';
-    this.priceanupTarget.innerHTML = '<span class="prix">495,60€</span><span>/an</span>';
+    this.priceanubTarget.innerHTML = '<span class="prix">159€</span><span>/an</span>';
+    this.priceanupTarget.innerHTML = '<span class="prix">489€</span><span>/an</span>';
   }
 
 }

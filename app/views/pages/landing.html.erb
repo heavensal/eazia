@@ -2,7 +2,7 @@
         <nav>
           <div class="bar-nav landmenu">
             <div class="logo">
-              <%= image_tag 'landing/logo.svg', alt: "Logo Eazia", id: "logo" %>
+              <%= image_tag 'landing/logo.svg', alt: "Logo Eazia", id: "logo1" %>
             </div>
 
             <div class="liste">
@@ -64,16 +64,14 @@
                 <div class="phraseintro">
                   <h1>ChatGPT + Canva + Hootsuite =</h1>
                 </div>
-                <div class ="encadrelogo">
-                  <%= image_tag 'landing/eazia.svg', alt: "Logo Eazia", id:'logo' %>
-                </div>
+                <%= image_tag 'landing/eazia.png', alt: "Logo Eazia", id:'logo' %>
               </div>
             <div class="textintro">
               <h2> Générateur de contenus pour les réseaux sociaux par l'IA</h2>
 
               <%# S'inscrire - #SEO il faut un btn %>
-              <%= link_to new_user_registration_path, class: "intro-btn" do %>
-                <p class="intro-button">Tester gratuitement</p>
+              <%= link_to new_user_session_path, class: "intro-btn" do %>
+                <p class="intro-button">Essayer gratuitement</p>
               <%end%>
 
             </div>
@@ -96,17 +94,17 @@
             <!-- 3 cards -->
             <div class="cards">
               <div class="card">
-                <%= image_tag 'landing/inscription-1.png', alt: "1" %>
+                <%= image_tag 'landing/inscription-1.png', alt: "1", class:"imgcard" %>
                 <p>Créer votre compte en 15 secondes</p>
               </div>
 
               <div class="card">
-                <%= image_tag 'landing/inscription-2.png', alt: "1" %>
-                <p>Génerer du contenu personalisé</p>
+                <%= image_tag 'landing/inscription-2.png', alt: "1", class:"imgcard" %>
+                <p>Générer du contenu personnalisé</p>
               </div>
 
               <div class="card">
-                <%= image_tag 'landing/inscription-3.png', alt: "1" %>
+                <%= image_tag 'landing/inscription-3.png', alt: "1", class:"imgcard" %>
                 <p>Publier ou programmer en 1 clic !</p>
               </div>
             </div>
@@ -114,7 +112,7 @@
               <%= image_tag 'landing/file.svg', alt: "file" %>
               <p>Création illimitée</p>
             </div>
-            <h1>Optimisez votre stratégie Instagram avec EAZIA</h1>
+            <h1>Optimisez votre stratégie Instagram avec eazIA</h1>
             <%= image_tag 'landing/Insta.png', alt: "Insta", class: "instalanding" %>
           </div>
 
@@ -129,9 +127,6 @@
                     <%= image_tag 'landing/file.svg', alt: "file" %>
                     <p>Nos Offres</p>
                   </div>
-                  <h1>3 outils pour le prix d’1</h1>
-                  <h4>Automatisez enfin votre communication par l'IA</h4>
-
                   <!-- onglets prix -->
                   <div class="button-prix">
                     <p class="btn-prix mensuel active" data-action="click->landing--offer#convertToMensuel">Mensuel</p>
@@ -176,14 +171,14 @@
                       </div>
 
                     </div>
-                    <p style="color: #B0B0B0; font-size: 14px;">"Généré par Eazia" dans la description</p>
+                    <p style="color: #B0B0B0; font-size: 14px;">"Généré par eazIA" dans la description</p>
                   </div>
 
                   <div class="cardprice cardprice-2">
 
                     <div class="offre">
                       <div class="populaire"><h3>BEGINNER</h3> <div class="encadrepopulaire"><p>Populaire</p></div></div>
-                      <p class="price" data-landing--offer-target="pricetrimb priceanub pricemensub"><span class="prix prixbarre">19€</span><span>/mois</span> <i class="fa-solid fa-arrow-right"></i><span class="lancement prix">19€</span><span class="lancement"> pour 6 mois !</span></p>
+                      <p class="price" data-landing--offer-target="pricetrimb priceanub pricemensub"><span class="prix prixbarre">19€</span><span>/mois</span> <i class="fa-solid fa-arrow-right"></i><span class="lancement prix">19€</span><span class="lancement"> / 6 mois !</span></p>
                     </div>
 
                     <%= link_to cart_path do %>
@@ -201,7 +196,7 @@
 
                       <div class="pricecomponent">
                         <%= image_tag 'landing/folder.svg', alt: "Icône dossier" %>
-                        <p>Entre 3 et 4 posts/mois</p>
+                        <p>Entre 3 et 15 posts/mois</p>
                       </div>
 
                       <div class="pricecomponent">
@@ -211,12 +206,12 @@
 
                       <div class="pricecomponent">
                         <%= image_tag 'landing/Chat.svg', alt: "Icône chat" %>
-                        <p>SAV 5j/7 par mail (réponse en 48h max)</p>
+                        <p>SAV 24/24h (réponse en 48h max)</p>
                       </div>
 
                       <div class="pricecomponent">
                         <%= image_tag 'landing/globe.svg', alt: "Icône globe" %>
-                        <p>Accès à l'agence QA sur devis</p>
+                        <p>Accès à l'agence Quartz Agency sur devis</p>
                       </div>
 
                     </div>
@@ -235,15 +230,15 @@
                     <%end%>
                     <div class="pricecomponents">
                       <div class="pricecomponent"><%= image_tag 'landing/jeton.svg', alt: "Icône jeton" %><p>100 Jetons disponibles pour créer des posts*</p></div>
-                      <div class="pricecomponent"><%= image_tag 'landing/folder.svg', alt: "Icône dossier" %><p>Entre 6 et 24 posts/mois</p></div>
+                      <div class="pricecomponent"><%= image_tag 'landing/folder.svg', alt: "Icône dossier" %><p>Entre 6 et 50 posts/mois</p></div>
                       <div class="pricecomponent"><%= image_tag 'landing/calendar.svg', alt: "Icône calendrier" %><p>Programmation</p></div>
-                      <div class="pricecomponent"><%= image_tag 'landing/Chat.svg', alt: "Icône chat" %><p>SAV 5j/7 (téléphone en 24h max)</p></div>
-                      <div class="pricecomponent"><%= image_tag 'landing/globe.svg', alt: "Icône globe" %><p>Accès à l'agence QA sur devis</p></div>
+                      <div class="pricecomponent"><%= image_tag 'landing/Chat.svg', alt: "Icône chat" %><p>SAV 24/24h (réponse en 24h max) </p></div>
+                      <div class="pricecomponent"><%= image_tag 'landing/globe.svg', alt: "Icône globe" %><p>Accès à l'agence Quartz Agency sur devis</p></div>
                     </div>
                   </div>
                 </div>
               </div>
-              <p style="color: #B0B0B0; font-size: 14px; padding-left: 20px;" class="asterisque">* 1 image = 1 jeton / 1 description = 1 jeton</p>
+              <p style="color: black; font-size: 14px; padding-left: 20px;" class="asterisque">* 1 jeton = 1 image ou 1 description </p>
             </div>
 
             <!-- <div class="title">
@@ -277,12 +272,6 @@
                 0', alt: "" %>inscription-1.png" alt="1">
               </div>
             </div> -->
-            <div class="card-lancement">
-              <h1>Offre de lancement !</h1>
-              <p>6 mois pour le prix d'1</p>
-              <p><span class="prix">19€</span> pour <span class="prix">6 mois</span>  d'abonnement BEGINNER</p>
-            </div>
-          </div>
         </section>
 
         <section id="Calcul">
@@ -305,17 +294,22 @@
                   <div class="calculagence" data-landing--calcul-target="prixAgence">€</div>
                 </div>
                 <div class="prixeazia">
-                  <p>Le prix avec Eazia</p>
+                  <p>Le prix avec eazIA</p>
                   <div class="calculeazia" data-landing--calcul-target="prixEazia">€</div>
                 </div>
               </div>
               <div class="total">
-                <p>Combien vous gagnez grâce à Eazia</p>
+                <p>Combien vous gagnez grâce à eazIA</p>
                 <div class="calcultotal" data-landing--calcul-target="gainEazia"><div class="textarc">€</div></div>
               </div>
             </div>
           </div>
         </section>
+
+      <footer>
+        <%= render 'layouts/footer'%>
+      </footer>
+
 </div>
 
 <script>
@@ -359,7 +353,7 @@
   padding: 8px 12px;
   align-items: center;
   border-radius: 4px;
-  background: linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
+  background: linear-gradient(135deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
   box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
   img{
     margin-right:5px;
@@ -372,7 +366,7 @@
   flex-direction: column;
   align-items: center;
   border-radius: 4px;
-  background: linear-gradient(99deg, rgba(35, 61, 255, 0.12) 0.82%, rgba(225, 122, 255, 0.12) 38.59%, rgba(253, 151, 44, 0.12) 95.25%);
+  background: linear-gradient(135deg, rgba(35, 61, 255, 0.12) 0.82%, rgba(225, 122, 255, 0.12) 38.59%, rgba(253, 151, 44, 0.12) 95.25%);
   box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
 }
 
@@ -382,7 +376,7 @@
   flex-direction: column;
   align-items: center;
   border-radius: 4px;
-  background: var(--2, linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%));
+  background: var(--2, linear-gradient(135deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%));
   box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
   color: var(--Foundation-White-white-50, #FFF);
   font-family: Inter;
@@ -403,7 +397,7 @@
   flex-direction: column;
   align-items: center;
   border-radius: 4px;
-  background: var(--2, linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%));
+  background: var(--2, linear-gradient(135deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%));
   box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
   color: var(--Foundation-White-white-50, #FFF);
   font-family: Inter;
@@ -469,10 +463,11 @@
   background: #FEFEFE;
   box-shadow: 0px 0px 59.7px 0px rgba(0, 0, 0, 0.06);
   backdrop-filter: blur(10px);
+  max-width: 450px;
 }
 
 .card img {
-  max-width: 450px;
+  max-width: 100%;
   height: auto;
   border-radius: 8px;
 }
@@ -492,11 +487,10 @@
 
 .title{
   display: flex;
-  padding: 8px 12px;
+  padding: 8px 20px;
   align-items: center;
   gap: 8px;
-  border-radius: 8px;
-  border: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
   margin-top:128px;
   color: #000;
   font-family: Inter;
@@ -553,14 +547,14 @@
   align-items: flex-start;
   gap: 4px;
   border-radius: 4px;
-  background: linear-gradient(99deg, rgba(35, 61, 255, 0.20) 0.82%, rgba(225, 122, 255, 0.20) 38.59%, rgba(253, 151, 44, 0.20) 95.25%);
+  background: linear-gradient(135deg, rgba(35, 61, 255, 0.20) 0.82%, rgba(225, 122, 255, 0.20) 38.59%, rgba(253, 151, 44, 0.20) 95.25%);
   font-family: Inter;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
   line-height: 16px;
    p {
-    background: var(--2, linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%));
+    background: var(--2, linear-gradient(135deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -590,7 +584,7 @@
   gap: 4px;
   border-radius: 4px;
   border: 1px solid var(--2, #233DFF);
-  background: linear-gradient(99deg, rgba(35, 61, 255, 0.20) 0.82%, rgba(225, 122, 255, 0.20) 38.59%, rgba(253, 151, 44, 0.20) 95.25%);
+  background: linear-gradient(135deg, rgba(35, 61, 255, 0.20) 0.82%, rgba(225, 122, 255, 0.20) 38.59%, rgba(253, 151, 44, 0.20) 95.25%);
 }
 
 .pricecomponent{
@@ -625,7 +619,7 @@ gap: 20px;
 
 .prix {
   font-weight: bold;
-  font-size: 48px;
+  font-size: 32px;
 }
 
 .cardgain {
@@ -686,9 +680,10 @@ gap: 20px;
     width: 100%; /* Assure que chaque carte occupe toute la largeur */
     margin-bottom: 20px; /* Ajoute un espacement entre les cartes */
     max-width: 70%;
-    img{
-      max-width: 100%;
-    }
+  }
+
+  .card  img{
+    max-width: 100%;
   }
 
   .cards{
@@ -830,9 +825,9 @@ gap: 20px;
 
 .calcultotal {
   border-radius: 4px;
-  background: linear-gradient(99deg, rgba(35, 61, 255, 0.10) 0.82%, rgba(225, 122, 255, 0.10) 38.59%, rgba(253, 151, 44, 0.10) 95.25%);
+  background: linear-gradient(135deg, rgba(35, 61, 255, 0.10) 0.82%, rgba(225, 122, 255, 0.10) 38.59%, rgba(253, 151, 44, 0.10) 95.25%);
   .textarc{
-    background: var(--2, linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%));
+    background: var(--2, linear-gradient(135deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -914,16 +909,8 @@ gap: 28px;
    }
 }
 
-.encadrelogo{
-  display: flex;
-  width: 851px;
-  padding: 40px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 12px;
-  background: linear-gradient(99deg, rgba(35, 61, 255, 0.08) 0.82%, rgba(225, 122, 255, 0.08) 38.59%, rgba(253, 151, 44, 0.08) 95.25%);
-  box-shadow: 0px 6.736px 18.356px 0px rgba(255, 255, 255, 0.40) inset;
+#logo{
+max-width:80%;
 }
 
 .dashboard{
@@ -969,7 +956,7 @@ gap: 28px;
     }
   }
 
-  .encadrelogo{
+  #logo{
     max-width: 80%;
     padding: 20px;
   }
@@ -1130,13 +1117,14 @@ a .main-button {
 }
 
 .lancement {
-  background: var(--2, linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%));
+  background: var(--2, linear-gradient(135deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 .fa-arrow-right{
-  padding:10px;
+  padding-left:10px;
+  padding-right:10px;
   font-size: 30px;
 }
 
@@ -1243,7 +1231,7 @@ h4{
 .encadre {
   padding: 20px;
   border-radius: 20px;
-  border-image: linear-gradient(99deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
+  border-image: linear-gradient(135deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
   border-image-slice: 1;
   border-width: 2px;
   border-style: solid;
