@@ -1,9 +1,5 @@
 <div class="draft" data-controller="post-options">
   <% if @posts.any? %>
-  <div class="titre-brouillon">
-    <h1>Brouillons</h1>
-    <div class="main-bouton"><%= link_to "Générer un post", new_post_path  %></div>
-  </div>
 
   <%= render "posts/brouillons", post: @post %>
 
