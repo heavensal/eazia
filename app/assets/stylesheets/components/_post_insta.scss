@@ -344,9 +344,10 @@
 
 @media (max-width: 768px){
   .gnration-de-la{
-    display: grid;
-    grid-template-columns: 1fr;
-    // margin-top: 20vh;
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction:column;
   }
 }
 

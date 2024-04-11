@@ -29,7 +29,7 @@
           <% sorted_photos.each.with_index do |img, i| %>
             <div class="carousel-item <%= 'active' if i.zero? %>">
               <%= link_to post_path(post) do %>
-                <%= cl_image_tag img.key, :aspect_ratio=>"1:1", :crop=>"fill", width: 370 %>
+                <%= cl_image_tag img.key, :aspect_ratio=>"1:1", :crop=>"fill" %>
               <% end %>
             </div>
           <% end %>

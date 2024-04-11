@@ -31,10 +31,13 @@
 body {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
   // font-family: 'glaciale-indifference', sans-serif;
-
 }
 
+html {
+  overflow-x: hidden;
+}
 // body.sub-menus-open .content {
 //   width: calc(100% - 200px);
 
@@ -386,9 +389,10 @@ a {
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-color: var(--secondaryblackblack-50);
-    position: relative;
-    // z-index: 600;
-
+    position: sticky;
+    z-index: 900;
+    overflow-x: hidden;
+    overflow-y: hidden;
       }
 }
 

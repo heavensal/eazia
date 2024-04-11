@@ -204,7 +204,7 @@ width: 370px;
   width: 25px;
   height: 25px;
   top: 15px;
-  left: 330px;
+  right:10px;
   background-color: rgba(255, 255, 255, 1);
   border: 1px solid;
   border-color: var(--secondarywhitewhite-50);
@@ -224,7 +224,7 @@ width: 370px;
   cursor: pointer;
 
   @media (max-width: 768px){
-    left: 290px;
+    right: 10px;
   }
 
 }
@@ -394,6 +394,10 @@ width: 370px;
   width: 100%
 }
 
+.carousel-item img{
+  width: 100%;
+}
+
 
 .btn-supprimer-draft{
   font-family: "Helvetica Neue-Regular", Helvetica;
@@ -429,13 +433,10 @@ line-height: 14.6px;
 }
 
 .no-image{
-  width: 370px;
-  height: 350px;
+  width: 100%;
 
   img{
-    width: 370px;
-    height: 350px;
-
+    width: 100%;
   }
 }
 
