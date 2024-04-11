@@ -441,6 +441,7 @@ height: 12px;
 }
 
 
+
 .modal-content-info{
   background-color: var(--secondarywhitewhite-200);
   // opacity: 0.8;
@@ -524,12 +525,18 @@ height: 12px;
 
 @media (max-width: 768px){
 .modal-info{
+  // display: flex;
   max-width: 100%;
   max-height: 30vh;
   padding: 20px 0 0 ;
   top: 0px;
-  left: 50px
+  left: 50px;
 }
+
+.modal-info:hover {
+  display: block; /* Afficher le modal au survol sur le bureau */
+}
+
 }
 
 .modal-info-photo{
@@ -595,6 +602,12 @@ height: 12px;
   // z-index: 1000;
   top: 10px;
   left: 500px;
+}
+
+@media (max-width: 768px){
+  .informations:hover {
+    display: block;
+  }
 }
 
 

@@ -1,45 +1,22 @@
 <div data-controller="modal-account">
- <div class="modal-info fade " id="modalAccountId" data-modal-account-target="info" data-modal-name="info" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-        <div class="modal-dialog-custom-infos" role="document">
-          <div class="modal-content-info">
-            <p>Pour optimiser votre post, donnez un maximum de détails. Pas la peine de commencer par "génère moi un post Instagram". Exemple : "Balade à vélo en famille dans les Calanques de Marseille au soleil."</p>
-          </div>
-        </div>
-</div>
 
-<div class="modal-info-photo fade" id="modalAccountId" data-modal-account-target="photo" data-modal-name="photo"tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-            <div class="modal-dialog-custom-infos" role="document">
-              <div class="modal-content-info">
-                <p>Si vous avez des images de vos produits, téléchargez-les pour qu'elles apparaissent dans le carrousel Instagram. Vos photos n'impacteront pas celles générées par l'IA. Il n'est pas nécessaire d'ajouter des images si vous n'en avez pas. </p>
-              </div>
-            </div>
-          </div>
+  <%= render "posts/modal_info", post: @post %>
 
-
-<div class="modal-info-ia fade" id="modalAccountId" data-modal-account-target="ia" data-modal-name="ia" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-            <div class="modal-dialog-custom-infos-ia" role="document">
-              <div class="modal-content-info">
-                <p>Choisissez le nombre d'images à générer par l'IA. Celles-ci seront libres de droit et uniques. Profitez-en ! </p>
-              </div>
-            </div>
-          </div>
-
-<div class="gnrateur" data-controller="autorisation-form">
-  <div class="informations">
-    <a href="#" data-action="mouseenter->modal-account#open mouseleave->modal-account#close" data-modal-name="info"><i class="fa fa-info-circle"></i></a>
-  </div>
+  <div class="gnrateur" data-controller="autorisation-form">
+    <div class="informations">
+      <a href="#" data-action="mouseenter->modal-account#open mouseleave->modal-account#close" data-modal-name="info"><i class="fa fa-info-circle"></i></a>
+    </div>
 
     <%= form_for(@post, data: { action: "submit->autorisation-form#validateForm"}) do |f| %>
     <%= f.text_area :prompt, wrap: "soft", placeholder: "Saisissez en quelques mots le sujet de votre prochain post", data: {action:"blur->autorisation-form#validatePrompt", autorisation_form_target:"prompt"} %>
-
-
-    <p  class="hidden" data-autorisation-form-target="myErrorMessage" style="font-size: 14px; color: red">la description doit contenir au moins 20 caractères</p>
+      <p  class="hidden" data-autorisation-form-target="myErrorMessage" style="font-size: 14px; color: red">la description doit contenir au moins 20 caractères</p>
 
     <div class="footer-form">
       <div class="form-secondary-bouton">
-      <div class="informations">
-        <a href="#" data-action="mouseenter->modal-account#open mouseleave->modal-account#close" data-modal-name="photo"><i class="fa fa-info-circle"></i></a>
-          </div>
+
+        <div class="informations">
+          <a href="#" data-action="mouseenter->modal-account#open mouseleave->modal-account#close" data-modal-name="photo"><i class="fa fa-info-circle"></i></a>
+        </div>
 
         <div class="file-upload-wrapper" data-controller="file-upload">
           <%= f.label :photos, "Ajouter vos images", class: "custom-file-upload" %>
@@ -51,17 +28,18 @@
           <%= f.label :pictures_generated do %> Générer des images
           <%end%>
 
-          <%# helper pour ne pas créer plus de photos que de jetons cf: PostsHelper %>
+            <%# helper pour ne pas créer plus de photos que de jetons cf: PostsHelper %>
           <%= f.select :pictures_generated, options_for_select(options(@wallet)), selected: 0 %>
         </div>
 
-      <div class="informations">
-        <a href="#" data-action="mouseenter->modal-account#open mouseleave->modal-account#close" data-modal-name="ia"><i class="fa fa-info-circle"></i></a>
-    </div>
-  </div>
+        <div class="informations">
+          <a href="#" data-action="mouseenter->modal-account#open mouseleave->modal-account#close" data-modal-name="ia"><i class="fa fa-info-circle"></i></a>
+        </div>
+
+      </div>
+
       <%= f.submit "Générer mon post", class:"main-bouton", data: { action: "submit->autorisation-form#validateForm"} %>
       <% end %>
-</div>
-</div>
-
+    </div>
+  </div>
 </div>

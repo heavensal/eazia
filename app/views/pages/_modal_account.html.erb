@@ -1,8 +1,9 @@
 <div class="overlay" data-modal-account-target="overlay"></div>
+
 <div class="modal fade" id="modalAccountId" data-modal-account-target="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-custom-account" role="document">
-      <div class="modal-content">
-          <h5 class="modal-title-account" id="modalLabel">Modifier votre profil</h5>
+  <div class="modal-dialog modal-dialog-custom-account" role="document">
+    <div class="modal-content">
+      <h5 class="modal-title-account" id="modalLabel">Modifier votre profil</h5>
         <div class="modal-body-account">
           <%= form_for(current_user, url: pages_update_account_path, html: { method: :patch }) do |f| %>
             <div class="modal-field-update">
@@ -31,7 +32,6 @@
             </div>
           <% end %>
         </div>
-      </div>
-      </div>
     </div>
   </div>
+</div>

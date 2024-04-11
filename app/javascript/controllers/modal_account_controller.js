@@ -12,20 +12,23 @@ export default class extends Controller {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
     if (isMobile) {
-      // Ajoutez ici l'écouteur pour le 'click' sur mobile
-      this.element.addEventListener("click", this.open.bind(this));
+      // écouteurs pour les interactions tactiles sur mobile
+      this.element.addEventListener("touchend", this.open.bind(this));
 
      }
-    // else {
-    //   // Ajoutez ici les écouteurs pour 'mouseenter' et 'mouseleave' pour desktop
-    //   this.element.addEventListener("mouseenter", this.open.bind(this));
-    //   this.element.addEventListener("mouseleave", this.close.bind(this));
-    // }
+    else {
+      // Ajoutez ici les écouteurs pour 'mouseenter' et 'mouseleave' pour desktop
+      this.element.addEventListener("mouseenter", this.open.bind(this));
+      this.element.addEventListener("mouseleave", this.close.bind(this));
+    }
+
+    this.element.addEventListener("click", this.open.bind(this));
+
   }
 
   open(event) {
-    event.preventDefault();
-    event.stopPropagation();
+    // event.preventDefault();
+    // event.stopPropagation();
 
     const modalName = event.currentTarget.dataset.modalName;
 
@@ -67,7 +70,7 @@ export default class extends Controller {
     this.modalTarget.setAttribute("role", "dialog");
     }
     if (this.hasOverlayTarget) {
-    this.overlayTarget.style.display = "block"; // Afficher l'overlay
+    this.overlayTarget.style.display = "block";
     }
 
     if (this.hasModalTarget || this.hasOverlayTarget || this.infoTarget || this.photoTarget || this.iaTarget) {
@@ -86,7 +89,7 @@ export default class extends Controller {
     }
 
     if (this.hasOverlayTarget) {
-    this.overlayTarget.style.display = "none"; // Cacher l'overlay
+    this.overlayTarget.style.display = "none";
     }
 
     if (this.hasModalTarget || this.hasOverlayTarget || this.infoTarget || this.photoTarget || this.iaTarget) {
