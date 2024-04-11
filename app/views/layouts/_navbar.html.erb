@@ -1,46 +1,107 @@
 <div class="navbar">
+  <div class="sidebar">
+    <% if current_user %>
+      <div class="frame-4">
+        <div class= "logo">
+          <%= link_to new_post_path do %>
+            <%= image_tag("logo_principal_eazia.png", alt:"logo eazia") %>
+          <% end %>
+        </div>
 
-<div class="sidebar">
-<% if current_user %>
-  <div class="frame-4">
-  <div class= "logo">
-  <%= link_to new_post_path do %>
-  <%= image_tag("logo_principal_eazia.png", alt:"logo eazia") %>
-  <% end %>
-  </div>
+        <%# menu de la navbar %>
 
-      <%# menu de la navbar %>
-      <%= render 'layouts/navbar-components/menu-list' %>
+        <div class="menu-list">
 
-  </div>
+          <%= link_to new_post_path do %>
+            <div class="nouvelle-publication-wrapper">
+              <div class="div-2-sidebar">
+                <%= image_tag "icon-new.svg", alt:"publications" %>
+                <div class="text-wrapper-4">
+                  Générer un post
+                </div>
+              </div>
+            </div>
+          <% end %>
 
-  <div>
-    <div class="div-2-sidebar">
-      <div class="text-wrapper-4">
-        <%= turbo_frame_tag "wallet" do %>
-              <%= @wallet %> Jetons restants
-        <% end %>
+          <%= link_to drafts_path do %>
+            <div class="nouvelle-publication-wrapper">
+              <div class="div-2-sidebar">
+                <%= image_tag("icon-draft.svg", alt:"brouillons") %>
+                <div class="text-wrapper-4">
+                  Brouillons
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+            <%# <div class="nouvelle-publication-wrapper">
+              <div class="div-2-sidebar">
+                <%# image_tag("icon_programmation", alt:"programmation") %>
+                <%# <div class="text-wrapper-4"><%= link_to "Posts Programmés", new_post_path %>
+                <%# </div> %>
+              <%# </div>
+            </div> %>
+            <%#
+            <div class="nouvelle-publication-wrapper">
+              <div class="div-2-sidebar"> %>
+                <%# image_tag("icon_historique", alt:"historique") %>
+                <%# <div class="text-wrapper-4"><%= link_to "Historique", new_post_path %>
+                <%# </div> %>
+              <%# </div>
+            </div> %>
+
+          <%= link_to cart_path do %>
+            <div class="nouvelle-publication-wrapper">
+              <div class="div-2-sidebar icon-basket">
+                <%= image_tag("shopping-basket.png", alt:"achat") %>
+                <div class="text-wrapper-4">
+                  Abonnements
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+
+          <% if current_user.admin? %>
+            <%= link_to admin_root_path do %>
+              <div class="nouvelle-publication-wrapper">
+                <div class="div-2-sidebar">
+                  <%# image_tag("icon-admin.svg", alt:"admin") %>
+                  <div class="text-wrapper-4">
+                    Admin Mode
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
-  </div>
 
+      <div class="bottomnav">
+        <div class="restjeton">
+          <div class="div-2-sidebar">
+            <div class="text-wrapper-4">
+              <%= turbo_frame_tag "wallet" do %>
+                <p><%= @wallet %> Jetons restants</p>
+              <% end %>
+            </div>
+          </div>
+        </div>
 
         <div class="user">
           <%= link_to account_path do %>
             <div class="div-2-sidebar">
               <%= image_tag("icon-user.svg", alt:"compte") %>
-            <div class="text-wrapper-4"> Mon compte</div>
-          </div>
+              <div class="text-wrapper-4">
+                Mon compte
+              </div>
+            </div>
           <% end%>
         </div>
-        </div>
-      <%# </div> %>
-    <%# </div> %>
-  <%# </div> %>
-<% end %>
+      </div>
+    <% end %>
+  </div>
 
-
-<%# LE RESPONSIVE DE LA NAVBAR %>
-<%= render 'layouts/navbar-components/sidebar-responsive' %>
-
+  <%# LE RESPONSIVE DE LA NAVBAR %>
+  <%= render 'layouts/navbar-components/sidebar-responsive' %>
 </div>
