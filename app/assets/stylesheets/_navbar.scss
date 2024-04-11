@@ -204,6 +204,34 @@ box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
   height: 28px;
 }
 
+.restjeton{
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.08);
+  align-items: center;
+  margin-left:12px;
+  background-color: #ffffff66;
+}
+
+.restjeton p{
+  margin-bottom: 0;
+  background: linear-gradient(135deg, #233DFF 0.82%, #E17AFF 38.59%, #FD972C 95.25%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+.bottomnav{
+  display: inline-flex;
+  gap: 30px;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  flex: 0 0 auto;
+}
 
 @media screen and (max-width: 768px){
 
