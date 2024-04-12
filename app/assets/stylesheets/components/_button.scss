@@ -202,7 +202,6 @@
 
 }
 
-
 @media screen and (max-width: 1024px) {
   .logout-button {
     position: relative;
@@ -284,5 +283,17 @@
     font-size: 16px;
     padding: 0;
     border-radius: 10px;
+  }
+
+  .container-boutons{
+    display: flex;
+    justify-content: space-between;
+    gap:4px;
+    width:100%;
+    height: auto;
+  }
+
+  .frame-description .newdescription{
+    padding: auto 0px;
   }
 }

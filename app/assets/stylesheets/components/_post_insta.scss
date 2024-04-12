@@ -363,7 +363,7 @@
 
 @media (max-width: 768px){
   .frame-show{
-  padding: 12px;
+  padding: 25px 10px;
   width: 100%
   }
 }
@@ -384,6 +384,7 @@
   .frame-show .div-show{
    gap: 12px;
    width: 100%;
+   padding:0px;
 
     img{
       width: 100%
@@ -393,7 +394,7 @@
 }
 
 .bouton-images{
-display: inline-block;
+  display: inline-block;
   position: relative;
   width: 148px;
   height: 148px;
@@ -413,6 +414,8 @@ display: inline-block;
   .bouton-images{
     width: 150px;
     height: 150px;
+    overflow: visible;
+    padding: 20px;
   }
 }
 
@@ -423,11 +426,24 @@ display: inline-block;
   gap: 8px;
 
   @media (max-width: 768px) {
-    display: grid;
-    grid-template-columns:1fr 1fr;
-    // grid-auto-rows: minmax(100px, auto); /* Ajustez 100px à la hauteur minimale désirée */
-    gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding:10px;
+    gap: 18px;
     width: 100%;
+    justify-content: center;
+  }
+
+  @media (max-width:358px){
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding:0px;
+    gap: 10px;
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
   }
 }
 
@@ -1003,7 +1019,6 @@ display: inline-block;
   overflow: hidden;
   border: 1px solid;
   border-color: var(--secondaryblackblack-50);
-  position: relative;
   width: fit-content;
   font-family: var(--titre-medium-h5-font-family);
   font-weight: var(--titre-medium-h5-font-weight);
@@ -1017,7 +1032,10 @@ display: inline-block;
 
 
   @media (max-width: 768px){
-    font-size: 10px;
+    font-size: 11px;
+    text-wrap: wrap;
+    height:47px;
+    padding: 0 8px;
   }
 }
 
@@ -1052,6 +1070,10 @@ display: inline-block;
 .insta {
   overflow-x: hidden;
   max-width: 350px;
+
+  @media screen and (max-width: 768px){
+    max-width: 100%;
+}
 }
 
 .topbar {
@@ -1066,7 +1088,7 @@ display: inline-block;
 }
 
 .insta-show {
-  width: 350px;
+  width: 100%;
   justify-content:center;
 }
 
@@ -1080,7 +1102,7 @@ display: inline-block;
 
 .crop {
   width: 100%;
-  height: 350px;
+  height: auto;
   object-fit: cover;
   object-position: 50% 50%;
 
@@ -1130,15 +1152,20 @@ display: inline-block;
 
 .frame-bouton-insta {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
   width: 100%;
   gap: 4px;
   padding:20px;
   position: relative;
   border-top: 1px solid;
   border-color: var(--secondaryblackblack-50);
+
+  @media screen and (max-width: 768px){
+    padding:10px;
+    flex-wrap: wrap;
+  }
 }
 
 
@@ -1213,7 +1240,8 @@ box-shadow: 0px 4px 10.9px 0px rgba(255, 255, 255, 0.40) inset;
     width: 100%;
     display: block;
     overflow:visible;
-    padding: 12px;
+    padding: 0px;
+    padding-bottom: 100px;
   }
 }
 

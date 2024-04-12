@@ -7,7 +7,7 @@
       <%# Pour régénérer une description %>
        <div>
       <%= form_for([@post, @gpt_creation], url: recreate_post_gpt_creation_path(@post), method: :patch, autofocus: true, data: { action: "submit->form-submission#submit" }) do |f| %>
-      <%= f.submit "Générer une nouvelle description",  class:"secondary-bouton",   data: { form_submission_target: "submitButton" }%>
+      <%= f.submit "Générer une nouvelle description",  class:"secondary-bouton newdescription",   data: { form_submission_target: "submitButton" }%>
       <div class="chargement" data-form-submission-target="loadingSpinner" hidden>
       <div id="loading" class="text-chargement">En cours de génération</div>
       <div  class="loading-spinner"></div>
