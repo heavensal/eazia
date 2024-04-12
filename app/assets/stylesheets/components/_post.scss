@@ -520,8 +520,12 @@ height: 12px;
   padding: 20px 0 0 ;
   top: -20px;
   left: 80px
-
 }
+
+.modal-info-responsive{
+  display: none
+}
+
 
 @media (max-width: 768px){
 .modal-info{
@@ -533,8 +537,10 @@ height: 12px;
   left: 50px;
 }
 
-.modal-info:hover {
-  display: block; /* Afficher le modal au survol sur le bureau */
+.modal-info-responsive{
+  // display: block !important; /* Force le modal à rester affiché */
+  opacity: 1 !important; /* Force l'opacité à 1 */
+  max-height: 100vh !important; /* S'assure que le modal peut s'étendre entièrement */
 }
 
 }
@@ -550,6 +556,11 @@ height: 12px;
   top: -20px;
   left: 80px
 }
+
+.modal-info-photo-responsive{
+  display: none
+}
+
 
 @media (max-width: 768px){
   .modal-info-photo{
@@ -573,6 +584,11 @@ height: 12px;
   left: 80px
 }
 
+.modal-info-ia-responsive{
+  display: none
+}
+
+
 .modal-info.fade.show {
   display: block; /* Montrer la modale */
 }
@@ -584,6 +600,7 @@ height: 12px;
 .modal-info-ia.fade.show {
   display: block; /* Montrer la modale */
 }
+
 
 .modal-backdrop {
   position: fixed;
@@ -604,9 +621,17 @@ height: 12px;
   left: 500px;
 }
 
+.informations-responsive{
+  display: none
+}
+
 @media (max-width: 768px){
-  .informations:hover {
+  .informations-responsive {
     display: block;
+  }
+
+  .informations{
+    display: none
   }
 }
 

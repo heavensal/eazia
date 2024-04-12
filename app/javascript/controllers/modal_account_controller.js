@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="modal-account"
 export default class extends Controller {
-  static targets = ["modal", "overlay", "info", "photo", "ia"];
+  static targets = ["modal", "overlay", "info", "photo", "ia", "infoResponsive", "photoResponsive", "iaResponsive"];
 
   connect() {
     this.setEventListeners();
@@ -13,7 +13,7 @@ export default class extends Controller {
 
     if (isMobile) {
       // écouteurs pour les interactions tactiles sur mobile
-      this.element.addEventListener("touchend", this.open.bind(this));
+      this.element.addEventListener("click", this.open.bind(this));
 
      }
     else {
@@ -22,15 +22,22 @@ export default class extends Controller {
       this.element.addEventListener("mouseleave", this.close.bind(this));
     }
 
-    this.element.addEventListener("click", this.open.bind(this));
+    // this.element.addEventListener("click", this.open.bind(this));
 
   }
 
+  toggle() {
+    const modal = this.element.querySelector('.modal-info-responsive');
+    modal.style.display = (modal.style.display === "block" ? "none" : "block");
+  }
+
+
   open(event) {
-    // event.preventDefault();
-    // event.stopPropagation();
+    event.preventDefault();
+    event.stopPropagation();
 
     const modalName = event.currentTarget.dataset.modalName;
+
 
     this.infoTargets.forEach((info) => {
       if (info.dataset.modalName === modalName) {
@@ -42,6 +49,16 @@ export default class extends Controller {
       }
     });
 
+    if (window.innerWidth > 768) {
+      this.infoTarget.style.display = "block";
+      this.photoTarget.style.display = "block";
+      this.iaTarget.style.display = "block";
+    } else {
+      this.inforesponsiveTarget.style.display = "block";
+      this.photoResponsiveTarget.style.display = "block";
+      this.iaResponsiveTarget.style.display = "block";
+    }
+
     this.photoTargets.forEach((photo) => {
       if (photo.dataset.modalName === modalName) {
         photo.classList.add("show");
@@ -51,6 +68,8 @@ export default class extends Controller {
         photo.style.display = "none";
       }
     });
+
+
 
     this.iaTargets.forEach((ia) => {
       if (ia.dataset.modalName === modalName) {
@@ -118,5 +137,14 @@ export default class extends Controller {
       this.iaTarget.removeAttribute("aria-modal");
       this.iaTarget.removeAttribute("role");
     }
+
+    if (!this.isMobile) {
+      this.element.querySelector('.modal-info-responsive').style.display = "none";
+      this.element.querySelector('.modal-photo-responsive').style.display = "none";
+      this.element.querySelector('.modal-ia-responsive').style.display = "none";
+
+
+    }
+
   }
 }
