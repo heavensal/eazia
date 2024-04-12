@@ -3,33 +3,31 @@
     <div class="secondary-bouton-wrapper">
       <%= link_to drafts_path, class:"secondary-bouton" do %>
        <%= image_tag('icone-draft.svg', alt: 'Supprimer') %>
-    <% end %>
-
+      <% end %>
     </div>
 
     <div class="secondary-bouton-wrapper">
       <%= link_to new_post_path,  class:"secondary-bouton" do %>
        <%= image_tag('icone-prog.svg', alt: 'Supprimer') %>
-    <% end %>
+      <% end %>
     </div>
 
     <div class="connexion-insta">
       <%= form_for(post, url: publish_post_path(post), method: :patch, data: { action: "submit->form-submission#submit" }) do |f| %>
-      <%= f.submit "Publier maintenant", class: "main-bouton", data: { form_submission_target: "submitButton" } %>
-      <div class="chargement-publier" data-form-submission-target="loadingSpinner" hidden>
-      <div id="loading" class="text-chargement-publication">En cours <div  class="loading-spinner"></div></div>
-
-      </div>
+        <%= f.submit "Publier maintenant", class: "main-bouton", data: { form_submission_target: "submitButton" } %>
+        <div class="chargement-publier" data-form-submission-target="loadingSpinner" hidden>
+          <div id="loading" class="text-chargement-publication">
+            En cours <div class="loading-spinner"></div>
+          </div>
+        </div>
       <% end %>
     </div>
 
+    <div class="secondary-bouton-wrapper">
+        <%= link_to post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?"} do %>
+          <%= image_tag('icon-supp-post-insta.svg', alt: 'Supprimer') %>
+        <% end %>
+      </div>
   </div>
-
-  <div class="secondary-bouton-wrapper">
-    <%= link_to post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr de supprimer le brouillon ?"} do %>
-    <%= image_tag('icon-supp-post-insta.svg', alt: 'Supprimer') %>
-    <% end %>
-  </div>
-
 
 </div>
