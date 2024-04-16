@@ -182,11 +182,12 @@ mode: "payment",
 amount: 100,
 stripe_price_id: "price_1OvzMLGGbOzXfEYBkzZDqlXO")
 
-# Subscription.create!(name: "Offre spéciale Eazia 1.0",
-# description: "Bénéficiez de l'offre spéciale pour la sortie de la version 1.0 d'Eazia. 6 mois d'abonnement Premium au prix unique de 19.00 €. Aucun paiement mensuel supplémentaire n'est requis ! 100 jetons crédités mensuellement dans votre porte-monnaie.",
-# price: 19,
-# mode: "payment",
-# duration: "Durant 6 mois",
-# stripe_price_id: "price_1P1ZSkGGbOzXfEYBaSg77JyE")
+Subscription.create!(name: "Offre spéciale Eazia 1.0",
+description: "Bénéficiez de l'offre spéciale pour la sortie de la version 1.0 d'Eazia. 6 mois d'abonnement Premium au prix unique de 19.00 €. Aucun paiement mensuel supplémentaire n'est requis ! 100 jetons crédités mensuellement dans votre porte-monnaie.",
+price: 19,
+mode: "payment",
+duration: "Durant 6 mois",
+stripe_price_id: "price_1P1ZSkGGbOzXfEYBaSg77JyE")
 
-User.create(email: 'test@example.com', password: '123456', confirmed_at: Time.now)
+User.create(email: 'test@example.com', password: '123456', confirmed_at: Time.now, status: "admin")
+User.create(email: 'emma@example.com', password: '123456', confirmed_at: Time.now, status: "admin")

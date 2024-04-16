@@ -12,8 +12,10 @@ export default class extends Controller {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
     if (isMobile) {
+
       // écouteurs pour les interactions tactiles sur mobile
       this.element.addEventListener("click", this.open.bind(this));
+
 
      }
 

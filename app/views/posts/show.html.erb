@@ -18,8 +18,6 @@
         </div>
       </div>
 
-      <%= image_tag("line_2.png", alt:"line") %>
-
       <div class="frame-description">
         <div class="description-de-post">
           <%= render 'gpt_creations/recreate', gpt_creation: @gpt_creation %>
@@ -30,13 +28,7 @@
   </div>
 
   <div class="view-insta">
-  <div class="bg">
-    <div class="overlap-group-2">
-      <div class="ellipse-2-show"></div>
-      <div class="ellipse-show"></div>
-      <div class="ellipse-3-show"></div>
-    </div>
-  </div>
+
       <%= render "insta_show", post: @post, gpt_creation: @gpt_creation, description: @description, photos_selected: @photos_selected %>
       <%# <%= render "show_btns", post: @post %>
   </div>

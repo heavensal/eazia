@@ -1,3 +1,4 @@
+
 .mentions{
   display: flex;
   flex-direction: column;
@@ -19,7 +20,7 @@
 
 .main-logo-footer {
 display: flex;
-justify-content: center;
+justify-content: flex-start;
 align-items: center;
 width: 50%;
   img {
@@ -29,7 +30,7 @@ width: 50%;
 }
 
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
 .mentions {
   a{
     font-size: 14px;
