@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="modal-account"
 export default class extends Controller {
-  static targets = ["modal", "overlay", "info", "photo", "ia", "infoResponsive", "photoResponsive", "iaResponsive"];
+  static targets = ["modal", "overlay", "info", "photo", "ia"];
 
   connect() {
     this.setEventListeners();
@@ -16,11 +16,6 @@ export default class extends Controller {
       this.element.addEventListener("click", this.open.bind(this));
 
      }
-    else {
-      // Ajoutez ici les écouteurs pour 'mouseenter' et 'mouseleave' pour desktop
-      this.element.addEventListener("mouseenter", this.open.bind(this));
-      this.element.addEventListener("mouseleave", this.close.bind(this));
-    }
 
     // this.element.addEventListener("click", this.open.bind(this));
 
@@ -29,11 +24,14 @@ export default class extends Controller {
   toggle(event) {
     event.preventDefault(); // Prévient le comportement par défaut du lien
     const modalId = event.currentTarget.dataset.target; // Récupère l'ID du modal depuis l'attribut data-target de l'élément cliqué
-    const modal = document.querySelector(modalId); // Sélectionne le modal spécifique par son ID
+    const modal = document.querySelector(modalId); // Sélectionne le modal par son ID
 
     // Change l'affichage du modal spécifique
     modal.style.display = (modal.style.display === "block" ? "none" : "block");
+
   }
+
+
 
 
   open(event) {
@@ -52,16 +50,6 @@ export default class extends Controller {
         info.style.display = "none";
       }
     });
-
-    if (window.innerWidth > 768) {
-      this.infoTarget.style.display = "block";
-      this.photoTarget.style.display = "block";
-      this.iaTarget.style.display = "block";
-    } else {
-      this.inforesponsiveTarget.style.display = "block";
-      this.photoResponsiveTarget.style.display = "block";
-      this.iaResponsiveTarget.style.display = "block";
-    }
 
     this.photoTargets.forEach((photo) => {
       if (photo.dataset.modalName === modalName) {
@@ -140,14 +128,6 @@ export default class extends Controller {
       this.iaTarget.setAttribute("aria-hidden", "true");
       this.iaTarget.removeAttribute("aria-modal");
       this.iaTarget.removeAttribute("role");
-    }
-
-    if (!this.isMobile) {
-      this.element.querySelector('.modal-info-responsive').style.display = "none";
-      this.element.querySelector('.modal-photo-responsive').style.display = "none";
-      this.element.querySelector('.modal-ia-responsive').style.display = "none";
-
-
     }
 
   }
