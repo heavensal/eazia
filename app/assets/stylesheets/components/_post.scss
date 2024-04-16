@@ -570,6 +570,12 @@ height: 12px;
     top: 0px;
     left: 50px
   }
+
+  .modal-info-photo-responsive{
+    // display: block !important; /* Force le modal à rester affiché */
+    opacity: 1 !important; /* Force l'opacité à 1 */
+    max-height: 100vh !important; /* S'assure que le modal peut s'étendre entièrement */
+  }
   }
 
 .modal-info-ia{
@@ -587,6 +593,22 @@ height: 12px;
 .modal-info-ia-responsive{
   display: none
 }
+
+@media (max-width: 768px){
+  .modal-info-ia{
+    max-width: 100%;
+    max-height: 30vh;
+    padding: 20px 0 0 ;
+    top: 0px;
+    left: 50px
+  }
+
+  .modal-info-ia-responsive{
+    // display: block !important; /* Force le modal à rester affiché */
+    opacity: 1 !important; /* Force l'opacité à 1 */
+    max-height: 100vh !important; /* S'assure que le modal peut s'étendre entièrement */
+  }
+  }
 
 
 .modal-info.fade.show {

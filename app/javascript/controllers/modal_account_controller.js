@@ -26,8 +26,12 @@ export default class extends Controller {
 
   }
 
-  toggle() {
-    const modal = this.element.querySelector('.modal-info-responsive');
+  toggle(event) {
+    event.preventDefault(); // Prévient le comportement par défaut du lien
+    const modalId = event.currentTarget.dataset.target; // Récupère l'ID du modal depuis l'attribut data-target de l'élément cliqué
+    const modal = document.querySelector(modalId); // Sélectionne le modal spécifique par son ID
+
+    // Change l'affichage du modal spécifique
     modal.style.display = (modal.style.display === "block" ? "none" : "block");
   }
 

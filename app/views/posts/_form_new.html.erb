@@ -8,7 +8,7 @@
       <a href="#" data-action="mouseenter->modal-account#open mouseleave->modal-account#close" data-modal-name="info"><i class="fa fa-info-circle"></i></a>
     </div>
      <div class="informations-responsive">
-      <a href="#" data-action="click->modal-account#toggle" data-modal-name="info"><i class="fa fa-info-circle"></i></a>
+      <a href="#" data-action="click->modal-account#toggle" data-modal-name="info" data-target="#info-modal"><i class="fa fa-info-circle"></i></a>
     </div>
 
     <%= form_for(@post, data: { action: "submit->autorisation-form#validateForm"}) do |f| %>
@@ -22,7 +22,7 @@
           <a href="#" data-action="mouseenter->modal-account#open mouseleave->modal-account#close" data-modal-name="photo"><i class="fa fa-info-circle"></i></a>
         </div>
         <div class="informations-responsive">
-      <a href="#" data-action="click->modal-account#open click->modal-account#close" data-modal-name="info"><i class="fa fa-info-circle"></i></a>
+      <a href="#" data-action="click->modal-account#toggle" data-modal-name="photo" data-target="#photo-modal"><i class="fa fa-info-circle"></i></a>
     </div>
 
         <div class="file-upload-wrapper" data-controller="file-upload">
@@ -43,7 +43,7 @@
           <a href="#" data-action="mouseenter->modal-account#open mouseleave->modal-account#close" data-modal-name="ia"><i class="fa fa-info-circle"></i></a>
         </div>
         <div class="informations-responsive">
-      <a href="#" data-action="click->modal-account#open click->modal-account#close" data-modal-name="info"><i class="fa fa-info-circle"></i></a>
+      <a href="#" data-action="click->modal-account#toggle" data-modal-name="ia" data-target="#ia-modal"><i class="fa fa-info-circle"></i></a>
     </div>
 
       </div>
