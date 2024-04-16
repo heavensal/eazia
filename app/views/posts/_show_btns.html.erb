@@ -13,13 +13,15 @@
     </div>
 
     <div class="connexion-insta">
-      <%= form_for(post, url: publish_post_path(post), method: :patch, data: { action: "submit->form-submission#submit" }) do |f| %>
-        <%= f.submit "Publier maintenant", class: "main-bouton", data: { form_submission_target: "submitButton" } %>
-        <div class="chargement-publier" data-form-submission-target="loadingSpinner" hidden>
-          <div id="loading" class="text-chargement-publication">
-            En cours <div class="loading-spinner"></div>
+      <% if current_user.admin? %>
+        <%= form_for(post, url: publish_post_path(post), method: :patch, data: { action: "submit->form-submission#submit" }) do |f| %>
+          <%= f.submit "Publier maintenant", class: "main-bouton", data: { form_submission_target: "submitButton" } %>
+          <div class="chargement-publier" data-form-submission-target="loadingSpinner" hidden>
+            <div id="loading" class="text-chargement-publication">
+              En cours <div class="loading-spinner"></div>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
 
