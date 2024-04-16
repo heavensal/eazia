@@ -1,14 +1,14 @@
 <div class="card carousel-card insta text-center" data-controller="form-submission">
   <div class="topbar">
-    <%# <div>
+    <div>
       <%# Image du instagram à publier et username, possible uniquement si il s'est bien connecté %>
-      <%# <% if current_user.instagram_account.username %>
-        <%# <%= image_tag current_user.instagram_account.photo_url, class:"icon" %>
-        <%# <b> %>
-          <%# <%= current_user.instagram_account.username %>
-        <%# </b> %>
-      <%# <% end %>
-    <%# </div> %>
+      <% if current_user.instagram_account.username
+        <%= image_tag current_user.instagram_account.photo_url, class:"icon" %>
+         <b>
+           <%= current_user.instagram_account.username %>
+         </b>
+       <% end %>
+     </div>
     <div>
       <%= render "layouts/instagram/threepoints" %>
     </div>

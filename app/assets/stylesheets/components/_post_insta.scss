@@ -1,337 +1,3 @@
-// .show{
-//   display:flex;
-//   justify-content: space-around;
-//   flex: 1;
-//   margin-top: 1%;
-//   z-index: 501;
-// }
-
-// .creation{
-//   display: flex;
-//   flex-direction: column;
-//   width: 50%;
-//   margin-left: 2%
-// }
-
-// .creation-images {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: space-between;
-
-//   img{
-//     width: 200px;
-//     height: 200px;
-//     margin: 1%
-//   }
-// }
-
-// .creation-images > div {
-//   flex: 0 0 33.333%;
-//   max-width: 33.333%;
-// }
-
-
-// .prompt-insta{
-//   font-family: 'glacial-indifference';
-//   font-size: 18px;
-//   font-weight: bold;
-//   text-align: center;
-// }
-
-// .description{
-//   font-family: 'glacial-indifference';
-//   font-size: 14px;
-//   font-weight: lighter;
-//   text-align: justify;
-//   margin: 2%
-// }
-
-// .modifier{
-//   display: flex;
-//   justify-content: center;
-// }
-
-// .gpt{
-//   display: flex;
-//   flex-direction: column;
-
-//   textarea{
-//   width: 100%;
-//   font-size: 14px;
-//   font-family: 'glacial-indifference';
-//   z-index: 11 ;
-//   }
-// }
-
-
-// .recreer{
-//   display: flex;
-//   justify-content: center;
-//   width: 100%;
-// }
-
-// .view-insta{
-//   display: flex;
-//   flex-direction: column;
-//   margin-left: auto;
-//   margin-right: auto;
-
-//   h4{
-//     font-family: 'glacial-indifference';
-//     font-size: 20px;
-//     font-weight: bold;
-//     text-align: center;
-//     margin-bottom: 5%;
-//   }
-// }
-
-
-// .interactionbtns {
-//   padding: 8px 0px;
-//   border-bottom: 1px solid #e6e6e6;
-//   margin: 0 10px 0 10px;
-//   display: flex;
-//   align-content: center;
-//   justify-content: space-between;
-// }
-
-// .interactionbtns span {
-//   width: 95px;
-//   display: flex;
-//   justify-content: space-between;
-// }
-
-// .btn-show{
-//   display: flex;
-//   flex-direction: column;
-// }
-
-// .btn-annexe, .btn-publier{
-//   display: flex;
-//   justify-content: space-around;
-//   margin-top: 5%;
-
-//   @at-root .btn-publier {
-//     margin-bottom: 5%;
-
-//   }
-// }
-
-
-// path {
-//   fill: none;
-//   stroke-miterlimit: 10;
-//   stroke: #000000;
-// }
-
-
-// @media (max-width: 1024px) {
-//   .creation{
-//     width: 90%;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     margin: 0
-//   }
-
-//   .creation-images{
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: center;
-//   }
-
-//   .creation-images img{
-//     width: 200px;
-//     height: 200px;
-//     margin: 1%
-//   }
-
-//   .description{
-//     margin: 3%
-//   }
-
-//   .instagram{
-//     margin-left: auto;
-//     margin-right: auto;
-
-//   }
-
-//   .view-insta{
-//     width: 100%;
-
-//     h4 {
-//       font-size: 20px;
-//     }
-//   }
-
-//   .insta-show {
-//     width: 100%;
-//   }
-
-//   .icon {
-//     width: 30px;
-//     height: 30px;
-//   }
-
-
-//   .interactionbtns span {
-//     width: 95px;
-//   }
-
-//   .textcontent {
-//     font-size: 12px;
-//   }
-// }
-
-
-
-// @media  (max-width: 768px) {
-
-//   .show{
-//     display:flex;
-//     flex-direction: column;
-//   }
-
-//   .creation{
-//     display:flex;
-//     justify-content: center;
-//     width: 100%;
-//   }
-
-//   .prompt-insta{
-//     font-size: 14px;
-//   }
-
-//   .creation-images img{
-//     width: 150px;
-//     height: 150px;
-//     margin: 1%
-//   }
-
-//   .recreer{
-//     width: 100%;
-//     margin-top: 2%;
-//   }
-
-//   .instagram{
-//     margin-top: 5%;
-//   }
-
-//   .insta-show {
-//     width: 100%;
-//   }
-
-//   .view-insta h4 {
-//     font-size: 18px;
-//   }
-
-//   .icon {
-//     width: 25px;
-//     height: 25px;
-//   }
-
-//   .interactionbtns {
-//     padding: 8px 10px;
-//   }
-
-//   .interactionbtns span {
-//     width: 80%;
-//   }
-
-//   .btn-annexe, .btn-publier {
-//     display: flex;
-//     flex-direction: column;
-//     margin-left: auto;
-//     margin-right: auto;
-//   }
-
-//   .textcontent {
-//     font-size: 11px;
-//   }
-
-//   .decalage {
-//     margin-top: 250px;
-//   }
-// }
-
-// @media (max-width: 480px) {
-
-//   .show{
-//     display:flex;
-//     flex-direction: column;
-//   }
-
-//   .creation{
-//     width: 90%;
-//   }
-
-//   .prompt-insta{
-//     font-size: 14px;
-//   }
-
-//   .creation-images img{
-//     width: 50px;
-//     height: 50px;
-//   }
-
-//   .gpt{
-//     width: 100%;
-//     margin-top: 2%;
-//   }
-
-//   .recreer{
-//     width: 100%;
-//     margin-top: 2%;
-//   }
-
-//   .insta-show img {
-//     width: 100%;
-//     height: 300px
-//   }
-
-//   .view-insta h4 {
-//     font-size: 16px;
-//     margin-top: 1%
-//   }
-
-//   .insta {
-//     max-width: 100%;
-//   }
-
-//   .insta-show {
-//     width: 100%;
-//   }
-
-//   .icon {
-//     width: 20px;
-//     height: 20px;
-//   }
-
-//   .interactionbtns {
-//     flex-direction: row;
-//     align-items: space-between;
-//   }
-
-//   .interactionbtns span {
-//     width: 100%;
-//     justify-content: left;
-//   }
-
-//   .btn-annexe, .btn-publier {
-//     flex-direction: column;
-//     align-items: center;
-//   }
-
-//   .textcontent {
-//     font-size: 10px;
-//   }
-
-//   .decalage {
-//     margin-top: 250px;
-//   }
-// }
-
-
 .gnration-de-la {
   background-color: #ffffff;
   display: flex;
@@ -353,7 +19,6 @@
 .frame-show {
   align-items: flex-start;
   gap: 40px;
-  // padding: 24px 0 0;
   position: relative;
   border-right-width: 1px;
   border-right-style: solid;
@@ -375,7 +40,6 @@
   padding: 24px;
   position: relative;
   align-self: stretch;
-  // width: 50%;
   flex: 0 0 auto;
 }
 
@@ -418,13 +82,12 @@ display: inline-block;
 .creation-images {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(100px, auto); /* Ajustez 100px à la hauteur minimale désirée */
+  grid-auto-rows: minmax(100px, auto);
   gap: 8px;
 
   @media (max-width: 768px) {
     display: grid;
     grid-template-columns:1fr 1fr;
-    // grid-auto-rows: minmax(100px, auto); /* Ajustez 100px à la hauteur minimale désirée */
     gap: 8px;
     width: 100%;
   }
@@ -482,13 +145,6 @@ display: inline-block;
 .image-container {
   position: relative;
   display: inline-block;
-
-  // @media (max-width: 768px){
-  //   display: grid;
-  //   grid-template-columns: 1fr 1fr;
-  //   width:100%
-  // }
-
 }
 
 .image-container input[type="image"]{
@@ -521,52 +177,6 @@ display: inline-block;
   80%   { opacity: 0; }
   100%  { opacity: 1; }
 }
-
-
-
-// .image-container form{
-//   display: flex;
-//   width: 126px;
-//   align-items: center;
-//   justify-content: center;
-//   padding: 8px;
-//   position: relative;
-//   flex: 0 0 auto;
-//   border-radius: 4px;
-//   overflow: hidden;
-//   border-color: var(--secondarywhitewhite-300);
-//   position: relative;
-//   width: 100%;
-//   margin-top: -1px;
-//   font-family: var(--petit-texte-medium-h1-font-family);
-//   font-weight: var(--petit-texte-medium-h1-font-weight);
-//   color: var(--secondaryblackblack-300);
-//   font-size: var(--petit-texte-medium-h1-font-size);
-//   letter-spacing: var(--petit-texte-medium-h1-letter-spacing);
-//   line-height: var(--petit-texte-medium-h1-line-height);
-//   white-space: nowrap;
-//   font-style: var(--petit-texte-medium-h1-font-style);
-
-// }
-
-// .selection-indicator {
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-//   width: 20px; /* Ajustez selon vos besoins */
-//   height: 20px; /* Ajustez selon vos besoins */
-//   background-color: rgba(255, 255, 255, 0.7); /* Fond semi-transparent */
-//   color: black; /* Couleur du texte */
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   font-size: 12px; /* Ajustez selon vos besoins */
-//   visibility: hidden; /* Caché par défaut */
-// }
-
-// .photo.selected + .selection-indicator {
-//   visibility: visible; /* Affiche le carré quand l'image est sélectionnée */
-// }
 
 .delete-icon {
   position: absolute;
@@ -645,14 +255,8 @@ display: inline-block;
 
     @media (max-width: 768px){
       top: 10px;
-      // left: 270px;
     }
   }
-
-  // .image-container input[type="image"]:hover {
-  //   opacity: 0.6;
-
-  // }
 
 
 .frame-bouton {
@@ -743,11 +347,6 @@ display: inline-block;
 
 }
 
-
-
-// .file-upload-wrapper-show:hover {
-//   color:  #FD972C;
-// }
 
 .file-upload-wrapper-show input[type="file"] {
   display: none;
