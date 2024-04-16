@@ -1,38 +1,47 @@
 <div class="pages">
-    <div class="account" data-controller="modal-account">
-    <div class="account-header">
+
+
+  <div class="titre-compte">
+    <h1>Mon compte</h1>
+    <div class="main-bouton">
+      <%= link_to "Générer un post", new_post_path  %>
+    </div>
+  </div>
+
+  <div class="account">
+    <div class="account-header"  data-controller="modal-account">
+
       <h3>Informations personnelles</h3>
        <a href="#" data-action="click->modal-account#open" class="edit-profile-link">
-      <i class="fa fa-edit"></i> Modifier le profil
+        <i class="fa fa-edit"></i> Modifier le profil
       </a>
+      <%= render "pages/modal_account"%>
     </div>
+
     <div class="account-body">
-    <div class="account-column">
-      <p><%= @user.email %></p>
-      <p> <%= @user.last_name %></p>
-      </div>
       <div class="account-column">
-      <p> <%= @user.first_name %></p>
-      <p> <%= @user.company %></p>
+        <p><%= @user.email %></p>
+        <p> <%= @user.last_name %></p>
       </div>
 
-        <% if @user.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@user.errors.count, "error") %> empêchent cette mise à jour :</h2>
+      <div class="account-column">
+        <p> <%= @user.first_name %></p>
+        <p> <%= @user.company %></p>
+      </div>
+
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> empêchent cette mise à jour :</h2>
             <ul>
               <% @user.errors.full_messages.each do |message| %>
               <li><%= message %></li>
               <% end %>
             </ul>
-          </div>
-          <% end %>
+        </div>
+      <% end %>
 
-        <%= link_to "Déconnexion", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Etes-vous sûr ?" }, class:"btn-deconnexion"  %>
+      <%= link_to "Déconnexion", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Etes-vous sûr ?" }, class:"btn-deconnexion"  %>
 
     </div>
-
-
-
-    <%= render "pages/modal_account"%>
-    </div>
+  </div>
 </div>

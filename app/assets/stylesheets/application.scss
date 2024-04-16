@@ -7,30 +7,17 @@
 @import 'bootstrap';
 
 
-// @font-face {
-//   font-family: 'glacial-indifference';
-//   src: url('GlacialIndifference-Regular.woff') format('woff');
-//   font-weight: normal;
-//   font-style: normal;
-// }
-
-// @font-face {
-//   font-family: 'glacial-indifference';
-//   src: url('GlacialIndifference-Bold.woff') format('woff');
-//   font-weight: normal;
-//   font-style: italic;
-// }
-
-
-
-// html, body {
-//   height: 100vh;
-//   margin: 0;
-// }
-
 body {
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 768px){
+  body{
+    height: 100vh
+  }
+}
+
   overflow-x: hidden;
   // font-family: 'glaciale-indifference', sans-serif;
 }
@@ -153,78 +140,15 @@ html {
 //   }
 // }
 
-// h3{
-//   font-size: 18px;
-// }
 
 html {
   scroll-behavior: smooth;
 }
 
-// p{
-//   margin-bottom: 0;
-// }
-
-
-// * {
-//   margin: 0;
-// }
-
 a {
   text-decoration: none;
   color:inherit;
 }
-
-// .content {
-//   flex: 1;
-//   position: relative;
-//   margin-top: 10vh;
-//   z-index: 600;
-//   margin-left: 0;
-//   width: 100%;
-//   transition: margin-left 0.3s, width 0.3s;
-// }
-
-// @media (max-width: 768px) {
-
-//   body.menu-open .content {
-//     width: 100%;
-//     margin-left: 0;
-//   }
-
-//   h1 {
-//     font-size: 30px;
-//   }
-
-//   h3 {
-//     font-size: 16px;
-//   }
-
-//   .content{
-//     position: relative;
-//     z-index: 400
-//   }
-
-// }
-
-
-// @media (max-width: 480px) {
-
-//   body.menu-open .content {
-//     width: 100%;
-//     margin-left: 0;
-//   }
-
-//   h1 {
-//     font-size: 20px;
-//   }
-
-//   h3 {
-//     font-size: 14px;
-
-//   }
-// }
-
 
 :root {
   --secondaryblackblack-50: rgba(230, 230, 230, 1);
@@ -371,7 +295,6 @@ a {
   bottom: 0;
   overflow-y: auto;
   background-color: #ffffff33;
-  // background: linear-gradient(to bottom, #FD972C 0%, #FFFFFF 100%);
 }
 
 @media screen and (max-width: 768px){
@@ -393,42 +316,15 @@ a {
     z-index: 900;
     overflow-x: hidden;
     overflow-y: hidden;
+
       }
 }
 
-// .content {
-//   margin-left: 250px;
-//   flex-grow: 1;
-//   background: linear-gradient(to bottom, rgba(253, 151, 44, 0.6) 0%, rgba(255, 255, 255, 0.8) 100%);
-
-
-//   filter: blur(166.3px),
-//           blur(166.3px),
-//           blur(166.3px);
-// }
-
-// @media (max-width: 768px){
-//   .content{
-//     margin: 0
-//   }
-// }
-
 .content {
-  /* Styles par défaut quand la navbar et le footer ne sont pas présents */
   width: 100%;
   margin-top: 0;
   flex-grow: 1;
   display:flex;
-  // flex-direction: column;
-  // height: 100vh;
-  // margin-bottom: 10vh;
-
-  // background-size: cover; /* Couvre entièrement la div sans perdre les proportions de l'image */
-
-  // @media (max-width: 768px){
-  //   margin-top: 20vh;
-  // }
-
 }
 
 .user-logged-in .content {
@@ -438,8 +334,6 @@ a {
   flex-grow: 1;
   display:flex;
   flex-direction: column;
-  height: 100vh;
-  // margin-bottom: 10vh;
 
   @media screen and (max-width: 768px){
     width: 100%
@@ -459,11 +353,6 @@ a {
 
 }
 
-.orange, .rose-bleue {
-  position: absolute;
-  width: 100%;
-}
-
 
 .orange{
   position: fixed;
@@ -471,6 +360,17 @@ a {
   width: 100%;
   height: 40vh
 }
+
+.ellipse-orange {
+  width: 1225px;
+  height: 40vh;
+  flex-shrink: 0;
+  position: fixed;
+  opacity: 0.4;
+  background: linear-gradient(180deg, rgba(242, 65, 171, 0.00) 0%, #FFE5F3 44.42%);
+
+  filter: blur(50px);
+  }
 
 .rose-bleue{
   position: fixed;
@@ -480,19 +380,6 @@ a {
   bottom : 0;
   display: flex;
   flex-direction: row;
-}
-
-
-
-.ellipse-orange {
-width: 1225px;
-height: 40vh;
-flex-shrink: 0;
-position: fixed;
-opacity: 0.4;
-background: linear-gradient(180deg, rgba(242, 65, 171, 0.00) 0%, #FFE5F3 44.42%);
-
-filter: blur(50px);
 }
 
 .ellipse-rose {
@@ -518,6 +405,7 @@ filter: blur(50px);
 @media screen and (max-width: 768px){
   .user-logged-in .content{
   margin-left: 0;
+  height: 100vh
   }
 }
 

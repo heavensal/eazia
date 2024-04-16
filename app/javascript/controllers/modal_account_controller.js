@@ -12,15 +12,25 @@ export default class extends Controller {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
     if (isMobile) {
-      // Ajoutez ici l'écouteur pour le 'click' sur mobile
-      this.element.addEventListener("tap", this.open.bind(this));
+
+      // écouteurs pour les interactions tactiles sur mobile
+      this.element.addEventListener("click", this.open.bind(this));
+
 
      }
-    // else {
-    //   // Ajoutez ici les écouteurs pour 'mouseenter' et 'mouseleave' pour desktop
-    //   this.element.addEventListener("mouseenter", this.open.bind(this));
-    //   this.element.addEventListener("mouseleave", this.close.bind(this));
-    // }
+
+    // this.element.addEventListener("click", this.open.bind(this));
+
+  }
+
+  toggle(event) {
+    event.preventDefault(); // Prévient le comportement par défaut du lien
+    const modalId = event.currentTarget.dataset.target; // Récupère l'ID du modal depuis l'attribut data-target de l'élément cliqué
+    const modal = document.querySelector(modalId); // Sélectionne le modal par son ID
+
+    // Change l'affichage du modal spécifique
+    modal.style.display = (modal.style.display === "block" ? "none" : "block");
+
   }
 
   open(event) {
@@ -28,6 +38,7 @@ export default class extends Controller {
     event.stopPropagation();
 
     const modalName = event.currentTarget.dataset.modalName;
+
 
     this.infoTargets.forEach((info) => {
       if (info.dataset.modalName === modalName) {
@@ -49,6 +60,8 @@ export default class extends Controller {
       }
     });
 
+
+
     this.iaTargets.forEach((ia) => {
       if (ia.dataset.modalName === modalName) {
         ia.classList.add("show");
@@ -67,7 +80,7 @@ export default class extends Controller {
     this.modalTarget.setAttribute("role", "dialog");
     }
     if (this.hasOverlayTarget) {
-    this.overlayTarget.style.display = "block"; // Afficher l'overlay
+    this.overlayTarget.style.display = "block";
     }
 
     if (this.hasModalTarget || this.hasOverlayTarget || this.infoTarget || this.photoTarget || this.iaTarget) {
@@ -86,7 +99,7 @@ export default class extends Controller {
     }
 
     if (this.hasOverlayTarget) {
-    this.overlayTarget.style.display = "none"; // Cacher l'overlay
+    this.overlayTarget.style.display = "none";
     }
 
     if (this.hasModalTarget || this.hasOverlayTarget || this.infoTarget || this.photoTarget || this.iaTarget) {
@@ -115,5 +128,6 @@ export default class extends Controller {
       this.iaTarget.removeAttribute("aria-modal");
       this.iaTarget.removeAttribute("role");
     }
+
   }
 }

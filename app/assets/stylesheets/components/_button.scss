@@ -1,24 +1,3 @@
-// .btn-valider{
-//   width: 50%;
-//   height: 50px;
-//   margin: 1%;
-//   background: white;
-//   border-radius: 5px;
-//   border: none;
-//   border:3px solid #9f2dbe;
-//   font-size: 18px;
-//   font-weight: bold;
-//   color: #9f2dbe;
-
-//   &:hover {
-//     color: white;
-//     background-color:#a73cc2;
-//     border: none;
-//     border-bottom:5px solid #dcffff;
-//   }
-
-// }
-
 .button-annexe, .button-cancel{
   border: none;
   box-shadow: 4px 4px 8px 0px #007ff5 ;
@@ -109,21 +88,6 @@
   transform: scale(1.3);
 }
 
-// .logout-button {
-//   position: relative;
-//   margin: 0;
-//   background-color: white;
-//   color: black;
-//   font-weight: lighter;
-//   border: 3px solid white;
-//   // border-radius: 15%;
-//   margin-bottom: 10%;
-//   cursor: pointer;
-// }
-
-// .logout-button:hover {
-//   color: #007ff5 ;
-// }
 
 .button-annexe-draft{
   border: none;
@@ -178,11 +142,7 @@
   line-height: var(--titre-medium-h4-line-height);
   white-space: nowrap;
   font-style: var(--titre-medium-h4-font-style);
-
-
 }
-
-
 
 .btn-deconnexion{
   display: flex;
@@ -210,6 +170,7 @@
     width: 70%;
   }
 }
+
 
 @media screen and (max-width: 768px) {
 
@@ -255,6 +216,7 @@
   }
 }
 
+
 @media screen and (max-width: 480px) {
 
   // .btn-valider {
@@ -262,6 +224,7 @@
   //   padding: 2%;
   //   width: 100%;
   // }
+
 
   .button-modifier{
     width: 50%;

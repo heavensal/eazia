@@ -1,7 +1,6 @@
 .pages{
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   text-align: justify;
   align-items: center;
   height: 100vh;
@@ -12,7 +11,6 @@
 }
 
 .legales, .cgv, .cgu, .confidentialite {
-
   width: 80%;
   background: var(--secondarywhitewhite-200);
   box-shadow: 0 3px 3px;
@@ -154,6 +152,7 @@
     font-style: var(--titre-regular-h4-font-style);
   }
 
+
   @media screen and (max-width: 768px){
     margin-top: 20px;
   }
@@ -225,7 +224,8 @@
     width: 100%;
 
     p{
-      width: 100%;
+     font-size: 14px;
+     width: 100%;
     }
 
   }
@@ -253,15 +253,16 @@
   border-color: #ffffff;
 }
 
+
 .overlay {
-  position: fixed; /* Positionnement fixe pour couvrir toute la page */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%; /* Largeur : 100% de la fenêtre */
-  height: 100vh; /* Hauteur : 100% de la fenêtre */
-  background-color: rgba(0,0,0,0.5); /* Couleur de fond semi-transparente */
-  z-index: 1040; /* S'assurer qu'il est derrière le modal mais au-dessus du reste */
-  display: none; /* Caché par défaut */
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 500;
+  display: none;
 }
 
 .modal .modal-content {
@@ -274,7 +275,7 @@
 }
 
 .modal-title-account{
- font-family: "Helvetica Neue-Medium", Helvetica;
+font-family: "Helvetica Neue-Medium", Helvetica;
 font-weight: 500;
 color: #1f1f1f;
 font-size: 24px;
@@ -293,25 +294,21 @@ line-height: normal;
   position: relative;
 
   form{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-   justify-content: space-between;
-   gap: 16px;
-   padding: 24px 0;
-
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 0;
   }
 
 }
 
-// .modal-body-account:last-child {
-//   margin-top: 20px; /* Ajoute un espace supplémentaire avant .actions-compte */
-// }
 
 .modal-field-update{
   width: 100%;
-height: 10vh;
-gap: 16px;
+  height: 10vh;
+  gap: 16px;
 
   input{
     display: flex;
@@ -334,16 +331,15 @@ gap: 16px;
 }
 
 
-
-
 .actions-compte{
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  display: inline-flex;
-  position: relative;
-  flex: 0 0 auto;
-  margin-top: 20px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // gap: 16px;
+  // // position: relative;
+  // // flex: 0 0 auto;
+  // margin-top: 20px;
+
 
   button{
     display: inline-flex;
@@ -391,6 +387,11 @@ gap: 16px;
     }
   }
 
+  input{
+    @media (max-width: 768px){
+      width: 60%
+    }
+  }
 }
 
 
@@ -434,19 +435,6 @@ gap: 16px;
 }
 
 @media (max-width :768px){
-  // .account{
-  //   width: 90%;
-
-  //   h3{
-  //     font-size: 20px;
-  //     font-weight: bold;
-  //   }
-
-  //   p{
-  //     font-size: 18px;
-  //   }
-  // }
-
   .contact, .rs{
     width: 90%
   }
@@ -468,40 +456,3 @@ gap: 16px;
   }
 
 }
-
-
-// @media (max-width :480px){
-//   .account{
-//     width: 90%;
-
-//     h3{
-//       font-size: 18px;
-//       font-weight: bold;
-//     }
-
-//     p{
-//       font-size: 16px;
-//     }
-//   }
-
-//   .contact, .rs{
-//     width: 90%
-//   }
-
-//   .rs img {
-//     height: 20px
-//   }
-
-//   .legales, .cgv, .cgu, .confidentialite {
-//     width: 90%;
-
-//     h4{
-//       font-size: 18px;
-//     }
-
-//     p{
-//       font-size: 14px;
-//     }
-//   }
-
-// }
