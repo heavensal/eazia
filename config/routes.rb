@@ -51,7 +51,7 @@ Rails.application.routes.draw do
   get 'pages/contact'
   get 'pages/cgu'
   get 'pages/confidentialite'
-  get 'pages/inscription'
+  # get 'pages/inscription'
 
   patch 'pages/update_account', to: 'pages#update_account', as: 'pages_update_account'
 
